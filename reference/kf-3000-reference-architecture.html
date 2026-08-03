@@ -4,9 +4,10 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="reference.css">
+<script src="search.js" defer></script>
 </head><body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><div class="rsearch"><input type="search" id="q" placeholder="Search the reference…" aria-label="Search the reference" autocomplete="off"><div class="rsearch-results" id="qres" role="listbox" hidden></div></div><span class="draft">Public Review 0.1</span></header>
 <div class="doc">
 <details class="sidewrap" open><summary>Contents</summary>
 <nav class="side">
@@ -62,7 +63,7 @@ Engineering Practices (KF-2002)
         ↓
 Implementation (KF-4000)</code></pre>
 <h3 id="purpose">Purpose</h3>
-<p>This document defines the Knowledge Foundry Reference Architecture: the technology-neutral arrangement of capabilities, services, records and control relationships required to realise the Canon, lifecycle and engineering practices of a governed knowledge system.</p>
+<p>This document defines the Knowledge Foundry Reference Architecture: the technology-neutral arrangement of capabilities, services, records and control relationships required to realise the Canon, lifecycle and engineering practices of a <span class="gloss" tabindex="0">governed knowledge system<span class="gloss-pop" role="tooltip"><strong>Governed knowledge system</strong> — a socio-technical system that holds operational knowledge objects and governs their transition from one justified state to another across modalities (KF-1001). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>.</p>
 <p><a href="kf-3000-reference-architecture.html">KF-3000</a> does not prescribe a product, platform, vendor, storage model or deployment topology. It defines the logical responsibilities that any conforming architecture must discharge.</p>
 <p>The Reference Architecture answers:</p>
 <blockquote>
@@ -94,13 +95,13 @@ Architectural service</code></pre>
 <li>Its inputs, outputs and governed records can be identified.</li>
 <li>Its relationship to accountability and authority is explicit.</li>
 <li>Its conformance can be inspected or tested.</li>
-<li>Removing it would leave at least one lifecycle gate, invariant, practice obligation or Governance Primitive unsupported.</li>
+<li>Removing it would leave at least one lifecycle gate, invariant, practice obligation or <span class="gloss" tabindex="0">Governance Primitive<span class="gloss-pop" role="tooltip"><strong>Governance Primitive</strong> — one of the six operations by which warrant is conferred: evidence, authority, provenance, validation, versioning, reversibility (KF-1104). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> unsupported.</li>
 </ol>
 <p>If a proposed element fails these tests, it belongs either in KF-4000 or outside the Knowledge Foundry architecture.</p>
 <hr />
 <h2 id="part-i-architectural-foundations">Part I · Architectural Foundations</h2>
 <h3 id="scope-of-the-reference-architecture">1. Scope of the Reference Architecture</h3>
-<p>The Reference Architecture governs the operational life of Operational Knowledge Objects and the engineering artefacts attached to them.</p>
+<p>The Reference Architecture governs the operational life of <span class="gloss" tabindex="0">Operational Knowledge Objects<span class="gloss-pop" role="tooltip"><strong>Operational Knowledge Object</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> and the engineering artefacts attached to them.</p>
 <p>Its scope includes:</p>
 <ul>
 <li>object identity and representation;</li>
@@ -316,7 +317,7 @@ Engineering Artefact</code></pre>
 </ul>
 <p><strong>Principal artefacts maintained.</strong></p>
 <ul>
-<li>Evidence Record</li>
+<li><span class="gloss" tabindex="0">Evidence Record<span class="gloss-pop" role="tooltip"><strong>Evidence record</strong> — the durable record that a material obligation or decision was discharged; wherever possible emitted by the governed act itself (KF-3004 §5.2). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></li>
 <li>Evidence-to-Claim Link</li>
 <li>Counter-evidence Record</li>
 </ul>
@@ -535,7 +536,7 @@ Engineering Artefact</code></pre>
 <ul>
 <li>identify the object version and actionable form used;</li>
 <li>verify that acceptance and governance remain valid;</li>
-<li>record material use — materiality criteria and assurance classes are defined by <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> · Materiality and Assurance (a domain governance profile may set additional thresholds within it);</li>
+<li>record material use — <span class="gloss" tabindex="0">materiality<span class="gloss-pop" role="tooltip"><strong>Materiality</strong> — the degree to which an object, claim, decision or transition may affect consequential action, reliance, obligation, exposure, representation or preservation (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> criteria and <span class="gloss" tabindex="0">assurance classes<span class="gloss-pop" role="tooltip"><strong>Assurance class</strong> — the ordinal grade (A0 Exploratory · A1 Working · A2 Routine · A3 Consequential · A4 Critical) that sets the depth of assurance required; attaches to the release / scope of reliance (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> are defined by <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> · Materiality and Assurance (a domain governance profile may set additional thresholds within it);</li>
 <li>preserve the path from input to result;</li>
 <li>provide an explanation appropriate to the modality, materiality and decision context of the application, without claiming forms of interpretability the underlying representation cannot support;</li>
 <li>prevent use of suspended, retired or unaccepted objects.</li>
@@ -610,7 +611,7 @@ Engineering Artefact</code></pre>
 <p><strong>Conformance condition.</strong> For any object, version, actionable form, application or outcome, a reviewer can trace it to its origin and to every predecessor state, and any broken lineage or incomplete traceability is detectable.</p>
 <h4 id="e-cap-02-invariant-monitoring">E-CAP-02 · Invariant Monitoring</h4>
 <p><strong>Purpose.</strong> Continuously verify that the architectural invariants of §3 hold across all objects.</p>
-<p><strong>Upstream basis.</strong> Architectural invariants (§3); lifecycle invariants (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</p>
+<p><strong>Upstream basis.</strong> Architectural invariants (§3); <span class="gloss" tabindex="0">lifecycle invariants<span class="gloss-pop" role="tooltip"><strong>Lifecycle invariant</strong> — one of the six continuously checkable properties of an object at every instant: single identity, attributable transitions, justified transitions, inspectable transitions, provenance always present, lineage preserved (KF-2001). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</p>
 <p><strong>Required capabilities.</strong></p>
 <ul>
 <li>evaluate each architectural invariant against live and historical objects;</li>
@@ -962,7 +963,7 @@ Full Conformance</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>A1 · OKO Identification</td>
+<td>A1 · <span class="gloss" tabindex="0">OKO<span class="gloss-pop" role="tooltip"><strong>OKO</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> Identification</td>
 <td>A-CAP-01, A-CAP-03</td>
 </tr>
 <tr class="even">

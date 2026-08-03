@@ -4,9 +4,10 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="reference.css">
+<script src="search.js" defer></script>
 </head><body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><div class="rsearch"><input type="search" id="q" placeholder="Search the reference…" aria-label="Search the reference" autocomplete="off"><div class="rsearch-results" id="qres" role="listbox" hidden></div></div><span class="draft">Public Review 0.1</span></header>
 <div class="doc">
 <details class="sidewrap" open><summary>Contents</summary>
 <nav class="side">
@@ -52,7 +53,7 @@
 <pre class="text"><code>Principle (KF-1000) → Methodology (KF-2000) → Reference Architecture (KF-3000)
         → Domains (KF-3001–3005) → Integration (KF-3006) → Conformance (KF-3007) → Authority (KF-3008)
         → ▸ Crosswalks and Traceability (KF-3009) → Implementation (KF-4000)</code></pre>
-<p>The architecture is complete at <a href="kf-3008-architectural-authority-framework.html">KF-3008</a>. Principles, lifecycle, materiality, reference architecture, integration, conformance and authority together provide everything essential. This document therefore <strong>introduces no new architectural domain and no new first-order concept.</strong> It performs a different role: it is the architecture’s <em>synthesis</em> — the atlas that accompanies the constitutional text. The constitution defines the rules; the atlas helps readers see where everything sits and how the parts relate, without creating new law.</p>
+<p>The architecture is complete at <a href="kf-3008-architectural-authority-framework.html">KF-3008</a>. Principles, lifecycle, <span class="gloss" tabindex="0">materiality<span class="gloss-pop" role="tooltip"><strong>Materiality</strong> — the degree to which an object, claim, decision or transition may affect consequential action, reliance, obligation, exposure, representation or preservation (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>, reference architecture, integration, conformance and authority together provide everything essential. This document therefore <strong>introduces no new architectural domain and no new first-order concept.</strong> It performs a different role: it is the architecture’s <em>synthesis</em> — the atlas that accompanies the constitutional text. The constitution defines the rules; the atlas helps readers see where everything sits and how the parts relate, without creating new law.</p>
 <h3 id="purpose">Purpose</h3>
 <p>The Architectural Crosswalks and Traceability document provides the <strong>navigational layer</strong> of the Knowledge Foundry Reference Architecture. It maps architectural concepts, responsibilities and relationships across the architecture, clarifies document ownership, and demonstrates how the architecture forms a coherent, navigable and traceable system whose architectural integrity can be understood <strong>without duplicating its normative content</strong>.</p>
 <p>This is <em>navigation</em>, not architecture. Every entry below points to a home document that owns the concept; <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> owns only the <em>relationships between</em> the documents — the map, the crosswalks, the traceability matrices and the relationship catalogue. Where a crosswalk here and a home document appear to differ, the home document governs and this document is corrected.</p>
@@ -204,17 +205,17 @@ Institutional Reliance</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Canonical Principle · Constitutional Invariant · Governance Primitive</td>
+<td><span class="gloss" tabindex="0">Canonical Principle<span class="gloss-pop" role="tooltip"><strong>Canonical Principle</strong> — an enduring obligation true of any governed knowledge system, admitted only if it survives the two-question test (KF-1000 Part III). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> · <span class="gloss" tabindex="0">Constitutional Invariant<span class="gloss-pop" role="tooltip"><strong>Constitutional invariant</strong> — one of the five properties whose loss would make a system cease to be a governed knowledge system: inspectability, justification, provenance, governed evolution, human accountability (KF-1050). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> · <span class="gloss" tabindex="0">Governance Primitive<span class="gloss-pop" role="tooltip"><strong>Governance Primitive</strong> — one of the six operations by which warrant is conferred: evidence, authority, provenance, validation, versioning, reversibility (KF-1104). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></td>
 <td><a href="kf-1000-canon.html">KF-1000</a></td>
 <td><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>, <a href="kf-3006-architectural-integration-model.html">KF-3006</a>, <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></td>
 </tr>
 <tr class="even">
-<td>Operational Knowledge Object <em>(defined KF-1101; architectural unit <a href="kf-3000-reference-architecture.html">KF-3000</a> §2)</em></td>
+<td><span class="gloss" tabindex="0">Operational Knowledge Object<span class="gloss-pop" role="tooltip"><strong>Operational Knowledge Object</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> <em>(defined KF-1101; architectural unit <a href="kf-3000-reference-architecture.html">KF-3000</a> §2)</em></td>
 <td><a href="kf-1000-canon.html">KF-1000</a></td>
 <td><a href="kf-3000-reference-architecture.html">KF-3000</a>, <a href="kf-3004-information-and-record-model.html">KF-3004</a></td>
 </tr>
 <tr class="odd">
-<td>Lifecycle — stages, transitions, lifecycle invariants</td>
+<td>Lifecycle — stages, transitions, <span class="gloss" tabindex="0">lifecycle invariants<span class="gloss-pop" role="tooltip"><strong>Lifecycle invariant</strong> — one of the six continuously checkable properties of an object at every instant: single identity, attributable transitions, justified transitions, inspectable transitions, provenance always present, lineage preserved (KF-2001). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></td>
 <td><a href="kf-2001-oko-lifecycle.html">KF-2001</a></td>
 <td><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>, <a href="kf-3006-architectural-integration-model.html">KF-3006</a>, <a href="kf-3008-architectural-authority-framework.html">KF-3008</a></td>
 </tr>
@@ -224,7 +225,7 @@ Institutional Reliance</code></pre>
 <td><a href="kf-3002-capability-model.html">KF-3002</a>, <a href="kf-3000-reference-architecture.html">KF-3000</a> §22</td>
 </tr>
 <tr class="odd">
-<td>Materiality · Assurance Class · Governance Overlay</td>
+<td>Materiality · <span class="gloss" tabindex="0">Assurance Class<span class="gloss-pop" role="tooltip"><strong>Assurance class</strong> — the ordinal grade (A0 Exploratory · A1 Working · A2 Routine · A3 Consequential · A4 Critical) that sets the depth of assurance required; attaches to the release / scope of reliance (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> · <span class="gloss" tabindex="0">Governance Overlay<span class="gloss-pop" role="tooltip"><strong>Governance overlay</strong> — an orthogonal attribute (regulated, confidential, public, client-facing, legally-privileged) adding obligations without changing class (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></td>
 <td><a href="kf-2003-materiality-and-assurance.html">KF-2003</a></td>
 <td><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>, <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>, <a href="kf-3008-architectural-authority-framework.html">KF-3008</a></td>
 </tr>
@@ -259,7 +260,7 @@ Institutional Reliance</code></pre>
 <td><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>, <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></td>
 </tr>
 <tr class="even">
-<td>Conformance · Conformance Claim · Findings · the four tests</td>
+<td>Conformance · <span class="gloss" tabindex="0">Conformance Claim<span class="gloss-pop" role="tooltip"><strong>Conformance claim</strong> — an assertion that an object is governed, accepted, current or reliable, reconstructable to the depth its reliance requires (KF-3007). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> · Findings · the four tests</td>
 <td><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></td>
 <td><a href="kf-3006-architectural-integration-model.html">KF-3006</a>, <a href="kf-3008-architectural-authority-framework.html">KF-3008</a>, KF-4000</td>
 </tr>
@@ -387,7 +388,7 @@ Institutional Reliance</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td>I — governs OKOs, not knowledge</td>
+<td>I — governs <span class="gloss" tabindex="0">OKOs<span class="gloss-pop" role="tooltip"><strong>OKO</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>, not knowledge</td>
 <td>OKO as architectural unit (<a href="kf-3000-reference-architecture.html">KF-3000</a> §2); Object Registry (SVC-01); single-identity invariant</td>
 </tr>
 <tr class="even">
@@ -893,7 +894,7 @@ Conformance</code></pre>
 <p>The series answers six questions in order: <em>what is the architecture</em> (<a href="kf-3000-reference-architecture.html">KF-3000</a>), <em>what are its domains</em> (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>–3005), <em>how do they operate together</em> (<a href="kf-3006-architectural-integration-model.html">KF-3006</a>), <em>how is its integrity demonstrated</em> (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>), <em>who may legitimately make it consequential</em> (<a href="kf-3008-architectural-authority-framework.html">KF-3008</a>), and <em>how does the whole fit together</em> (<a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a>). Ending with synthesis rather than another specialised framework is the point: the last document is the one that makes all the others easier to understand and maintain.</p>
 <p>Together these documents establish a complete architectural lineage from constitutional principle to institutional reliance. <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> closes the Reference Architecture by making that lineage explicit, navigable and maintainable.</p>
 <h3 id="closing-statement">Closing Statement</h3>
-<p><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> is the atlas to the constitution. It creates no law and owns no concept save the relationships among the rest. Its success is measured not by what it adds but by what it makes navigable: an architect, an implementer, a reviewer or a governance officer should be able to enter the architecture anywhere, find where every concept lives, follow any obligation from principle to conformance, and trust that the whole remains one coherent, traceable system. With it, the Reference Architecture is not merely a set of documents — it is a map of a single governed knowledge system, and a means of keeping it coherent as it evolves.</p>
+<p><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> is the atlas to the constitution. It creates no law and owns no concept save the relationships among the rest. Its success is measured not by what it adds but by what it makes navigable: an architect, an implementer, a reviewer or a governance officer should be able to enter the architecture anywhere, find where every concept lives, follow any obligation from principle to conformance, and trust that the whole remains one coherent, traceable system. With it, the Reference Architecture is not merely a set of documents — it is a map of a single <span class="gloss" tabindex="0">governed knowledge system<span class="gloss-pop" role="tooltip"><strong>Governed knowledge system</strong> — a socio-technical system that holds operational knowledge objects and governs their transition from one justified state to another across modalities (KF-1001). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>, and a means of keeping it coherent as it evolves.</p>
 
 <nav class="prevnext"><a class="pv" href="kf-3008-architectural-authority-framework.html">&#8592; Authority</a><a class="nx" href="kf-5000-exemplars-and-case-studies.html">Exemplars & Case Studies &#8594;</a></nav>
 </main>

@@ -4,9 +4,10 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="reference.css">
+<script src="search.js" defer></script>
 </head><body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><div class="rsearch"><input type="search" id="q" placeholder="Search the reference…" aria-label="Search the reference" autocomplete="off"><div class="rsearch-results" id="qres" role="listbox" hidden></div></div><span class="draft">Public Review 0.1</span></header>
 <div class="doc">
 <details class="sidewrap" open><summary>Contents</summary>
 <nav class="side">
@@ -246,7 +247,7 @@ Implementation (KF-4000)</code></pre>
 <p><strong>Service statement.</strong> Registers evidence and counter-evidence as governed records related to claims and objects.</p>
 <p><strong>Purpose.</strong> Make evidential support, challenge and origin independently inspectable, distinct from the conclusions drawn from them.</p>
 <p><strong>Realised capabilities.</strong> Accountable for B-CAP-01.</p>
-<p><strong>Authoritative information objects.</strong> Evidence Record; Counter-Evidence Record; Evidence-to-Claim Link; Evidence Classification; Evidence Availability Status.</p>
+<p><strong>Authoritative information objects.</strong> <span class="gloss" tabindex="0">Evidence Record<span class="gloss-pop" role="tooltip"><strong>Evidence record</strong> — the durable record that a material obligation or decision was discharged; wherever possible emitted by the governed act itself (KF-3004 §5.2). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>; Counter-Evidence Record; Evidence-to-Claim Link; Evidence Classification; Evidence Availability Status.</p>
 <p><strong>Service operations.</strong> Register evidence; classify support, challenge or context; relate evidence to claims and objects; record availability; retain conflicting evidence.</p>
 <p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01, SVC-02. <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-15.</p>
 <p><strong>Enforced interaction constraints.</strong> Participates in IC-20 (provenance of evidence).</p>
@@ -360,7 +361,7 @@ Implementation (KF-4000)</code></pre>
 <p><strong>Service statement.</strong> Governs material use of actionable forms and captures outcomes as governed evidence.</p>
 <p><strong>Purpose.</strong> Keep use authorised, traceable and explainable, and close the loop back to the lifecycle.</p>
 <p><strong>Realised capabilities.</strong> Accountable for D-CAP-02, D-CAP-03.</p>
-<p><strong>Authoritative information objects.</strong> Application Record; Use Context Record; Eligibility Decision; Explanation Record; Application Participant Record; Outcome Record; Interpretation Record; Feedback Record; Materiality Assessment; Disposition Record; Lifecycle Trigger.</p>
+<p><strong>Authoritative information objects.</strong> Application Record; Use Context Record; Eligibility Decision; Explanation Record; Application Participant Record; Outcome Record; Interpretation Record; Feedback Record; <span class="gloss" tabindex="0">Materiality<span class="gloss-pop" role="tooltip"><strong>Materiality</strong> — the degree to which an object, claim, decision or transition may affect consequential action, reliance, obligation, exposure, representation or preservation (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> Assessment; Disposition Record; Lifecycle Trigger.</p>
 <p><strong>Service operations.</strong> Verify eligibility before use; record context and participants; preserve input-to-result path; produce modality-appropriate explanation; capture outcomes; assess materiality; assign disposition; raise lifecycle triggers.</p>
 <p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-12. <em>Collaborating:</em> SVC-08. <em>Constrained by:</em> SVC-07 (governance status), SVC-16. <em>Triggers:</em> SVC-07, SVC-09, SVC-08. <em>Evidence from:</em> SVC-15.</p>
 <p><strong>Enforced interaction constraints.</strong> IC-11 (Application Eligibility); IC-12 (Warrant Link Preservation).</p>

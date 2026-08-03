@@ -4,9 +4,10 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="reference.css">
+<script src="search.js" defer></script>
 </head><body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><div class="rsearch"><input type="search" id="q" placeholder="Search the reference…" aria-label="Search the reference" autocomplete="off"><div class="rsearch-results" id="qres" role="listbox" hidden></div></div><span class="draft">Public Review 0.1</span></header>
 <div class="doc">
 <details class="sidewrap" open><summary>Contents</summary>
 <nav class="side">
@@ -85,7 +86,7 @@ Capability
 Logical Service
         ↓
 Implementation</code></pre>
-<p>A capability belongs in <a href="kf-3002-capability-model.html">KF-3002</a> only when its absence would leave a Canonical Principle, a lifecycle stage/gate/invariant, an engineering-practice obligation, a mandatory engineering artefact, a <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> invariant or interaction constraint, or a conformance requirement unsupported.</p>
+<p>A capability belongs in <a href="kf-3002-capability-model.html">KF-3002</a> only when its absence would leave a <span class="gloss" tabindex="0">Canonical Principle<span class="gloss-pop" role="tooltip"><strong>Canonical Principle</strong> — an enduring obligation true of any governed knowledge system, admitted only if it survives the two-question test (KF-1000 Part III). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>, a lifecycle stage/gate/invariant, an engineering-practice obligation, a mandatory engineering artefact, a <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> invariant or interaction constraint, or a conformance requirement unsupported.</p>
 <h3 id="capability-admission-test">Capability Admission Test</h3>
 <p>A proposed capability is admitted only where it expresses an enduring architectural ability; is independent of any specific technology or organisational procedure; has an identifiable upstream basis; has observable required behaviours; has identifiable information objects and relationships; would create a defined architectural risk on failure; has demonstrable conformance; and is not already fully contained within another capability.</p>
 <h3 id="capability-boundaries">Capability Boundaries</h3>
@@ -148,7 +149,7 @@ Role       holds authority or accountability where required</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Domains A–D describe the abilities that act upon the Operational Knowledge Object and its operational life. Domain E is cross-cutting: <strong>it does not author, evaluate or alter the substantive content of an Operational Knowledge Object, nor does it independently authorise lifecycle transitions. It preserves and evaluates the provenance, integrity, temporal condition, protection and conformance evidence surrounding that content.</strong></p>
+<p>Domains A–D describe the abilities that act upon the <span class="gloss" tabindex="0">Operational Knowledge Object<span class="gloss-pop" role="tooltip"><strong>Operational Knowledge Object</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> and its operational life. Domain E is cross-cutting: <strong>it does not author, evaluate or alter the substantive content of an Operational Knowledge Object, nor does it independently authorise lifecycle transitions. It preserves and evaluates the provenance, integrity, temporal condition, protection and conformance evidence surrounding that content.</strong></p>
 <h3 id="capability-levels">2. Capability Levels</h3>
 <p><a href="kf-3002-capability-model.html">KF-3002</a> uses two levels. A <strong>domain capability</strong> is a broad architectural ability grouping related subordinate capabilities (for example, <em>Operational Governance</em>). A <strong>constituent capability</strong> is a bounded, independently testable architectural ability (for example, <em>Authority and Acceptance Management</em>). <a href="kf-3002-capability-model.html">KF-3002</a> does not decompose below constituent capability level; detailed service operations belong in <a href="kf-3003-service-architecture.html">KF-3003</a> and implementation functions in KF-4000.</p>
 <h3 id="capability-specification">3. Capability Specification</h3>
@@ -166,7 +167,7 @@ Role       holds authority or accountability where required</code></pre>
 <li><strong>Failure conditions</strong> — what inability or misuse looks like;</li>
 <li><strong>Conformance condition</strong> — observable proof that the capability exists.</li>
 </ul>
-<p>A <strong>principal information object</strong> is a logical information structure created, consumed or maintained by a capability. It may be an engineering artefact, governed record, representation, decision, status, linkage or result. It is not necessarily an Operational Knowledge Object; the OKO is the governed subject, while information objects are the structures through which capabilities act upon and evidence it.</p>
+<p>A <strong>principal information object</strong> is a logical information structure created, consumed or maintained by a capability. It may be an engineering artefact, governed record, representation, decision, status, linkage or result. It is not necessarily an Operational Knowledge Object; the <span class="gloss" tabindex="0">OKO<span class="gloss-pop" role="tooltip"><strong>OKO</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> is the governed subject, while information objects are the structures through which capabilities act upon and evidence it.</p>
 <p><strong>Operating criticality</strong> classifies the consequence of a capability being unavailable or degraded, using the categories: <em>conformance-critical</em>, <em>governance-critical</em>, <em>operationally critical</em>, <em>recoverable with bounded manual control</em>, and <em>advisory</em>. A capability may combine a category with a default failure posture (fail-open or fail-closed). This classification does not set implementation availability targets; it lets <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> and <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> determine the consequence of unavailability.</p>
 <h3 id="capability-relationship-types">4. Capability Relationship Types</h3>
 <p>Capabilities relate through five typed relationships, replacing any single undifferentiated notion of dependency:</p>
@@ -283,7 +284,7 @@ Role       holds authority or accountability where required</code></pre>
 <li>retain conflicting evidence;</li>
 <li>identify missing or unavailable evidence explicitly.</li>
 </ul>
-<p><strong>Principal information objects.</strong> Evidence Record; Counter-Evidence Record; Evidence-to-Claim Link; Evidence Classification; Evidence Availability Status.</p>
+<p><strong>Principal information objects.</strong> <span class="gloss" tabindex="0">Evidence Record<span class="gloss-pop" role="tooltip"><strong>Evidence record</strong> — the durable record that a material obligation or decision was discharged; wherever possible emitted by the governed act itself (KF-3004 §5.2). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>; Counter-Evidence Record; Evidence-to-Claim Link; Evidence Classification; Evidence Availability Status.</p>
 <p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01, A-CAP-02 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01</p>
 <p><strong>Protected invariants.</strong> INV-04; INV-06; INV-24.</p>
 <p><strong>Operating criticality.</strong> Governance-critical — warrant depends on inspectable evidence.</p>
@@ -570,7 +571,7 @@ Role       holds authority or accountability where required</code></pre>
 <li>record material application context;</li>
 <li>identify human and computational participants;</li>
 <li>preserve relevant input-to-result path;</li>
-<li>provide explanation adequate to the applicable modality, materiality, risk and decision context;</li>
+<li>provide explanation adequate to the applicable modality, <span class="gloss" tabindex="0">materiality<span class="gloss-pop" role="tooltip"><strong>Materiality</strong> — the degree to which an object, claim, decision or transition may affect consequential action, reliance, obligation, exposure, representation or preservation (KF-2003). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>, risk and decision context;</li>
 <li>detect use of invalid or withdrawn forms;</li>
 <li>enforce disclosure and use restrictions.</li>
 </ul>

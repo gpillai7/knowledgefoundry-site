@@ -70,3 +70,24 @@ a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid
 .rpath-l a{font-size:15px;color:var(--ink);border:none}
 .rpath-l a .id{font-family:var(--mono);font-size:11px;color:var(--patina);margin-right:5px}
 .rpath-l a:hover{color:var(--patina);text-decoration:none}
+/* search */
+.rsearch{margin-left:auto;position:relative;flex:0 1 300px;min-width:120px}
+.rsearch input{width:100%;font-family:var(--sans);font-size:13px;color:var(--ink);background:var(--vellum3);border:1px solid var(--line);border-radius:3px;padding:7px 11px;outline:none}
+.rsearch input:focus{border-color:var(--patina)}
+.rsearch input::placeholder{color:var(--graphite)}
+.rsearch-results{position:absolute;right:0;top:calc(100% + 8px);width:min(460px,86vw);max-height:70vh;overflow:auto;background:var(--vellum3);border:1px solid var(--line);border-radius:5px;box-shadow:0 10px 34px rgba(27,26,23,.16);z-index:40;padding:6px}
+a.rsearch-item{display:block;padding:10px 12px;border-radius:4px;border:none;text-decoration:none}
+a.rsearch-item:hover,a.rsearch-item:focus{background:var(--vellum2,#E3DFD4)}
+.rsearch-t{display:block;font-family:var(--serif);font-size:16px;color:var(--ink)}
+.rsearch-s{display:block;font-family:var(--sans);font-size:12.5px;line-height:1.5;color:var(--graphite);margin-top:2px}
+.rsearch-s mark{background:rgba(188,108,46,.22);color:inherit;padding:0 1px;border-radius:2px}
+.rsearch-none{padding:12px;font-family:var(--sans);font-size:13px;color:var(--graphite)}
+/* glossary */
+.gloss{border-bottom:1px dashed var(--patina-soft,#5E7D71);cursor:help;position:relative}
+.gloss:focus{outline:2px solid var(--patina);outline-offset:2px}
+.gloss-pop{position:absolute;left:0;top:calc(100% + 7px);z-index:30;width:min(330px,82vw);background:var(--iron);color:#E7E3D8;border:1px solid var(--line-dark,#43413A);border-radius:5px;padding:12px 14px;font-family:var(--sans);font-size:13px;line-height:1.55;font-style:normal;font-weight:400;letter-spacing:0;box-shadow:0 8px 28px rgba(0,0,0,.22);opacity:0;visibility:hidden;transition:opacity .12s;pointer-events:none}
+.gloss:hover .gloss-pop,.gloss:focus .gloss-pop,.gloss:focus-within .gloss-pop{opacity:1;visibility:visible;pointer-events:auto}
+.gloss-pop strong{color:#fff;font-weight:600}
+.gloss-pop a{color:var(--patina-soft,#5E7D71);border:none;white-space:nowrap}
+@media(max-width:900px){.rsearch{flex-basis:150px}.topbar .tag,.topbar .draft{display:none}}
+@media(prefers-reduced-motion:reduce){.gloss-pop{transition:none}}

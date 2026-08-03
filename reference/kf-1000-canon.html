@@ -4,9 +4,10 @@
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="reference.css">
+<script src="search.js" defer></script>
 </head><body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><div class="rsearch"><input type="search" id="q" placeholder="Search the reference…" aria-label="Search the reference" autocomplete="off"><div class="rsearch-results" id="qres" role="listbox" hidden></div></div><span class="draft">Public Review 0.1</span></header>
 <div class="doc">
 <details class="sidewrap" open><summary>Contents</summary>
 <nav class="side">
@@ -61,12 +62,12 @@
 </blockquote>
 <p>Every principle in this Canon serves that sentence. A statement that does not serve it does not belong here.</p>
 <h3 id="purpose">Purpose</h3>
-<p>These principles define the intellectual foundations of <strong>governed knowledge systems</strong>. Knowledge Foundry is one methodology that adopts them; it is not their source, and they do not depend on it.</p>
+<p>These principles define the intellectual foundations of <strong><span class="gloss" tabindex="0">governed knowledge systems<span class="gloss-pop" role="tooltip"><strong>Governed knowledge system</strong> — a socio-technical system that holds operational knowledge objects and governs their transition from one justified state to another across modalities (KF-1001). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></strong>. Knowledge Foundry is one methodology that adopts them; it is not their source, and they do not depend on it.</p>
 <p>The Canon derives the principles that any governed knowledge system must satisfy — regardless of implementation technology, organisational setting, or computational modality. Subsequent methodology, architecture and implementation documents inherit them rather than redefining them.</p>
 <p>A principle earns its place here only if it is true of the discipline, not merely of one methodology. The test is stated in <em>The Discipline and Its Four Levels</em> and applied to every principle that follows.</p>
 <h3 id="relationship-to-the-literature-landscape">Relationship to the Literature Landscape</h3>
 <p>KF-L001 answered one question: <em>What does the literature establish?</em> The Canon answers a different one: <em>What design principles necessarily follow from that evidence?</em></p>
-<p>The Literature Landscape is the evidential authority; the Canon converts settled evidence into obligation. No new literature is introduced. Where a principle is grounded in the Landscape, its derivation is cited by chapter and by Landscape Proposition (L-P1–L-P6), Proposition B01, Proposition C01, the six Governance Primitives, or the requirements register (R1–R10). The Canon adds no evidence of its own.</p>
+<p>The Literature Landscape is the evidential authority; the Canon converts settled evidence into obligation. No new literature is introduced. Where a principle is grounded in the Landscape, its derivation is cited by chapter and by Landscape Proposition (L-P1–L-P6), Proposition B01, Proposition C01, the six <span class="gloss" tabindex="0">Governance Primitives<span class="gloss-pop" role="tooltip"><strong>Governance Primitive</strong> — one of the six operations by which warrant is conferred: evidence, authority, provenance, validation, versioning, reversibility (KF-1104). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span>, or the requirements register (R1–R10). The Canon adds no evidence of its own.</p>
 <h3 id="the-discipline-and-its-four-levels">The Discipline and Its Four Levels</h3>
 <p>A mature engineering discipline separates what is <em>always true</em> from what is <em>one way of acting on that truth</em>. Knowledge Foundry adopts four levels. Each inherits from the one above; none may masquerade as another.</p>
 <table>
@@ -130,7 +131,7 @@
 </tr>
 <tr class="even">
 <td>Method</td>
-<td><em>Track each operational knowledge object with a provenance graph of its transitions.</em></td>
+<td><em>Track each <span class="gloss" tabindex="0">operational knowledge object<span class="gloss-pop" role="tooltip"><strong>Operational Knowledge Object</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never &quot;knowledge itself&quot;. <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span> with a provenance graph of its transitions.</em></td>
 </tr>
 <tr class="odd">
 <td>Architecture</td>
@@ -172,7 +173,7 @@
 </ul>
 <p><strong>Deliverable.</strong> The definition above is the discipline’s fixed point. Every principle in Part III is a property of the system so defined; every method in KF-2000 is a way of realising one of those properties.</p>
 <hr />
-<h2 id="part-ii-constitutional-invariants">Part II · Constitutional Invariants</h2>
+<h2 id="part-ii-constitutional-invariants">Part II · <span class="gloss" tabindex="0">Constitutional Invariants<span class="gloss-pop" role="tooltip"><strong>Constitutional invariant</strong> — one of the five properties whose loss would make a system cease to be a governed knowledge system: inspectability, justification, provenance, governed evolution, human accountability (KF-1050). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></h2>
 <h3 id="kf-1050-what-never-changes">KF-1050 · What Never Changes</h3>
 <p>Technology changes. Methods change. Architectures change. Products change. Institutions change. Yet some obligations remain invariant across all of them, and it is these invariants that make principles necessary. The ten principles of Part III are not free postulates; each one operationalises an invariant named here. This chapter is the Canon’s preamble: it states the properties that any governed knowledge system must exhibit in every era, before any principle prescribes how.</p>
 <p>Five invariants hold.</p>
@@ -183,7 +184,7 @@
 <p><strong>Human accountability.</strong> Some identifiable person or body must answer for what a system accepts as knowledge. Operations may be distributed across people and machines, but accountability may not be discharged into a substrate. There is always someone who is answerable.</p>
 <p>These five are not yet the principles. They are the properties whose loss would make a system cease to be a governed knowledge system. The principles that follow give them force: they state, for each invariant, the obligation it imposes on anyone who would build such a system. An invariant answers <em>what must always hold</em>; a principle answers <em>what that obligates us to do</em>.</p>
 <hr />
-<h2 id="part-iii-the-canonical-principles">Part III · The Canonical Principles</h2>
+<h2 id="part-iii-the-canonical-principles">Part III · The <span class="gloss" tabindex="0">Canonical Principles<span class="gloss-pop" role="tooltip"><strong>Canonical Principle</strong> — an enduring obligation true of any governed knowledge system, admitted only if it survives the two-question test (KF-1000 Part III). <a href="kf-0002-controlled-vocabulary.html">Vocabulary &#8594;</a></span></span></h2>
 <p>The ten principles are the constitutional core of the discipline. Each is stated as an obligation, derived from the Landscape, shown to survive both questions of the Admission Test, and closed with the line it must not cross. They are numbered I–X and carried under document IDs KF-1101–KF-1110 so that later documents can cite a principle in two characters.</p>
 <h3 id="kf-1101-principle-i-knowledge-systems-govern-operational-knowledge-objects-never-knowledge-itself">KF-1101 · Principle I — Knowledge systems govern operational knowledge objects, never knowledge itself</h3>
 <p><em>Derived primarily from B01 (Proposition B01; L-P1; the Inspectable Objects Principle). Invariant: inspectability.</em></p>
