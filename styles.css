@@ -43,3 +43,7 @@ a{text-decoration:none}
 .hvRef:hover{color:#1B1A17 !important}
 .hvOpen:hover{color:#1B1A17 !important}
 .hvFl:hover,.hvFo:hover{color:#E7E3D8 !important}
+.skip{position:absolute;left:-999px;top:0;z-index:200;background:#1B1A17;color:#ECE9E0;padding:10px 16px;font-family:'IBM Plex Mono',monospace;font-size:12px;text-decoration:none}
+.skip:focus{left:8px;top:8px}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #38574B;outline-offset:2px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto !important;transition:none !important;animation:none !important}}
