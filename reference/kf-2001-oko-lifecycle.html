@@ -1,0 +1,447 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lifecycle &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Working draft</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html" class="active"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-2001 · Operational Knowledge Object Lifecycle</h1>
+
+<h4 id="the-canonical-engineering-lifecycle-of-a-governed-knowledge-object-from-capture-to-retirement">The canonical engineering lifecycle of a governed knowledge object, from capture to retirement</h4>
+<p><em>Document Class: Methodology · Parent Programme: Knowledge Foundry · Parent Document: KF-2000 · Status: Draft · Version: 0.1</em></p>
+<pre><code>Principle (KF-1000)  →  ▸ Method (KF-2000)  →  Architecture (KF-3000)  →  Implementation (KF-4000)</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p>This document defines the canonical engineering lifecycle through which an Operational Knowledge Object evolves from initial capture to eventual retirement. It is the common engineering model beneath all Knowledge Foundry methods; the methods that follow in KF-2000 act on the stages defined here.</p>
+<p>The lifecycle models the evolution of <em>justified knowledge</em>, not the storage of <em>information</em>. A document-management system versions files and advances a record whenever it is saved; this lifecycle advances an object only when the obligations of its current stage are discharged. The difference is the gate. In a storage system a transition is a save event; here a transition is an act of warrant, and an object that has not earned the warrant of its stage does not advance, however complete it looks.</p>
+<h3 id="how-this-document-sits-in-the-programme">How This Document Sits in the Programme</h3>
+<p>KF-2001 is a <strong>Method-level</strong> document. It says <em>how the discipline acts</em> on the principles fixed by the Canon (KF-1000); it does not restate or revise them. Consistent with the four-level separation, this document names no technologies, stores or products — those are <strong>architecture</strong> (KF-3000) — and no deployments — those are <strong>implementation</strong> (KF-4000). Where a stage discharges a Canonical Principle, the principle is cited in a single <em>Canon basis</em> line; the authoritative stage-to-principle mapping is KF-2002, and is not duplicated here.</p>
+<h3 id="method-not-workflow">Method, Not Workflow</h3>
+<p>This lifecycle specifies the engineering <em>obligations</em> associated with each stage — what must be true for an object to advance — not the <em>workflow</em> by which any particular organisation satisfies them. Method fixes the obligation; workflow fixes the order of work, the tools, the hand-offs and the cadence by which a given deployment meets it. Workflow therefore belongs to implementation (KF-4000), not here.</p>
+<p>Conformance is not a matter of following a prescribed sequence of steps. It is whether, for every object, every obligation and every lifecycle invariant is met. Two organisations may run very different workflows — one manual and deliberative, another largely automated — and both conform to this lifecycle, provided no gate is passed unearned and no invariant is broken.</p>
+<h3 id="the-object-and-its-states">The Object and Its States</h3>
+<p>The object under management is an <strong>Operational Knowledge Object</strong> throughout its life. What the lifecycle changes is its <em>state</em>, not its identity. The stage outputs below name successive states of one object — Candidate, Structured, Evaluated, Justified, Accepted, Operational, and so on — not distinct objects. An object becomes an Operational Knowledge Object in the full Canon sense once it carries representation, evidence, justification and an acceptance-state; the early stages assemble those attachments onto an object that already holds a stable identity.</p>
+<blockquote>
+<p><strong>Terminology note (flagged design decision).</strong> “Operationalise” (Stage 5) makes an object’s knowledge <em>actionable</em>; it is not the same word as “Operational Knowledge Object,” which names the artefact across its whole life. Where the two could be confused, this document calls the Stage-5 result the object’s <em>actionable form</em> and reserves “Operational Knowledge Object” for the artefact. The stage names from the source model are preserved unchanged.</p>
+</blockquote>
+<h3 id="lifecycle-overview">Lifecycle Overview</h3>
+<blockquote>
+<p><strong>Worked example.</strong> KF-5001 walks a single Operational Knowledge Object — a four-day-week Knowledge Brief — through every stage below, from Capture to Supersession.</p>
+</blockquote>
+<pre class="text"><code>Capture
+   ↓
+Structure
+   ↓
+Evaluate
+   ↓
+Justify
+   ↓
+══ Accept ══   (an authority certifies the object — a named transition, not a stage)
+   ↓
+Operationalise
+   ↓
+Govern
+   ↓
+Apply
+   ↓
+Evolve
+   ↓
+Retire</code></pre>
+<p>Each stage is a distinct engineering responsibility with a defined <strong>entry condition</strong> and an <strong>exit gate</strong>. An object progresses only when the exit gate of its current stage is satisfied; until then it remains in place or returns to an earlier stage. The stages are not all of one kind: Capture through Justify <em>construct</em> the object; <strong>Accept</strong> is a decision by authority, not engineering work, and is modelled as a transition; Operationalise <em>realises</em> it; Govern holds it in <em>custody</em>; Apply <em>uses</em> it; Evolve <em>changes</em> it; Retire <em>closes</em> it. Application is the one step that does not transform the object — it is an operational context in which the object is used and from which evidence returns.</p>
+<p>The sequence above is the <em>principal path</em>, not the only path. As evidence changes, an object may return to an earlier stage, and from several steps it may pass directly to Retire. The lifecycle is a loop, not a ladder — a property inherited from the Landscape’s account of the knowledge object and made operational here through the return paths defined below.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Stage</th>
+<th>Engineering responsibility</th>
+<th>Output state</th>
+<th>Exit gate (in one line)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Capture</td>
+<td>Admit candidate information</td>
+<td>Candidate</td>
+<td>Origin recorded</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Structure</td>
+<td>Give the object identity and form</td>
+<td>Structured</td>
+<td>Object is inspectable</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Evaluate</td>
+<td>Assess quality before acceptance</td>
+<td>Evaluated</td>
+<td>Quality verdict recorded</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Justify</td>
+<td>Establish epistemic legitimacy</td>
+<td>Justified</td>
+<td>Justification is inspectable</td>
+</tr>
+<tr class="odd">
+<td>—</td>
+<td><strong>Accept</strong> <em>(transition)</em></td>
+<td>Certify the object by authority</td>
+<td>Accepted</td>
+<td>Acceptance recorded by an authority</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Operationalise</td>
+<td>Make knowledge actionable</td>
+<td>Operational (actionable)</td>
+<td>Actionable form linked to justification</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>Govern</td>
+<td>Maintain legitimacy over time</td>
+<td>Governed</td>
+<td>Ownership and review in force</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>Apply</td>
+<td>Use the object in practice</td>
+<td>(in use) → Outcomes</td>
+<td>Outcomes captured as feedback</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>Evolve</td>
+<td>Allow controlled improvement</td>
+<td>Next Version</td>
+<td>Change justified and versioned</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>Retire</td>
+<td>Conclude operational life</td>
+<td>Historical</td>
+<td>Reason recorded, history preserved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-three-dimensions-of-every-transition">The Three Dimensions of Every Transition</h3>
+<p>A workflow advances one property: a status. This lifecycle advances three at once. Every transition changes not only the <strong>state</strong> of the object, but the <strong>evidence</strong> attached to it and the <strong>governance posture</strong> it has achieved. These three dimensions are independent — they answer different questions — and reading the lifecycle as only a sequence of states hides two-thirds of what each transition does.</p>
+<ul>
+<li><strong>State</strong> — what the object <em>is</em>: the label that says how far it has progressed.</li>
+<li><strong>Evidence</strong> — what is <em>attached</em> to the object: the accumulating record that travels with it.</li>
+<li><strong>Governance posture</strong> — what is <em>assured</em> about the object: the governance property each step secures.</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lifecycle step</th>
+<th>State (what it is)</th>
+<th>Evidence (what is attached)</th>
+<th>Governance posture (what is assured)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Capture</td>
+<td>Candidate</td>
+<td>Origin</td>
+<td>Identity</td>
+</tr>
+<tr class="even">
+<td>Structure</td>
+<td>Structured</td>
+<td>+ metadata, relationships</td>
+<td>Inspectability</td>
+</tr>
+<tr class="odd">
+<td>Evaluate</td>
+<td>Evaluated</td>
+<td>+ quality assessment</td>
+<td>Quality</td>
+</tr>
+<tr class="even">
+<td>Justify</td>
+<td>Justified</td>
+<td>+ justification</td>
+<td>Warrant</td>
+</tr>
+<tr class="odd">
+<td><strong>Accept</strong></td>
+<td><strong>Accepted</strong></td>
+<td><strong>+ acceptance record</strong></td>
+<td><strong>Authority</strong></td>
+</tr>
+<tr class="even">
+<td>Operationalise</td>
+<td>Operational</td>
+<td>+ actionable form</td>
+<td>Operability</td>
+</tr>
+<tr class="odd">
+<td>Govern</td>
+<td>Governed</td>
+<td>+ review history</td>
+<td>Ownership</td>
+</tr>
+<tr class="even">
+<td>Apply</td>
+<td><em>(remains Governed)</em></td>
+<td>+ operational outcomes</td>
+<td>Accountability in use</td>
+</tr>
+<tr class="odd">
+<td>Evolve</td>
+<td>Next Version</td>
+<td>+ change record</td>
+<td>Reversibility</td>
+</tr>
+<tr class="even">
+<td>Retire</td>
+<td>Historical</td>
+<td>+ retirement record</td>
+<td>History</td>
+</tr>
+</tbody>
+</table>
+<p>Two features of this table matter. First, the three columns advance at different times: Apply adds evidence and governance assurance without changing the object’s <em>state</em>, which is precisely why application is a different kind of thing from the construction stages. Second, each column can be read on its own as a coherent progression — a reviewer auditing <em>evidence</em> need not trace <em>state</em>, and a reviewer auditing <em>governance</em> need not trace either. The lifecycle is richer than a pipeline because it is really three pipelines advancing on one object.</p>
+<hr />
+<h3 id="the-nine-stages">The Nine Stages</h3>
+<h4 id="stage-1-capture">Stage 1 — Capture</h4>
+<p><strong>Purpose.</strong> Admit candidate information into the system. Capture is deliberately permissive: the aim is to bring material in, not yet to judge it. Nothing captured is trusted, and nothing captured is knowledge; everything enters as a candidate whose status must be earned downstream.</p>
+<p>The one obligation that cannot be deferred at capture is <strong>origin</strong>. Provenance can be recorded now but rarely reconstructed later: the moment a source is detached from its content, the object’s history is compromised for the rest of its life. Capture therefore records <em>where the material came from</em> as a condition of entry, even while deferring every question of quality and warrant.</p>
+<p><strong>Typical inputs.</strong> Documents; research papers; interviews; AI outputs; meeting notes; regulations; datasets; observations.</p>
+<p><strong>Entry condition.</strong> Material is presented to the system. <strong>Activities.</strong> Intake; source identification; provenance seeding; assignment of a candidate identifier. <strong>Exit gate.</strong> The candidate is recorded together with its origin. <strong>Output state.</strong> Candidate. <strong>Accountable role.</strong> Contributor. <strong>Key question.</strong> <em>What has entered the system?</em> <strong>Canon basis.</strong> Provenance invariant; Principle I (the object, not knowledge, is what enters).</p>
+<h4 id="stage-2-structure">Stage 2 — Structure</h4>
+<p><strong>Purpose.</strong> Transform raw, opaque input into a structured object that can be reasoned about. Structuring is what makes everything downstream possible: an object that cannot be inspected cannot be evaluated, justified, explained or governed. The stage confers a stable identity and an inspectable form.</p>
+<p><strong>Entry condition.</strong> A Candidate with recorded origin. <strong>Activities.</strong> Decomposition; metadata assignment; semantic typing; relationship identification; provenance recording. <strong>Exit gate.</strong> The object has a stable identity, a semantic type, its relationships, and a provenance record — that is, it is inspectable. <strong>Output state.</strong> Structured. <strong>Accountable role.</strong> Knowledge Engineer. <strong>Key question.</strong> <em>What exactly is this object?</em> <strong>Canon basis.</strong> Inspectability invariant; Principle I.</p>
+<h4 id="stage-3-evaluate">Stage 3 — Evaluate</h4>
+<p><strong>Purpose.</strong> Assess quality before any question of belief is raised. Evaluation asks whether the object is <em>good enough to be worth justifying</em> — a different and prior question to <em>why it should be believed</em>. It is the first gate that can stop progression: an object may pass, be returned for restructuring, or be rejected outright.</p>
+<p><strong>Entry condition.</strong> A Structured object. <strong>Activities.</strong> Source assessment; evidence-quality assessment; confidence estimation; consistency and completeness checks. <strong>Exit gate.</strong> A quality verdict — pass, return, or reject — is recorded with its reasons. <strong>Output state.</strong> Evaluated. <strong>Accountable role.</strong> Evaluator. <strong>Key question.</strong> <em>Should this object be trusted?</em> <strong>Canon basis.</strong> Principle IV (the Validation/Quality primitive).</p>
+<h4 id="stage-4-justify">Stage 4 — Justify</h4>
+<p><strong>Purpose.</strong> Establish epistemic legitimacy. This is the epistemic core of the lifecycle: the stage at which an object earns the standing to be called knowledge. Justification attaches the reasons for belief to the object and makes them inspectable. Counter-evidence is recorded as a matter of obligation, not option — an object justified only by the evidence that supports it has not been justified, it has been advocated.</p>
+<p>A system can engineer justification even though it cannot engineer truth; justification, not truth, is the standard every transition is held to.</p>
+<p><strong>Entry condition.</strong> An Evaluated object that passed. <strong>Activities.</strong> Assembly of supporting evidence; assembly of counter-evidence; statement of rationale; statement of assumptions; end-to-end traceability. <strong>Exit gate.</strong> The object carries an inspectable justification: supporting and counter-evidence, rationale, assumptions, and traceability to source. <strong>Output state.</strong> Justified. <strong>Accountable role.</strong> Evaluator (with domain authority as required). <strong>Key question.</strong> <em>Why should this be believed?</em> <strong>Canon basis.</strong> Principle VIII; Principle IV; justification invariant.</p>
+<hr />
+<h4 id="the-acceptance-transition-justify-operationalise">══ The Acceptance Transition ══ (Justify → Operationalise)</h4>
+<p>Acceptance is the act by which an identified authority certifies a justified object as fit to be relied upon. It is the single most consequential moment in the lifecycle, and it is deliberately <strong>not</strong> a stage: nothing is transformed, no work is performed on the object. It is a <em>decision about</em> the object — the point at which human authority admits a justified representation into operational use. For that reason it is modelled as a named transition, a gate, rather than an engineering stage. This mirrors the treatment of Application below: both are things that happen to a governed object without being engineering transformations of it, and naming them honestly keeps the nine stages purely about work performed on the object.</p>
+<p>Acceptance is where the object acquires the <strong>acceptance-state</strong> that the Canon requires of a full Operational Knowledge Object (KF-1001). Until it is accepted, an object may be perfectly justified and still have no standing to be relied upon; justification establishes <em>why it may be believed</em>, acceptance establishes <em>that we will act on it</em>. The two are distinct, and conflating them is the failure this transition exists to prevent.</p>
+<p><strong>Who acts.</strong> An Authority — an identified person or body with the right to certify knowledge for the community that will use it. <strong>Requires.</strong> A Justified object with inspectable justification. <strong>Produces.</strong> An acceptance-state recorded against the object — accepted, provisionally accepted, or refused — attributed to the authority and dated. On acceptance the object proceeds to Operationalise; on refusal it returns to Justify or Evaluate with reasons. <strong>Key question.</strong> <em>On whose authority will we rely on this?</em> <strong>Canon basis.</strong> Principle III (knowledge becomes capability through collective authorisation); Principle IV (the Authority primitive); human-accountability invariant.</p>
+<hr />
+<h4 id="stage-5-operationalise">Stage 5 — Operationalise</h4>
+<p><strong>Purpose.</strong> Make accepted knowledge usable. Operationalisation converts an accepted object into an <em>actionable form</em> — the shape in which it can be applied in decisions, reasoning or automation. The binding constraint is that the actionable form must remain linked to its justification. A playbook, rule or prompt that has been severed from the evidence and reasoning that warrant it is ungoverned knowledge in use, and is the failure mode this stage exists to prevent.</p>
+<p><strong>Entry condition.</strong> An Accepted object (see <em>The Acceptance Transition</em> above). <strong>Activities.</strong> Derivation of decision rules, playbooks, patterns, prompts, procedures or models; linkage of each to the underlying justification. <strong>Exit gate.</strong> An actionable form exists and is traceably linked to its justification. <strong>Output state.</strong> Operational (actionable). <strong>Accountable role.</strong> Knowledge Engineer. <strong>Key question.</strong> <em>How can this knowledge be used?</em> <strong>Canon basis.</strong> Principle II (lifecycle); Principle I.</p>
+<h4 id="stage-6-govern">Stage 6 — Govern</h4>
+<p><strong>Purpose.</strong> Maintain legitimacy through time. Acceptance is not permanent, and Govern is the standing machinery that keeps an operational object legitimate as its context changes: ownership, review cycles, approvals, versioning, provenance upkeep and policy compliance.</p>
+<p>Govern is a stage, but governance is not confined to it. The Governance Primitives operate throughout the lifecycle — provenance from Capture, validation at Evaluate, justification at Justify, authority at Accept. Stage 6 does not introduce governance; it makes it <em>continuous</em>, and it names the person or body answerable for the object from this point forward.</p>
+<p><strong>Entry condition.</strong> An Operational object. <strong>Activities.</strong> Assignment of ownership; scheduling of review cycles; approval workflows; version control; provenance maintenance; policy-compliance checks. <strong>Exit gate.</strong> Ownership is assigned and a review cycle is in force. (This gate is standing, not one-off: it must remain satisfied for the object to stay operational.) <strong>Output state.</strong> Governed. <strong>Accountable role.</strong> Steward (owner). <strong>Key question.</strong> <em>Who is accountable?</em> <strong>Canon basis.</strong> Principle IV; Principle VII; human-accountability invariant.</p>
+<h4 id="stage-7-apply">Stage 7 — Apply</h4>
+<p><strong>Purpose.</strong> Use the governed object in the practice it was built to serve. Application is different in kind from every stage before it: it does not transform the object, it <em>uses</em> it. Its engineering value is that it is the lifecycle’s principal source of new evidence — the outcomes of use are the truest test of whether the knowledge is fit — and it is therefore the principal trigger for evolution. The lifecycle’s working rhythm is <em>use, observe, improve</em>, and Apply is the “use” and “observe” of that rhythm.</p>
+<p>Because application does not change the object’s state, an applied object remains Governed; what changes is the evidence attached to it (operational outcomes) and what is assured about it (its accountability in use). Outcomes feed forward into Evolve, or, where use shows the object is no longer needed, into Retire.</p>
+<p><strong>Entry condition.</strong> A Governed object. <strong>Activities.</strong> Use in human decisions, AI reasoning, automation and organisational workflows; use in teaching and advisory work; capture of outcomes. <strong>Exit gate.</strong> Outcomes are captured and attached to the object as feedback. <strong>Output state.</strong> Operational Outcomes (feedback into Evolve or Retire); the object remains Governed. <strong>Accountable role.</strong> User. <strong>Key question.</strong> <em>Did the knowledge produce value?</em> <strong>Canon basis.</strong> Principle IX (knowledge must remain explainable in use); Principle III.</p>
+<h4 id="stage-8-evolve">Stage 8 — Evolve</h4>
+<p><strong>Purpose.</strong> Allow controlled improvement. Change is the default condition of knowledge, and Evolve is where change is performed as a first-class, justified operation rather than an untracked edit. Every change produces a new version; the prior version is preserved, never overwritten. A change is itself a transition, and so carries its own justification and provenance.</p>
+<p>Evolution is triggered principally by the outcomes of Application, and also by new external evidence, competing claims or a scheduled review — so an object may enter Evolve from Apply or directly from Govern. It takes several forms: amendment in the light of new evidence; adjudication of competing claims; supersession of one object by another; branching for divergent contexts; and consolidation of several objects into one. Each returns the object to the appropriate earlier stage for re-evaluation, re-justification and re-acceptance before its new version can be relied upon.</p>
+<p><strong>Entry condition.</strong> A Governed object with a change trigger (application outcomes, new evidence, a competing claim, or a scheduled review). <strong>Activities.</strong> Amendment; incorporation of new evidence; adjudication of competing claims; supersession; branching; consolidation. <strong>Exit gate.</strong> A new version is produced under recorded justification and provenance, with the prior version retained. <strong>Output state.</strong> Next Version (which re-enters the lifecycle at Evaluate or Justify, and is re-accepted before returning to operational use). <strong>Accountable role.</strong> Steward, with the Evaluator and Authority as required. <strong>Key question.</strong> <em>What has changed?</em> <strong>Canon basis.</strong> Principle X; Principle II; governed-evolution invariant.</p>
+<h4 id="stage-9-retire">Stage 9 — Retire</h4>
+<p><strong>Purpose.</strong> Conclude the operational life of the object. Retirement is a change of state, not a deletion: the object leaves active use but its record — content, justification, provenance and history — is preserved. An object is retired because it is obsolete, superseded, merged, archived or withdrawn; the reason is recorded, because the fact of retirement is itself part of the knowledge history a later reader may need.</p>
+<p>Retirement is reversible in principle. If evidence changes such that a retired object regains relevance — for example, a superseding object is itself withdrawn — the historical object can be reactivated through Evolve, with its provenance intact.</p>
+<p><strong>Entry condition.</strong> A retirement reason holds for a Governed or applied object. <strong>Reasons.</strong> Obsolete; superseded; merged; archived; withdrawn. <strong>Exit gate.</strong> The object is moved to the historical state, its retirement reason recorded and its history preserved. <strong>Output state.</strong> Historical. <strong>Accountable role.</strong> Steward. <strong>Key question.</strong> <em>Why is this object no longer active?</em> <strong>Canon basis.</strong> Principle VII (trust across time); Principle X.</p>
+<hr />
+<h3 id="transitions-and-return-paths">Transitions and Return Paths</h3>
+<p>The principal path runs Capture → Retire, but the lifecycle is governed as a loop. Three kinds of non-forward transition are canonical.</p>
+<p><strong>Returns</strong> send an object back to an earlier stage when a gate cannot be met. Evaluate may return an object to Structure or Capture when it is ill-formed or its origin is inadequate. Justify may return an object to Evaluate when its justification fails. <strong>Acceptance may be refused</strong>, returning a justified object to Justify or Evaluate with the authority’s reasons — a refusal is as much a governed transition as an acceptance, and is recorded as one.</p>
+<p><strong>Evolution re-entry.</strong> Evolve re-enters the lifecycle at Evaluate or Justify, and its new version passes through the Acceptance transition again before returning to operational use. A new version re-earns its warrant and its authority; it does not inherit them.</p>
+<p><strong>Retirements</strong> may be reached from Govern, Apply or Evolve. An object that becomes obsolete, superseded or withdrawn passes directly to Retire without completing the forward path.</p>
+<p>Every transition — forward, return, acceptance, refusal or retirement — is itself a governed act: it is recorded, attributed and justified. There are no silent transitions. This is what distinguishes the lifecycle from a workflow in which status simply advances: here, movement between states is the very thing being governed.</p>
+<h3 id="engineering-events">Engineering Events</h3>
+<p>States and transitions describe <em>what</em> the lifecycle does. Events describe <em>what causes it to act</em>. The lifecycle is, formally, a state machine with three distinct kinds of element:</p>
+<ul>
+<li><strong>States</strong> — what an object is at a given moment (Candidate, Structured, Justified, Accepted, Governed, Historical …).</li>
+<li><strong>Transitions</strong> — the governed moves between states (Accept, Return, Evolve, Retire …).</li>
+<li><strong>Events</strong> — the occurrences that trigger a transition (new evidence, a scheduled review, a challenge …).</li>
+</ul>
+<p>Events cause transitions; transitions produce new states:</p>
+<pre class="text"><code>State
+   │
+Engineering Event   (what happened)
+   │
+Transition          (the governed move it triggers)
+   │
+New State</code></pre>
+<p>Separating events from transitions matters for two reasons. First, it makes the model a clean state machine — the form over which later automated validation and orchestration operate. Second, it locates where automation is safe: an <strong>event may be raised by a human or by an agent</strong>, but the <strong>transition it triggers remains governed</strong> — attributable, justified, and, where authority is required, certified by a human. An AI recommendation is an event, not an acceptance; automation may propose, but the invariants still hold on whatever transition follows.</p>
+<p>The canonical event types, and the transitions they typically trigger:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Engineering event</th>
+<th>Typically triggers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>New evidence</td>
+<td>Evolve (or a Return to Justify)</td>
+</tr>
+<tr class="even">
+<td>Scheduled review</td>
+<td>A governance review, then Evolve or Retire</td>
+</tr>
+<tr class="odd">
+<td>Policy or regulatory change</td>
+<td>Re-validation, then Evolve or Retire</td>
+</tr>
+<tr class="even">
+<td>Challenge to a claim</td>
+<td>Return to Justify or Evaluate</td>
+</tr>
+<tr class="odd">
+<td>AI recommendation</td>
+<td>Capture of a new candidate, or an Evolve proposal</td>
+</tr>
+<tr class="even">
+<td>User feedback / application outcome</td>
+<td>Evolve or Retire</td>
+</tr>
+<tr class="odd">
+<td>Authority decision</td>
+<td>The Acceptance transition (accept or refuse)</td>
+</tr>
+</tbody>
+</table>
+<p>An event does not itself change an object; it obliges the system to perform — and govern — a transition. No event bypasses a gate.</p>
+<h3 id="roles-and-accountability">Roles and Accountability</h3>
+<p>The lifecycle defines role <em>responsibilities</em>, not posts or systems; how they are staffed is an implementation concern (KF-4000). One person may hold several roles; a role may be held by several people. What the method fixes is that every stage has an accountable role, and that acceptance and stewardship are always held by an identifiable human authority — labour may be distributed across people and machines, but accountability may not be discharged into a substrate.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Role</th>
+<th>Principal stages</th>
+<th>Accountable for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Contributor</td>
+<td>Capture</td>
+<td>What enters the system, and its recorded origin</td>
+</tr>
+<tr class="even">
+<td>Knowledge Engineer</td>
+<td>Structure, Operationalise</td>
+<td>The object’s form and its actionable expression</td>
+</tr>
+<tr class="odd">
+<td>Evaluator</td>
+<td>Evaluate, Justify</td>
+<td>The quality verdict and the inspectable justification</td>
+</tr>
+<tr class="even">
+<td>Authority</td>
+<td>the Acceptance transition</td>
+<td>Certifying an object as fit to be relied upon</td>
+</tr>
+<tr class="odd">
+<td>Steward (owner)</td>
+<td>Govern, Evolve, Retire</td>
+<td>The object’s standing legitimacy over time</td>
+</tr>
+<tr class="even">
+<td>User</td>
+<td>Apply</td>
+<td>Using the object as governed, and returning outcomes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lifecycle-invariants">Lifecycle Invariants</h3>
+<p>The lifecycle principles below describe how the lifecycle <em>behaves</em>. The invariants here describe what must be true of an object <em>at every instant, regardless of stage</em>. An invariant is a continuously checkable property: an object that violates any invariant is non-conformant, whatever state it is in and however it reached it. These are the properties automated validation will assert, and the ground on which the Reference Architecture (KF-3000) is designed.</p>
+<p>Six invariants hold across the whole lifecycle.</p>
+<ol type="1">
+<li><strong>Single identity.</strong> Every Operational Knowledge Object has exactly one immutable identity for its entire life. Identity is assigned at Capture and is never reassigned, reused or mutated. Editing produces new <em>versions</em> under the same identity; branching, consolidation and supersession create <em>successor</em> objects with their own identities, linked to their predecessors. They do not split, merge or overwrite an existing identity. (Identity, version and lineage are distinct concerns, and KF-3000 realises them separately.)</li>
+<li><strong>Attributable transitions.</strong> Every state transition is attributable to an identified actor — a person, or an agent acting under a named human authority. No transition is anonymous.</li>
+<li><strong>Justified transitions.</strong> Every state transition carries a recorded justification. A transition without a recorded reason is not permitted, even when it is automatic.</li>
+<li><strong>Inspectable transitions.</strong> Every state transition is inspectable after the fact: what changed, why, by whom, and from which prior state can always be recovered.</li>
+<li><strong>Provenance always present.</strong> No operational state exists without a complete provenance chain back to origin. Provenance is a precondition of operational use, not an annotation added afterward.</li>
+<li><strong>Lineage preserved.</strong> Retirement, supersession and consolidation never destroy lineage. History is append-only; states are superseded, never erased.</li>
+</ol>
+<p>Where an invariant appears to echo a principle — justification, for instance — the two do different work. The principle is the behavioural rule that a transition must <em>earn</em> its justification in order to proceed; the invariant is the checkable property that, once made, the transition <em>carries</em> that justification for all time. Principles govern progression; invariants govern conformance.</p>
+<p><strong>Invariants are ungraded.</strong> These six hold identically for every object, whatever its consequence or intended reliance. What <em>does</em> vary with reliance is the <em>depth</em> to which a gate’s obligations must be discharged — the strength of evaluation, the independence of review, the sufficiency of evidence. That depth is set by the object’s <strong>assurance class</strong>, defined in KF-2003 and attaching to the object’s scope of reliance at acceptance and release. An Exploratory object and a Consequential one cross the same gates and satisfy the same six invariants; the Consequential object must satisfy each gate to a greater depth. No assurance class ever lowers the invariant floor.</p>
+<h3 id="lifecycle-principles">Lifecycle Principles</h3>
+<p>Beyond the invariants above, the lifecycle is governed by six behavioural rules, each a direct consequence of the Canon.</p>
+<ol type="1">
+<li><strong>Knowledge always begins as a candidate.</strong> Nothing is trusted on entry; status is earned stage by stage. (Principle I.)</li>
+<li><strong>Every transition requires justification.</strong> A gate is a justification checkpoint; an object advances only when it has earned the warrant of its stage. (Principle VIII.)</li>
+<li><strong>Acceptance is an act of authority, distinct from justification.</strong> Justification establishes why an object may be believed; acceptance establishes that an identified authority will rely on it. No object reaches operational use without both. (Principle III.)</li>
+<li><strong>Governance accompanies every stage.</strong> Govern is where legitimacy is <em>maintained</em>, but the Governance Primitives operate from Capture onward. Governance is a property of the whole lifecycle, not a single step within it. (Principles IV and VI.)</li>
+<li><strong>Knowledge may return to earlier stages as evidence changes.</strong> The lifecycle is a loop; returns, refusals and re-justification are normal operations, not exceptions. (Principle X.)</li>
+<li><strong>Retirement preserves history rather than erasing it.</strong> An object leaves active use with its record intact, because trust is a property of transitions over time. (Principle VII.)</li>
+</ol>
+<h3 id="relationship-to-the-canon">Relationship to the Canon</h3>
+<p>Each lifecycle stage operationalises one or more Canonical Principles: the per-stage <em>Canon basis</em> lines above indicate the principal derivation. The lifecycle as a whole is the method by which the Canon’s central operation — the controlled transition of a knowledge object from one justified state to another — is carried out in practice. The authoritative, complete stage-to-principle mapping is defined in <strong>KF-2002</strong> and is not reproduced here, so that a change to the mapping has a single home.</p>
+<h3 id="relationship-to-the-reference-architecture">Relationship to the Reference Architecture</h3>
+<p>Each lifecycle stage is realised through one or more architectural services — for capture, structuring, evaluation, justification, acceptance, governance, versioning and retirement. This document fixes <em>what each stage must achieve and when it may advance</em>; it does not specify the services, stores or technologies that achieve it. That mapping is defined in <strong>KF-3000</strong>, which a given deployment (KF-4000, and domain instantiations such as MacroLab) then implements. KF-3000 must also enforce the lifecycle invariants as continuous conformance checks, and handle the engineering events as the triggers its services respond to.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-1000-canon.html">&#8592; Canon</a><a class="nx" href="kf-2002-engineering-practices.html">Engineering Practices &#8594;</a></nav>
+</main>
+</div>
+</body></html>

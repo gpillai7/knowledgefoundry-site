@@ -1,0 +1,1263 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability Model &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Working draft</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html" class="active"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-3002 · Capability Model</h1>
+
+<h4 id="the-required-abilities-of-a-governed-knowledge-architecture">The Required Abilities of a Governed Knowledge Architecture</h4>
+<p><em>Document Class: Reference Architecture · Parent Document: KF-3000 · Governed By: KF-3001 · Status: Draft · Version: 0.2</em></p>
+<pre class="text"><code>Canon and Method
+KF-1000 / KF-2001 / KF-2002
+        ↓
+Reference Architecture
+KF-3000
+        ↓
+Architectural Rules
+KF-3001
+        ↓
+▸ Capability Model
+KF-3002
+        ↓
+Logical Services, Records and Controls
+KF-3003–KF-3009
+        ↓
+Implementation
+KF-4000</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p>KF-3002 defines the architectural capabilities required to realise the Knowledge Foundry methodology and preserve the principles, invariants and interaction constraints established in KF-3001.</p>
+<p>A capability is an enduring ability the architecture must possess, independent of organisational workflow, accountable role, logical service arrangement, information-storage model, technology, vendor, deployment topology or computational modality.</p>
+<p>KF-3002 answers: <em>What must a conforming Knowledge Foundry architecture be able to do?</em> KF-3003 answers: <em>Through which logical services are those abilities exposed and coordinated?</em> KF-3004 answers: <em>Through which records and relationships are those abilities represented and evidenced?</em> KF-3005 answers: <em>Through which lifecycle controls are those abilities constrained?</em></p>
+<h3 id="capability-derivation">Capability Derivation</h3>
+<p>Every capability must be traceable to an upstream obligation.</p>
+<pre class="text"><code>Canonical Principle
+        ↓
+Lifecycle or Practice Obligation
+        ↓
+Architectural Principle, Invariant or Constraint
+        ↓
+Required Architectural Ability
+        ↓
+Capability
+        ↓
+Logical Service
+        ↓
+Implementation</code></pre>
+<p>A capability belongs in KF-3002 only when its absence would leave a Canonical Principle, a lifecycle stage/gate/invariant, an engineering-practice obligation, a mandatory engineering artefact, a KF-3001 invariant or interaction constraint, or a conformance requirement unsupported.</p>
+<h3 id="capability-admission-test">Capability Admission Test</h3>
+<p>A proposed capability is admitted only where it expresses an enduring architectural ability; is independent of any specific technology or organisational procedure; has an identifiable upstream basis; has observable required behaviours; has identifiable information objects and relationships; would create a defined architectural risk on failure; has demonstrable conformance; and is not already fully contained within another capability.</p>
+<h3 id="capability-boundaries">Capability Boundaries</h3>
+<p>A capability is not a lifecycle stage, an engineering practice, a logical service, a human role, an artefact, a control, an application feature or a technology component. The relationships are:</p>
+<pre class="text"><code>Practice   establishes an engineering obligation
+Capability states the ability required to discharge it
+Service    exposes and coordinates that ability
+Record     preserves its governed information and evidence
+Control    limits or verifies its exercise
+Role       holds authority or accountability where required</code></pre>
+<hr />
+<h2 id="part-i-capability-model-foundations">Part I · Capability Model Foundations</h2>
+<h3 id="capability-domains">1. Capability Domains</h3>
+<p>The model contains five capability domains and twenty-four constituent capabilities.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Purpose</th>
+<th>Capabilities</th>
+<th>Principal upstream basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A · Identity &amp; Representation</strong></td>
+<td>Establish and preserve what the object is and how it can be inspected</td>
+<td>3</td>
+<td>KF-2002 Domain A</td>
+</tr>
+<tr class="even">
+<td><strong>B · Evidence &amp; Justification</strong></td>
+<td>Establish and preserve the warrant for belief</td>
+<td>4</td>
+<td>KF-2002 Domain B</td>
+</tr>
+<tr class="odd">
+<td><strong>C · Operational Governance</strong></td>
+<td>Govern authority, custody, versioning, release, change and transition</td>
+<td>8</td>
+<td>KF-2002 Domain C</td>
+</tr>
+<tr class="even">
+<td><strong>D · Operational Use</strong></td>
+<td>Make knowledge actionable and learn from its use</td>
+<td>4</td>
+<td>KF-2002 Domain D</td>
+</tr>
+<tr class="odd">
+<td><strong>E · Assurance, Protection &amp; Continuity</strong></td>
+<td>Preserve provenance, integrity, conformance and explicit operating condition across all domains</td>
+<td>5</td>
+<td>KF-3000 and KF-3001</td>
+</tr>
+</tbody>
+</table>
+<p>Domains A–D describe the abilities that act upon the Operational Knowledge Object and its operational life. Domain E is cross-cutting: <strong>it does not author, evaluate or alter the substantive content of an Operational Knowledge Object, nor does it independently authorise lifecycle transitions. It preserves and evaluates the provenance, integrity, temporal condition, protection and conformance evidence surrounding that content.</strong></p>
+<h3 id="capability-levels">2. Capability Levels</h3>
+<p>KF-3002 uses two levels. A <strong>domain capability</strong> is a broad architectural ability grouping related subordinate capabilities (for example, <em>Operational Governance</em>). A <strong>constituent capability</strong> is a bounded, independently testable architectural ability (for example, <em>Authority and Acceptance Management</em>). KF-3002 does not decompose below constituent capability level; detailed service operations belong in KF-3003 and implementation functions in KF-4000.</p>
+<h3 id="capability-specification">3. Capability Specification</h3>
+<p>Each constituent capability is specified through eleven fields:</p>
+<ul>
+<li><strong>Capability statement</strong> — the enduring ability;</li>
+<li><strong>Purpose</strong> — why the ability is required;</li>
+<li><strong>Upstream derivation</strong> — practices, principles, invariants and constraints;</li>
+<li><strong>Scope</strong> — what falls inside and outside the capability;</li>
+<li><strong>Required behaviours</strong> — what the architecture must be able to do;</li>
+<li><strong>Principal information objects</strong> — the logical information structures acted upon or produced;</li>
+<li><strong>Capability relationships</strong> — typed relationships to other capabilities;</li>
+<li><strong>Protected invariants</strong> — KF-3001 invariants preserved;</li>
+<li><strong>Operating criticality</strong> — the consequence of the capability’s inability or degradation;</li>
+<li><strong>Failure conditions</strong> — what inability or misuse looks like;</li>
+<li><strong>Conformance condition</strong> — observable proof that the capability exists.</li>
+</ul>
+<p>A <strong>principal information object</strong> is a logical information structure created, consumed or maintained by a capability. It may be an engineering artefact, governed record, representation, decision, status, linkage or result. It is not necessarily an Operational Knowledge Object; the OKO is the governed subject, while information objects are the structures through which capabilities act upon and evidence it.</p>
+<p><strong>Operating criticality</strong> classifies the consequence of a capability being unavailable or degraded, using the categories: <em>conformance-critical</em>, <em>governance-critical</em>, <em>operationally critical</em>, <em>recoverable with bounded manual control</em>, and <em>advisory</em>. A capability may combine a category with a default failure posture (fail-open or fail-closed). This classification does not set implementation availability targets; it lets KF-3005 and KF-3007 determine the consequence of unavailability.</p>
+<h3 id="capability-relationship-types">4. Capability Relationship Types</h3>
+<p>Capabilities relate through five typed relationships, replacing any single undifferentiated notion of dependency:</p>
+<ul>
+<li><strong>Prerequisite</strong> — an ability that must already exist or produce an input before this one can operate;</li>
+<li><strong>Collaborating capability</strong> — an ability participating with this one in the same governed operation;</li>
+<li><strong>Constraining capability</strong> — an ability that limits or validates this one’s execution;</li>
+<li><strong>Triggered capability</strong> — an ability invoked as a consequence of this one;</li>
+<li><strong>Evidence provider / consumer</strong> — an ability supplying, or receiving, conformance evidence.</li>
+</ul>
+<p>Typing these relationships removes false circularity: two capabilities that <em>collaborate</em> in one operation are not mutual prerequisites. Relationships do not create authority; authority is assigned through KF-3008.</p>
+<h3 id="common-capability-requirements">5. Common Capability Requirements</h3>
+<p>Every capability must:</p>
+<ol type="1">
+<li>preserve the relevant KF-3001 invariants;</li>
+<li>operate within the applicable interaction constraints;</li>
+<li>produce or maintain inspectable evidence of material actions;</li>
+<li>expose failure, pending and indeterminate conditions explicitly;</li>
+<li>preserve attribution between human and computational action;</li>
+<li>operate across supported computational modalities;</li>
+<li>preserve recorded time and effective time where relevant;</li>
+<li>preserve the authoritative-maintainer boundary assigned to each information object in KF-3003 and KF-3004, altering such information only through a governed interaction;</li>
+<li>remain logically distinguishable even where combined physically;</li>
+<li>support conformance inspection.</li>
+</ol>
+<hr />
+<h2 id="part-ii-domain-a-identity-representation">Part II · Domain A — Identity &amp; Representation</h2>
+<h3 id="domain-statement">Domain Statement</h3>
+<p>The architecture must be able to establish what an Operational Knowledge Object is, preserve its identity and make its representation and context inspectable.</p>
+<hr />
+<h3 id="a-cap-01-object-registration">A-CAP-01 · Object Registration</h3>
+<p><strong>Capability statement.</strong> The architecture can register a candidate Operational Knowledge Object and assign it one durable, immutable identity, and can determine how an intake relates to existing objects.</p>
+<p><strong>Purpose.</strong> Establish the object as a governable entity from the moment of capture, and route the intake correctly without itself performing version or lineage operations.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 A1; KF-3001 AP-04, AP-10; INV-01; IC-05.</p>
+<p><strong>Scope.</strong> Includes candidate registration; identity assignment; initial origin capture; duplicate and prior-object assessment; classification of intake as a new object, version candidate, branch candidate or consolidation candidate. Excludes detailed semantic structuring; acceptance; release; the creation of the resulting version, branch or consolidated successor. <strong>A-CAP-01 determines whether an intake should create a new object identity or be routed to an existing object’s version or lineage path; it does not itself create the resulting version, branch or consolidated successor</strong> (those are C-CAP-04 and C-CAP-06). This preserves the distinction: identity resolution ≠ version creation ≠ lineage operation.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>assign an immutable object identifier;</li>
+<li>prevent identifier reuse;</li>
+<li>distinguish object identity from record identity;</li>
+<li>determine whether intake represents a new object or relates to an existing one;</li>
+<li>bind origin and intake context to the identity;</li>
+<li>route version, branch and consolidation candidates to the responsible capability;</li>
+<li>expose ambiguous or unresolved identity conditions;</li>
+<li>prevent progression where identity is absent or conflicting.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Object Identity Record; Intake Record; Provenance Seed; Identity Resolution Decision.</p>
+<p><strong>Capability relationships.</strong> - <em>Constrained by:</em> E-CAP-03, E-CAP-04 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> C-CAP-04, C-CAP-06</p>
+<p><strong>Protected invariants.</strong> INV-01; INV-04; INV-11; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; normally fail-closed — no progression without a resolved, unique identity.</p>
+<p><strong>Failure conditions.</strong> Duplicate identity; reused identifier; unidentified object; origin absent; unresolved ambiguity represented as resolved; version or branch incorrectly registered as an unrelated object.</p>
+<p><strong>Conformance condition.</strong> For any registered object, an independent reviewer can recover its identity, origin, intake decision and, where applicable, its relationship to predecessor or source objects.</p>
+<hr />
+<h3 id="a-cap-02-structured-representation">A-CAP-02 · Structured Representation</h3>
+<p><strong>Capability statement.</strong> The architecture can create and maintain an inspectable representation of an object’s semantic content, type, constituent elements and relationships.</p>
+<p><strong>Purpose.</strong> Enable evaluation, justification, governance, discovery and explanation to operate on explicit representations.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 A2; KF-3001 AP-04, AP-05, AP-13; INV-02; INV-03.</p>
+<p><strong>Scope.</strong> Includes semantic typing; constituent claim or element representation; metadata; object relationships; source-to-representation linkage; multiple representations of one object version. Excludes evidence evaluation; justification; operational acceptance; physical representation technology.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>assign and maintain semantic type;</li>
+<li>represent constituent claims or elements;</li>
+<li>represent relationships among elements and objects;</li>
+<li>preserve the distinction between content and warrant;</li>
+<li>support human, symbolic, parametric and hybrid representations;</li>
+<li>indicate representation limitations and opacity;</li>
+<li>link every representation to the object and version represented.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Structured Representation; Semantic Type Record; Metadata Record; Object Relationship Record; Representation Limitation Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> C-CAP-04</p>
+<p><strong>Protected invariants.</strong> INV-02; INV-03; INV-04; INV-20.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — inspectability is a precondition of evaluation, justification and governance.</p>
+<p><strong>Failure conditions.</strong> Representation not linked to object or version; structure implicit and unrecoverable; type absent or contradictory; semantic relationship lost; modality limitations concealed; content and justification collapsed.</p>
+<p><strong>Conformance condition.</strong> A reviewer can identify what the representation expresses, which object and version it represents, how its material elements relate and what limitations apply to its modality.</p>
+<hr />
+<h3 id="a-cap-03-object-resolution-and-contextual-discovery">A-CAP-03 · Object Resolution and Contextual Discovery</h3>
+<p><strong>Capability statement.</strong> The architecture can locate and retrieve an object together with the governed context required to interpret its identity, state, warrant, relationships and history.</p>
+<p><strong>Purpose.</strong> Ensure that retrieval does not detach content from its governance and epistemic context.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 A1, A2; KF-3001 AP-05, AP-09; INV-02, INV-03, INV-04; IC-12.</p>
+<p><strong>Scope.</strong> Includes discovery by object identity, version, semantic type, relationship, lifecycle state, epistemic status, steward, lineage, and acceptance or release condition. Excludes ranking algorithms; user-interface design; physical indexes; implementation-specific search technology.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>resolve an identifier to exactly one object;</li>
+<li>retrieve current and historical versions;</li>
+<li>expose lifecycle and epistemic status separately;</li>
+<li>traverse object relationships and lineage;</li>
+<li>retrieve relevant warrant and governance context;</li>
+<li>distinguish current, superseded, branched, consolidated, suspended and retired objects;</li>
+<li>prevent context-free retrieval from being represented as governed knowledge.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Resolution Result; Governed Context Package; Relationship Path; Lineage Path; Retrieval Provenance Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01, A-CAP-02 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> B-CAP-04, C-CAP-08, E-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-01; INV-02; INV-03; INV-04; INV-17.</p>
+<p><strong>Operating criticality.</strong> Recoverable with bounded manual control — discovery may degrade for a bounded period without blocking governed transitions, provided degradation is visible.</p>
+<p><strong>Failure conditions.</strong> Ambiguous resolution; stale version presented as current; content retrieved without its relevant acceptance or warrant; retired or suspended status concealed; lineage or relationship path broken.</p>
+<p><strong>Conformance condition.</strong> Given a valid retrieval request, the architecture can return the correct object and enough governed context to determine what it is, which version is being inspected, its present standing and the basis on which it may be relied upon.</p>
+<hr />
+<h2 id="part-iii-domain-b-evidence-justification">Part III · Domain B — Evidence &amp; Justification</h2>
+<h3 id="domain-statement-1">Domain Statement</h3>
+<p>The architecture must be able to represent, evaluate and preserve the grounds on which an object may be believed without conflating evidential quality, justification and operational acceptance.</p>
+<hr />
+<h3 id="b-cap-01-evidence-registration-and-relationship">B-CAP-01 · Evidence Registration and Relationship</h3>
+<p><strong>Capability statement.</strong> The architecture can register evidence and counter-evidence as governed records and relate them explicitly to claims, objects and assessments.</p>
+<p><strong>Purpose.</strong> Make evidential support, challenge and origin independently inspectable.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 B1, B2; KF-3001 AP-05; INV-04; INV-06; IC-20.</p>
+<p><strong>Scope.</strong> Includes evidence and counter-evidence registration; evidence-to-claim and evidence-to-object linkage; evidence classification (support, challenge, context); evidence provenance; evidence availability status. Excludes quality evaluation (B-CAP-02); justification assembly (B-CAP-03); acceptance; adjudication of the truth of the evidence.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>assign evidence-record identity;</li>
+<li>capture evidence origin and type;</li>
+<li>distinguish support, challenge and context;</li>
+<li>relate evidence to specific claims or objects;</li>
+<li>preserve evidence independently from the conclusion drawn from it;</li>
+<li>retain conflicting evidence;</li>
+<li>identify missing or unavailable evidence explicitly.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Evidence Record; Counter-Evidence Record; Evidence-to-Claim Link; Evidence Classification; Evidence Availability Status.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01, A-CAP-02 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-04; INV-06; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — warrant depends on inspectable evidence.</p>
+<p><strong>Failure conditions.</strong> Evidence embedded but not identifiable; evidence detached from its source; counter-evidence hidden or deleted; support relationship stated without basis; unavailable evidence represented as favourable evidence.</p>
+<p><strong>Conformance condition.</strong> For each material claim, the architecture can recover the evidence and counter-evidence related to it, their origins, roles and present availability.</p>
+<hr />
+<h3 id="b-cap-02-quality-evaluation">B-CAP-02 · Quality Evaluation</h3>
+<p><strong>Capability statement.</strong> The architecture can assess the quality and fitness of a structured object or evidence item against explicit criteria and record the resulting verdict.</p>
+<p><strong>Purpose.</strong> Determine whether an object is suitable to proceed toward justification.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 B1; KF-3001 AP-09, AP-16; INV-21; INV-24.</p>
+<p><strong>Scope.</strong> Includes application of evaluation criteria; assessment of quality, consistency, completeness and confidence; recording of pass, fail, return, pending and indeterminate verdicts; retention of verdicts and reasons. Excludes justification construction (B-CAP-03); acceptance (C-CAP-01); the definition of organisational thresholds, which belong to the applicable governance or implementation profile.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>apply defined evaluation criteria;</li>
+<li>preserve criteria and applicable thresholds;</li>
+<li>evaluate quality, consistency, completeness and confidence;</li>
+<li>distinguish pass, fail, return, pending and indeterminate;</li>
+<li>retain all verdicts and reasons;</li>
+<li>route failed or incomplete assessments appropriately;</li>
+<li>prevent unevaluated conditions from appearing as passed.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Evaluation Criteria Record; Quality Assessment; Evaluation Verdict; Evaluation Exception; Confidence Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-02, B-CAP-01 - <em>Constrained by:</em> E-CAP-04 - <em>Evidence providers:</em> E-CAP-05 - <em>Provides evidence to:</em> E-CAP-02</p>
+<p><strong>Protected invariants.</strong> INV-05; INV-21; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — the quality gate precedes justification.</p>
+<p><strong>Failure conditions.</strong> Undocumented criteria; verdict without reasons; pending assessment treated as passed; low-quality object advanced; evaluation altered after the fact without history.</p>
+<p><strong>Conformance condition.</strong> For any evaluation, a reviewer can recover the criteria, inputs, evaluator, result, confidence, reasons and disposition.</p>
+<hr />
+<h3 id="b-cap-03-justification-construction-and-inspection">B-CAP-03 · Justification Construction and Inspection</h3>
+<p><strong>Capability statement.</strong> The architecture can assemble, preserve and expose an inspectable warrant connecting claims to evidence, counter-evidence, rationale and assumptions.</p>
+<p><strong>Purpose.</strong> Establish why an object may be believed without claiming that justification guarantees truth.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 B2; KF-3001 AP-05; INV-05; INV-06; IC-09.</p>
+<p><strong>Scope.</strong> Includes claim-to-evidence linkage; assumptions and rationale; the end-to-end traceability chain; the admission and reliance rationale for parametrically represented capability; preservation of unresolved challenges. Excludes acceptance (C-CAP-01); evidence registration (B-CAP-01); quality evaluation (B-CAP-02); any claim that justification guarantees truth.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>relate claims to supporting and defeating evidence;</li>
+<li>record assumptions and rationale;</li>
+<li>preserve unresolved challenges;</li>
+<li>create an end-to-end traceability chain;</li>
+<li>support independent inspection;</li>
+<li>preserve an inspectable admission and reliance rationale for parametric capability;</li>
+<li>prevent acceptance from substituting for justification.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Justification Record; Assumption Record; Rationale Record; Traceability Chain; Challenge Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> B-CAP-01, B-CAP-02 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> C-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-04; INV-05; INV-06; INV-07.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — justification is the warrant on which reliance rests.</p>
+<p><strong>Failure conditions.</strong> Rationale unsupported; assumptions hidden; counter-evidence omitted; traceability incomplete; accepted status treated as epistemic proof; modality opacity used as an exemption from warrant.</p>
+<p><strong>Conformance condition.</strong> An independent reviewer can reconstruct the material reasons for and against belief, identify the assumptions and trace each material claim to its evidential basis.</p>
+<hr />
+<h3 id="b-cap-04-epistemic-status-management">B-CAP-04 · Epistemic Status Management</h3>
+<p><strong>Capability statement.</strong> The architecture can represent and maintain the epistemic standing of an object independently from its lifecycle, release and acceptance states.</p>
+<p><strong>Purpose.</strong> Preserve uncertainty, dispute and evidential weakness even where operational reliance is permitted.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 B1, B2, C1; KF-3001 AP-04, AP-05; INV-03; INV-07; IC-09.</p>
+<p><strong>Scope.</strong> Includes representation of epistemic conditions from unassessed through insufficiently supported; confidence and uncertainty; contestation; attributable status-change events; prior epistemic states. Excludes lifecycle state (C-CAP-08); acceptance (C-CAP-01); release (C-CAP-05).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>represent unassessed, quality-assessed, warrant-established, contested, warrant-weakened and insufficiently supported conditions;</li>
+<li>preserve confidence and uncertainty;</li>
+<li>record unresolved challenges;</li>
+<li>distinguish epistemic status from acceptance;</li>
+<li>update status only through attributable evidence or assessment events;</li>
+<li>preserve prior epistemic states.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Epistemic Status Record; Confidence Record; Contestation Record; Epistemic Status Change Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> B-CAP-01, B-CAP-02, B-CAP-03 - <em>Collaborates with:</em> C-CAP-01 - <em>Evidence providers:</em> E-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-03; INV-06; INV-07; INV-14.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — protects the separation of epistemic standing from acceptance.</p>
+<p><strong>Failure conditions.</strong> Acceptance overwrites evidential weakness; uncertainty reduced without evidence; dispute removed without disposition; lifecycle state used as proxy for epistemic status.</p>
+<p><strong>Conformance condition.</strong> The architecture can show an object’s present and historical epistemic standing separately from whether it is accepted, released or operationally active.</p>
+<hr />
+<h2 id="part-iv-domain-c-operational-governance">Part IV · Domain C — Operational Governance</h2>
+<h3 id="domain-statement-2">Domain Statement</h3>
+<p>The architecture must be able to control authority, stewardship, review, versioning, release, change, dependency and transition throughout the operational life of an object. Version, acceptance and release are kept as distinct capabilities because they occur at different points and are governed by different obligations.</p>
+<hr />
+<h3 id="c-cap-01-authority-and-acceptance-management">C-CAP-01 · Authority and Acceptance Management</h3>
+<p><strong>Capability statement.</strong> The architecture can record and govern the decision by which an identified authority permits reliance upon a justified object.</p>
+<p><strong>Purpose.</strong> Separate epistemic warrant from institutional permission to rely.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C1; KF-3001 AP-06, AP-08; INV-05, INV-08, INV-09, INV-17; IC-09, IC-13.</p>
+<p><strong>Scope.</strong> Includes acceptance, provisional-acceptance and refusal decisions; authority identification and scope verification; the scope, conditions and duration of reliance; decision rationale. Excludes justification construction (B-CAP-03); permission assignment (E-CAP-03); version creation (C-CAP-04); release designation (C-CAP-05); stewardship (C-CAP-02).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>identify the accepting authority or accountable body;</li>
+<li>verify that the authority’s mandate, scope and effective period apply to the decision;</li>
+<li>record acceptance, provisional acceptance or refusal;</li>
+<li>define scope, conditions and duration of reliance;</li>
+<li>preserve decision rationale;</li>
+<li>prevent acceptance where mandatory prerequisites are absent;</li>
+<li>route refusal or conditional acceptance appropriately.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Acceptance Record; Refusal Record; Scope-of-Reliance Record; Authority Assignment Reference; Acceptance Condition Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> B-CAP-03, B-CAP-04, E-CAP-03 - <em>Collaborates with:</em> C-CAP-08 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> C-CAP-05, C-CAP-08</p>
+<p><strong>Protected invariants.</strong> INV-05; INV-08; INV-09; INV-17; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; normally fail-closed — no acceptance without an applicable authority.</p>
+<p><strong>Failure conditions.</strong> Acceptance without an identified applicable authority; acceptance substituting for justification; technical permission mistaken for acceptance authority; acceptance where mandatory prerequisites are absent; refusal neither routed nor recorded.</p>
+<p><strong>Conformance condition.</strong> Every accepted object carries a decision attributable to an authority or accountable body whose mandate, scope and effective period were applicable, together with the reliance scope, conditions, date and supporting justification.</p>
+<hr />
+<h3 id="c-cap-02-stewardship-and-responsibility-management">C-CAP-02 · Stewardship and Responsibility Management</h3>
+<p><strong>Capability statement.</strong> The architecture can assign, maintain and transfer stewardship and responsibility for an operational object.</p>
+<p><strong>Purpose.</strong> Ensure sustained human accountability throughout operational life.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C2; KF-3001 AP-08; INV-09; INV-10; INV-11.</p>
+<p><strong>Scope.</strong> Includes steward assignment and transfer; identification of accountable roles; stewardship history; the mandate and membership of an accountable body where used. Excludes acceptance decisions (C-CAP-01); review scheduling (C-CAP-03); access-permission assignment (E-CAP-03).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>assign a steward before operational release;</li>
+<li>identify accountable roles;</li>
+<li>transfer stewardship without loss of history;</li>
+<li>prevent ownerless operational state;</li>
+<li>distinguish service execution from human accountability;</li>
+<li>preserve mandate and membership where an accountable body is used.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Stewardship Assignment; Responsibility Record; Stewardship History; Accountable Body Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01 - <em>Collaborates with:</em> C-CAP-08 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-09; INV-10; INV-11.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — no operational object may be ownerless.</p>
+<p><strong>Failure conditions.</strong> Ownerless operational object; stewardship transfer that loses history; service execution mistaken for accountability; accountable body without recoverable mandate or membership.</p>
+<p><strong>Conformance condition.</strong> For every operational object and material governance decision, the architecture can identify the responsible steward and applicable human authority or accountable body.</p>
+<hr />
+<h3 id="c-cap-03-review-and-compliance-management">C-CAP-03 · Review and Compliance Management</h3>
+<p><strong>Capability statement.</strong> The architecture can schedule, execute and record reviews and determine whether standing governance conditions remain satisfied.</p>
+<p><strong>Purpose.</strong> Preserve legitimacy as evidence, policy and context change.</p>
+<p>Review determines whether the object’s warrant, utility and governance standing remain adequate. Compliance determines whether applicable formal obligations are satisfied. A review may include compliance evaluation, but one does not substitute for the other.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C2; KF-3001 AP-07, AP-16; INV-10, INV-18, INV-21, INV-24.</p>
+<p><strong>Scope.</strong> Includes review scheduling; due and overdue detection; evaluation of applicable policy and governance requirements; recording of review outcomes, compliance findings and exceptions; triggering of suspension, evolution or retirement. Excludes the transition execution itself (C-CAP-08); acceptance (C-CAP-01); the definition of external policy.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>establish review cycles;</li>
+<li>detect due and overdue reviews;</li>
+<li>evaluate applicable policy and governance requirements;</li>
+<li>record review outcomes, compliance assessments and exceptions;</li>
+<li>trigger suspension, evolution or retirement;</li>
+<li>prevent expired governance conditions from remaining silently valid.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Review Schedule; Review Record; Compliance Assessment; Compliance Finding; Governance Exception; Review Trigger.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> C-CAP-02 - <em>Collaborates with:</em> C-CAP-08 - <em>Constrained by:</em> E-CAP-04 - <em>May trigger:</em> C-CAP-06, C-CAP-08 - <em>Provides evidence to:</em> E-CAP-02</p>
+<p><strong>Protected invariants.</strong> INV-10; INV-18; INV-21; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; recoverable within a defined period — a late review is bounded and must be visible as overdue.</p>
+<p><strong>Failure conditions.</strong> Expired governance condition remaining silently valid; overdue review undetected; compliance breach unrecorded; review outcome without disposition.</p>
+<p><strong>Conformance condition.</strong> The architecture can establish whether every operational object has a valid steward, review status and applicable governance conditions in force.</p>
+<hr />
+<h3 id="c-cap-04-version-management">C-CAP-04 · Version Management</h3>
+<p><strong>Capability statement.</strong> The architecture can create, preserve and resolve immutable versions of an Operational Knowledge Object without altering its enduring identity.</p>
+<p><strong>Purpose.</strong> Preserve every state of represented content and warrant as an immutable, recoverable version, distinct from acceptance and release. A version must exist before an object can be evaluated, justified, accepted or released; version creation is therefore prior to, not consequent on, acceptance.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C2, C3; KF-3001 AP-04, AP-11; INV-03, INV-12, INV-14; IC-06.</p>
+<p><strong>Scope.</strong> Includes creation of candidate and governed versions; preservation of prior versions; the version-to-identity relation; predecessor and successor identification; correction and supersession relationships; the distinction of version state from acceptance and release state. Excludes the acceptance decision (C-CAP-01); release designation (C-CAP-05); lineage and evolution operations (C-CAP-06).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>create candidate and governed versions;</li>
+<li>preserve prior versions;</li>
+<li>relate versions to their object identity;</li>
+<li>prevent overwrite;</li>
+<li>identify predecessor and successor versions;</li>
+<li>preserve correction and supersession relationships;</li>
+<li>distinguish version state from acceptance and release state.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Version Record; Version State; Predecessor–Successor Link; Correction Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01, A-CAP-02 - <em>Collaborates with:</em> E-CAP-05 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-03; INV-12; INV-14; and constraint IC-06.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — a prior version is never overwritten.</p>
+<p><strong>Failure conditions.</strong> Version overwritten; version detached from object identity; predecessor or successor relationship lost; version state conflated with release state.</p>
+<p><strong>Conformance condition.</strong> For any object, a reviewer can enumerate its immutable versions, their order, and their correction and supersession relationships, distinct from whether any version is accepted or released.</p>
+<hr />
+<h3 id="c-cap-05-release-management">C-CAP-05 · Release Management</h3>
+<p><strong>Capability statement.</strong> The architecture can designate an accepted version as eligible for a defined scope and period of operational reliance.</p>
+<p><strong>Purpose.</strong> Separate controlled operational release from both version creation and acceptance, so that creating a version does not release it and accepting a version does not automatically make every successor released.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C2; KF-3001 AP-04, AP-06; INV-05, INV-17; IC-08.</p>
+<p><strong>Scope.</strong> Includes verification of acceptance; binding of release to a specific immutable version; release scope and effective period; prevention of automatic release inheritance; withdrawal, suspension and supersession of releases; release history. Excludes version creation (C-CAP-04); the acceptance decision (C-CAP-01); actionable-form release (D-CAP-01).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>verify acceptance;</li>
+<li>bind release to a specific immutable version;</li>
+<li>define release scope and effective period;</li>
+<li>prevent automatic inheritance of release by a new version;</li>
+<li>withdraw, suspend or supersede releases;</li>
+<li>preserve release history.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Release Record; Release Scope; Effective Period; Withdrawal Record; Supersession Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> C-CAP-01, C-CAP-04 - <em>Collaborates with:</em> C-CAP-08 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-05</p>
+<p><strong>Protected invariants.</strong> INV-05; INV-17; and constraint IC-08.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; normally fail-closed — no release without a bound, accepted version.</p>
+<p><strong>Failure conditions.</strong> Release without acceptance; a new version inheriting release automatically; release not bound to a specific version; withdrawal that deletes history.</p>
+<p><strong>Conformance condition.</strong> For every released form, the architecture can identify the immutable version released, its acceptance basis, scope, effective period and predecessor or successor releases.</p>
+<hr />
+<h3 id="c-cap-06-lineage-and-evolution-management">C-CAP-06 · Lineage and Evolution Management</h3>
+<p><strong>Capability statement.</strong> The architecture can govern amendment, branching, consolidation, supersession and reactivation while preserving history and requiring renewed warrant.</p>
+<p><strong>Purpose.</strong> Make semantic change a controlled and attributable operation.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C3; KF-3001 AP-10, AP-11; INV-12, INV-13, INV-14, INV-16; IC-06, IC-07.</p>
+<p><strong>Scope.</strong> Includes change triggers and rationale; creation of successor versions or objects; preservation of branch, consolidation and supersession lineage; correction history; routing changed states through evaluation, justification and acceptance. Excludes version-record mechanics (C-CAP-04); dependency impact (C-CAP-07); the acceptance decision itself (C-CAP-01).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>record change triggers and rationale;</li>
+<li>create successor versions or objects appropriately;</li>
+<li>preserve branch, consolidation and supersession lineage;</li>
+<li>distinguish object evolution from object replacement;</li>
+<li>return changed states through evaluation, justification and acceptance;</li>
+<li>preserve correction history;</li>
+<li>prevent silent mutation.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Change Record; Lineage Record; Branch Record; Consolidation Record; Correction Record; Reactivation Proposal.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> C-CAP-04 - <em>Collaborates with:</em> C-CAP-07, C-CAP-08 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> B-CAP-02, B-CAP-03, C-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-12; INV-13; INV-14; INV-16; and constraints IC-06, IC-07.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — silent mutation and lineage loss are the failures it exists to prevent.</p>
+<p><strong>Failure conditions.</strong> Silent mutation; lineage lost on branch or merge; predecessor identity mutated; change without renewed warrant; correction that overwrites the corrected record.</p>
+<p><strong>Conformance condition.</strong> For any current state, a reviewer can reconstruct its predecessors, changes, rationales, responsible actors and renewed evaluation, justification and acceptance.</p>
+<hr />
+<h3 id="c-cap-07-dependency-impact-management">C-CAP-07 · Dependency Impact Management</h3>
+<p><strong>Capability statement.</strong> The architecture can identify and disposition objects, actionable forms and applications affected by a proposed or completed change.</p>
+<p><strong>Purpose.</strong> Prevent locally correct change from silently invalidating dependent knowledge.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C3; KF-3001 AP-12; INV-13, INV-15, INV-18, INV-24.</p>
+<p><strong>Scope.</strong> Includes representation of material dependencies; determination of impacted dependants; impact classification; disposition as revalidation, evolution, suspension or no-action; preservation of impact decisions. Excludes the change execution (C-CAP-06); the application itself (D-CAP-02); discovery of dependencies beyond governed objects.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>represent material dependencies;</li>
+<li>determine impacted dependants;</li>
+<li>classify impact;</li>
+<li>require revalidation, evolution, suspension or no-action disposition;</li>
+<li>preserve impact decisions;</li>
+<li>prevent return to operational use where material dependencies remain undispositioned.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Dependency Record; Dependency Impact Record; Revalidation Requirement; Dependency Disposition Record; Suspension Recommendation.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-03 - <em>Collaborates with:</em> C-CAP-06 - <em>May trigger:</em> C-CAP-06, C-CAP-08</p>
+<p><strong>Protected invariants.</strong> INV-13; INV-15; INV-18; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; normally fail-closed — a changed object does not return to use with undispositioned dependants.</p>
+<p><strong>Failure conditions.</strong> Dependants unidentified; a changed object returning to use with undispositioned dependants; impact decision unrecorded; material dependency representation absent.</p>
+<p><strong>Conformance condition.</strong> For every material change, the architecture can identify affected dependants and show their recorded disposition before the changed object returns to operational use.</p>
+<hr />
+<h3 id="c-cap-08-event-gate-and-transition-management">C-CAP-08 · Event, Gate and Transition Management</h3>
+<p><strong>Capability statement.</strong> The architecture can register lifecycle events, evaluate gates and execute attributable state transitions as one governed operation.</p>
+<p><strong>Purpose.</strong> Preserve the controlled movement of objects through the lifecycle. Operational control determines whether a transition may execute; independent assurance (E-CAP-02) later determines whether the control operated correctly, and is therefore an evidence consumer, not a prerequisite of the transition.</p>
+<p><strong>Upstream derivation.</strong> KF-2001 lifecycle states, events, gates and transitions; KF-3001 AP-09, AP-16; INV-08, INV-09, INV-10, INV-14, INV-24; IC-01, IC-02.</p>
+<p><strong>Scope.</strong> Includes event registration; gate identification and eligibility evaluation; transactional binding of gate decision and transition; separate attribution of execution and authority; forward, return, suspension and retirement paths. Excludes the definition of gate criteria (KF-3005); the content of the acceptance decision (C-CAP-01); dependency disposition (C-CAP-07).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>register triggering events;</li>
+<li>determine applicable current and proposed states;</li>
+<li>identify the required gate;</li>
+<li>evaluate transition eligibility;</li>
+<li>bind Gate Decision and Transition Records transactionally under one transition identifier;</li>
+<li>attribute execution and accountable authority separately;</li>
+<li>support forward, return, suspension and retirement paths;</li>
+<li>prevent invalid or indeterminate gates from silently passing.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Event Record; Gate Decision Record; Transition Record; Transition Warrant; Transition Status.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> applicable gate criteria and current state - <em>Collaborates with:</em> C-CAP-01, C-CAP-03, C-CAP-05, C-CAP-06, C-CAP-07, D-CAP-04 - <em>Constrained by:</em> E-CAP-03, E-CAP-04 - <em>Evidence providers:</em> E-CAP-01, E-CAP-05 - <em>Provides evidence to:</em> E-CAP-02</p>
+<p><strong>Protected invariants.</strong> INV-08; INV-09; INV-10; INV-14; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; normally fail-closed — an indeterminate or unavailable gate does not silently pass.</p>
+<p><strong>Failure conditions.</strong> Lifecycle state changed outside this capability; gate decision and transition not atomically bound; indeterminate gate silently passing; transition unattributed.</p>
+<p><strong>Conformance condition.</strong> For every transition, the architecture can recover the event, prior state, proposed state, applicable gate, gate result, execution actor, accountable authority and transition outcome under one transition identifier.</p>
+<hr />
+<h2 id="part-v-domain-d-operational-use">Part V · Domain D — Operational Use</h2>
+<h3 id="domain-statement-3">Domain Statement</h3>
+<p>The architecture must be able to derive usable forms from accepted objects, govern their application and return application outcomes to the lifecycle.</p>
+<hr />
+<h3 id="d-cap-01-actionable-form-derivation-and-release">D-CAP-01 · Actionable Form Derivation and Release</h3>
+<p><strong>Capability statement.</strong> The architecture can derive actionable forms from governed objects and control when those forms become eligible for operational use.</p>
+<p><strong>Purpose.</strong> Convert represented knowledge into usable forms without severing warrant. Form-level release governed here is distinct from object-level release (C-CAP-05).</p>
+<p><strong>Upstream derivation.</strong> KF-2002 D1; KF-3001 AP-05; INV-17, INV-18; IC-10, IC-12.</p>
+<p><strong>Scope.</strong> Includes derivation of actionable forms; the provisional-versus-released distinction; source-version linkage; warrant and acceptance linkage of released forms; withdrawal or replacement on source change. Excludes application and use (D-CAP-02); acceptance (C-CAP-01); the object’s own versioning (C-CAP-04).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>derive rules, playbooks, procedures, prompts, patterns, models and other actionable forms;</li>
+<li>distinguish provisional form from released form;</li>
+<li>link each form to its source object version;</li>
+<li>link released forms to justification and acceptance;</li>
+<li>prevent provisional forms from operational use;</li>
+<li>identify forms affected by source change;</li>
+<li>withdraw or replace forms when source standing changes.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Actionable Form; Derivation Record; Warrant Linkage; Form Release Record; Form Status.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> C-CAP-01, C-CAP-04 - <em>Collaborates with:</em> C-CAP-05 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-01</p>
+<p><strong>Protected invariants.</strong> INV-17; INV-18; and constraints IC-10, IC-12.</p>
+<p><strong>Operating criticality.</strong> Operationally critical; normally fail-closed for release — a form is not made usable without a warrant linkage.</p>
+<p><strong>Failure conditions.</strong> Form severed from warrant; provisional form used operationally; form not linked to a source version; stale form used after source change.</p>
+<p><strong>Conformance condition.</strong> Every operationally eligible actionable form traces to an accepted object version and carries an inspectable release and warrant linkage.</p>
+<hr />
+<h3 id="d-cap-02-controlled-application-and-explanation">D-CAP-02 · Controlled Application and Explanation</h3>
+<p><strong>Capability statement.</strong> The architecture can govern material use of actionable forms and preserve an explanation appropriate to the modality, risk and decision context.</p>
+<p><strong>Purpose.</strong> Ensure that use remains authorised, traceable and explainable.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 D2; KF-3001 AP-13; INV-17, INV-18, INV-20; IC-11, IC-12, IC-13.</p>
+<p><strong>Scope.</strong> Includes eligibility verification; recording of material application context; identification of human and computational participants; preservation of the input-to-result path; modality-appropriate explanation; enforcement of disclosure and use restrictions. Excludes outcome capture (D-CAP-03); the form derivation (D-CAP-01); user-interface design.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>verify object, version, form, release and governance eligibility before use;</li>
+<li>record material application context;</li>
+<li>identify human and computational participants;</li>
+<li>preserve relevant input-to-result path;</li>
+<li>provide explanation adequate to the applicable modality, materiality, risk and decision context;</li>
+<li>detect use of invalid or withdrawn forms;</li>
+<li>enforce disclosure and use restrictions.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Application Record; Use Context Record; Eligibility Decision; Explanation Record; Application Participant Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> D-CAP-01 - <em>Collaborates with:</em> C-CAP-08 - <em>Constrained by:</em> C-CAP-03, E-CAP-03 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> D-CAP-03</p>
+<p><strong>Protected invariants.</strong> INV-17; INV-18; INV-20; and constraints IC-11, IC-12, IC-13.</p>
+<p><strong>Operating criticality.</strong> Operationally critical; normally fail-closed for use — an ineligible object is not applied.</p>
+<p><strong>Failure conditions.</strong> Use without an eligibility check; application for which no explanation adequate to the applicable modality, materiality, risk and decision context can be produced; use of a withdrawn or invalid form; disclosure restriction bypassed; use detached from warrant.</p>
+<p><strong>Conformance condition.</strong> For each material application, the architecture can identify what was used, why it was eligible, who or what participated, the context of use, the resulting action or recommendation, and an explanation proportionate to the applicable risk and modality.</p>
+<hr />
+<h3 id="d-cap-03-outcome-and-feedback-capture">D-CAP-03 · Outcome and Feedback Capture</h3>
+<p><strong>Capability statement.</strong> The architecture can capture application outcomes and return them as governed evidence, review triggers or change signals.</p>
+<p><strong>Purpose.</strong> Close the lifecycle from operational use back to evaluation and evolution.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 D2; KF-3001 AP-11; INV-06, INV-19, INV-24.</p>
+<p><strong>Scope.</strong> Includes attachment of outcomes to application and object version; the distinction of observation from interpretation; preservation of adverse, contradictory and null outcomes; materiality assessment under an applicable profile; assignment of a disposition; aggregation preserving individual provenance. Excludes the application itself (D-CAP-02); evolution execution (C-CAP-06); the definition of materiality thresholds, which belong to the applicable profile.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>attach outcomes to application and object version;</li>
+<li>distinguish observed result from interpretation;</li>
+<li>preserve adverse, contradictory and null outcomes;</li>
+<li>assess outcome materiality under an applicable profile;</li>
+<li>assign a disposition — no action, additional observation, investigation, temporary restriction, suspension, review, evolution, retirement or continued use;</li>
+<li>raise the corresponding lifecycle trigger where required;</li>
+<li>aggregate outcomes while preserving individual provenance.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Outcome Record; Interpretation Record; Feedback Record; Materiality Assessment; Disposition Record; Lifecycle Trigger.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> D-CAP-02 - <em>Evidence providers:</em> E-CAP-01 - <em>May trigger:</em> C-CAP-03, C-CAP-06, C-CAP-08</p>
+<p><strong>Protected invariants.</strong> INV-06; INV-19; INV-24.</p>
+<p><strong>Operating criticality.</strong> Operationally critical; recoverable within a defined period — outcome capture may lag briefly, provided the gap is visible and bounded.</p>
+<p><strong>Failure conditions.</strong> Outcomes not captured; observation and interpretation conflated; adverse outcomes suppressed; aggregation that erases provenance; outcomes without disposition.</p>
+<p><strong>Conformance condition.</strong> Every material outcome is traceable to the application, actionable form and object version involved and has a recorded disposition under the applicable governance profile.</p>
+<hr />
+<h3 id="d-cap-04-retirement-and-historical-preservation">D-CAP-04 · Retirement and Historical Preservation</h3>
+<p><strong>Capability statement.</strong> The architecture can conclude operational use of an object while preserving identity, record integrity, lineage and the possibility of governed reactivation.</p>
+<p><strong>Purpose.</strong> Remove knowledge from active reliance without destroying institutional memory.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 D3; KF-3001 AP-11; INV-09, INV-13, INV-16, INV-18; IC-04.</p>
+<p><strong>Scope.</strong> Includes retirement of the Operational Knowledge Object from active operational eligibility; determination and recording of retirement reason and authority; preservation of the full historical record; maintenance of successor and supersession links; retrieval as historical material; governed reactivation. <strong>Withdrawal of a particular release or actionable form without retiring the object remains governed by C-CAP-05 and D-CAP-01 respectively</strong>; retirement is reserved for the object as a whole. Excludes destructive deletion; the evolution path itself (C-CAP-06); acceptance (C-CAP-01).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>determine and record retirement reason;</li>
+<li>identify retirement authority;</li>
+<li>remove the object and its forms from active eligibility;</li>
+<li>preserve the full historical record;</li>
+<li>maintain successor and supersession links;</li>
+<li>support retrieval as historical material;</li>
+<li>permit reactivation only through governed evolution;</li>
+<li>prevent destructive deletion of governed history.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Retirement Record; Historical Object Record; Preservation Record; Reactivation Request; Successor Link.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01 - <em>Collaborates with:</em> C-CAP-08 - <em>Constrained by:</em> E-CAP-03 - <em>Evidence providers:</em> E-CAP-05 - <em>May trigger:</em> C-CAP-06 (reactivation)</p>
+<p><strong>Protected invariants.</strong> INV-09; INV-13; INV-16; INV-18; and constraint IC-04.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — destructive deletion of governed history is prohibited.</p>
+<p><strong>Failure conditions.</strong> Retirement without a recorded reason or authority; destructive deletion; lineage lost; a retired object remaining operationally usable; reactivation outside governed evolution.</p>
+<p><strong>Conformance condition.</strong> A retired object cannot be used operationally, but its identity, versions, warrant, governance history, applications, outcomes and lineage remain recoverable.</p>
+<hr />
+<h2 id="part-vi-domain-e-assurance-protection-continuity">Part VI · Domain E — Assurance, Protection &amp; Continuity</h2>
+<h3 id="domain-statement-4">Domain Statement</h3>
+<p>The architecture must be able to preserve the provenance, integrity, operating condition and conformance evidence required for Domains A–D to remain trustworthy across time and computational modality. Domain E preserves and evaluates governed context; it does not author or alter substantive content, nor independently authorise transitions.</p>
+<hr />
+<h3 id="e-cap-01-provenance-and-end-to-end-traceability">E-CAP-01 · Provenance and End-to-End Traceability</h3>
+<p><strong>Capability statement.</strong> The architecture can preserve origin, derivation, custody, attribution and relationship traceability across every material object, record, transition and application.</p>
+<p><strong>Purpose.</strong> Make current states and historical change reconstructable.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 A1, A2, B2, C2, C3, D1; KF-3001 AP-11, AP-12; INV-02, INV-04, INV-08, INV-13, INV-17, INV-19, INV-24; IC-20.</p>
+<p><strong>Scope.</strong> Includes preservation of source origin; why-, where- and how-provenance; traceability across representations, changes, actionable forms, applications and outcomes; provenance across modality hand-offs; explicit identification of provenance gaps. Excludes substantive content (Domains A–D); access control (E-CAP-03); the authorising of transitions (C-CAP-08).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>preserve source origin;</li>
+<li>capture why-, where- and how-provenance where applicable;</li>
+<li>trace representations to sources and objects;</li>
+<li>trace changes to actors, evidence and events;</li>
+<li>trace actionable forms to warrant;</li>
+<li>trace applications and outcomes to the forms used;</li>
+<li>preserve provenance across human, symbolic, parametric and hybrid hand-offs;</li>
+<li>identify incomplete or unavailable provenance explicitly.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Provenance Record; Custody Record; Derivation Link; Attribution Link; Traceability Path; Provenance Gap Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Prerequisites:</em> A-CAP-01 - <em>Constrained by:</em> E-CAP-03 - <em>Provides evidence to:</em> all capabilities (E-CAP-01 is a primary evidence provider across the model)</p>
+<p><strong>Protected invariants.</strong> INV-02; INV-04; INV-08; INV-13; INV-17; INV-19; INV-24.</p>
+<p><strong>Operating criticality.</strong> Governance-critical and conformance-critical; fail-closed at hand-offs — a material hand-off that cannot preserve provenance is not silently completed.</p>
+<p><strong>Failure conditions.</strong> Broken lineage; provenance regenerated rather than carried through a hand-off; a provenance gap concealed rather than represented; attribution lost at a hand-off.</p>
+<p><strong>Conformance condition.</strong> For a representative material outcome, the architecture can reconstruct the path from source and object creation through evaluation, acceptance, operationalisation, use and outcome, while exposing any known provenance gaps.</p>
+<hr />
+<h3 id="e-cap-02-conformance-and-independent-assurance">E-CAP-02 · Conformance and Independent Assurance</h3>
+<p><strong>Capability statement.</strong> The architecture can determine and demonstrate whether required capabilities, invariants, gates, controls and interaction constraints are satisfied.</p>
+<p><strong>Purpose.</strong> Prevent architectural compliance from depending solely on structural resemblance or self-assertion. E-CAP-02 receives evidence from all capabilities and may raise findings, exceptions, suspension recommendations or corrective-action triggers. It does not participate in the substantive decision or service action it later assesses, and is never an operational prerequisite of the operations it evaluates.</p>
+<p><strong>Upstream derivation.</strong> KF-3001 Part VI; KF-3001 AP-03; INV-21, INV-22, INV-23, INV-24; IC-17, IC-18.</p>
+<p><strong>Scope.</strong> Includes inspection of required records and control evidence; invariant and prohibited-path testing; cross-service reconciliation; recording of findings, exceptions and violations; the distinction of conformance, variation, exception and non-conformance. Excludes altering the records under examination; authorising transitions; acting as sole judge of its own outputs; participating as a prerequisite in the operations it assesses.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>inspect required records and control evidence;</li>
+<li>test invariant conditions;</li>
+<li>test prohibited paths;</li>
+<li>reconcile evidence across services;</li>
+<li>preserve assurance independence;</li>
+<li>record findings, exceptions and violations;</li>
+<li>distinguish conformance, variation, exception and non-conformance;</li>
+<li>avoid altering records under examination.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Conformance Assessment; Invariant Test Result; Constraint Test Result; Assurance Finding; Non-Conformance Record; Exception Reference.</p>
+<p><strong>Capability relationships.</strong> - <em>Evidence consumers:</em> receives evidence from all capabilities - <em>May trigger:</em> C-CAP-08 (via suspension recommendation), E-CAP-04 - <em>Constrained by:</em> its own read-only and independence rules (IC-17, IC-18)</p>
+<p><strong>Protected invariants.</strong> INV-21; INV-22; INV-23; INV-24.</p>
+<p><strong>Operating criticality.</strong> Conformance-critical but not transaction-blocking — assurance must exist and be independent, but its unavailability does not by itself halt governed operations; it renders them unproven until reconciled.</p>
+<p><strong>Failure conditions.</strong> Self-certification; assurance that alters the records examined; non-conformance recorded as a mere exception; an indeterminate condition treated as a pass; assurance made a prerequisite of the operation it audits.</p>
+<p><strong>Conformance condition.</strong> The architecture can produce independently inspectable evidence for every required capability and report unmet, indeterminate or violated conditions without modifying the evidence assessed.</p>
+<hr />
+<h3 id="e-cap-03-access-authority-boundary-and-integrity-protection">E-CAP-03 · Access, Authority Boundary and Integrity Protection</h3>
+<p><strong>Capability statement.</strong> The architecture can restrict access and material action according to assigned permissions while preserving the distinction between permission and authority.</p>
+<p><strong>Purpose.</strong> Protect governed records and operations against unauthorised access, alteration or disclosure.</p>
+<p><strong>Upstream derivation.</strong> KF-3000 §1 access, disclosure and integrity obligations; KF-3001 AP-06; INV-08, INV-09, INV-11, INV-23; IC-13, IC-14, IC-15, IC-16.</p>
+<p><strong>Scope.</strong> Includes actor and service identification; permission assignment and revocation; the permission-versus-authority distinction; record-integrity protection; disclosure and use restriction; administrative-action recording; permission and authority history. Excludes acceptance-authority decisions (C-CAP-01); specific security technologies (KF-4000); the content of the governance decision.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>identify actors and services;</li>
+<li>assign and revoke permissions;</li>
+<li>distinguish technical access from governance authority;</li>
+<li>enforce view, create, amend, accept, release, suspend and retire permissions;</li>
+<li>protect record integrity;</li>
+<li>enforce disclosure and use restrictions;</li>
+<li>record material administrative action;</li>
+<li>preserve permission and authority history.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Access Policy; Permission Assignment; Authority Assignment Reference; Disclosure Constraint; Integrity Status; Administrative Action Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Collaborates with:</em> C-CAP-02 - <em>Constrains:</em> all capabilities performing a material action - <em>Evidence providers:</em> E-CAP-05</p>
+<p><strong>Protected invariants.</strong> INV-08; INV-09; INV-11; INV-23; and constraints IC-13, IC-14, IC-15, IC-16.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; normally fail-closed — an unauthorised material action is refused, not permitted by default.</p>
+<p><strong>Failure conditions.</strong> Permission mistaken for authority; unauthorised alteration; record integrity compromised; material administrative action unrecorded; disclosure restriction bypassed.</p>
+<p><strong>Conformance condition.</strong> For every material action, the architecture can demonstrate that the actor possessed the required permission and, where applicable, that a separate valid authority decision existed.</p>
+<hr />
+<h3 id="e-cap-04-operating-condition-exception-and-degraded-state-management">E-CAP-04 · Operating Condition, Exception and Degraded-State Management</h3>
+<p><strong>Capability statement.</strong> The architecture can represent normal, failed, pending, indeterminate and degraded conditions explicitly and govern their consequences.</p>
+<p><strong>Purpose.</strong> Prevent absent evidence, failed controls or unavailable services from appearing as successful operation.</p>
+<p><strong>Upstream derivation.</strong> KF-3001 AP-16; INV-10, INV-18, INV-21, INV-24; IC-19.</p>
+<p><strong>Scope.</strong> Includes the distinction of passed, failed, pending and indeterminate conditions; representation of service and control degradation; explicit fail-open or fail-closed decision; exception raising, tracking and bounding; compensating controls; corrective triggering. Excludes the corrective transition execution (C-CAP-08); the definition of organisational risk acceptance (governance).</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>distinguish passed, failed, pending and indeterminate conditions;</li>
+<li>represent service or control degradation;</li>
+<li>determine fail-open or fail-closed behaviour explicitly;</li>
+<li>prevent silent success;</li>
+<li>raise and track exceptions;</li>
+<li>bound duration and scope of authorised exceptions;</li>
+<li>preserve compensating controls;</li>
+<li>trigger suspension or corrective action where required.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Operating Condition Record; Degradation Record; Exception Record; Compensating Control Record; Recovery Record; Failure Disposition Record.</p>
+<p><strong>Capability relationships.</strong> - <em>Collaborates with:</em> C-CAP-08 - <em>May trigger:</em> C-CAP-08 (suspension or corrective action) - <em>Provides evidence to:</em> E-CAP-02</p>
+<p><strong>Protected invariants.</strong> INV-10; INV-18; INV-21; INV-24; and constraint IC-19.</p>
+<p><strong>Operating criticality.</strong> Conformance-critical and governance-critical — it is the capability that determines fail-safe behaviour, so its own degradation defaults to fail-closed.</p>
+<p><strong>Failure conditions.</strong> Silent success; an unavailable service presumed available; an exception without bound or expiry; a degraded state concealed; missing evidence read as a pass.</p>
+<p><strong>Conformance condition.</strong> When a required condition cannot be evaluated or a service is degraded, the architecture records the condition explicitly and applies the predefined operational consequence rather than treating it as satisfied.</p>
+<hr />
+<h3 id="e-cap-05-temporal-and-historical-continuity">E-CAP-05 · Temporal and Historical Continuity</h3>
+<p><strong>Capability statement.</strong> The architecture can preserve the temporal meaning, sequence and authenticity of governed records and states across time.</p>
+<p><strong>Purpose.</strong> Maintain trust where events, records and effective conditions occur at different times.</p>
+<p><strong>Upstream derivation.</strong> KF-2002 C2, D3; KF-3001 AP-11; INV-04, INV-12, INV-13, INV-14, INV-16; IC-21, IC-22.</p>
+<p><strong>Scope.</strong> Includes preservation of recorded, effective and event time; sequencing of transitions and decisions; retention of superseded and corrected records; authenticity across custody and format change; as-of historical reconstruction; retention and disposition. Excludes the version mechanics (C-CAP-04); storage technology; substantive content.</p>
+<p><strong>Required behaviours.</strong></p>
+<ul>
+<li>preserve recorded time;</li>
+<li>preserve effective time;</li>
+<li>preserve event time where distinct;</li>
+<li>sequence transitions and decisions;</li>
+<li>retain superseded and corrected records;</li>
+<li>preserve authenticity through custody and format change;</li>
+<li>support historical reconstruction as of a specified time;</li>
+<li>enforce retention and disposition conditions.</li>
+</ul>
+<p><strong>Principal information objects.</strong> Temporal Metadata Record; Effective Period; Event-Time Record; Custody History; Retention Condition; Historical Reconstruction Result.</p>
+<p><strong>Capability relationships.</strong> - <em>Collaborates with:</em> C-CAP-04, C-CAP-06 - <em>Evidence providers:</em> E-CAP-01 - <em>Provides evidence to:</em> E-CAP-02</p>
+<p><strong>Protected invariants.</strong> INV-04; INV-12; INV-13; INV-14; INV-16; and constraints IC-21, IC-22.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; recoverable with bounded manual control — temporal reconstruction may require manual assembly for a bounded period, but must never rely on overwritten records.</p>
+<p><strong>Failure conditions.</strong> Temporal semantics collapsed; effective time lost; as-of reconstruction relying on overwritten current records; authenticity broken across a format change; retention condition unenforced.</p>
+<p><strong>Conformance condition.</strong> The architecture can reconstruct the object’s represented content, warrant, acceptance, governance and operational state at a specified historical point without relying on overwritten current records.</p>
+<hr />
+<h2 id="part-vii-capability-relationships">Part VII · Capability Relationships</h2>
+<h3 id="principal-eligibility-progression">6. Principal Eligibility Progression</h3>
+<p>The principal eligibility progression follows the governed life of an object from registration to retirement or evolution:</p>
+<pre class="text"><code>A-CAP-01 Object Registration
+        ↓
+A-CAP-02 Structured Representation
+        ↓
+C-CAP-04 Version Management
+        ↓
+B-CAP-01 Evidence Registration
+        ↓
+B-CAP-02 Quality Evaluation
+        ↓
+B-CAP-03 Justification Construction
+        ↓
+B-CAP-04 Epistemic Status Management
+        ↓
+C-CAP-01 Authority and Acceptance
+        ↓
+C-CAP-02 Stewardship Assignment
+        ↓
+C-CAP-05 Release Management
+        ↓
+D-CAP-01 Actionable Form Derivation and Release
+        ↓
+D-CAP-02 Controlled Application
+        ↓
+D-CAP-03 Outcome and Feedback
+        ↓
+C-CAP-06 Evolution   or   D-CAP-04 Retirement</code></pre>
+<p>This represents the principal eligibility progression of an object. It is neither a complete lifecycle diagram nor a mandatory procedural workflow. <strong>C-CAP-08 governs every state transition</strong> along the progression, and the Domain E capabilities — provenance, conformance, access and integrity, operating condition, and temporal continuity — operate throughout rather than at any single point.</p>
+<h3 id="critical-capability-relationships">7. Critical Capability Relationships</h3>
+<p>Relationships are typed. The most consequential are:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Relationship</th>
+<th>Related capability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A-CAP-02</td>
+<td>Prerequisite</td>
+<td>A-CAP-01</td>
+</tr>
+<tr class="even">
+<td>A-CAP-03</td>
+<td>Prerequisite</td>
+<td>A-CAP-01, A-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-04</td>
+<td>Prerequisite</td>
+<td>A-CAP-01, A-CAP-02</td>
+</tr>
+<tr class="even">
+<td>B-CAP-02</td>
+<td>Prerequisite</td>
+<td>B-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-03</td>
+<td>Prerequisite</td>
+<td>B-CAP-01, B-CAP-02</td>
+</tr>
+<tr class="even">
+<td>B-CAP-04</td>
+<td>Prerequisite</td>
+<td>B-CAP-01, B-CAP-02, B-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-01</td>
+<td>Prerequisite</td>
+<td>B-CAP-03, B-CAP-04</td>
+</tr>
+<tr class="even">
+<td>C-CAP-01</td>
+<td>Collaborates with</td>
+<td>C-CAP-08</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-01</td>
+<td>Constrained by</td>
+<td>E-CAP-03</td>
+</tr>
+<tr class="even">
+<td>C-CAP-05</td>
+<td>Prerequisite</td>
+<td>C-CAP-01, C-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-06</td>
+<td>Prerequisite</td>
+<td>C-CAP-04</td>
+</tr>
+<tr class="even">
+<td>C-CAP-06</td>
+<td>Collaborates with</td>
+<td>C-CAP-07, C-CAP-08</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-07</td>
+<td>Prerequisite</td>
+<td>A-CAP-03</td>
+</tr>
+<tr class="even">
+<td>C-CAP-08</td>
+<td>Collaborates with</td>
+<td>C-CAP-01, C-CAP-03, C-CAP-05, C-CAP-06, C-CAP-07, D-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-08</td>
+<td>Constrained by</td>
+<td>E-CAP-03, E-CAP-04</td>
+</tr>
+<tr class="even">
+<td>C-CAP-08</td>
+<td>Provides evidence to</td>
+<td>E-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-01</td>
+<td>Prerequisite</td>
+<td>C-CAP-01, C-CAP-04</td>
+</tr>
+<tr class="even">
+<td>D-CAP-02</td>
+<td>Prerequisite</td>
+<td>D-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-03</td>
+<td>Prerequisite</td>
+<td>D-CAP-02</td>
+</tr>
+<tr class="even">
+<td>D-CAP-04</td>
+<td>Collaborates with</td>
+<td>C-CAP-08</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-01</td>
+<td>Provides evidence to</td>
+<td>all capabilities</td>
+</tr>
+<tr class="even">
+<td>E-CAP-02</td>
+<td>Evidence consumer</td>
+<td>all capabilities</td>
+</tr>
+</tbody>
+</table>
+<p>No relationship in this table is a mutual prerequisite. Where two capabilities appear to depend on one another — acceptance and transition, or evolution and dependency impact — the relationship is <em>collaboration</em> within one governed operation, not circular prerequisite.</p>
+<h3 id="prohibited-capability-substitution">8. Prohibited Capability Substitution</h3>
+<p>The following substitutions are not permitted: discovery may not substitute for provenance; evaluation may not substitute for justification; justification may not substitute for acceptance; acceptance may not substitute for release; version creation may not substitute for release; permission may not substitute for authority; audit logging may not substitute for accountability; explainability may not substitute for evidential warrant; retention may not substitute for historical authenticity; model confidence may not substitute for epistemic status; and service availability may not be presumed when operating condition is unknown.</p>
+<hr />
+<h2 id="part-viii-capability-completeness">Part VIII · Capability Completeness</h2>
+<h3 id="practice-to-capability-crosswalk">9. Practice-to-Capability Crosswalk</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>KF-2002 Practice</th>
+<th>Principal capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1 · OKO Identification</td>
+<td>A-CAP-01, A-CAP-03, E-CAP-01</td>
+</tr>
+<tr class="even">
+<td>A2 · Knowledge Structuring</td>
+<td>A-CAP-02, A-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>B1 · Evidence Evaluation</td>
+<td>B-CAP-01, B-CAP-02</td>
+</tr>
+<tr class="even">
+<td>B2 · Knowledge Justification</td>
+<td>B-CAP-01, B-CAP-03, B-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>C1 · Knowledge Acceptance</td>
+<td>C-CAP-01, C-CAP-08</td>
+</tr>
+<tr class="even">
+<td>C2 · Governance &amp; Stewardship</td>
+<td>C-CAP-02, C-CAP-03, C-CAP-04, C-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>C3 · Knowledge Evolution</td>
+<td>C-CAP-06, C-CAP-07, C-CAP-08, C-CAP-04</td>
+</tr>
+<tr class="even">
+<td>D1 · Operationalisation</td>
+<td>D-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>D2 · Knowledge Application</td>
+<td>D-CAP-02, D-CAP-03</td>
+</tr>
+<tr class="even">
+<td>D3 · Knowledge Retirement</td>
+<td>D-CAP-04, C-CAP-06, C-CAP-08</td>
+</tr>
+</tbody>
+</table>
+<p>Domain E supports every practice.</p>
+<h3 id="invariant-to-capability-crosswalk-family-level">10. Invariant-to-Capability Crosswalk (family level)</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Invariant family</th>
+<th>Principal capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identity and representation (INV-01–03)</td>
+<td>A-CAP-01, A-CAP-02, A-CAP-03, C-CAP-04, E-CAP-01</td>
+</tr>
+<tr class="even">
+<td>Evidence and justification (INV-04–07)</td>
+<td>B-CAP-01, B-CAP-02, B-CAP-03, B-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>Governance and accountability (INV-08–11)</td>
+<td>C-CAP-01, C-CAP-02, C-CAP-03, C-CAP-08, E-CAP-03</td>
+</tr>
+<tr class="even">
+<td>Change and history (INV-12–16)</td>
+<td>C-CAP-04, C-CAP-06, C-CAP-07, D-CAP-04, E-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>Operational use (INV-17–20)</td>
+<td>C-CAP-05, D-CAP-01, D-CAP-02, D-CAP-03</td>
+</tr>
+<tr class="even">
+<td>Assurance and explicit condition (INV-21–24)</td>
+<td>E-CAP-02, E-CAP-04</td>
+</tr>
+</tbody>
+</table>
+<h3 id="capability-coverage-test">11. Capability Coverage Test</h3>
+<p>The model is complete when: every KF-2002 practice maps to at least one principal capability; every mandatory KF-2002 artefact has a capability responsible for its creation or maintenance; every KF-3001 invariant is protected by at least one capability (demonstrated individually in Appendix A); every KF-3001 interaction constraint is enforceable through the capabilities in Appendix B; every capability has an upstream derivation; every capability has at least one independently observable conformance condition; no capability exists solely because a familiar technology category suggests it; and no upstream obligation remains unsupported.</p>
+<hr />
+<h2 id="part-ix-capability-conformance">Part IX · Capability Conformance</h2>
+<h3 id="capability-conformance">12. Capability Conformance</h3>
+<p>A capability is conformant when an implementation demonstrates that all required behaviours are realised; all principal information objects can be produced, maintained and retrieved; relationships are satisfied; protected invariants remain true whenever their scope applies; failure and indeterminate conditions are visible; the stated conformance condition can be demonstrated; and no prohibited substitution is used to claim satisfaction.</p>
+<p>Capability conformance may be assessed individually for diagnostic purposes, but <strong>architectural conformance is systemic</strong>. A capability cannot be declared conformant where an unsatisfied prerequisite or collaborating capability prevents its required behaviours or protected invariants from being realised. Conformance is not a component-by-component certification.</p>
+<h3 id="capability-evidence">13. Capability Evidence</h3>
+<p>Evidence may include representative end-to-end lifecycle cases; information-object inspection; invariant tests; prohibited-path tests; authority and permission checks; historical reconstruction; dependency-impact tests; degraded-state tests; cross-service reconciliation; and independent assurance results. Technology features or vendor claims are not, by themselves, evidence of capability conformance.</p>
+<h3 id="capability-conformance-and-capability-maturity">14. Capability Conformance and Capability Maturity</h3>
+<p>Capability conformance is not the same as capability maturity, and the two are assessed separately. A conforming capability may exhibit different degrees of automation, scale, latency, usability, coverage, reliability, modality support and assurance independence. A manually maintained stewardship register may <em>conform</em> to C-CAP-02 while being operationally immature; a sophisticated AI governance platform may be <em>non-conforming</em> if it silently passes indeterminate evidence or collapses acceptance into model confidence. Maturity does not compensate for an absent required behaviour or a violated invariant.</p>
+<hr />
+<h2 id="part-x-appendices">Part X · Appendices</h2>
+<h3 id="appendix-a-invariant-to-capability-crosswalk-individual">Appendix A · Invariant-to-Capability Crosswalk (individual)</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Invariant</th>
+<th>Principal capability</th>
+<th>Supporting capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>INV-01 · Unique Object Identity</td>
+<td>A-CAP-01</td>
+<td>A-CAP-03, E-CAP-03</td>
+</tr>
+<tr class="even">
+<td>INV-02 · Representation Traceability</td>
+<td>A-CAP-02</td>
+<td>A-CAP-03, E-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>INV-03 · Logical Distinction</td>
+<td>A-CAP-02</td>
+<td>B-CAP-04, C-CAP-04, C-CAP-05</td>
+</tr>
+<tr class="even">
+<td>INV-04 · Provenance Persistence</td>
+<td>E-CAP-01</td>
+<td>A-CAP-01, B-CAP-01, E-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>INV-05 · Justification before Reliance</td>
+<td>B-CAP-03</td>
+<td>C-CAP-01, C-CAP-05, C-CAP-08</td>
+</tr>
+<tr class="even">
+<td>INV-06 · Counter-Evidence Visibility</td>
+<td>B-CAP-01</td>
+<td>B-CAP-03, B-CAP-04, D-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>INV-07 · Acceptance Does Not Rewrite Status</td>
+<td>B-CAP-04</td>
+<td>C-CAP-01</td>
+</tr>
+<tr class="even">
+<td>INV-08 · Attributable Transition</td>
+<td>C-CAP-08</td>
+<td>E-CAP-01, E-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>INV-09 · Human Accountability</td>
+<td>C-CAP-01</td>
+<td>C-CAP-02, C-CAP-08, D-CAP-04, E-CAP-03</td>
+</tr>
+<tr class="even">
+<td>INV-10 · Standing Governance</td>
+<td>C-CAP-03</td>
+<td>C-CAP-02, E-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>INV-11 · Authorised Change</td>
+<td>E-CAP-03</td>
+<td>C-CAP-08</td>
+</tr>
+<tr class="even">
+<td>INV-12 · Version Preservation</td>
+<td>C-CAP-04</td>
+<td>E-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>INV-13 · Lineage Preservation</td>
+<td>C-CAP-06</td>
+<td>C-CAP-04, D-CAP-04, E-CAP-05</td>
+</tr>
+<tr class="even">
+<td>INV-14 · No Silent Mutation</td>
+<td>C-CAP-08</td>
+<td>C-CAP-04, C-CAP-06, E-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>INV-15 · Dependency Disposition</td>
+<td>C-CAP-07</td>
+<td>C-CAP-06, C-CAP-08</td>
+</tr>
+<tr class="even">
+<td>INV-16 · Retirement Preserves History</td>
+<td>D-CAP-04</td>
+<td>C-CAP-06, E-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>INV-17 · Warranted Actionable Form</td>
+<td>D-CAP-01</td>
+<td>C-CAP-05, C-CAP-01</td>
+</tr>
+<tr class="even">
+<td>INV-18 · Governed Application</td>
+<td>D-CAP-02</td>
+<td>D-CAP-01, C-CAP-03, C-CAP-08</td>
+</tr>
+<tr class="odd">
+<td>INV-19 · Outcome Traceability</td>
+<td>D-CAP-03</td>
+<td>E-CAP-01</td>
+</tr>
+<tr class="even">
+<td>INV-20 · Modality-Appropriate Explainability</td>
+<td>D-CAP-02</td>
+<td>A-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>INV-21 · Inspectable Conformance</td>
+<td>E-CAP-02</td>
+<td>E-CAP-04</td>
+</tr>
+<tr class="even">
+<td>INV-22 · Assurance Independence</td>
+<td>E-CAP-02</td>
+<td>—</td>
+</tr>
+<tr class="odd">
+<td>INV-23 · Audit Non-Interference</td>
+<td>E-CAP-02</td>
+<td>E-CAP-03</td>
+</tr>
+<tr class="even">
+<td>INV-24 · No Silent Success</td>
+<td>E-CAP-04</td>
+<td>B-CAP-02, C-CAP-03, C-CAP-08, E-CAP-02</td>
+</tr>
+</tbody>
+</table>
+<p>Every one of the twenty-four invariants has a principal capability, and no invariant is left without coverage — the check a family-level mapping alone can conceal.</p>
+<h3 id="appendix-b-interaction-constraint-to-capability-crosswalk">Appendix B · Interaction-Constraint-to-Capability Crosswalk</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constraint</th>
+<th>Enforcing / participating capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IC-01 · Lifecycle State Authority</td>
+<td>C-CAP-08</td>
+</tr>
+<tr class="even">
+<td>IC-02 · Gate Enforcement</td>
+<td>C-CAP-08, E-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>IC-03 · Suspension Ownership</td>
+<td>C-CAP-08; triggers from C-CAP-03, C-CAP-07, E-CAP-02</td>
+</tr>
+<tr class="even">
+<td>IC-04 · Reactivation through Evolution</td>
+<td>D-CAP-04, C-CAP-06, C-CAP-08</td>
+</tr>
+<tr class="odd">
+<td>IC-05 · Identity Immutability</td>
+<td>A-CAP-01</td>
+</tr>
+<tr class="even">
+<td>IC-06 · Version Immutability</td>
+<td>C-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>IC-07 · Branch and Consolidation Identity</td>
+<td>C-CAP-06, A-CAP-01</td>
+</tr>
+<tr class="even">
+<td>IC-08 · Release Separation</td>
+<td>C-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>IC-09 · Justification–Acceptance Separation</td>
+<td>B-CAP-03, C-CAP-01, B-CAP-04</td>
+</tr>
+<tr class="even">
+<td>IC-10 · Operationalisation Eligibility</td>
+<td>D-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>IC-11 · Application Eligibility</td>
+<td>D-CAP-02</td>
+</tr>
+<tr class="even">
+<td>IC-12 · Warrant Link Preservation</td>
+<td>D-CAP-01, D-CAP-02, E-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>IC-13 · Authority Is Not Permission</td>
+<td>E-CAP-03, C-CAP-01</td>
+</tr>
+<tr class="even">
+<td>IC-14 · Least Necessary Alteration</td>
+<td>E-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>IC-15 · Material Administrative Action</td>
+<td>E-CAP-03</td>
+</tr>
+<tr class="even">
+<td>IC-16 · Automated Authority Boundary</td>
+<td>C-CAP-01, E-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>IC-17 · Read-Only Assurance Boundary</td>
+<td>E-CAP-02</td>
+</tr>
+<tr class="even">
+<td>IC-18 · No Sole Self-Certification</td>
+<td>E-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>IC-19 · Exception Visibility</td>
+<td>E-CAP-04</td>
+</tr>
+<tr class="even">
+<td>IC-20 · Provenance Continuity</td>
+<td>E-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>IC-21 · Append-Only Correction</td>
+<td>C-CAP-04, E-CAP-05</td>
+</tr>
+<tr class="even">
+<td>IC-22 · Time Semantics Preservation</td>
+<td>E-CAP-05</td>
+</tr>
+</tbody>
+</table>
+<p>Every interaction constraint is enforceable through at least one capability, demonstrating enforceability rather than asserting it.</p>
+<hr />
+<h2 id="part-xi-relationship-to-subsequent-documents">Part XI · Relationship to Subsequent Documents</h2>
+<p><strong>KF-3003</strong> defines the logical services that expose and coordinate these capabilities; a service may realise several capabilities and a capability may be distributed across several services, and it will carry the typed relationships of §4 and §7 into service collaboration, constraint and evidence contracts. <strong>KF-3004</strong> defines the information objects, record classes and relationships named here, and fixes the recorded, effective and event time semantics of Domain E. <strong>KF-3005</strong> defines the lifecycle controls and gate logic through which the capabilities operate safely, including the transactional binding of gate decision and transition in C-CAP-08. <strong>KF-3008</strong> assigns the authority and accountability of the participants exercising these capabilities (technical permission is assigned by SVC-16). <strong>KF-3007</strong> defines the tests and evidence by which capability conformance is demonstrated, including the operating-criticality consequences of unavailability. <strong>KF-3009</strong> preserves traceability from Canonical Principle through practice, invariant, capability, service, record, control and implementation.</p>
+<h3 id="closing-statement">Closing Statement</h3>
+<p>The Capability Model defines the complete set of abilities that a governed knowledge architecture must possess. It does not prescribe how those abilities are implemented. It ensures that, whatever form an implementation takes, it can identify and structure knowledge objects, establish and preserve their warrant, govern authority, versioning, release and change, control operational use, learn from outcomes, and demonstrate that these obligations remain satisfied over time.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-3001-architectural-principles-and-invariants.html">&#8592; Principles & Invariants</a><a class="nx" href="kf-3003-service-architecture.html">Service Architecture &#8594;</a></nav>
+</main>
+</div>
+</body></html>

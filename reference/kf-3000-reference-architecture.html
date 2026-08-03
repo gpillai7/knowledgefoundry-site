@@ -1,0 +1,1526 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference Architecture &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Working draft</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html" class="active"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-3000 · Knowledge Foundry Reference Architecture</h1>
+
+<h4 id="the-logical-architecture-of-a-governed-knowledge-system">The logical architecture of a governed knowledge system</h4>
+<p><em>Document Class: Reference Architecture · Parent Programme: Knowledge Foundry · Status: Draft · Version: 0.3</em></p>
+<blockquote>
+<p><strong>Service-catalogue alignment (v0.3).</strong> The service catalogue (§12) and every service reference in this document have been renumbered to the <strong>definitive nineteen-service catalogue fixed by KF-3003</strong>. The earlier provisional sixteen-service numbering — in which, for example, SVC-05 was Evaluation and SVC-15 was Conformance — has been superseded. KF-3003 is authoritative for the service catalogue; KF-3004 is authoritative for record ownership. KF-3000’s <em>capability</em> enumeration (§6–§10) remains the provisional umbrella model and is refined definitively by KF-3002; a note at §12 and §23 identifies the three services (Release, Operating Condition and Exception, Temporal Continuity) whose capability grounding is established there rather than in this document’s provisional capability list.</p>
+</blockquote>
+<pre class="text"><code>Principle (KF-1000)
+        ↓
+Lifecycle (KF-2001)
+        ↓
+Engineering Practices (KF-2002)
+        ↓
+▸ Reference Architecture (KF-3000)
+        ↓
+Implementation (KF-4000)</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p>This document defines the Knowledge Foundry Reference Architecture: the technology-neutral arrangement of capabilities, services, records and control relationships required to realise the Canon, lifecycle and engineering practices of a governed knowledge system.</p>
+<p>KF-3000 does not prescribe a product, platform, vendor, storage model or deployment topology. It defines the logical responsibilities that any conforming architecture must discharge.</p>
+<p>The Reference Architecture answers:</p>
+<blockquote>
+<p><em>What must a governed knowledge system be architecturally capable of doing?</em></p>
+</blockquote>
+<p>KF-4000 answers:</p>
+<blockquote>
+<p><em>How are those capabilities instantiated in a particular implementation?</em></p>
+</blockquote>
+<h3 id="architectural-derivation">Architectural Derivation</h3>
+<p>Every architectural element must be traceable to an upstream obligation.</p>
+<pre class="text"><code>Canonical Principle
+        ↓
+Lifecycle stage, gate or invariant
+        ↓
+Engineering practice
+        ↓
+Mandatory artefact or governance checkpoint
+        ↓
+Architectural capability
+        ↓
+Architectural service</code></pre>
+<p>An architectural component is admitted only when it can be justified by this chain. The Reference Architecture therefore does not begin with technologies. It begins with the obligations the system must preserve.</p>
+<h3 id="architectural-admission-test">Architectural Admission Test</h3>
+<p>A proposed architectural capability or service belongs in KF-3000 only if all of the following are true:</p>
+<ol type="1">
+<li>It discharges one or more obligations defined in KF-2001 or KF-2002.</li>
+<li>Its responsibility can be stated without naming a specific technology or product.</li>
+<li>Its inputs, outputs and governed records can be identified.</li>
+<li>Its relationship to accountability and authority is explicit.</li>
+<li>Its conformance can be inspected or tested.</li>
+<li>Removing it would leave at least one lifecycle gate, invariant, practice obligation or Governance Primitive unsupported.</li>
+</ol>
+<p>If a proposed element fails these tests, it belongs either in KF-4000 or outside the Knowledge Foundry architecture.</p>
+<hr />
+<h2 id="part-i-architectural-foundations">Part I · Architectural Foundations</h2>
+<h3 id="scope-of-the-reference-architecture">1. Scope of the Reference Architecture</h3>
+<p>The Reference Architecture governs the operational life of Operational Knowledge Objects and the engineering artefacts attached to them.</p>
+<p>Its scope includes:</p>
+<ul>
+<li>object identity and representation;</li>
+<li>evidence and justification;</li>
+<li>acceptance and authority;</li>
+<li>operationalisation and application;</li>
+<li>provenance and traceability;</li>
+<li>governance and stewardship;</li>
+<li>versioning, branching and lineage;</li>
+<li>change-impact analysis;</li>
+<li>outcome capture;</li>
+<li>retirement and historical preservation;</li>
+<li>identity and access governance;</li>
+<li>confidentiality and disclosure constraints;</li>
+<li>integrity protection;</li>
+<li>role- and authority-based permissions;</li>
+<li>retention and lawful disposition requirements;</li>
+<li>conformance and audit.</li>
+</ul>
+<p>Its scope does not include:</p>
+<ul>
+<li>specific software products;</li>
+<li>physical infrastructure;</li>
+<li>deployment geography;</li>
+<li>organisational workflow design;</li>
+<li>user-interface design;</li>
+<li>model or database selection;</li>
+<li>implementation-specific security technologies and controls;</li>
+<li>performance thresholds.</li>
+</ul>
+<p>Those concerns are defined in KF-4000 or in implementation-specific profiles. The Reference Architecture states the <em>logical</em> obligation to control access, disclosure and integrity; it does not name the encryption, identity-management or network technologies that realise it.</p>
+<h3 id="architectural-unit">2. Architectural Unit</h3>
+<p>The primary architectural unit is the <strong>Operational Knowledge Object</strong>.</p>
+<p>The architecture must treat the following as distinct but related concerns:</p>
+<pre class="text"><code>Object Identity
+        ≠
+Object Version
+        ≠
+Object Representation
+        ≠
+Object State
+        ≠
+Object Lineage
+        ≠
+Actionable Form
+        ≠
+Engineering Artefact</code></pre>
+<p>A conforming architecture must preserve these distinctions even when an implementation stores them together.</p>
+<p>The three that are most often confused are fixed here precisely. An <strong>object</strong> is the enduring governed identity. A <strong>version</strong> is an immutable state of that object’s represented content and attached warrant at a point in its history. A <strong>release</strong> is a version authorised for a defined scope of operational reliance. A new version does not automatically become a release, and a release does not create a new object identity.</p>
+<p><strong>Branching and consolidation</strong> create successor objects with new identities and explicit lineage links. They do not divide, merge or reuse the immutable identities of existing objects.</p>
+<h3 id="architectural-invariants">3. Architectural Invariants</h3>
+<p>The following properties must hold across the architecture:</p>
+<ol type="1">
+<li><strong>Stable identity</strong> — each object has one immutable identity.</li>
+<li><strong>Persistent provenance</strong> — origin and subsequent lineage remain attached throughout the object’s life.</li>
+<li><strong>Inspectable state</strong> — the current lifecycle state and the basis for entering it are recoverable.</li>
+<li><strong>Attributable transition</strong> — every state transition is assigned to an identifiable actor or authority.</li>
+<li><strong>Justified transition</strong> — every transition carries its recorded warrant.</li>
+<li><strong>Version preservation</strong> — prior versions are retained and recoverable.</li>
+<li><strong>Separation of concerns</strong> — identity, state, version, lineage, acceptance and representation remain logically distinct.</li>
+<li><strong>Human accountability</strong> — computational execution never removes identifiable human accountability.</li>
+<li><strong>Traceable use</strong> — every material application can be traced to the object version, actionable form and acceptance-state used.</li>
+<li><strong>Historical continuity</strong> — retirement preserves the object’s record and lineage.</li>
+<li><strong>Modality independence</strong> — the obligations hold whether knowledge is represented symbolically, parametrically or through a combination of modalities.</li>
+<li><strong>Continuous conformance</strong> — governance conditions are maintained over time, not verified only once.</li>
+</ol>
+<p><em>(KF-3001 separates these into three categories gathered here: architectural principles, system invariants, and service-interaction constraints.)</em></p>
+<h3 id="architectural-perspectives">4. Architectural Perspectives</h3>
+<p>The same governed knowledge system must be inspectable through five complementary perspectives.</p>
+<h4 id="object-perspective">4.1 Object Perspective</h4>
+<p>What objects exist, how are they identified, structured, related and versioned?</p>
+<h4 id="evidence-perspective">4.2 Evidence Perspective</h4>
+<p>What evidence, counter-evidence, assumptions and justification warrant each object?</p>
+<h4 id="lifecycle-perspective">4.3 Lifecycle Perspective</h4>
+<p>What state is the object in, what event triggered its movement, and what gate authorised the transition?</p>
+<h4 id="governance-perspective">4.4 Governance Perspective</h4>
+<p>Who owns, evaluates, accepts, reviews and retires the object?</p>
+<h4 id="operational-perspective">4.5 Operational Perspective</h4>
+<p>How is the object made actionable, where is it used, and what outcomes arise from that use?</p>
+<p>No one perspective is sufficient by itself. The architecture must preserve their relationships.</p>
+<hr />
+<h2 id="part-ii-capability-architecture">Part II · Capability Architecture</h2>
+<h3 id="capability-domains">5. Capability Domains</h3>
+<p>The Reference Architecture is organised into four capability domains derived from KF-2002.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Architectural purpose</th>
+<th>Principal upstream practices</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A. Identity &amp; Representation</strong></td>
+<td>Establish what the object is and make it inspectable</td>
+<td>A1, A2</td>
+</tr>
+<tr class="even">
+<td><strong>B. Evidence &amp; Justification</strong></td>
+<td>Establish why the object may be trusted</td>
+<td>B1, B2</td>
+</tr>
+<tr class="odd">
+<td><strong>C. Operational Governance</strong></td>
+<td>Control acceptance, custody and change</td>
+<td>C1, C2, C3</td>
+</tr>
+<tr class="even">
+<td><strong>D. Operational Use</strong></td>
+<td>Make knowledge actionable, observe its use and preserve its history</td>
+<td>D1, D2, D3</td>
+</tr>
+</tbody>
+</table>
+<p>These four domains are supported by a fifth, cross-cutting domain:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Domain</th>
+<th>Architectural purpose</th>
+<th>Upstream basis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>E. Cross-Cutting: Provenance, Assurance &amp; Access</strong></td>
+<td>Preserve traceability, verify continuing conformance, and govern access and integrity across every domain</td>
+<td>Architectural invariants (§3); Governance Primitives; lifecycle gates; practice checkpoints and artefacts</td>
+</tr>
+</tbody>
+</table>
+<p>The first four domains mirror the practice structure of KF-2002. The fifth gathers the three concerns that serve every domain rather than belonging to one: <strong>provenance and traceability</strong>, derived from practices A1, A2, B2, C2, C3 and D1; <strong>assurance and conformance</strong>, derived from the architectural invariants and the gates and checkpoints it exists to keep honest; and <strong>access and integrity</strong>, derived from the human-accountability and attributable-transition invariants and the Authority and Provenance Governance Primitives.</p>
+<p>Each capability below is specified against the same compact form: Purpose, Upstream basis, Required capabilities, Principal artefacts maintained, and a <strong>Conformance condition</strong> — a single high-level, testable statement of what an independent reviewer must be able to confirm. The detailed tests are deferred to KF-3002 and KF-3007; the conformance condition makes each capability testable in principle.</p>
+<hr />
+<h3 id="domain-a-identity-representation-capabilities">6. Domain A — Identity &amp; Representation Capabilities</h3>
+<h4 id="a-cap-01-object-registration">A-CAP-01 · Object Registration</h4>
+<p><strong>Purpose.</strong> Admit a candidate object and assign its durable identity.</p>
+<p><strong>Upstream basis.</strong> KF-2002 A1.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>assign an immutable object identifier;</li>
+<li>distinguish a new object from a version, branch, consolidation or duplicate;</li>
+<li>record the object’s origin;</li>
+<li>prevent identifier reuse;</li>
+<li>resolve an identifier to exactly one object.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Identity Record</li>
+<li>Provenance Seed</li>
+<li>Intake Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object, an independent reviewer can resolve its identifier to exactly one object, retrieve its recorded origin, and confirm the identifier was never reused or reassigned.</p>
+<h4 id="a-cap-02-structured-representation">A-CAP-02 · Structured Representation</h4>
+<p><strong>Purpose.</strong> Represent an object in an inspectable form.</p>
+<p><strong>Upstream basis.</strong> KF-2002 A2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>assign semantic type;</li>
+<li>represent constituent claims or elements;</li>
+<li>attach metadata;</li>
+<li>represent relationships to other objects;</li>
+<li>preserve the relationship between source material and structured form;</li>
+<li>accommodate multiple computational modalities while retaining inspectability.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Structured Representation</li>
+<li>Metadata Record</li>
+<li>Relationship Map</li>
+<li>Extended Provenance Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object, a reviewer can retrieve its semantic type, constituent claims, metadata, relationships and provenance without reconstructing them from unstructured source material.</p>
+<h4 id="a-cap-03-object-resolution-and-discovery">A-CAP-03 · Object Resolution and Discovery</h4>
+<p><strong>Purpose.</strong> Enable authorised actors and services to locate and inspect objects and their related records.</p>
+<p><strong>Upstream basis.</strong> KF-2002 A1, A2 (the read side of identity and representation).</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>resolve objects by identity;</li>
+<li>retrieve the current and historical states;</li>
+<li>traverse relationships and lineage;</li>
+<li>distinguish current, superseded, branched, consolidated, suspended and retired objects;</li>
+<li>expose sufficient context for downstream evaluation and governance.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Resolution Index (a derived, rebuildable index over existing records; A-CAP-03 reads and indexes rather than originating primary records)</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any identifier or relationship, a reviewer can resolve the object, retrieve its current and historical states, and traverse its lineage, distinguishing current, superseded, branched, consolidated, suspended and retired objects.</p>
+<hr />
+<h3 id="domain-b-evidence-justification-capabilities">7. Domain B — Evidence &amp; Justification Capabilities</h3>
+<h4 id="b-cap-01-evidence-registration">B-CAP-01 · Evidence Registration</h4>
+<p><strong>Purpose.</strong> Register supporting and defeating evidence as first-class governed records.</p>
+<p><strong>Upstream basis.</strong> KF-2002 B1 and B2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>identify evidence independently of the claims it supports;</li>
+<li>classify evidence type and origin;</li>
+<li>attach evidence to one or more claims or objects;</li>
+<li>distinguish supporting, defeating and contextual evidence;</li>
+<li>preserve evidence provenance.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Evidence Record</li>
+<li>Evidence-to-Claim Link</li>
+<li>Counter-evidence Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any claim, a reviewer can retrieve the supporting, defeating and contextual evidence attached to it, each with its own provenance.</p>
+<h4 id="b-cap-02-quality-evaluation">B-CAP-02 · Quality Evaluation</h4>
+<p><strong>Purpose.</strong> Assess whether an object is suitable to proceed toward justification.</p>
+<p><strong>Upstream basis.</strong> KF-2002 B1.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>apply stated evaluation criteria;</li>
+<li>record pass, return or reject verdicts;</li>
+<li>record confidence, completeness and consistency assessments;</li>
+<li>retain rejected and returned evaluations;</li>
+<li>prevent progression where the quality gate is unmet.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Quality Assessment</li>
+<li>Evaluation Verdict</li>
+<li>Evaluation Criteria Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object that advanced, a reviewer can retrieve the recorded verdict, the criteria applied and the reasons; returned and rejected objects carry the same record and did not proceed.</p>
+<h4 id="b-cap-03-justification-construction">B-CAP-03 · Justification Construction</h4>
+<p><strong>Purpose.</strong> Assemble and preserve the warrant for belief.</p>
+<p><strong>Upstream basis.</strong> KF-2002 B2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>connect claims to supporting and counter-evidence;</li>
+<li>record assumptions and rationale;</li>
+<li>preserve traceability from claim to source;</li>
+<li>expose the justification to independent inspection;</li>
+<li>preserve an inspectable evidence, evaluation and rationale record sufficient to explain how parametrically represented knowledge or capability was admitted, bounded and relied upon.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Justification Record</li>
+<li>Assumption Record</li>
+<li>Rationale Record</li>
+<li>Traceability Chain</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any operational object, a reviewer can trace each material claim to its supporting and defeating evidence, recover the stated assumptions and reproduce the recorded rationale.</p>
+<h4 id="b-cap-04-epistemic-status-management">B-CAP-04 · Epistemic Status Management</h4>
+<p><strong>Purpose.</strong> Represent the current epistemic standing of the object without conflating it with acceptance or lifecycle state.</p>
+<p><strong>Upstream basis.</strong> KF-2002 B2 (Principle VIII); the Landscape’s separation of justification from acceptance.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>distinguish unassessed, quality-assessed, warrant-established, contested, warrant-weakened and insufficiently-supported conditions;</li>
+<li>represent confidence and unresolved challenge;</li>
+<li>preserve disagreement and competing claims;</li>
+<li>prevent epistemic status from being overwritten by operational acceptance.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Epistemic Status Record</li>
+<li>Challenge Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object, a reviewer can determine its current epistemic status and any unresolved challenge, and confirm that acceptance has not overwritten it.</p>
+<hr />
+<h3 id="domain-c-operational-governance-capabilities">8. Domain C — Operational Governance Capabilities</h3>
+<h4 id="c-cap-01-authority-and-acceptance">C-CAP-01 · Authority and Acceptance</h4>
+<p><strong>Purpose.</strong> Manage the governed transition from justified object to accepted operational object.</p>
+<p><strong>Upstream basis.</strong> KF-2002 C1.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>identify the accepting authority;</li>
+<li>record acceptance, provisional acceptance or refusal;</li>
+<li>define the scope and conditions of reliance;</li>
+<li>attribute and date the decision;</li>
+<li>return refused objects to the appropriate stage;</li>
+<li>prevent operational use without valid acceptance.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Acceptance Record</li>
+<li>Refusal Record</li>
+<li>Scope-of-Reliance Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any operational object, a reviewer can identify the accepting authority, the decision, the date and the scope of reliance; refusals carry the authority’s recorded reasons.</p>
+<h4 id="c-cap-02-stewardship-and-ownership">C-CAP-02 · Stewardship and Ownership</h4>
+<p><strong>Purpose.</strong> Maintain identifiable accountability throughout the operational life of the object.</p>
+<p><strong>Upstream basis.</strong> KF-2002 C2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>assign and transfer stewardship;</li>
+<li>identify responsible roles;</li>
+<li>ensure no operational object is ownerless;</li>
+<li>preserve historical accountability;</li>
+<li>distinguish execution by machines from accountability held by people.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Stewardship Assignment</li>
+<li>Responsibility Record</li>
+<li>Ownership History</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any operational object, a reviewer can identify its current steward and its ownership history, and confirm that no operational object is ownerless.</p>
+<h4 id="c-cap-03-review-and-compliance">C-CAP-03 · Review and Compliance</h4>
+<p><strong>Purpose.</strong> Preserve legitimacy as time, context and policy change.</p>
+<p><strong>Upstream basis.</strong> KF-2002 C2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>schedule and record reviews;</li>
+<li>detect overdue reviews;</li>
+<li>assess policy or governance compliance;</li>
+<li>suspend or flag objects whose standing gate is no longer met;</li>
+<li>preserve review and compliance history.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Review Schedule</li>
+<li>Review Record</li>
+<li>Compliance Record</li>
+<li>Exception Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any operational object, a reviewer can retrieve its review schedule, last review, compliance status and any exception, and the system can detect overdue reviews.</p>
+<h4 id="c-cap-04-version-and-release-management">C-CAP-04 · Version and Release Management</h4>
+<p><strong>Purpose.</strong> Preserve controlled change without loss of history.</p>
+<p><strong>Upstream basis.</strong> KF-2002 C2 and C3.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>create immutable versions;</li>
+<li>designate current, superseded and historical versions;</li>
+<li>preserve prior versions;</li>
+<li>distinguish draft, accepted and released forms;</li>
+<li>associate each version with its justification and acceptance-state.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Version Record</li>
+<li>Release Record</li>
+<li>Supersession Link</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object, a reviewer can enumerate its versions, identify the current, superseded and historical versions and any releases, and confirm no prior version was overwritten.</p>
+<h4 id="c-cap-05-lineage-and-evolution">C-CAP-05 · Lineage and Evolution</h4>
+<p><strong>Purpose.</strong> Govern amendment, branching, consolidation, supersession and reactivation.</p>
+<p><strong>Upstream basis.</strong> KF-2002 C3.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>represent predecessor and successor relationships;</li>
+<li>preserve branch and merge lineage;</li>
+<li>record change triggers and rationales;</li>
+<li>return changed objects through evaluation, justification and acceptance;</li>
+<li>prevent silent mutation.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Change Record</li>
+<li>Lineage Record</li>
+<li>Branch Record</li>
+<li>Consolidation Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any change, a reviewer can recover the predecessor and successor relationships, the change trigger and rationale, and confirm the changed object returned through evaluation, justification and acceptance.</p>
+<h4 id="c-cap-06-dependency-impact-management">C-CAP-06 · Dependency Impact Management</h4>
+<p><strong>Purpose.</strong> Identify and disposition objects and actionable forms affected by change.</p>
+<p><strong>Upstream basis.</strong> KF-2002 C3.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>identify downstream dependencies;</li>
+<li>determine which dependants require revalidation;</li>
+<li>recommend suspension, re-evaluation or evolution of affected objects;</li>
+<li>record their disposition;</li>
+<li>prevent changed knowledge from leaving dependants silently inconsistent.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Dependency Impact Record</li>
+<li>Revalidation Record</li>
+<li>Suspension Recommendation</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any change, a reviewer can identify the affected dependants and their disposition, and confirm none was left silently inconsistent.</p>
+<h4 id="c-cap-07-event-and-transition-management">C-CAP-07 · Event and Transition Management</h4>
+<p><strong>Purpose.</strong> Govern movement between lifecycle states.</p>
+<p><strong>Upstream basis.</strong> KF-2001 (states, transitions, events, gates).</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>register lifecycle events;</li>
+<li>evaluate transition eligibility;</li>
+<li>enforce exit gates;</li>
+<li>record forward, return, suspension, reactivation and retirement transitions;</li>
+<li>attribute each transition;</li>
+<li>preserve transition history.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Event Record</li>
+<li>Transition Record</li>
+<li>Gate Decision Record</li>
+<li>Suspension Record</li>
+<li>Reactivation Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any lifecycle transition, an independent reviewer can recover the triggering event, the prior and resulting states, the applicable gate, the gate decision, the accountable actor and the recorded warrant.</p>
+<hr />
+<h3 id="domain-d-operational-use-capabilities">9. Domain D — Operational Use Capabilities</h3>
+<h4 id="d-cap-01-actionable-form-derivation">D-CAP-01 · Actionable Form Derivation</h4>
+<p><strong>Purpose.</strong> Derive actionable forms from an accepted object — the forms usable in decisions, reasoning and automation.</p>
+<p><strong>Upstream basis.</strong> KF-2002 D1.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>derive decision rules, playbooks, prompts, procedures, models and other actionable forms;</li>
+<li>identify the object version from which each form derives;</li>
+<li>preserve links to justification and acceptance;</li>
+<li>distinguish the actionable form from the source knowledge object;</li>
+<li>withdraw or update actionable forms when the source object changes.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Actionable Form</li>
+<li>Derivation Record</li>
+<li>Warrant Linkage Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any actionable form, a reviewer can identify the object version, justification and acceptance-state from which it derives, and confirm it is withdrawn or updated when its source object changes.</p>
+<h4 id="d-cap-02-controlled-application">D-CAP-02 · Controlled Application</h4>
+<p><strong>Purpose.</strong> Enable governed use while preserving traceability and explainability.</p>
+<p><strong>Upstream basis.</strong> KF-2002 D2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>identify the object version and actionable form used;</li>
+<li>verify that acceptance and governance remain valid;</li>
+<li>record material use — materiality criteria and assurance classes are defined by KF-2003 · Materiality and Assurance (a domain governance profile may set additional thresholds within it);</li>
+<li>preserve the path from input to result;</li>
+<li>provide an explanation appropriate to the modality, materiality and decision context of the application, without claiming forms of interpretability the underlying representation cannot support;</li>
+<li>prevent use of suspended, retired or unaccepted objects.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Application Record</li>
+<li>Use Context Record</li>
+<li>Explanation Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For every material application, a reviewer can identify the object version and actionable form used, the governing acceptance-state and the recorded path from input to result, and confirm that suspended, retired or unaccepted objects were not used.</p>
+<h4 id="d-cap-03-outcome-and-feedback-capture">D-CAP-03 · Outcome and Feedback Capture</h4>
+<p><strong>Purpose.</strong> Capture what happened when knowledge was applied and return it as lifecycle evidence.</p>
+<p><strong>Upstream basis.</strong> KF-2002 D2.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>attach outcomes to the relevant object version and application;</li>
+<li>distinguish observation from judgement;</li>
+<li>raise review, evolution or retirement events;</li>
+<li>aggregate outcomes without erasing individual provenance;</li>
+<li>preserve adverse and contradictory outcomes.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Outcome Record</li>
+<li>Feedback Record</li>
+<li>Trigger Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any application, a reviewer can retrieve the captured outcomes attached to the object version, distinguish observation from judgement, and trace any review, evolution or retirement event raised from them.</p>
+<h4 id="d-cap-04-retirement-and-historical-preservation">D-CAP-04 · Retirement and Historical Preservation</h4>
+<p><strong>Purpose.</strong> Conclude operational use while preserving lineage and reversibility.</p>
+<p><strong>Upstream basis.</strong> KF-2002 D3.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>record retirement reason, date and authority;</li>
+<li>remove an object from active operational use;</li>
+<li>preserve the full historical record;</li>
+<li>maintain successor and supersession links;</li>
+<li>assemble the restoration package that permits governed reactivation through Evolution;</li>
+<li>prevent destructive deletion of governed history.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Retirement Record</li>
+<li>Historical Object Record</li>
+<li>Restoration Package</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any retired object, a reviewer can identify the retirement reason, date and authority, retrieve its full historical record and lineage, and confirm that reactivation remains possible and no history was destroyed.</p>
+<hr />
+<h3 id="domain-e-cross-cutting-provenance-assurance-access">10. Domain E — Cross-Cutting: Provenance, Assurance &amp; Access</h3>
+<p>Domain E is cross-cutting. It gathers the three capabilities that serve every other domain rather than belonging to one. Its assurance members do not create or alter the substantive knowledge represented by an object, nor do they authorise lifecycle transitions; they evaluate the objects, records, controls and service actions through which the architecture demonstrates conformance. Its provenance and access members maintain records of their own, but likewise never authorise a transition or alter substantive content.</p>
+<h4 id="e-cap-01-provenance-and-traceability">E-CAP-01 · Provenance and Traceability</h4>
+<p><strong>Purpose.</strong> Preserve origin, derivation, custody and end-to-end traceability across every stage of the object lifecycle.</p>
+<p><strong>Upstream basis.</strong> Architectural invariants 2, 3, 4, 9 and 10; KF-2002 A1, A2, B2, C2, C3 and D1.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>preserve source origin;</li>
+<li>trace representations and claims to source material;</li>
+<li>trace versions to predecessor versions and change events;</li>
+<li>trace actionable forms to object versions, justification and acceptance;</li>
+<li>trace applications and outcomes to the forms and versions used;</li>
+<li>preserve custody and attribution across transitions;</li>
+<li>detect broken lineage or incomplete traceability.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Provenance Seed</li>
+<li>Extended Provenance Record</li>
+<li>Traceability Chain</li>
+<li>Derivation and Custody Links</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object, version, actionable form, application or outcome, a reviewer can trace it to its origin and to every predecessor state, and any broken lineage or incomplete traceability is detectable.</p>
+<h4 id="e-cap-02-invariant-monitoring">E-CAP-02 · Invariant Monitoring</h4>
+<p><strong>Purpose.</strong> Continuously verify that the architectural invariants of §3 hold across all objects.</p>
+<p><strong>Upstream basis.</strong> Architectural invariants (§3); lifecycle invariants (KF-2001).</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>evaluate each architectural invariant against live and historical objects;</li>
+<li>detect and record violations;</li>
+<li>raise conformance exceptions;</li>
+<li>verify continuously rather than once.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Invariant Test Register</li>
+<li>Conformance Exception Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any architectural invariant, the system can demonstrate across the object population that it holds, and any violation raises a recorded conformance exception.</p>
+<h4 id="e-cap-03-gate-and-checkpoint-assurance">E-CAP-03 · Gate and Checkpoint Assurance</h4>
+<p><strong>Purpose.</strong> Verify that every lifecycle gate and practice governance checkpoint was enforced and satisfied.</p>
+<p><strong>Upstream basis.</strong> Lifecycle gates (KF-2001); practice governance checkpoints (KF-2002).</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>confirm each transition passed its exit gate;</li>
+<li>detect gate bypass;</li>
+<li>verify that the checkpoint artefacts required by KF-2002 exist for each transition;</li>
+<li>record verification.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Gate Conformance Record</li>
+<li>Checkpoint Verification Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any transition, the system can demonstrate that its exit gate and the required KF-2002 checkpoints were enforced and satisfied, and detect any bypass.</p>
+<h4 id="e-cap-04-artefact-completeness-verification">E-CAP-04 · Artefact Completeness Verification</h4>
+<p><strong>Purpose.</strong> Verify that every mandatory artefact required by a practice exists, is inspectable and is retrievable.</p>
+<p><strong>Upstream basis.</strong> KF-2002 mandatory artefacts; the artefact definition of KF-2002.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>enumerate the required artefacts for each object and lifecycle state;</li>
+<li>detect missing or unretrievable artefacts;</li>
+<li>confirm semantic completeness — that an artefact holds its required content, not merely that a record exists.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Artefact Completeness Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object and lifecycle state, the system can enumerate the required artefacts and demonstrate that each exists, is retrievable and holds its required content.</p>
+<h4 id="e-cap-05-audit-and-reconstruction">E-CAP-05 · Audit and Reconstruction</h4>
+<p><strong>Purpose.</strong> Enable independent reconstruction of an object’s full history for audit.</p>
+<p><strong>Upstream basis.</strong> Architectural invariants 3–5, 9–10; conformance evidence (§21).</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>reconstruct the end-to-end lifecycle of any object — states, transitions, warrant, authority and use;</li>
+<li>produce inspectable audit trails;</li>
+<li>support external inspection without privileged reinterpretation.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Audit Trail</li>
+<li>Reconstruction Record</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any object, the system can reconstruct its end-to-end lifecycle — states, transitions, warrant, authority and use — as an inspectable audit trail, without privileged reinterpretation.</p>
+<h4 id="e-cap-06-access-and-integrity-assurance">E-CAP-06 · Access and Integrity Assurance</h4>
+<p><strong>Purpose.</strong> Ensure that governed objects, artefacts and transitions are accessed and altered only by authorised actors operating within their assigned roles.</p>
+<p><strong>Upstream basis.</strong> Human-accountability invariant; attributable-transition invariant; the Authority and Provenance Governance Primitives.</p>
+<p><strong>Required capabilities.</strong></p>
+<ul>
+<li>distinguish authority, accountability and access permission;</li>
+<li>control who may view, create, modify, accept, release, apply, suspend and retire an object;</li>
+<li>protect governed records against unauthorised alteration;</li>
+<li>record access and material administrative action;</li>
+<li>enforce disclosure or use restrictions attached to an object;</li>
+<li>preserve access-control history as roles and ownership change.</li>
+</ul>
+<p><strong>Principal artefacts maintained.</strong></p>
+<ul>
+<li>Access Policy Record</li>
+<li>Permission Assignment</li>
+<li>Disclosure Constraint Record</li>
+<li>Access and Administrative Action Log</li>
+</ul>
+<p><strong>Conformance condition.</strong> For any governed object, artefact or transition, a reviewer can determine which roles may view or alter it, confirm that access and material administrative actions were logged, and confirm that governed records were protected against unauthorised alteration.</p>
+<p><strong>A note on independence.</strong> Logical independence does not require a single implementation component. The assurance capabilities (E-CAP-02 to E-CAP-05) may be distributed across monitoring, policy-evaluation, audit and reporting components, provided assurance remains independent of the services whose conformance it evaluates.</p>
+<hr />
+<h2 id="part-iii-logical-service-architecture">Part III · Logical Service Architecture</h2>
+<h3 id="from-capabilities-to-services">11. From Capabilities to Services</h3>
+<p>An architectural service is a stable logical responsibility exposed to authorised actors or other services through defined inputs, outputs, records and controls. It may be realised by software, assigned human work, or a governed combination of both.</p>
+<p>Capabilities state what the architecture must be able to do; services state the responsibilities through which those capabilities are made available. A service may realise several capabilities, and a capability may require several services: the relationship is many-to-many. Services are logical, not technological.</p>
+<h3 id="core-architectural-services">12. Core Architectural Services</h3>
+<p>This is the definitive <strong>nineteen-service catalogue</strong>, fixed here in alignment with KF-3003. It is grouped by domain: A (identity and representation); B (evidence, evaluation and justification); C (governance, lifecycle, version, release and dependency); D (operationalisation, application and retirement); and E (five cross-cutting services — provenance, access, operating condition, conformance and time). Version, acceptance and release are three separate services, and the assurance concerns previously folded into one “Conformance and Audit” service are separated into provenance (SVC-15), operating condition (SVC-17), conformance and audit (SVC-18) and temporal continuity (SVC-19).</p>
+<h4 id="svc-01-object-registry-service">SVC-01 · Object Registry Service</h4>
+<p>Maintains durable identity, object resolution and basic status.</p>
+<h4 id="svc-02-representation-service">SVC-02 · Representation Service</h4>
+<p>Maintains structured representations, semantic types, metadata and object relationships.</p>
+<h4 id="svc-03-evidence-service">SVC-03 · Evidence Service</h4>
+<p>Registers evidence, counter-evidence and evidence relationships.</p>
+<h4 id="svc-04-evaluation-service">SVC-04 · Evaluation Service</h4>
+<p>Supports quality assessment, verdicts and evaluation history.</p>
+<h4 id="svc-05-justification-service">SVC-05 · Justification Service</h4>
+<p>Maintains rationale, assumptions, warrant, epistemic status and claim-to-evidence traceability, holding epistemic status distinct from acceptance.</p>
+<h4 id="svc-06-authority-and-acceptance-service">SVC-06 · Authority and Acceptance Service</h4>
+<p>Manages acceptance decisions, authority, scope and refusal.</p>
+<h4 id="svc-07-stewardship-and-review-service">SVC-07 · Stewardship and Review Service</h4>
+<p>Maintains ownership, review cycles and compliance status.</p>
+<h4 id="svc-08-lifecycle-and-transition-service">SVC-08 · Lifecycle and Transition Service</h4>
+<p>Manages object state, events, gates and governed transitions — including suspension and reactivation, which are lifecycle transitions. It holds the sole authority to write lifecycle state.</p>
+<h4 id="svc-09-version-and-lineage-service">SVC-09 · Version and Lineage Service</h4>
+<p>Maintains immutable versions, branches, consolidations, supersession and historical lineage, kept strictly distinct from acceptance and release.</p>
+<h4 id="svc-10-release-service">SVC-10 · Release Service</h4>
+<p>Designates an accepted version as eligible for a defined scope and period of operational reliance, and governs withdrawal, supersession and revalidation of that eligibility. Release is a distinct governed decision, separate from version creation (SVC-09) and acceptance (SVC-06).</p>
+<h4 id="svc-11-dependency-service">SVC-11 · Dependency Service</h4>
+<p>Represents dependencies and performs change-impact analysis; recommends suspension where dependants are affected.</p>
+<h4 id="svc-12-operationalisation-service">SVC-12 · Operationalisation Service</h4>
+<p>Creates and manages actionable forms and their warrant linkages.</p>
+<h4 id="svc-13-application-and-outcome-service">SVC-13 · Application and Outcome Service</h4>
+<p>Records use, explanation, results and feedback.</p>
+<h4 id="svc-14-retirement-and-preservation-service">SVC-14 · Retirement and Preservation Service</h4>
+<p>Manages retirement, historical state and restoration packages.</p>
+<h4 id="svc-15-provenance-and-traceability-service">SVC-15 · Provenance and Traceability Service</h4>
+<p>Maintains origin, custody, derivation and end-to-end traceability. It is the principal service of the provenance capability (E-CAP-01) and maintains the provenance and traceability artefacts produced across Domains A, B, C and D.</p>
+<h4 id="svc-16-access-and-integrity-service">SVC-16 · Access and Integrity Service</h4>
+<p>Governs who may view, create, modify, accept, release, apply, suspend and retire objects and artefacts; protects governed records against unauthorised alteration; enforces disclosure constraints; and logs access and material administrative action. It mediates access and permission; it does not itself authorise lifecycle transitions or hold substantive accountability, both of which remain with human roles.</p>
+<h4 id="svc-17-operating-condition-and-exception-service">SVC-17 · Operating Condition and Exception Service</h4>
+<p>Maintains service and transaction operating condition, determines the fail-posture when a required condition is unavailable or indeterminate, and holds operational exceptions until they are closed. <em>(Its capability basis — Operating Condition assurance — is fixed definitively in KF-3002; KF-3000’s provisional capability model folded this concern into general assurance.)</em></p>
+<h4 id="svc-18-conformance-and-audit-service">SVC-18 · Conformance and Audit Service</h4>
+<p>Verifies invariants, gates, artefact completeness and architectural conformance, and reconstructs object history for audit. It realises the assurance capabilities of Domain E and reads the records of every other service without altering them. Logical independence does not require a single component: SVC-18 may be distributed across monitoring, policy-evaluation, audit and reporting components, provided assurance remains independent of the services it evaluates.</p>
+<h4 id="svc-19-temporal-continuity-service">SVC-19 · Temporal Continuity Service</h4>
+<p>Owns the common temporal model, historical sequencing, reconstruction and the preservation of recorded, effective and event time across governed records. <em>(Its capability basis — Temporal Continuity — is fixed definitively in KF-3002; it is not enumerated in KF-3000’s provisional capability list.)</em></p>
+<h3 id="service-interaction-principles">13. Service Interaction Principles</h3>
+<p>The services must interact according to the following rules:</p>
+<ol type="1">
+<li>No service may alter object identity after assignment.</li>
+<li>No lifecycle transition may occur without a Transition Record.</li>
+<li>No accepted operational object may lack a Justification Record and Acceptance Record.</li>
+<li>No actionable form may exist without a traceable source object version.</li>
+<li>No application may use an object whose acceptance or governance state is invalid.</li>
+<li>No version change may overwrite a prior version.</li>
+<li>No retirement operation may destroy lineage.</li>
+<li>No automated service may become the final accountable authority.</li>
+<li>All material service actions must be attributable and auditable.</li>
+<li>Architectural services may automate work but may not silently bypass practice obligations.</li>
+<li>The Conformance and Audit Service may read the governed records and control evidence of every service. It must not alter the records under examination, authorise the transitions it verifies, or rely solely on assertions produced by the service being assessed.</li>
+<li>Access to governed records, and any change to permissions, is mediated by the Access and Integrity Service; no service grants itself access or alters its own permissions outside it.</li>
+<li>Suspension and reactivation are lifecycle transitions owned by the Lifecycle and Transition Service; other services may recommend or trigger them but may not record the transition themselves.</li>
+</ol>
+<hr />
+<h2 id="part-iv-architectural-records">Part IV · Architectural Records</h2>
+<h3 id="record-classes">14. Record Classes</h3>
+<p>The architecture distinguishes seven principal record classes, and a set of common properties every record must carry.</p>
+<h4 id="object-records">14.1 Object Records</h4>
+<p>Describe what the object is, and where it came from.</p>
+<p>Examples: Identity Record, Intake Record, Structured Representation, Metadata Record, Relationship Map, Provenance Seed, Extended Provenance Record.</p>
+<h4 id="epistemic-records">14.2 Epistemic Records</h4>
+<p>Describe why the object may be believed.</p>
+<p>Examples: Evidence Record, Counter-evidence Record, Quality Assessment, Justification Record, Assumption Record, Rationale Record, Traceability Chain, Epistemic Status Record.</p>
+<h4 id="governance-records">14.3 Governance Records</h4>
+<p>Describe who authorised, owns and reviews the object.</p>
+<p>Examples: Acceptance Record, Refusal Record, Scope-of-Reliance Record, Stewardship Assignment, Review Record, Compliance Record.</p>
+<h4 id="evolution-records">14.4 Evolution Records</h4>
+<p>Describe how the object moved and changed through time.</p>
+<p>Examples: Event Record, Transition Record, Gate Decision Record, Version Record, Change Record, Lineage Record, Dependency Impact Record, Suspension Record, Reactivation Record, Retirement Record.</p>
+<h4 id="operational-records">14.5 Operational Records</h4>
+<p>Describe how the object was made usable and what happened when it was used.</p>
+<p>Examples: Actionable Form, Derivation Record, Application Record, Outcome Record, Explanation Record.</p>
+<h4 id="assurance-records">14.6 Assurance Records</h4>
+<p>Describe whether the architecture is meeting its own obligations.</p>
+<p>Examples: Invariant Test Register, Gate Conformance Record, Checkpoint Verification Record, Artefact Completeness Record, Audit Trail, Conformance Exception Record.</p>
+<h4 id="access-integrity-records">14.7 Access &amp; Integrity Records</h4>
+<p>Describe who may access or alter an object, and what access occurred.</p>
+<p>Examples: Access Policy Record, Permission Assignment, Disclosure Constraint Record, Access and Administrative Action Log.</p>
+<h4 id="common-record-properties">14.8 Common Record Properties</h4>
+<p>Every governed record, of whatever class, must carry at minimum:</p>
+<ul>
+<li>a stable record identity;</li>
+<li>the object and version to which it relates;</li>
+<li>record type;</li>
+<li>creation time, and effective time where different;</li>
+<li>creator or originating service;</li>
+<li>accountable role where applicable;</li>
+<li>status;</li>
+<li>provenance;</li>
+<li>version or revision information;</li>
+<li>integrity status;</li>
+<li>retention or disposition condition;</li>
+<li>links to superseding or correcting records.</li>
+</ul>
+<p>Where a record is corrected, the correction is appended or versioned; the prior record is not silently overwritten. The distinction between <em>creation time</em> and <em>effective time</em> is required: a policy change may be recorded on one date and take effect from another, and both must be recoverable.</p>
+<h3 id="record-relationship-model">15. Record Relationship Model</h3>
+<p>At minimum, the architecture must support the following logical relationships:</p>
+<pre class="text"><code>Operational Knowledge Object
+    ├── has Identity Record
+    ├── has one or more Versions
+    ├── has current Lifecycle State
+    ├── has Transition History
+    ├── has Structured Representation
+    ├── has Provenance
+    ├── is supported or challenged by Evidence
+    ├── has Quality Assessment
+    ├── has Justification
+    ├── has Epistemic Status
+    ├── has Acceptance-State
+    ├── has Steward
+    ├── has Review History
+    ├── is subject to Access and Disclosure Constraints
+    ├── may derive Actionable Forms
+    ├── may be used in Applications
+    ├── may produce Outcomes
+    ├── may depend upon or support other Objects
+    ├── may branch, merge or supersede
+    ├── may be Suspended
+    ├── is subject to Conformance Verification
+    └── may enter Historical State</code></pre>
+<p>The logical model fixes these relationships. It does not prescribe whether they are implemented in documents, relational tables, graphs, event streams, model context, or another substrate.</p>
+<hr />
+<h2 id="part-v-control-architecture">Part V · Control Architecture</h2>
+<h3 id="gate-enforcement">16. Gate Enforcement</h3>
+<p>Each lifecycle gate must be represented as an inspectable architectural control.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lifecycle point</th>
+<th>Required architectural check</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Capture exit</td>
+<td>Identity and origin exist</td>
+</tr>
+<tr class="even">
+<td>Structure exit</td>
+<td>Representation, type, relationships and provenance are inspectable</td>
+</tr>
+<tr class="odd">
+<td>Evaluate exit</td>
+<td>Quality verdict and reasons exist</td>
+</tr>
+<tr class="even">
+<td>Justify exit</td>
+<td>Supporting evidence, counter-evidence, assumptions, rationale and traceability exist</td>
+</tr>
+<tr class="odd">
+<td>Acceptance transition</td>
+<td>Identified authority has recorded the acceptance-state and scope</td>
+</tr>
+<tr class="even">
+<td>Operationalise exit</td>
+<td>Actionable form is linked to object version, justification and acceptance</td>
+</tr>
+<tr class="odd">
+<td>Govern standing gate</td>
+<td>Stewardship and review remain in force</td>
+</tr>
+<tr class="even">
+<td>Evolve exit</td>
+<td>Change, version, lineage and dependency impacts are recorded</td>
+</tr>
+<tr class="odd">
+<td>Apply exit</td>
+<td>Application outcome and traceability are captured</td>
+</tr>
+<tr class="even">
+<td>Retire exit</td>
+<td>Retirement reason, authority and historical preservation are recorded</td>
+</tr>
+</tbody>
+</table>
+<p>Each check is enforced at execution by the Lifecycle and Transition Service (SVC-08) and verified after the fact by the Conformance and Audit Service (SVC-18): the first prevents an unearned transition, the second proves that none occurred.</p>
+<h3 id="control-types">17. Control Types</h3>
+<p>The architecture must support five classes of control.</p>
+<h4 id="preventive-controls">17.1 Preventive Controls</h4>
+<p>Stop an invalid transition or use before it occurs.</p>
+<h4 id="detective-controls">17.2 Detective Controls</h4>
+<p>Identify missing, stale or contradictory conditions.</p>
+<h4 id="corrective-controls">17.3 Corrective Controls</h4>
+<p>Return an object to an earlier stage, suspend it or trigger Evolution.</p>
+<h4 id="evidentiary-controls">17.4 Evidentiary Controls</h4>
+<p>Produce inspectable proof that an obligation was discharged.</p>
+<h4 id="historical-controls">17.5 Historical Controls</h4>
+<p>Preserve prior states and enable reconstruction of what occurred.</p>
+<h3 id="human-authority-boundaries">18. Human Authority Boundaries</h3>
+<p>The architecture must distinguish:</p>
+<ul>
+<li>computation;</li>
+<li>recommendation;</li>
+<li>evaluation support;</li>
+<li>transition execution;</li>
+<li>accountable authorisation.</li>
+</ul>
+<p>Automated systems may perform or assist the first four where permitted. They may not erase the requirement for an identifiable human authority where the Canon assigns acceptance, stewardship or accountability to a person or body.</p>
+<hr />
+<h2 id="part-vi-conformance-architecture">Part VI · Conformance Architecture</h2>
+<h3 id="architectural-conformance">19. Architectural Conformance</h3>
+<p>Conformance is assessed as <strong>coverage, not one-to-one correspondence</strong>, and to a depth <strong>proportionate to assurance class</strong> (KF-2003). A capability may be realised by several mechanisms and a mechanism may serve several capabilities; what must hold is that every obligation is covered, not that each maps to exactly one element. The nine clauses below are the structural integrity checklist; the four proportionate tests through which they are applied — Constitutional, Operational, Integrity and Reconstructability coverage — are defined authoritatively in <strong>KF-3007 · Architectural Conformance Framework</strong>. The six lifecycle invariants are demonstrated at full strength for every object regardless of class; the <em>depth</em> of evidence and reconstruction required of graded obligations scales with the object’s assurance class.</p>
+<p>An implementation conforms to KF-3000 when it demonstrates that:</p>
+<ol type="1">
+<li>every required capability is realised by at least one identified mechanism;</li>
+<li>every mandatory artefact can be produced and retrieved;</li>
+<li>every governance checkpoint can be enforced or inspected;</li>
+<li>every architectural invariant is maintained, at full strength, for every object;</li>
+<li>every lifecycle transition is attributable and reconstructable to the depth its assurance class requires;</li>
+<li>every practice in KF-2002 is supported;</li>
+<li>every Governance Primitive is instantiated;</li>
+<li>access and integrity controls protect governed records and are themselves inspectable;</li>
+<li>no implementation choice collapses distinctions the Reference Architecture requires to remain separate.</li>
+</ol>
+<h3 id="progressive-implementation-profiles">20. Progressive Implementation Profiles</h3>
+<p>The profiles below describe progressive implementation maturity. They <strong>do not</strong> constitute full conformance with KF-3000. An implementation is conformant only when it satisfies the complete requirements of §19, or an explicitly defined domain profile approved by the Knowledge Foundry governance authority.</p>
+<p>These implementation-maturity profiles are <strong>orthogonal to the per-object assurance classes</strong> of KF-2003: a maturity profile describes how much of the architecture an implementation has stood up, while an assurance class describes how much rigour a <em>particular object</em> is governed to. A Foundational implementation and a Full-Conformance one may both hold Exploratory and Consequential objects; the class sets the depth, the profile sets the reach.</p>
+<p>The profiles are cumulative:</p>
+<pre class="text"><code>Foundational
+    ↓ adds
+Governed
+    ↓ adds
+Operational
+    ↓ adds
+Full Conformance</code></pre>
+<h4 id="foundational">Foundational</h4>
+<p>Supports identity, provenance, structure, evaluation, justification and acceptance.</p>
+<h4 id="governed">Governed</h4>
+<p>Adds stewardship, reviews, versioning, lineage and controlled evolution.</p>
+<h4 id="operational">Operational</h4>
+<p>Adds actionable forms, governed application, outcome capture and retirement.</p>
+<h4 id="full-conformance">Full Conformance</h4>
+<p>Adds continuous assurance, dependency impact, access and integrity governance, modality independence and complete lifecycle traceability — satisfying §19 in full.</p>
+<h3 id="conformance-evidence">21. Conformance Evidence</h3>
+<p>A conforming implementation must be able to produce:</p>
+<ul>
+<li>a capability-to-service mapping;</li>
+<li>a practice-to-capability mapping;</li>
+<li>an artefact implementation map;</li>
+<li>a lifecycle gate-control map;</li>
+<li>an authority, access and accountability map;</li>
+<li>an invariant test register;</li>
+<li>an access and integrity control register;</li>
+<li>a record-retention and lawful-disposition policy;</li>
+<li>evidence of representative end-to-end lifecycle execution.</li>
+</ul>
+<p>Wherever possible this evidence is <strong>event-native</strong> — emitted by the governed acts themselves rather than authored separately (KF-3001 IC-24; KF-3004 §5.2) — and its required depth is <strong>graded by assurance class</strong> (KF-2003). The Conformance and Audit Service (SVC-18) is the architectural means by which this evidence is produced and kept current; the model that determines what must be reconstructable, and to what depth, is <strong>KF-3007 · Architectural Conformance Framework</strong>.</p>
+<hr />
+<h2 id="part-vii-crosswalks">Part VII · Crosswalks</h2>
+<h3 id="practice-to-capability-crosswalk">22. Practice-to-Capability Crosswalk</h3>
+<table>
+<thead>
+<tr class="header">
+<th>KF-2002 Practice</th>
+<th>Principal architectural capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1 · OKO Identification</td>
+<td>A-CAP-01, A-CAP-03</td>
+</tr>
+<tr class="even">
+<td>A2 · Knowledge Structuring</td>
+<td>A-CAP-02, A-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>B1 · Evidence Evaluation</td>
+<td>B-CAP-01, B-CAP-02</td>
+</tr>
+<tr class="even">
+<td>B2 · Knowledge Justification</td>
+<td>B-CAP-01, B-CAP-03, B-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>C1 · Knowledge Acceptance</td>
+<td>C-CAP-01, C-CAP-07</td>
+</tr>
+<tr class="even">
+<td>C2 · Governance &amp; Stewardship</td>
+<td>C-CAP-02, C-CAP-03, C-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>C3 · Knowledge Evolution</td>
+<td>C-CAP-04, C-CAP-05, C-CAP-06, C-CAP-07</td>
+</tr>
+<tr class="even">
+<td>D1 · Operationalisation</td>
+<td>D-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>D2 · Knowledge Application</td>
+<td>D-CAP-02, D-CAP-03</td>
+</tr>
+<tr class="even">
+<td>D3 · Knowledge Retirement</td>
+<td>D-CAP-04, C-CAP-05, C-CAP-07</td>
+</tr>
+</tbody>
+</table>
+<p>Domain E is cross-cutting and does not map one-to-one to a practice. Its provenance capability (E-CAP-01) is derived from practices A1, A2, B2, C2, C3 and D1; its access capability (E-CAP-06) from the human-accountability and attributable-transition invariants and the Authority and Provenance Governance Primitives; and its assurance capabilities (E-CAP-02 to E-CAP-05) from the architectural invariants and the gates and checkpoints of KF-2001 and KF-2002, which they verify.</p>
+<h3 id="capability-to-service-crosswalk">23. Capability-to-Service Crosswalk</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Principal logical service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A-CAP-01</td>
+<td>Object Registry Service</td>
+</tr>
+<tr class="even">
+<td>A-CAP-02</td>
+<td>Representation Service</td>
+</tr>
+<tr class="odd">
+<td>A-CAP-03</td>
+<td>Object Registry and Representation Services</td>
+</tr>
+<tr class="even">
+<td>B-CAP-01</td>
+<td>Evidence Service</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-02</td>
+<td>Evaluation Service</td>
+</tr>
+<tr class="even">
+<td>B-CAP-03</td>
+<td>Justification Service</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-04</td>
+<td>Justification and Lifecycle Services</td>
+</tr>
+<tr class="even">
+<td>C-CAP-01</td>
+<td>Authority and Acceptance Service</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-02</td>
+<td>Stewardship and Review Service</td>
+</tr>
+<tr class="even">
+<td>C-CAP-03</td>
+<td>Stewardship and Review Service</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-04</td>
+<td>Version and Lineage Service; Release Service</td>
+</tr>
+<tr class="even">
+<td>C-CAP-05</td>
+<td>Version and Lineage Service</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-06</td>
+<td>Dependency Service</td>
+</tr>
+<tr class="even">
+<td>C-CAP-07</td>
+<td>Lifecycle and Transition Service</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-01</td>
+<td>Operationalisation Service</td>
+</tr>
+<tr class="even">
+<td>D-CAP-02</td>
+<td>Application and Outcome Service</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-03</td>
+<td>Application and Outcome Service</td>
+</tr>
+<tr class="even">
+<td>D-CAP-04</td>
+<td>Retirement and Preservation Service</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-01</td>
+<td>Provenance and Traceability Service</td>
+</tr>
+<tr class="even">
+<td>E-CAP-02</td>
+<td>Conformance and Audit Service</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-03</td>
+<td>Conformance and Audit Service</td>
+</tr>
+<tr class="even">
+<td>E-CAP-04</td>
+<td>Conformance and Audit Service</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-05</td>
+<td>Conformance and Audit Service</td>
+</tr>
+<tr class="even">
+<td>E-CAP-06</td>
+<td>Access and Integrity Service</td>
+</tr>
+</tbody>
+</table>
+<p>Every capability in this document’s provisional model has a principal service. Under the definitive nineteen-service catalogue (§12), three services are grounded in the definitive capability model of <strong>KF-3002</strong> rather than in KF-3000’s provisional enumeration: <strong>SVC-10 Release</strong> (definitive capability C-CAP-05 Release), <strong>SVC-17 Operating Condition and Exception</strong> (E-CAP-04) and <strong>SVC-19 Temporal Continuity</strong> (E-CAP-05). Within KF-3000’s provisional capabilities their responsibilities are folded respectively into version and release management (C-CAP-04), the assurance capabilities (E-CAP-02–E-CAP-05) and provenance (E-CAP-01). With provenance now seated at SVC-15 and access at SVC-16, and once the KF-3002 capability model is applied, no service is left without a capability basis.</p>
+<h3 id="artefact-to-service-crosswalk">24. Artefact-to-Service Crosswalk</h3>
+<p>This crosswalk identifies, for each mandatory artefact, the logical service that is its <strong>authoritative maintainer</strong> — the service holding primary architectural responsibility for creating and maintaining it. Other services may read an artefact; only human roles hold accountability in the normative sense reserved for Stewards and Authorities. Artefacts are grouped by the record classes of §14.</p>
+<p><strong>Object records</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Identity Record</td>
+<td>Object Registry Service (SVC-01)</td>
+</tr>
+<tr class="even">
+<td>Intake Record</td>
+<td>Object Registry Service (SVC-01)</td>
+</tr>
+<tr class="odd">
+<td>Resolution Index</td>
+<td>Object Registry Service (SVC-01), with SVC-02</td>
+</tr>
+<tr class="even">
+<td>Structured Representation</td>
+<td>Representation Service (SVC-02)</td>
+</tr>
+<tr class="odd">
+<td>Metadata Record</td>
+<td>Representation Service (SVC-02)</td>
+</tr>
+<tr class="even">
+<td>Relationship Map</td>
+<td>Representation Service (SVC-02)</td>
+</tr>
+<tr class="odd">
+<td>Provenance Seed</td>
+<td>Provenance and Traceability Service (SVC-15)</td>
+</tr>
+<tr class="even">
+<td>Extended Provenance Record</td>
+<td>Provenance and Traceability Service (SVC-15)</td>
+</tr>
+<tr class="odd">
+<td>Traceability Chain</td>
+<td>Provenance and Traceability Service (SVC-15), with SVC-05</td>
+</tr>
+<tr class="even">
+<td>Derivation and Custody Links</td>
+<td>Provenance and Traceability Service (SVC-15)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Epistemic records</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Evidence Record</td>
+<td>Evidence Service (SVC-03)</td>
+</tr>
+<tr class="even">
+<td>Evidence-to-Claim Link</td>
+<td>Evidence Service (SVC-03)</td>
+</tr>
+<tr class="odd">
+<td>Counter-evidence Record</td>
+<td>Evidence Service (SVC-03)</td>
+</tr>
+<tr class="even">
+<td>Quality Assessment</td>
+<td>Evaluation Service (SVC-04)</td>
+</tr>
+<tr class="odd">
+<td>Evaluation Verdict</td>
+<td>Evaluation Service (SVC-04)</td>
+</tr>
+<tr class="even">
+<td>Evaluation Criteria Record</td>
+<td>Evaluation Service (SVC-04)</td>
+</tr>
+<tr class="odd">
+<td>Justification Record</td>
+<td>Justification Service (SVC-05)</td>
+</tr>
+<tr class="even">
+<td>Assumption Record</td>
+<td>Justification Service (SVC-05)</td>
+</tr>
+<tr class="odd">
+<td>Rationale Record</td>
+<td>Justification Service (SVC-05)</td>
+</tr>
+<tr class="even">
+<td>Epistemic Status Record</td>
+<td>Justification Service (SVC-05)</td>
+</tr>
+<tr class="odd">
+<td>Challenge Record</td>
+<td>Justification Service (SVC-05), with SVC-08</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Governance records</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Acceptance Record</td>
+<td>Authority and Acceptance Service (SVC-06)</td>
+</tr>
+<tr class="even">
+<td>Refusal Record</td>
+<td>Authority and Acceptance Service (SVC-06)</td>
+</tr>
+<tr class="odd">
+<td>Scope-of-Reliance Record</td>
+<td>Authority and Acceptance Service (SVC-06)</td>
+</tr>
+<tr class="even">
+<td>Stewardship Assignment</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+<tr class="odd">
+<td>Responsibility Record</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+<tr class="even">
+<td>Ownership History</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+<tr class="odd">
+<td>Review Schedule</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+<tr class="even">
+<td>Review Record</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+<tr class="odd">
+<td>Compliance Record</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+<tr class="even">
+<td>Exception Record</td>
+<td>Stewardship and Review Service (SVC-07)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Evolution records</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Event Record</td>
+<td>Lifecycle and Transition Service (SVC-08)</td>
+</tr>
+<tr class="even">
+<td>Transition Record</td>
+<td>Lifecycle and Transition Service (SVC-08)</td>
+</tr>
+<tr class="odd">
+<td>Gate Decision Record</td>
+<td>Lifecycle and Transition Service (SVC-08)</td>
+</tr>
+<tr class="even">
+<td>Suspension Record</td>
+<td>Lifecycle and Transition Service (SVC-08)</td>
+</tr>
+<tr class="odd">
+<td>Reactivation Record</td>
+<td>Lifecycle and Transition Service (SVC-08), with SVC-14</td>
+</tr>
+<tr class="even">
+<td>Version Record</td>
+<td>Version and Lineage Service (SVC-09)</td>
+</tr>
+<tr class="odd">
+<td>Release Record</td>
+<td>Release Service (SVC-10)</td>
+</tr>
+<tr class="even">
+<td>Supersession Link</td>
+<td>Version and Lineage Service (SVC-09); release supersession with SVC-10</td>
+</tr>
+<tr class="odd">
+<td>Change Record</td>
+<td>Version and Lineage Service (SVC-09)</td>
+</tr>
+<tr class="even">
+<td>Lineage Record</td>
+<td>Version and Lineage Service (SVC-09)</td>
+</tr>
+<tr class="odd">
+<td>Branch Record</td>
+<td>Version and Lineage Service (SVC-09)</td>
+</tr>
+<tr class="even">
+<td>Consolidation Record</td>
+<td>Version and Lineage Service (SVC-09)</td>
+</tr>
+<tr class="odd">
+<td>Dependency Impact Record</td>
+<td>Dependency Service (SVC-11)</td>
+</tr>
+<tr class="even">
+<td>Revalidation Record</td>
+<td>Dependency Service (SVC-11)</td>
+</tr>
+<tr class="odd">
+<td>Suspension Recommendation</td>
+<td>Dependency Service (SVC-11); may also originate from SVC-07 or SVC-18</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Operational records</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Actionable Form</td>
+<td>Operationalisation Service (SVC-12)</td>
+</tr>
+<tr class="even">
+<td>Derivation Record</td>
+<td>Operationalisation Service (SVC-12)</td>
+</tr>
+<tr class="odd">
+<td>Warrant Linkage Record</td>
+<td>Operationalisation Service (SVC-12)</td>
+</tr>
+<tr class="even">
+<td>Application Record</td>
+<td>Application and Outcome Service (SVC-13)</td>
+</tr>
+<tr class="odd">
+<td>Use Context Record</td>
+<td>Application and Outcome Service (SVC-13)</td>
+</tr>
+<tr class="even">
+<td>Explanation Record</td>
+<td>Application and Outcome Service (SVC-13)</td>
+</tr>
+<tr class="odd">
+<td>Outcome Record</td>
+<td>Application and Outcome Service (SVC-13)</td>
+</tr>
+<tr class="even">
+<td>Feedback Record</td>
+<td>Application and Outcome Service (SVC-13)</td>
+</tr>
+<tr class="odd">
+<td>Trigger Record</td>
+<td>Application and Outcome Service (SVC-13); raised as events to SVC-08</td>
+</tr>
+<tr class="even">
+<td>Retirement Record</td>
+<td>Retirement and Preservation Service (SVC-14)</td>
+</tr>
+<tr class="odd">
+<td>Historical Object Record</td>
+<td>Retirement and Preservation Service (SVC-14)</td>
+</tr>
+<tr class="even">
+<td>Restoration Package</td>
+<td>Retirement and Preservation Service (SVC-14)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assurance records</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Invariant Test Register</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+<tr class="even">
+<td>Conformance Exception Record</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+<tr class="odd">
+<td>Gate Conformance Record</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+<tr class="even">
+<td>Checkpoint Verification Record</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+<tr class="odd">
+<td>Artefact Completeness Record</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+<tr class="even">
+<td>Audit Trail</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+<tr class="odd">
+<td>Reconstruction Record</td>
+<td>Conformance and Audit Service (SVC-18)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Access &amp; integrity records</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artefact</th>
+<th>Authoritative maintainer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Access Policy Record</td>
+<td>Access and Integrity Service (SVC-16)</td>
+</tr>
+<tr class="even">
+<td>Permission Assignment</td>
+<td>Access and Integrity Service (SVC-16)</td>
+</tr>
+<tr class="odd">
+<td>Disclosure Constraint Record</td>
+<td>Access and Integrity Service (SVC-16)</td>
+</tr>
+<tr class="even">
+<td>Access and Administrative Action Log</td>
+<td>Access and Integrity Service (SVC-16)</td>
+</tr>
+</tbody>
+</table>
+<p>Every mandatory artefact in this provisional set resolves to a single authoritative maintainer. Of the definitive nineteen services, seventeen maintain at least one artefact listed above; the two remaining cross-cutting services — <strong>SVC-17 Operating Condition and Exception</strong> and <strong>SVC-19 Temporal Continuity</strong> — maintain records (operating-condition status and operational exceptions; temporal, sequencing and reconstruction records) that are defined authoritatively in <strong>KF-3004</strong> and are not enumerated in this provisional artefact list. Two allocations are set deliberately: <strong>suspension</strong> and <strong>reactivation</strong> are lifecycle transitions owned by SVC-08, while the originating service supplies the reason or recommendation; and the <strong>restoration package</strong> that supports reactivation is held by SVC-14, the maintainer of historical state.</p>
+<hr />
+<h2 id="part-viii-relationship-to-kf-4000">Part VIII · Relationship to KF-4000</h2>
+<p>KF-3000 fixes the logical architecture. KF-4000 defines how that architecture is instantiated in a particular Knowledge Operating System, organisational environment or domain implementation.</p>
+<p>An implementation may:</p>
+<ul>
+<li>combine several logical services into one component;</li>
+<li>distribute one service across several components;</li>
+<li>allocate responsibility across people and machines;</li>
+<li>use different storage and representation models;</li>
+<li>adopt different deployment and integration patterns.</li>
+</ul>
+<p>It may not:</p>
+<ul>
+<li>omit a required capability;</li>
+<li>bypass a lifecycle gate;</li>
+<li>remove mandatory human accountability;</li>
+<li>destroy provenance, versions or lineage;</li>
+<li>collapse justification into acceptance;</li>
+<li>detach actionable forms from their warrant;</li>
+<li>weaken access, disclosure or integrity controls below the logical obligation;</li>
+<li>substitute technological sophistication for architectural conformance.</li>
+</ul>
+<h3 id="subordinate-documents">Subordinate Documents</h3>
+<p>KF-3000 is the umbrella architecture: it establishes the whole logical model and is not the place for further detail. Subordinate documents deepen specific parts without revising this one:</p>
+<ul>
+<li><strong>KF-3001 · Architectural Principles and Invariants</strong> — separating the architectural principles, system invariants and service-interaction constraints presently gathered in §3 and §13.</li>
+<li><strong>KF-3002 · Capability Model</strong></li>
+<li><strong>KF-3003 · Logical Service Catalogue</strong></li>
+<li><strong>KF-3004 · Information and Record Model</strong></li>
+<li><strong>KF-3005 · Lifecycle and Control Architecture</strong></li>
+<li><strong>KF-3006 · Architectural Integration Model</strong> — how the architectural elements collaborate to produce, govern, evolve and retire an Operational Knowledge Object; the integrated systems view that precedes conformance.</li>
+<li><strong>KF-3007 · Architectural Conformance Framework</strong> — the four proportionate tests (Constitutional, Operational, Integrity, Reconstructability) through which §19 is applied, graded by assurance class.</li>
+<li><strong>KF-3008 · Architectural Authority Framework</strong></li>
+<li><strong>KF-3009 · Architectural Crosswalks and Traceability</strong></li>
+</ul>
+<p>Two cross-programme documents are load-bearing for this architecture and are cited throughout: <strong>KF-2003 · Materiality and Assurance</strong> (the assurance-class scale and the depth to which graded obligations are discharged) and <strong>KF-0002 · Controlled Vocabulary and Architectural Distinctions</strong> (the authoritative terms and the user-facing projection of the architecture’s states).</p>
+<h3 id="closing-statement">Closing Statement</h3>
+<p>The Knowledge Foundry Reference Architecture is not a diagram of software components. It is the logical arrangement of responsibilities required to preserve justified knowledge as it moves through identity, evaluation, acceptance, use, change and retirement.</p>
+<p>Its purpose is to ensure that every implementation remains answerable to the same constitutional and engineering obligations, regardless of the technologies through which those obligations are realised.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-2003-materiality-and-assurance.html">&#8592; Materiality & Assurance</a><a class="nx" href="kf-3001-architectural-principles-and-invariants.html">Principles & Invariants &#8594;</a></nav>
+</main>
+</div>
+</body></html>

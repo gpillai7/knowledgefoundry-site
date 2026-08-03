@@ -1,0 +1,893 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crosswalks & Traceability &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Working draft</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html" class="active"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-3009 · Architectural Crosswalks and Traceability</h1>
+<figure class="hero"><img src="img/KF-Master-Traceability.png" alt="The master traceability — the whole architecture in one line."></figure>
+<h4 id="the-navigation-layer-of-the-knowledge-foundry-reference-architecture-how-the-whole-fits-together">The navigation layer of the Knowledge Foundry Reference Architecture — how the whole fits together</h4>
+<p><em>Document Class: Reference Architecture (Navigational) · Parent Programme: Knowledge Foundry · Parent Document: KF-3000 · Status: Draft · Version: 0.1</em></p>
+<pre class="text"><code>Principle (KF-1000) → Methodology (KF-2000) → Reference Architecture (KF-3000)
+        → Domains (KF-3001–3005) → Integration (KF-3006) → Conformance (KF-3007) → Authority (KF-3008)
+        → ▸ Crosswalks and Traceability (KF-3009) → Implementation (KF-4000)</code></pre>
+<p>The architecture is complete at KF-3008. Principles, lifecycle, materiality, reference architecture, integration, conformance and authority together provide everything essential. This document therefore <strong>introduces no new architectural domain and no new first-order concept.</strong> It performs a different role: it is the architecture’s <em>synthesis</em> — the atlas that accompanies the constitutional text. The constitution defines the rules; the atlas helps readers see where everything sits and how the parts relate, without creating new law.</p>
+<h3 id="purpose">Purpose</h3>
+<p>The Architectural Crosswalks and Traceability document provides the <strong>navigational layer</strong> of the Knowledge Foundry Reference Architecture. It maps architectural concepts, responsibilities and relationships across the architecture, clarifies document ownership, and demonstrates how the architecture forms a coherent, navigable and traceable system whose architectural integrity can be understood <strong>without duplicating its normative content</strong>.</p>
+<p>This is <em>navigation</em>, not architecture. Every entry below points to a home document that owns the concept; KF-3009 owns only the <em>relationships between</em> the documents — the map, the crosswalks, the traceability matrices and the relationship catalogue. Where a crosswalk here and a home document appear to differ, the home document governs and this document is corrected.</p>
+<h3 id="navigational-principle">Navigational Principle</h3>
+<blockquote>
+<p><strong>Every architectural concept has one authoritative home. Relationships may be described elsewhere, but normative ownership is never duplicated. KF-3009 exists to preserve that discipline.</strong></p>
+</blockquote>
+<p>That single rule governs the whole document. It is why KF-3009 can map, cross-reference and trace freely without ever becoming a competing source of truth: it describes where things live and how they relate, and defines only the relationships themselves.</p>
+<h3 id="figure-1-the-master-traceability">Figure 1 · The Master Traceability</h3>
+<p>The single diagram that explains the entire architecture — the programme’s architectural signature. It threads every layer, from the obligations the Canon imposes to the reliance the institution is finally warranted in placing:</p>
+<pre class="text"><code>Canonical Principles
+        ▼ obligate
+Architectural Obligations
+        ▼ realised by
+Capabilities
+        ▼ delivered through
+Services
+        ▼ operate over
+Lifecycle
+        ▼ made consequential by
+Authority
+        ▼ enforced through
+Controls
+        ▼ emit
+Evidence
+        ▼ accumulates as
+Traceability
+        ▼ reconstructed as
+Conformance
+        ▼ warrants
+Institutional Reliance</code></pre>
+<p>This figure is referenced throughout the document, and §11 reads it in full.</p>
+<h3 id="what-this-document-does-and-does-not-own">What this document does and does not own</h3>
+<p>KF-3009 defines <strong>no new ontology, no new lifecycle, no new authority and no new governance mechanism.</strong> It is the architecture’s index, atlas and navigation layer. What it <em>does</em> own — because these are relationships, not concepts — are: the Concept-Ownership register (§4), the Relationship Catalogue (§10), and the master traceability matrices (§§6–9). These were already promised to KF-3009 by the closing sections of KF-3002–3005 (“KF-3009 preserves traceability from principle through capability, service, record and control”).</p>
+<hr />
+<h2 id="introduction">1 · Introduction</h2>
+<p><strong>Scope.</strong> The reading guide, the architecture map, concept ownership, the relationship catalogue, and the principle / obligation / lifecycle / materiality crosswalks, plus reference indexes and reserved extensions.</p>
+<p><strong>Audience.</strong> Every reader of the Reference Architecture, especially those arriving after KF-3000 who need to orient before going deep, and maintainers who must keep the series coherent as it evolves.</p>
+<p><strong>Relationship to the Reference Architecture.</strong> KF-3009 sits beside KF-3000 as its companion: KF-3000 opens the architecture, KF-3009 helps navigate it. It is the document every future reader should read <em>second</em>.</p>
+<hr />
+<h2 id="how-to-read-the-architecture">2 · How to Read the Architecture</h2>
+<p>Different readers enter at different places. This is the shortest path to what each needs:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Reader</th>
+<th>Enter at</th>
+<th>Then read</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Architect</strong></td>
+<td>KF-3000 Reference Architecture</td>
+<td>KF-3001–3005, then KF-3006</td>
+</tr>
+<tr class="even">
+<td><strong>Engineer</strong></td>
+<td>KF-3006 Integration Model</td>
+<td>KF-3003 Services, KF-3005 Control</td>
+</tr>
+<tr class="odd">
+<td><strong>Reviewer / Assessor</strong></td>
+<td>KF-3007 Conformance Framework</td>
+<td>KF-3004 Records, KF-3006 §10</td>
+</tr>
+<tr class="even">
+<td><strong>Governance lead</strong></td>
+<td>KF-3008 Authority Framework</td>
+<td>KF-2003 Materiality, KF-2001 Lifecycle</td>
+</tr>
+<tr class="odd">
+<td><strong>Implementation team</strong></td>
+<td>KF-4000 Knowledge Operating System</td>
+<td>KF-3006, KF-3007, KF-3008</td>
+</tr>
+<tr class="even">
+<td><strong>Executive / sponsor</strong></td>
+<td>KF-0001 Architecture Map, then this §14</td>
+<td>KF-1000 Canon (purpose)</td>
+</tr>
+<tr class="odd">
+<td><strong>Researcher</strong></td>
+<td>KF-L001 Literature Landscape</td>
+<td>KF-1000 Canon</td>
+</tr>
+</tbody>
+</table>
+<p>No reader should have to read the series front to back to become productive; each path above is sufficient to act, and the crosswalks below fill in the rest on demand.</p>
+<hr />
+<h2 id="the-architecture-map">3 · The Architecture Map</h2>
+<p>The authoritative one-page orientation. (Its standalone pull-out is <strong>KF-0001 · Architecture Map</strong>; this is the same map, seated in its atlas.)</p>
+<pre class="text"><code>                      KF-L001 · Literature Landscape
+                                 │ evidence
+                                 ▼
+                          KF-1000 · Canon
+                                 │ principles
+                                 ▼
+              KF-2000 · Methodology
+        (2001 Lifecycle · 2002 Practices · 2003 Materiality)
+                                 │ methods
+                                 ▼
+                 KF-3000 · Reference Architecture
+                                 │ domains
+   ┌─────────────────────────────┼─────────────────────────────┐
+   │  3001 Principles · 3002 Capabilities · 3003 Services       │
+   │  3004 Records    · 3005 Control                            │
+   │  ───────────────────────────────────────────────────────  │
+   │  3006 Integration   ◀ how it works                         │
+   │  3007 Conformance   ◀ how we know                          │
+   │  3008 Authority     ◀ who may make it consequential        │
+   │  3009 Crosswalks    ◀ how it all fits (this document)      │
+   └─────────────────────────────┬─────────────────────────────┘
+                                 │ realised by
+                                 ▼
+                 KF-4000 · Knowledge Operating System
+                                 ▼
+                       MacroLab (domain deployment)
+
+  Programme-wide navigation:  KF-0001 Map · KF-0002 Controlled Vocabulary</code></pre>
+<p>Read by architectural layer, the same series stacks into four bands:</p>
+<pre class="text"><code>  Constitution   │ KF-1000
+  ───────────────┼───────────────────────
+  Method         │ KF-2000  (2001–2003)
+  ───────────────┼───────────────────────
+  Architecture   │ KF-3000–3009
+  ───────────────┼───────────────────────
+  Implementation │ KF-4000</code></pre>
+<hr />
+<h2 id="concept-ownership">4 · Concept Ownership</h2>
+<p>The rule that keeps the architecture free of duplicated definitions: <strong>every concept has exactly one primary home.</strong> When a concept appears in several documents, one owns it and the others reference it.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Primary home</th>
+<th>Secondary references</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Canonical Principle · Constitutional Invariant · Governance Primitive</td>
+<td>KF-1000</td>
+<td>KF-3001, KF-3006, KF-3009</td>
+</tr>
+<tr class="even">
+<td>Operational Knowledge Object <em>(defined KF-1101; architectural unit KF-3000 §2)</em></td>
+<td>KF-1000</td>
+<td>KF-3000, KF-3004</td>
+</tr>
+<tr class="odd">
+<td>Lifecycle — stages, transitions, lifecycle invariants</td>
+<td>KF-2001</td>
+<td>KF-3005, KF-3006, KF-3008</td>
+</tr>
+<tr class="even">
+<td>Engineering Practice</td>
+<td>KF-2002</td>
+<td>KF-3002, KF-3000 §22</td>
+</tr>
+<tr class="odd">
+<td>Materiality · Assurance Class · Governance Overlay</td>
+<td>KF-2003</td>
+<td>KF-3005, KF-3007, KF-3008</td>
+</tr>
+<tr class="even">
+<td>Architectural Principle · System Invariant · Interaction Constraint</td>
+<td>KF-3001</td>
+<td>KF-3005, KF-3007</td>
+</tr>
+<tr class="odd">
+<td>Capability</td>
+<td>KF-3002</td>
+<td>KF-3003, KF-3000 §23</td>
+</tr>
+<tr class="even">
+<td>Service</td>
+<td>KF-3003</td>
+<td>KF-3004, KF-3005, KF-3006</td>
+</tr>
+<tr class="odd">
+<td>Information / Record Object · Event-native evidence <em>(record model)</em></td>
+<td>KF-3004</td>
+<td>KF-3001 (IC-24), KF-3007</td>
+</tr>
+<tr class="even">
+<td>Gate · Control · Transition pattern</td>
+<td>KF-3005</td>
+<td>KF-3006, KF-3007</td>
+</tr>
+<tr class="odd">
+<td>Integration — relationships, behaviour, patterns, events</td>
+<td>KF-3006</td>
+<td>KF-3007, KF-3009</td>
+</tr>
+<tr class="even">
+<td>Conformance · Conformance Claim · Findings · the four tests</td>
+<td>KF-3007</td>
+<td>KF-3006, KF-3008, KF-4000</td>
+</tr>
+<tr class="odd">
+<td>Authority · Delegation · Institutional Reliance</td>
+<td>KF-3008</td>
+<td>KF-2001, KF-2003, KF-3007, KF-3009</td>
+</tr>
+<tr class="even">
+<td>Crosswalks · Traceability matrices · Relationship Catalogue</td>
+<td>KF-3009</td>
+<td>KF-3006 §4, KF-3001 §24</td>
+</tr>
+<tr class="odd">
+<td>Controlled Vocabulary · Required Distinctions · user-facing terms</td>
+<td>KF-0002</td>
+<td>KF-3009 §13.3</td>
+</tr>
+<tr class="even">
+<td>Architecture Map (one-page)</td>
+<td>KF-0001</td>
+<td>KF-3009 §3</td>
+</tr>
+<tr class="odd">
+<td>Implementation — components, technology, deployment</td>
+<td>KF-4000</td>
+<td>KF-3006, KF-3007, KF-3008</td>
+</tr>
+<tr class="even">
+<td>Worked examples · canonical slice · case studies</td>
+<td>KF-5000 / KF-5001</td>
+<td>KF-2001, KF-3006, KF-3007, KF-3008</td>
+</tr>
+</tbody>
+</table>
+<p>Where two documents touch one concept, one holds the authoritative treatment and the other holds an adjacent or derived view — the same single-owner discipline the record model applies to data (KF-3004 §7).</p>
+<hr />
+<h2 id="concept-relationship-crosswalk">5 · Concept Relationship Crosswalk</h2>
+<p>For each core concept: what it depends on, what it supports, and where it is referenced. This is the “if I change this, what else is affected?” table.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concept</th>
+<th>Depends upon</th>
+<th>Supports</th>
+<th>Most significant consumers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Lifecycle</td>
+<td>Canon (II, X)</td>
+<td>Authority, Conformance, Control</td>
+<td>KF-3005, KF-3006, KF-3008</td>
+</tr>
+<tr class="even">
+<td>Materiality</td>
+<td>Canon; Lifecycle</td>
+<td>Authority depth, Evidence depth, Review cadence</td>
+<td>KF-3005, KF-3007, KF-3008</td>
+</tr>
+<tr class="odd">
+<td>Capability</td>
+<td>Canon; Lifecycle; Practices</td>
+<td>Services</td>
+<td>KF-3003, KF-3000 §23</td>
+</tr>
+<tr class="even">
+<td>Service</td>
+<td>Capability</td>
+<td>Records, Transitions, Controls</td>
+<td>KF-3004, KF-3005, KF-3006</td>
+</tr>
+<tr class="odd">
+<td>Control</td>
+<td>Invariants; Obligations</td>
+<td>Gates</td>
+<td>KF-3005, KF-3007</td>
+</tr>
+<tr class="even">
+<td>Authority</td>
+<td>Lifecycle (Accept); Canon III</td>
+<td>Acceptance, Release, Retirement</td>
+<td>KF-3007 (Authority dimension), KF-2003</td>
+</tr>
+<tr class="odd">
+<td>Evidence (event-native)</td>
+<td>Transitions; Records</td>
+<td>Traceability, Conformance</td>
+<td>KF-3006 §9, KF-3007 §10</td>
+</tr>
+<tr class="even">
+<td>Conformance</td>
+<td>Obligations; Evidence; Traceability</td>
+<td>Institutional reliance</td>
+<td>KF-3008, KF-4000</td>
+</tr>
+<tr class="odd">
+<td>Institutional Reliance</td>
+<td>Authority; Conformance</td>
+<td>(the purpose the architecture serves)</td>
+<td>KF-1204, KF-2003</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="principle-traceability-constitutional-matrix">6 · Principle Traceability <em>(constitutional matrix)</em></h2>
+<p>Every Canonical Principle is realised somewhere in the architecture. This matrix is the constitutional traceability the Canon requires (KF-1301): a principle with no realisation would be an aspiration, not an obligation.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Canonical Principle</th>
+<th>Principal architectural realisation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I — governs OKOs, not knowledge</td>
+<td>OKO as architectural unit (KF-3000 §2); Object Registry (SVC-01); single-identity invariant</td>
+</tr>
+<tr class="even">
+<td>II — engineered as a lifecycle</td>
+<td>Lifecycle (KF-2001); Lifecycle &amp; Control Architecture (KF-3005)</td>
+</tr>
+<tr class="odd">
+<td>III — collective authorisation</td>
+<td>Authority Framework (KF-3008); Acceptance (SVC-06); GATE-ACC-01</td>
+</tr>
+<tr class="even">
+<td>IV — governance is constitutive</td>
+<td>Governance Primitives across services; Controls (KF-3005); Conformance (KF-3007)</td>
+</tr>
+<tr class="odd">
+<td>V — modality redistributes labour, not obligation</td>
+<td>Modality-independence invariant (KF-3000 §3); human-accountability boundary (KF-3006 §5.3)</td>
+</tr>
+<tr class="even">
+<td>VI — engineered, collective, governed at once</td>
+<td>Architectural Integration Model (KF-3006)</td>
+</tr>
+<tr class="odd">
+<td>VII — trust is a property of transitions over time</td>
+<td>Provenance &amp; lineage records (KF-3004); Temporal Continuity (SVC-19); continuous conformance (KF-3007 §16)</td>
+</tr>
+<tr class="even">
+<td>VIII — inspectable justification per transition</td>
+<td>Justification (SVC-05); justified-transition invariant; event-native evidence (KF-3004 §5.2)</td>
+</tr>
+<tr class="odd">
+<td>IX — explainable across modality</td>
+<td>Explainability control (CTRL-EXP-01); Application &amp; Outcome (SVC-13)</td>
+</tr>
+<tr class="even">
+<td>X — designed for governed evolution</td>
+<td>Version &amp; Lineage (SVC-09); Evolve gate (GATE-EVO-01); the lifecycle loop</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="obligation-traceability-complete-lineage">7 · Obligation Traceability <em>(complete lineage)</em></h2>
+<p>One level below principles. Each material obligation can be traced along a single lineage from constitutional source to demonstrated conformance — the chain KF-3007 reconstructs:</p>
+<pre class="text"><code>Canonical Principle
+      ▼ handed to method (KF-1301)
+Architectural Obligation
+      ▼ realised by
+Architecture   (capability · service · gate · control · record)
+      ▼ instantiated in
+Implementation (KF-4000)
+      ▼ emits
+Evidence   (event-native)
+      ▼ reconstructed as
+Conformance</code></pre>
+<p><em>Worked lineage — justified transition.</em> Principle VIII → obligation “no state advances without recorded warrant” → realised by Justification Service (SVC-05), GATE-JUS-01 and the justified-transition invariant → instantiated by a deployment’s justification store → emits the justification and transition records → reconstructed by KF-3007 Test 4 as the claim <em>“this transition carried its warrant.”</em> No link in this chain is optional for a material obligation; the depth of each is graded by assurance class (KF-2003).</p>
+<p>This lineage is the <strong>minimum reconstruction path</strong> required for any material conformance claim. Additional evidence may exist, and higher assurance classes require more of it, but no conforming implementation may omit one of these architectural stages — a claim with a broken link in the chain is <em>Not Assessable</em> (KF-3007 §13).</p>
+<hr />
+<h2 id="lifecycle-crosswalk">8 · Lifecycle Crosswalk</h2>
+<p>Each lifecycle stage, read across its architectural participants. This is the single-page operational reference for “what does this stage require?”</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th>Authority (KF-3008)</th>
+<th>Principal service</th>
+<th>Principal gate</th>
+<th>Principal control</th>
+<th>Evidence emitted</th>
+<th>Primary conformance dimension (KF-3007 §6)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Capture</td>
+<td>Creation</td>
+<td>SVC-01 Object Registry</td>
+<td>GATE-REG-01</td>
+<td>CTRL-ID-01/02</td>
+<td>Identity, Intake, Provenance Seed</td>
+<td>Structural</td>
+</tr>
+<tr class="even">
+<td>Structure</td>
+<td>—</td>
+<td>SVC-02 Representation</td>
+<td>GATE-STR-01</td>
+<td>CTRL-STA-01</td>
+<td>Structured Representation, Metadata</td>
+<td>Structural</td>
+</tr>
+<tr class="odd">
+<td>Evaluate</td>
+<td>Evaluation</td>
+<td>SVC-04 Evaluation</td>
+<td>GATE-EVA-01</td>
+<td>CTRL-EVA-01</td>
+<td>Quality Assessment, Verdict</td>
+<td>Evidence</td>
+</tr>
+<tr class="even">
+<td>Justify</td>
+<td>Evaluation</td>
+<td>SVC-05 Justification</td>
+<td>GATE-JUS-01</td>
+<td>CTRL-JUS-01</td>
+<td>Justification, Assumptions, Rationale</td>
+<td>Evidence</td>
+</tr>
+<tr class="odd">
+<td><strong>Accept</strong></td>
+<td><strong>Acceptance</strong></td>
+<td>SVC-06 Authority &amp; Acceptance</td>
+<td>GATE-ACC-01</td>
+<td>CTRL-AUT-01, CTRL-ACC-01</td>
+<td>Acceptance, Scope-of-Reliance</td>
+<td>Authority</td>
+</tr>
+<tr class="even">
+<td>Operationalise / Release</td>
+<td>Publication</td>
+<td>SVC-12 / SVC-10</td>
+<td>GATE-REL-01</td>
+<td>CTRL-REL-01, CTRL-DEP-01</td>
+<td>Actionable Form, Release</td>
+<td>Governance</td>
+</tr>
+<tr class="odd">
+<td>Govern</td>
+<td>Stewardship</td>
+<td>SVC-07 Stewardship &amp; Review</td>
+<td>GATE-REV-01</td>
+<td>CTRL-STW-01, CTRL-REV-01</td>
+<td>Review, Stewardship records</td>
+<td>Governance</td>
+</tr>
+<tr class="even">
+<td>Apply</td>
+<td>— (use under permission)</td>
+<td>SVC-13 Application &amp; Outcome</td>
+<td>GATE-APP-01</td>
+<td>CTRL-EXP-01, CTRL-OUT-01</td>
+<td>Application, Explanation, Outcome</td>
+<td>Behavioural</td>
+</tr>
+<tr class="odd">
+<td>Evolve</td>
+<td>Revision</td>
+<td>SVC-09 Version &amp; Lineage</td>
+<td>GATE-EVO-01</td>
+<td>CTRL-VER-01, CTRL-LIN-01</td>
+<td>Version, Change, Lineage</td>
+<td>Lifecycle</td>
+</tr>
+<tr class="even">
+<td>Retire</td>
+<td>Retirement</td>
+<td>SVC-14 Retirement &amp; Preservation</td>
+<td>GATE-RET-01</td>
+<td>CTRL-LIN-01</td>
+<td>Retirement, Historical Object</td>
+<td>Traceability</td>
+</tr>
+</tbody>
+</table>
+<p>Every row’s evidence is emitted by the act (event-native), and its conformance is assessed on the KF-3007 Authority, Lifecycle and Evidence dimensions.</p>
+<hr />
+<h2 id="materiality-crosswalk">9 · Materiality Crosswalk</h2>
+<p>How assurance class propagates through the architecture — the single value that grades authority, evidence, review, monitoring and conformance at once (KF-2003; KF-3007 §11; KF-3008 §12).</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class</th>
+<th>Required authority</th>
+<th>Evidence depth</th>
+<th>Review</th>
+<th>Monitoring</th>
+<th>Conformance depth</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A0 Exploratory</strong></td>
+<td>none (provenance only)</td>
+<td>minimal, event-native</td>
+<td>none required</td>
+<td>none</td>
+<td>shallow, rare</td>
+</tr>
+<tr class="even">
+<td><strong>A1 Working</strong></td>
+<td>named owner</td>
+<td>basic + versioning</td>
+<td>collaborative</td>
+<td>on change</td>
+<td>light</td>
+</tr>
+<tr class="odd">
+<td><strong>A2 Routine</strong></td>
+<td>authorised acceptance role</td>
+<td>defined scope of use</td>
+<td>periodic</td>
+<td>currency checks</td>
+<td>standard</td>
+</tr>
+<tr class="even">
+<td><strong>A3 Consequential</strong></td>
+<td>confirmed acceptance authority; separation begins</td>
+<td>independent, counter-evidence</td>
+<td>independent review</td>
+<td>active</td>
+<td>deep</td>
+</tr>
+<tr class="odd">
+<td><strong>A4 Critical</strong></td>
+<td>accountable body; segregation of duties</td>
+<td>comprehensive, independent</td>
+<td>formal + independent</td>
+<td>continuous</td>
+<td>full, reconstructable end-to-end</td>
+</tr>
+</tbody>
+</table>
+<p>The six lifecycle invariants hold identically across every row; only the depth above that floor scales.</p>
+<hr />
+<h2 id="the-relationship-catalogue">10 · The Relationship Catalogue</h2>
+<p>The permanent home of the canonical relationship vocabulary first stated in KF-3006 §4.1. <strong>The relationships defined below constitute the canonical architectural vocabulary for expressing relationships throughout the Knowledge Foundry programme. New relationship types shall not be introduced unless adopted into this catalogue.</strong> Every architectural diagram in the programme draws its arrows from here, so that a relationship always means one thing. These are <em>collected</em>, not invented here.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Relationship</th>
+<th>Category</th>
+<th>Reads as</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>constrains</strong></td>
+<td>normative</td>
+<td>Principle / interaction constraint → element</td>
+</tr>
+<tr class="even">
+<td><strong>realises</strong></td>
+<td>implementation</td>
+<td>Capability → Service</td>
+</tr>
+<tr class="odd">
+<td><strong>invokes</strong></td>
+<td>behavioural</td>
+<td>Transition → Service</td>
+</tr>
+<tr class="even">
+<td><strong>consumes</strong></td>
+<td>information</td>
+<td>Service → Information object (read)</td>
+</tr>
+<tr class="odd">
+<td><strong>produces</strong></td>
+<td>information</td>
+<td>Service / Transition → Information object</td>
+</tr>
+<tr class="even">
+<td><strong>evaluates</strong></td>
+<td>governance</td>
+<td>Gate → Control</td>
+</tr>
+<tr class="odd">
+<td><strong>protects</strong></td>
+<td>assurance</td>
+<td>Control → Obligation / Invariant</td>
+</tr>
+<tr class="even">
+<td><strong>generates</strong></td>
+<td>evidential</td>
+<td>Transition / Obligation → Evidence</td>
+</tr>
+<tr class="odd">
+<td><strong>traces</strong></td>
+<td>provenance</td>
+<td>derived state → source; successor → predecessor</td>
+</tr>
+<tr class="even">
+<td><strong>delegates</strong></td>
+<td>authority</td>
+<td>Authority → Authority (bounded)</td>
+</tr>
+</tbody>
+</table>
+<p>Three structural relationships support composite decisions and grading: <strong>references</strong> (decision → authoritative record, without copying it), <strong>attributed-to</strong> (transition → actor / authority), and <strong>graded-by</strong> (obligation depth → assurance class). <em>Supersession</em> and <em>governance oversight</em> are read as instances of <strong>traces</strong> (lineage) and <strong>constrains</strong> (policy) respectively, not as separate primitives.</p>
+<hr />
+<h2 id="reading-the-master-diagram">11 · Reading the Master Diagram</h2>
+<p><strong>Figure 1</strong> (near the front of this document) is the single diagram that explains the entire architecture: it threads every layer, from the obligations the Canon imposes to the reliance the institution is finally warranted in placing. Every earlier diagram in the series is a <em>segment</em> of it — KF-3006 Figure 1 is its Principles-to-Conformance span; KF-3008 Figure 1 is its Authority-to-Reliance span. Read whole, it is the architectural argument of Knowledge Foundry in a single column, and the reason the series ends here, with synthesis rather than another framework. It is the programme’s architectural signature — the figure future presentations, papers and talks should reach for first.</p>
+<hr />
+<h2 id="reading-paths-recommended-order-by-role">12 · Reading Paths <em>(recommended order by role)</em></h2>
+<ul>
+<li><strong>Executive / sponsor</strong> — KF-0001 → KF-1000 (purpose) → Figure 1 → KF-3009 §14.</li>
+<li><strong>Reader (general)</strong> — KF-0001 → KF-3000 → KF-3006 → this document.</li>
+<li><strong>Architect</strong> — KF-3000 → KF-3001 → KF-3002 → KF-3003 → KF-3004 → KF-3005 → KF-3006.</li>
+<li><strong>Implementer</strong> — KF-3006 → KF-3003 → KF-3005 → KF-3007 → KF-3008 → KF-4000.</li>
+<li><strong>Governance officer</strong> — KF-1000 → KF-2001 → KF-2003 → KF-3008 → KF-3007.</li>
+<li><strong>Researcher</strong> — KF-L001 → KF-1000 → KF-3000 → KF-3006.</li>
+</ul>
+<hr />
+<h2 id="reference-tables">13 · Reference Tables</h2>
+<h3 id="document-index">13.1 Document Index</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Title</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>KF-L001</td>
+<td>Literature Landscape</td>
+<td>evidence</td>
+</tr>
+<tr class="even">
+<td>KF-1000</td>
+<td>Canon</td>
+<td>principles</td>
+</tr>
+<tr class="odd">
+<td>KF-2001</td>
+<td>Operational Knowledge Object Lifecycle</td>
+<td>method</td>
+</tr>
+<tr class="even">
+<td>KF-2002</td>
+<td>Engineering Practices</td>
+<td>method</td>
+</tr>
+<tr class="odd">
+<td>KF-2003</td>
+<td>Materiality and Assurance</td>
+<td>method</td>
+</tr>
+<tr class="even">
+<td>KF-3000</td>
+<td>Reference Architecture</td>
+<td>architecture (umbrella)</td>
+</tr>
+<tr class="odd">
+<td>KF-3001</td>
+<td>Architectural Principles and Invariants</td>
+<td>domain</td>
+</tr>
+<tr class="even">
+<td>KF-3002</td>
+<td>Capability Model</td>
+<td>domain</td>
+</tr>
+<tr class="odd">
+<td>KF-3003</td>
+<td>Service Architecture</td>
+<td>domain</td>
+</tr>
+<tr class="even">
+<td>KF-3004</td>
+<td>Information and Record Model</td>
+<td>domain</td>
+</tr>
+<tr class="odd">
+<td>KF-3005</td>
+<td>Lifecycle and Control Architecture</td>
+<td>domain</td>
+</tr>
+<tr class="even">
+<td>KF-3006</td>
+<td>Architectural Integration Model</td>
+<td>behaviour</td>
+</tr>
+<tr class="odd">
+<td>KF-3007</td>
+<td>Architectural Conformance Framework</td>
+<td>assurance</td>
+</tr>
+<tr class="even">
+<td>KF-3008</td>
+<td>Architectural Authority Framework</td>
+<td>institutional</td>
+</tr>
+<tr class="odd">
+<td>KF-3009</td>
+<td>Architectural Crosswalks and Traceability</td>
+<td>navigation (this)</td>
+</tr>
+<tr class="even">
+<td>KF-4000</td>
+<td>Knowledge Operating System</td>
+<td>implementation</td>
+</tr>
+<tr class="odd">
+<td>KF-5000</td>
+<td>Exemplars &amp; Case Studies</td>
+<td>illustrative (series note)</td>
+</tr>
+<tr class="even">
+<td>KF-5001</td>
+<td>Canonical Vertical Slice (four-day-week Brief)</td>
+<td>illustrative exemplar</td>
+</tr>
+<tr class="odd">
+<td>KF-0001</td>
+<td>Architecture Map</td>
+<td>navigation (one-page)</td>
+</tr>
+<tr class="even">
+<td>KF-0002</td>
+<td>Controlled Vocabulary</td>
+<td>navigation (terminology)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="figure-index">13.2 Figure Index</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Figure</th>
+<th>Home</th>
+<th>Shows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Integration Spine</td>
+<td>KF-3006 Fig. 1</td>
+<td>Principles → Conformance</td>
+</tr>
+<tr class="even">
+<td>Conformance Chain</td>
+<td>KF-3007 Fig. 1</td>
+<td>Obligation → Claim → Evidence → Assessment → Finding</td>
+</tr>
+<tr class="odd">
+<td>Why Authority Belongs</td>
+<td>KF-3008 Fig. 1</td>
+<td>Institution → … → Institutional Reliance</td>
+</tr>
+<tr class="even">
+<td>Master Traceability</td>
+<td>KF-3009 Fig. 1</td>
+<td>the full architectural column</td>
+</tr>
+</tbody>
+</table>
+<h3 id="concept-index-and-glossary">13.3 Concept Index and Glossary</h3>
+<p>For any term’s authoritative definition, see the primary home in §4; for controlled definitions, required distinctions and the user-facing vocabulary, see <strong>KF-0002 · Controlled Vocabulary</strong>. KF-3009 does not redefine terms; it locates them.</p>
+<hr />
+<h2 id="architectural-evolution">14 · Architectural Evolution</h2>
+<p>The architecture is designed to change without losing coherence. Two distinct governance modes keep evolution disciplined — and the distinction between <em>adding</em> architecture and <em>changing</em> it is itself load-bearing.</p>
+<h3 id="controlled-extension-new-concepts">14.1 Controlled Extension <em>(new concepts)</em></h3>
+<p>Adding to the architecture. The numbering space is reserved rather than filled ad hoc:</p>
+<ul>
+<li><strong>KF-3010+</strong> — reserved for future architectural domains, admitted only if they pass the KF-3000 Architectural Admission Test and own a concept no existing document owns.</li>
+<li><strong>Deeper treatments</strong> — a dedicated temporal or dependency model, say — would extend, not revise, the existing domains, and would be traced here.</li>
+<li><strong>Discipline</strong> — no new document may duplicate a concept owned in §4; a proposed addition that would must instead amend the owning document. This is the Navigational Principle applied to growth.</li>
+</ul>
+<h3 id="controlled-revision-existing-concepts">14.2 Controlled Revision <em>(existing concepts)</em></h3>
+<p>Changing what already exists. Revision follows the inheritance rule the Canon fixes: a lower level may change how it satisfies a higher one, but may not silently revise the higher one.</p>
+<ul>
+<li><strong>Amend at the home</strong> — a concept is revised only in its owning document (§4); every secondary reference then inherits the change.</li>
+<li><strong>Constitutional amendments</strong> — a change to a Canonical Principle is made against the Landscape’s evidence and propagated downward (KF-1000); it is never overridden quietly in a lower document.</li>
+<li><strong>Re-trace after revision</strong> — when any home document changes, the crosswalks here and the conformance completeness check (KF-3007 §7.1) are re-run to confirm coverage still holds.</li>
+</ul>
+<p>The series is considered conceptually complete at KF-3008; anything beyond elaborates, operationalises or validates that core. Extension adds a new home; revision changes an existing one; neither duplicates a concept already owned.</p>
+<hr />
+<h2 id="summary">15 · Summary</h2>
+<p>The Knowledge Foundry Reference Architecture is intentionally modular. Architectural understanding therefore depends not only on the individual documents but on the relationships that bind them together. This document provides those relationships — the map, the ownership boundaries, the crosswalks, the relationship catalogue and the master traceability — ensuring that the architecture may continue to evolve while remaining coherent, navigable and traceable.</p>
+<p>The series answers six questions in order: <em>what is the architecture</em> (KF-3000), <em>what are its domains</em> (KF-3001–3005), <em>how do they operate together</em> (KF-3006), <em>how is its integrity demonstrated</em> (KF-3007), <em>who may legitimately make it consequential</em> (KF-3008), and <em>how does the whole fit together</em> (KF-3009). Ending with synthesis rather than another specialised framework is the point: the last document is the one that makes all the others easier to understand and maintain.</p>
+<p>Together these documents establish a complete architectural lineage from constitutional principle to institutional reliance. KF-3009 closes the Reference Architecture by making that lineage explicit, navigable and maintainable.</p>
+<h3 id="closing-statement">Closing Statement</h3>
+<p>KF-3009 is the atlas to the constitution. It creates no law and owns no concept save the relationships among the rest. Its success is measured not by what it adds but by what it makes navigable: an architect, an implementer, a reviewer or a governance officer should be able to enter the architecture anywhere, find where every concept lives, follow any obligation from principle to conformance, and trust that the whole remains one coherent, traceable system. With it, the Reference Architecture is not merely a set of documents — it is a map of a single governed knowledge system, and a means of keeping it coherent as it evolves.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-3008-architectural-authority-framework.html">&#8592; Authority</a><a class="nx" href="kf-5000-exemplars-and-case-studies.html">Exemplars & Case Studies &#8594;</a></nav>
+</main>
+</div>
+</body></html>
