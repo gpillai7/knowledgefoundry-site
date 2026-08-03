@@ -1,0 +1,423 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrative Synthesis &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html" class="active"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-L001-C01 · Integrative Synthesis</h1>
+<p class="deck">What Integrated Understanding of Knowledge Systems Emerges from the Literature?</p>
+<p class="docmeta">Synthesis &#183; Expanded Draft &#183; v0.2</p>
+
+<pre><code>Question  →  Corpus  →  Evidence  →  Patterns  →  Candidate Insight</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p>To synthesise the findings of the Literature Landscape into a coherent understanding of knowledge systems.</p>
+<p>Rather than reviewing additional literature, this chapter integrates the findings developed across B01–B05.</p>
+<p>Its purpose is to identify recurring principles, complementary contributions, unresolved tensions, genuine research gaps, and the requirements any integrated methodology must satisfy.</p>
+<p>Only after those requirements are established does the chapter consider whether a candidate methodology — Knowledge Foundry — might respond to them. It does not evaluate whether that candidate succeeds; that is the work of the chapters beyond the Landscape.</p>
+<h3 id="executive-summary">Executive Summary</h3>
+<p>The Literature Landscape investigated knowledge systems from five complementary perspectives: engineering, collective capability, governance, artificial intelligence, and foundational concepts.</p>
+<p>Individually, each tradition provides mature explanations for important aspects of knowledge systems. Collectively, they reveal a single structure.</p>
+<p>A knowledge system is one governed object, operated on along three dimensions, and enacted across computational modalities.</p>
+<ul>
+<li>The <strong>object</strong> is the concept complex established in B01: representation → claim → evidence → justification → acceptance.</li>
+<li>The <strong>three dimensions</strong> are operations on that object: it is engineered (B02), collectivised (B03) and governed through legitimate change (B04).</li>
+<li>The <strong>computational modality</strong> — human, symbolic, parametric or hybrid — is a cross-cutting axis (B05) that varies who performs each operation and where representations reside, without adding a further operation.</li>
+</ul>
+<p>No reviewed tradition treats these together. Each holds part of the structure steady while working on another part. The deficiency of the literature is therefore not of components but of coordination — and that observation establishes the requirements against which any candidate methodology, including Knowledge Foundry, must subsequently be evaluated.</p>
+<h3 id="orientation-for-the-standalone-reader">Orientation for the Standalone Reader</h3>
+<p>This is the synthesis chapter. It reviews no new literature. It reads the findings of the five evidence chapters (B01–B05) and asks whether they support a single integrated understanding.</p>
+<p>The chapter proceeds in one direction only, and the direction matters:</p>
+<pre><code>Evidence   →   Integrated Gap   →   Requirements   →   Candidate   →   Methodology   →   Evaluation
+(B01–B05)          (§7)               (§8)               (§9)          (beyond)         (beyond)</code></pre>
+<p><em>Figure C01·1 — the one-directional synthesis pipeline. Knowledge Foundry enters only at Candidate.</em></p>
+<p>Everything up to Requirements is a claim about the literature. Only at Candidate does Knowledge Foundry enter, and it enters as one possible response, not as a demonstrated solution. The methodology and its evaluation lie beyond the Landscape. Preserving that order is what keeps the synthesis honest.</p>
+<h3 id="introduction">1. Introduction</h3>
+<p>The preceding chapters deliberately separated evidence from interpretation. Each investigated one question and closed with only a provisional integrative insight, explicitly deferred to this chapter.</p>
+<p>The purpose of C01 is to determine whether those individual insights collectively support a broader interpretation — and, if they do, to convert that interpretation into a set of requirements precise enough to be tested.</p>
+<h3 id="central-research-question">2. Central Research Question</h3>
+<blockquote>
+<p><strong>What integrated understanding of knowledge systems emerges from the Literature Landscape?</strong></p>
+</blockquote>
+<p>Supporting questions:</p>
+<ul>
+<li>Which findings recur across otherwise separate traditions?</li>
+<li>Which complement one another?</li>
+<li>Which tensions remain genuinely unresolved?</li>
+<li>Which assumptions survive the whole review?</li>
+<li>Which gap persists once the mature contributions are set aside?</li>
+</ul>
+<h3 id="the-evidence-base">3. The Evidence Base</h3>
+<p>The five findings, stated as findings rather than as literature. Each is the portable line its chapter earned.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Chapter</th>
+<th>Question it answered</th>
+<th>Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>B01 · Concepts</strong></td>
+<td>What is the object?</td>
+<td>Systems manipulate representations, claims, evidence, justification and acceptance — never knowledge directly (Proposition B01).</td>
+</tr>
+<tr class="even">
+<td><strong>B02 · Engineering</strong></td>
+<td>What do we construct?</td>
+<td>The object of engineering expands over time — from rules to ontologies to graphs to parametric substrates.</td>
+</tr>
+<tr class="odd">
+<td><strong>B03 · Capability</strong></td>
+<td>How does knowledge endure?</td>
+<td>Knowledge is collective and socially authorised; every knowledge system governs representations, not knowledge itself.</td>
+</tr>
+<tr class="even">
+<td><strong>B04 · Governance</strong></td>
+<td>How does knowledge change legitimately?</td>
+<td>Legitimate change requires governance, which decomposes into six recurring primitives.</td>
+</tr>
+<tr class="odd">
+<td><strong>B05 · Computation</strong></td>
+<td>Do foundation models change the conclusions?</td>
+<td>Computational modality redistributes the operations across the symbolic–parametric boundary; the substrate changes, the epistemic obligations do not.</td>
+</tr>
+</tbody>
+</table>
+<p>B01 is set first deliberately. It is categorically unlike the others: it does not describe an activity but defines the object on which every activity operates. That difference is the hinge of the integration that follows.</p>
+<h3 id="cross-chapter-integration">4. Cross-Chapter Integration</h3>
+<p>This is the intellectual heart of the Landscape.</p>
+<p>The integrating move is to stop reading B02–B05 as four subjects and to read them as structure around a single object. B01 is not a fifth perspective. It is the ontology underlying every other chapter — the object that engineering constructs, that capability collectivises, that governance changes, and that computation enacts.</p>
+<p>Once B01 is recognised as substrate, the remaining chapters resolve into three operational dimensions and one cross-cutting axis:</p>
+<pre><code>                    ┌───────────────────────────────┐
+                    │             B01               │
+                    │     The Conceptual Object     │
+                    │    representation → claim →    │
+                    │   evidence → justification →   │
+                    │          acceptance           │
+                    └───────────────────────────────┘
+                                    ▲
+              operations performed upon the object (the dimensions)
+        ┌────────────────┬────────────────┬────────────────┐
+        │  ENGINEERING   │   CAPABILITY   │   GOVERNANCE    │
+        │  (construct)   │ (collectivise) │ (legit. change) │
+        └────────────────┴────────────────┴────────────────┘
+                                    ▲
+        ─────────────── COMPUTATIONAL MODALITY ───────────────
+         cross-cutting axis · Human · Symbolic · Parametric · Hybrid
+          (who performs each operation · where representations reside ·
+                       how the work is distributed)</code></pre>
+<p><em>Figure C01·2 — the integrated reference model: one governed object, three operational dimensions, one cross-cutting modality axis.</em></p>
+<p>Two clarifications make this precise.</p>
+<p><strong>Why three dimensions, not four.</strong> Engineering, capability and governance are operations — things done to the object. Computation is not a fourth operation. B05 never argued that artificial intelligence introduced a new knowledge dimension; it demonstrated that engineering, capability and governance persist, and that what AI changes is the modality in which they are performed. Treating computation as a peer dimension would be a category error.</p>
+<p><strong>Why “modality,” not “computation.”</strong> What varies across B05’s evidence is not computation as such but the mode of computation — human judgement, symbolic manipulation, parametric inference, or hybrids of these. Naming the axis Computational Modality states B05’s actual conclusion: the object and its three operations are constant; the modality in which they are enacted is what redistributes.</p>
+<p><strong>A note on the object.</strong> The diagram distinguishes two senses of “object” that the rest of the thesis keeps apart. The <strong>Conceptual Object</strong> is the abstract object B01 defines — representation → claim → evidence → justification → acceptance — and answers <em>what the object is</em>. The <strong>Operational Knowledge Object</strong> is the concrete artefact a knowledge system actually manipulates — the versioned representation together with its attached evidence, justification and acceptance-state — and answers <em>what systems actually operate upon</em>. The operational knowledge object is a concrete instance of the conceptual object. The distinction is dormant in the Landscape and becomes load-bearing once the methodology is specified; it also fixes the term that replaces the looser “proxy” used earlier in the drafting.</p>
+<p>The disciplines have become a geometry. That geometry is what the rest of the chapter reasons over.</p>
+<h3 id="persistent-patterns">5. Persistent Patterns</h3>
+<p>Six propositions recur across the evidence base with enough force to be treated as settled findings of the Landscape. They are numbered here as Landscape Propositions (L-P1–L-P6) so that the remaining thesis can cite them directly rather than re-deriving them chapter by chapter.</p>
+<p><strong>L-P1.</strong> Knowledge systems manipulate representations, not knowledge. <em>(Proposition B01; B03.)</em></p>
+<p><strong>L-P2.</strong> The object of engineering expands over time. <em>(B02.)</em></p>
+<p><strong>L-P3.</strong> Knowledge is collective and socially authorised. <em>(B03.)</em></p>
+<p><strong>L-P4.</strong> Legitimate change requires governance, which decomposes into six primitives — evidence/justification, authority, provenance, validation, versioning, reversibility. <em>(B04.)</em></p>
+<p><strong>L-P5.</strong> Computational modality redistributes the operations without removing epistemic obligation. <em>(B05.)</em></p>
+<p><strong>L-P6.</strong> The persistent challenge is the governed transition between accepted states, not storage. <em>(B01 §11; B04.)</em></p>
+<p>The register is a structural device, not merely a summary. A later chapter that writes “by L-P4” invokes the whole governance result in two characters, and the thesis reads as one research programme rather than five separate reviews.</p>
+<h4 id="interpretive-maxims">5.1 Interpretive Maxims</h4>
+<p>The Landscape carries one further class of statement, and it is worth naming explicitly, because the thesis now trades in three:</p>
+<ul>
+<li>a <strong>Proposition</strong> (L-Pn) is a claim derived from the literature;</li>
+<li>a <strong>Requirement</strong> (Rn, §8) is something a candidate methodology must satisfy;</li>
+<li>an <strong>interpretive maxim</strong> is a memorable way of thinking about a proposition — not itself a finding, but an operational reading of one.</li>
+</ul>
+<p>Keeping maxims separate from propositions protects the logical structure: a maxim earns its place by clarifying a proposition, never by adding evidence. The Landscape names one.</p>
+<blockquote>
+<p><strong>Inspectable Objects Principle</strong> <em>(interpretive maxim)</em></p>
+<p>Knowledge systems hold inspectable objects, never truth.</p>
+<p>An operational interpretation of Proposition L-P1: knowledge systems can inspect, compare, version and govern representations, but truth itself always remains external to the system.</p>
+</blockquote>
+<h3 id="persistent-tensions">6. Persistent Tensions</h3>
+<p>The literature leaves genuine tensions unresolved. This section does not paper over them; it sorts them. Some are dissolved by adopting a stance and pass out of scope. The remainder are genuinely open, and each becomes a requirement in §8. The open tensions are not defects in the literature — they are the coordinates of the integrated gap.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tension</th>
+<th>Status</th>
+<th>Disposition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Truth vs justification</td>
+<td>Dissolved by stance</td>
+<td>B01’s operational bracket: systems govern justification and acceptance, not truth. Out of scope; underpins R2. Noted, not solved.</td>
+</tr>
+<tr class="even">
+<td>Tacit vs explicit</td>
+<td>Genuinely open</td>
+<td>Polanyi’s representational limit → R9.</td>
+</tr>
+<tr class="odd">
+<td>Symbolic vs parametric</td>
+<td>Genuinely open</td>
+<td>The modality boundary → R7.</td>
+</tr>
+<tr class="even">
+<td>Human vs AI judgement</td>
+<td>Genuinely open</td>
+<td>Modality coordination → R8.</td>
+</tr>
+<tr class="odd">
+<td>Engineering vs emergence</td>
+<td>Genuinely open</td>
+<td>Constructed vs learned representations → spans R1 + R7.</td>
+</tr>
+<tr class="even">
+<td>Governance vs autonomy</td>
+<td>Genuinely open — sharpest</td>
+<td>Governed change vs autonomous enactment → R6 + R8. The hardest requirement, and the clearest candidate territory.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-integrated-gap">7. The Integrated Gap</h3>
+<p>This is where the thesis appears. Note the exact claim, and note what it is not.</p>
+<p>The literature does not lack engineering. It does not lack governance. It does not lack artificial intelligence or knowledge management. Each is mature in isolation. The deficiency is of a different kind.</p>
+<blockquote>
+<p><strong>Proposition C01 · The Integrated Gap</strong></p>
+<p>The literature explains how knowledge systems are engineered, socialised, governed and computationally enacted — but it does not explain how these operations are coordinated over the lifecycle of a single governed knowledge object.</p>
+</blockquote>
+<p>This is the strongest claim the evidence supports, and no stronger. It incorporates B01 (the governed object), B02 (engineered), B03 (socialised), B04 (governed) and B05 (computationally enacted) without importing any Knowledge Foundry terminology. It is falsifiable: it would be refuted by any reviewed framework that coordinates all three operations on one object across time, under varying modality. The Landscape found none.</p>
+<p>Proposition C01 stands in deliberate parallel to Proposition B01. B01 established <em>what the object is</em>; C01 establishes <em>what the literature, taken whole, fails to do with it</em>. Together they are the two load-bearing propositions of the Landscape.</p>
+<h3 id="requirements-for-an-integrated-methodology">8. Requirements for an Integrated Methodology</h3>
+<p>The requirements are derived from the evidence — not proposed to suit any methodology. They are stated before Knowledge Foundry is named, and they preserve a full audit trail: each requirement is traceable to the chapters, patterns and tensions that generate it. A condensed formulation is possible for later publication; the thesis retains all ten, because traceability matters more than elegance under examination.</p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Requirement</th>
+<th>Derived from</th>
+<th>B04 primitive</th>
+<th>Modality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>R1</strong></td>
+<td>Engineer and construct representations</td>
+<td>B02; L-P2</td>
+<td>(pre-governance)</td>
+<td>all</td>
+</tr>
+<tr class="even">
+<td><strong>R2</strong></td>
+<td>Manage evidence and justification</td>
+<td>B01; B04; L-P1</td>
+<td>Evidence/Justification</td>
+<td>all</td>
+</tr>
+<tr class="odd">
+<td><strong>R3</strong></td>
+<td>Authorise acceptance and release</td>
+<td>B03; B04; L-P3</td>
+<td>Authority; Versioning/Release</td>
+<td>all</td>
+</tr>
+<tr class="even">
+<td><strong>R4</strong></td>
+<td>Preserve provenance and traceability</td>
+<td>B04</td>
+<td>Provenance/Traceability</td>
+<td>all</td>
+</tr>
+<tr class="odd">
+<td><strong>R5</strong></td>
+<td>Validate the quality of inputs and claims</td>
+<td>B04; B01</td>
+<td>Validation/Quality</td>
+<td>all</td>
+</tr>
+<tr class="even">
+<td><strong>R6</strong></td>
+<td>Govern change as controlled transition between accepted states</td>
+<td>B04; B01 (loop); L-P6</td>
+<td>Versioning/Release; Reversibility/Audit</td>
+<td>all</td>
+</tr>
+<tr class="odd">
+<td><strong>R7</strong></td>
+<td>Integrate symbolic and parametric representations</td>
+<td>B05; symbolic–parametric tension</td>
+<td>(cross-cutting)</td>
+<td>symbolic + parametric</td>
+</tr>
+<tr class="even">
+<td><strong>R8</strong></td>
+<td>Coordinate human and AI judgement</td>
+<td>B05; human-vs-AI, governance-vs-autonomy tensions</td>
+<td>Authority; Reversibility/Audit</td>
+<td>human + machine</td>
+</tr>
+<tr class="odd">
+<td><strong>R9</strong></td>
+<td>Accommodate tacit knowledge despite partial representability</td>
+<td>B01 (Polanyi); B03</td>
+<td>—</td>
+<td>mainly non-symbolic</td>
+</tr>
+<tr class="even">
+<td><strong>R10</strong></td>
+<td>Maintain collective memory over time</td>
+<td>B03; B01 (loop)</td>
+<td>Versioning/Release</td>
+<td>all</td>
+</tr>
+</tbody>
+</table>
+<p>R1–R6 correspond one-to-one to engineering plus the six governance primitives: they are what a single dimension already demands. R7–R10 arise only when the dimensions are considered together under varying modality. R7–R10 are therefore the register’s operational statement of Proposition C01 — the requirements no isolated tradition was obliged to meet.</p>
+<h3 id="knowledge-foundry-as-candidate-methodology">9. Knowledge Foundry as Candidate Methodology</h3>
+<p>Only now, and only as a candidate, does Knowledge Foundry enter. Not “the solution.” A candidate response to R1–R10.</p>
+<p>The distinction is enforced in the wording. The mapping below records, for each requirement, what Knowledge Foundry <em>claims</em> to address and at what locus. It does not record that it succeeds. Mechanism is specified in the methodology chapters; success is tested in the evaluation chapters. Both lie beyond the Landscape, and stating either here would argue for Knowledge Foundry before it has been specified.</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Requirement</th>
+<th>Knowledge Foundry’s claim (candidacy only)</th>
+<th>Mechanism</th>
+<th>Evaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>R1–R5</strong></td>
+<td>Claims to adopt the mature foundations — engineering and the five governance primitives — rather than reinvent them</td>
+<td>specified later</td>
+<td>deferred</td>
+</tr>
+<tr class="even">
+<td><strong>R6</strong></td>
+<td>Claims its distinctive contribution here: change as a controlled transition from one justified state to another</td>
+<td>specified later</td>
+<td>deferred</td>
+</tr>
+<tr class="odd">
+<td><strong>R7</strong></td>
+<td>Claims cross-modality coverage of symbolic and parametric representations</td>
+<td>specified later</td>
+<td>deferred</td>
+</tr>
+<tr class="even">
+<td><strong>R8</strong></td>
+<td>Claims a coordination model for human and machine judgement</td>
+<td>specified later</td>
+<td>deferred</td>
+</tr>
+<tr class="odd">
+<td><strong>R9</strong></td>
+<td>Claims to accommodate the tacit remainder</td>
+<td>specified later</td>
+<td>deferred</td>
+</tr>
+<tr class="even">
+<td><strong>R10</strong></td>
+<td>Claims continuity of collective memory across transitions</td>
+<td>specified later</td>
+<td>deferred</td>
+</tr>
+</tbody>
+</table>
+<p>Two guardrails are explicit. First, Knowledge Foundry is not positioned as a successor stage to the reviewed traditions; it claims to be a cross-layer governance of change over them. Second, whether it satisfies R1–R10 is an open empirical question — the reason the remaining thesis exists.</p>
+<h3 id="relationship-to-subsequent-chapters">10. Relationship to Subsequent Chapters</h3>
+<p>The Literature Landscape ends here.</p>
+<p>Its hand-off artifact is the requirements register (R1–R10). The remaining thesis is structured as the attempt first to specify a methodology against that register, and then to test whether the specification satisfies it. Every later claim traces back through R1–R10 to the evidence chapters, and through the Landscape Propositions to the literature.</p>
+<p>The pipeline is therefore complete and one-directional:</p>
+<pre><code>Evidence (B01–B05)  →  Integrated Gap (C01 §7)  →  Requirements (C01 §8)
+                    →  Candidate (C01 §9)  →  Methodology (beyond)  →  Evaluation (beyond)</code></pre>
+<p><em>Figure C01·3 — the complete programme pipeline; every later claim traces back through R1–R10 to the evidence.</em></p>
+<h3 id="guiding-principle">Guiding Principle</h3>
+<blockquote>
+<p>The Literature Landscape does not demonstrate that Knowledge Foundry is necessary.</p>
+<p>It demonstrates that any methodology capable of integrating the engineering, social, governance and computational dimensions of knowledge systems must satisfy a common set of requirements.</p>
+<p>Knowledge Foundry is introduced only as one candidate response to those requirements.</p>
+</blockquote>
+<h3 id="references">References</h3>
+<p>C01 introduces no new sources. All citations are to B01–B05 and to the works reviewed therein; the DOI pass for those works is held at their respective chapters, deferred to v1.0 per house convention.</p>
+<h3 id="appendix-editorial-notes-flagged-decisions-remove-at-v1.0">Appendix — Editorial Notes (flagged decisions, remove at v1.0)</h3>
+<p>Fork decisions applied in this draft (all as agreed):</p>
+<p><strong>A</strong> — B01 rendered as substrate/ontology, set first in §3 and beneath the object in the §4 diagram; not a fifth peer.</p>
+<p><strong>B / G</strong> — Computation reframed as a cross-cutting axis, not a peer dimension; the three true dimensions are Engineering, Capability, Governance. The axis is renamed Computational Modality (Human · Symbolic · Parametric · Hybrid), per Decision G, to match B05’s actual conclusion.</p>
+<p><strong>C</strong> — Patterns promoted to numbered Landscape Propositions L-P1–L-P6, set apart and citable.</p>
+<p><strong>D / H</strong> — The gap is boxed as Proposition C01, in parallel with Proposition B01, using the sharpened wording of Decision H (coordination over the lifecycle of a single governed object).</p>
+<p><strong>E</strong> — All ten requirements retained for traceability; a condensed six-requirement version is reserved for later publication and not built here.</p>
+<p><strong>F</strong> — KF mapping kept thin, and phrased throughout as “claims to” rather than “satisfies,” with mechanism and evaluation explicitly deferred.</p>
+<p>Two cross-cutting items, now resolved (this pass):</p>
+<ol type="1">
+<li><strong>Operational-truth line</strong> — promoted as an interpretive maxim, not a proposition. Per your refinement, it is set apart in §5.1 as the Inspectable Objects Principle and explicitly typed as an operational interpretation of L-P1. This also introduces the thesis’s three statement classes: Proposition (L-Pn), Requirement (Rn), interpretive maxim.</li>
+<li><strong>Terminology standardised.</strong> “Proxy” is retired across the Landscape in favour of Operational Knowledge Object (the concrete artefact a system manipulates), kept distinct from the Conceptual Object (B01’s abstract object; §4). C01 and B01 are updated this pass. B02–B05 are not in the current working set — when next opened, run the same find-and-replace (“proxy” → “operational knowledge object”) for full Landscape consistency. The acronym OKO is deliberately not introduced yet; it can be adopted later if the methodology chapters make it useful.</li>
+</ol>
+
+<nav class="prevnext"><a class="pv" href="kf-l001-b05.html">&#8592; Foundation Models & the Knowledge Sciences</a><a class="nx" href="kf-0002-controlled-vocabulary.html">Controlled Vocabulary &#8594;</a></nav>
+</main>
+</div>
+</body></html>

@@ -1,8 +1,246 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-<rect width="32" height="32" rx="5" fill="#23221D"/>
-<line x1="16" y1="2.5" x2="16" y2="5.5" stroke="#BC6C2E" stroke-width="1.7"/>
-<path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#ECE9E0" stroke-width="1.6" fill="none"/>
-<line x1="9" y1="13" x2="23" y2="13" stroke="#ECE9E0" stroke-width="1" opacity=".4"/>
-<line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#ECE9E0" stroke-width="1" opacity=".65"/>
-<rect x="6" y="21" width="20" height="5" fill="#ECE9E0"/>
-</svg>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Controlled Vocabulary &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html" class="active"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-0002 · Controlled Vocabulary and Architectural Distinctions</h1>
+<p class="deck">The authoritative terms of the Knowledge Foundry programme, the distinctions they must preserve, and their user-facing projection</p>
+<p class="docmeta">Programme-Wide Reference &#183; <span style="color:#BC6C2E">Draft for Experiment</span> &#183; v0.1</p>
+
+<h3 id="purpose">Purpose</h3>
+<p>This document is the single authoritative home for Knowledge Foundry terminology. It exists so that a term means the same thing in the Canon, the methodology, the architecture, the implementation, the interface and the training material — and so that distinctions the programme depends on are not quietly collapsed by casual synonymy.</p>
+<p>It does not re-cut the architecture’s concepts; those are defined in their home documents. It <strong>collects</strong> them, records the distinctions that must never be treated as synonyms, and defines the small user-facing vocabulary that ordinary users meet in place of the full ontology. Where a definition here and a definition in a home document appear to differ, the home document governs the concept and this document is corrected.</p>
+<blockquote>
+<p><strong>Namespace note.</strong> This document is numbered <strong><a href="kf-0002-controlled-vocabulary.html">KF-0002</a></strong> on the assumption that the <strong><a href="kf-0000-reference-architecture-overview.html">KF-0000</a> series is reserved for programme-wide constitutional and navigational artefacts</strong> (glossary, programme map, document register). It is deliberately <em>not</em> numbered KF-1001, which is already occupied by the Canon’s opening chapter (“The Nature of Governed Knowledge Systems”). If the <a href="kf-0000-reference-architecture-overview.html">KF-0000</a> series is designated otherwise, this document is renumbered without changing its content.</p>
+</blockquote>
+<p>The document has four sections: <strong>authoritative definitions</strong>, <strong>required distinctions</strong>, <strong>permitted user-facing language</strong>, and <strong>mapping rules</strong>.</p>
+<hr />
+<h2 id="section-1-authoritative-definitions">Section 1 · Authoritative Definitions</h2>
+<p>Terms are grouped by the layer that owns them. Each definition is a compact restatement of the governing document; the citation is the authority.</p>
+<h3 id="constitutional-kf-1000">Constitutional (<a href="kf-1000-canon.html">KF-1000</a>)</h3>
+<ul>
+<li><strong>Governed knowledge system</strong> — a socio-technical system that holds operational knowledge objects and governs their transition from one justified state to another across modalities (KF-1001).</li>
+<li><strong>Operational Knowledge Object (OKO)</strong> — the unit of design: a versioned representation together with its attached evidence, justification and acceptance-state (KF-1101). The system governs the object, never “knowledge itself”.</li>
+<li><strong>Canonical Principle</strong> — an enduring obligation true of any governed knowledge system, admitted only if it survives the two-question test (<a href="kf-1000-canon.html">KF-1000</a> Part III).</li>
+<li><strong>Governance Primitive</strong> — one of the six operations by which warrant is conferred: evidence, authority, provenance, validation, versioning, reversibility (KF-1104).</li>
+<li><strong>Constitutional invariant</strong> — one of the five properties whose loss would make a system cease to be a governed knowledge system: inspectability, justification, provenance, governed evolution, human accountability (KF-1050).</li>
+</ul>
+<h3 id="lifecycle-and-method-kf-2000">Lifecycle and method (KF-2000)</h3>
+<ul>
+<li><strong>Lifecycle stage</strong> — a distinct engineering responsibility with an entry condition and an exit gate (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</li>
+<li><strong>Transition</strong> — a governed move between states; always attributable and justified (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</li>
+<li><strong>Event</strong> — an occurrence that triggers a transition; may be raised by a human or an agent, but the transition it triggers remains governed (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</li>
+<li><strong>Gate</strong> — a justification checkpoint; the point at which an object may advance only if the obligations of its stage are discharged (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>; <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>).</li>
+<li><strong>Lifecycle invariant</strong> — one of the six continuously checkable properties of an object at every instant: single identity, attributable transitions, justified transitions, inspectable transitions, provenance always present, lineage preserved (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</li>
+<li><strong>Materiality</strong> — the degree to which an object, claim, decision or transition may affect consequential action, reliance, obligation, exposure, representation or preservation (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>).</li>
+<li><strong>Assurance class</strong> — the ordinal grade (A0 Exploratory · A1 Working · A2 Routine · A3 Consequential · A4 Critical) that sets the depth of assurance required; attaches to the release / scope of reliance (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>).</li>
+<li><strong>Governance overlay</strong> — an orthogonal attribute (regulated, confidential, public, client-facing, legally-privileged) adding obligations without changing class (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>).</li>
+</ul>
+<h3 id="architecture-kf-3000-series">Architecture (<a href="kf-3000-reference-architecture.html">KF-3000</a> series)</h3>
+<ul>
+<li><strong>Capability</strong> — an enduring ability the architecture must possess, independent of workflow, role, service, technology or modality (<a href="kf-3002-capability-model.html">KF-3002</a>).</li>
+<li><strong>Service</strong> — a logical mechanism with defined responsibility that realises capabilities and maintains records (<a href="kf-3003-service-architecture.html">KF-3003</a>).</li>
+<li><strong>Component</strong> — the technical element that implements part of a service (KF-4000).</li>
+<li><strong>Practice</strong> — the disciplined human or socio-technical method by which work is performed (<a href="kf-2002-engineering-practices.html">KF-2002</a>).</li>
+<li><strong>Control</strong> — a reusable mechanism that establishes whether one required condition holds; protects an obligation, risk, policy or invariant (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>).</li>
+<li><strong>Information / Record object</strong> — a structured unit of governed information with one authoritative maintaining service (<a href="kf-3004-information-and-record-model.html">KF-3004</a>).</li>
+<li><strong>Evidence record</strong> — the durable record that a material obligation or decision was discharged; wherever possible emitted by the governed act itself (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2).</li>
+<li><strong>Conformance claim</strong> — an assertion that an object is governed, accepted, current or reliable, reconstructable to the depth its reliance requires (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>).</li>
+<li><strong>Release</strong> — a version authorised for a defined scope of operational reliance; the anchor to which assurance class attaches (<a href="kf-3000-reference-architecture.html">KF-3000</a> §2).</li>
+</ul>
+<h3 id="navigation-kf-3009-kf-0001">Navigation (<a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a>, <a href="kf-0001-architecture-map.html">KF-0001</a>)</h3>
+<ul>
+<li><strong>Relationship</strong> — a semantic connection between architectural elements; the canonical relationship types are fixed in <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> §10.</li>
+<li><strong>Dependency</strong> — a relationship in which one element requires another for correct operation. Every dependency is a relationship; not every relationship is a dependency.</li>
+<li><strong>Traceability</strong> — the ability to reconstruct lineage across one or more relationships using observable evidence (<a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a>; <a href="kf-3006-architectural-integration-model.html">KF-3006</a> §10). Traceability is what makes a relationship <em>demonstrable</em> rather than merely asserted.</li>
+</ul>
+<hr />
+<h2 id="section-2-required-distinctions">Section 2 · Required Distinctions</h2>
+<p>These pairs carry the programme’s intellectual weight. They <strong>must not</strong> be treated as synonyms in any document, interface or procedure. Collapsing any one of them re-introduces the ambiguity the discipline exists to resolve.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distinction</th>
+<th>The difference that must be preserved</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Evidence vs. justification</strong></td>
+<td>Evidence is what supports a claim; justification is the reasoned case — including counter-evidence, assumptions and rationale — for why it may be believed.</td>
+</tr>
+<tr class="even">
+<td><strong>Justification vs. acceptance</strong></td>
+<td>Justification establishes <em>why</em> an object may be believed; acceptance establishes that an identified <em>authority will rely</em> on it. Neither substitutes for the other.</td>
+</tr>
+<tr class="odd">
+<td><strong>Principle vs. invariant</strong></td>
+<td>A principle governs <em>progression</em> (what a transition must earn); an invariant governs <em>conformance</em> (what must remain true at every instant).</td>
+</tr>
+<tr class="even">
+<td><strong>Capability vs. service</strong></td>
+<td>A capability is <em>what</em> must be possible; a service is <em>one mechanism</em> by which it is delivered. A capability need not reduce to a single service.</td>
+</tr>
+<tr class="odd">
+<td><strong>Object vs. representation</strong></td>
+<td>The object is the enduring governed identity; a representation is one form of its content. One object may have several representations.</td>
+</tr>
+<tr class="even">
+<td><strong>Identity vs. version</strong></td>
+<td>Identity is immutable and singular; a version is one immutable state of the object’s content under that identity.</td>
+</tr>
+<tr class="odd">
+<td><strong>Provenance vs. lineage</strong></td>
+<td>Provenance is origin and derivation of content; lineage is the historical relationship between objects and versions (branch, supersede, consolidate).</td>
+</tr>
+<tr class="even">
+<td><strong>Transition vs. event</strong></td>
+<td>An event is what <em>happened</em>; a transition is the governed <em>move</em> it triggers. An event never bypasses a gate.</td>
+</tr>
+<tr class="odd">
+<td><strong>Control vs. gate</strong></td>
+<td>A control tests one condition; a gate <em>orchestrates</em> several controls into one decision (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> §29).</td>
+</tr>
+<tr class="even">
+<td><strong>Evidence record vs. conformance claim</strong></td>
+<td>An evidence record is the durable proof an obligation was discharged; a conformance claim is an assertion reconstructable <em>from</em> such records.</td>
+</tr>
+<tr class="odd">
+<td><strong>Assurance class vs. maturity profile</strong></td>
+<td>A class grades how much rigour a <em>particular object</em> is governed to (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>); a maturity profile describes how much <em>architecture</em> an implementation has stood up (<a href="kf-3000-reference-architecture.html">KF-3000</a> §20).</td>
+</tr>
+<tr class="even">
+<td><strong>Relationship vs. dependency vs. traceability</strong></td>
+<td>A relationship is any semantic connection between elements; a dependency is a relationship of <em>required operation</em>; traceability is the <em>reconstruction</em> of lineage across relationships from observable evidence (<a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="section-3-permitted-user-facing-language">Section 3 · Permitted User-Facing Language</h2>
+<p>Ordinary users experience governance; they do not study its ontology. Interfaces and operating procedures may use the following <strong>five-state vocabulary</strong> in place of the internal lifecycle states. These terms are <strong>controlled projections</strong> of the architecture — simplifications sanctioned here — not replacements for the formal vocabulary, which continues to govern beneath them.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>User-facing term</th>
+<th>What the user understands</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Draft</strong></td>
+<td>Being worked on; not yet approved to rely on</td>
+</tr>
+<tr class="even">
+<td><strong>Under Review</strong></td>
+<td>Being checked; approval not yet complete</td>
+</tr>
+<tr class="odd">
+<td><strong>Approved</strong></td>
+<td>Approved to rely on, within a stated scope</td>
+</tr>
+<tr class="even">
+<td><strong>Needs Updating</strong></td>
+<td>Something has changed; its currency is in question</td>
+</tr>
+<tr class="odd">
+<td><strong>Superseded</strong></td>
+<td>Replaced by a newer object or version</td>
+</tr>
+</tbody>
+</table>
+<p>No other user-facing state names are sanctioned without amendment to this document. Assurance class may be surfaced to users in plain terms (e.g. “for significant decisions”) but the class codes A0–A4 are architectural, not user-facing.</p>
+<hr />
+<h2 id="section-4-mapping-rules">Section 4 · Mapping Rules</h2>
+<p>The user-facing terms map to internal architecture as follows. The mapping is the contract: an interface showing a user term asserts that the corresponding internal condition holds.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>User-facing term</th>
+<th>Internal meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Draft</strong></td>
+<td>Object exists but is not accepted for operational reliance (pre-Acceptance lifecycle states)</td>
+</tr>
+<tr class="even">
+<td><strong>Under Review</strong></td>
+<td>One or more required evaluation or justification activities are incomplete (Evaluate / Justify stages, or a returned object)</td>
+</tr>
+<tr class="odd">
+<td><strong>Approved</strong></td>
+<td>Accepted for a defined scope of reliance (Acceptance recorded; a valid Release within scope)</td>
+</tr>
+<tr class="even">
+<td><strong>Needs Updating</strong></td>
+<td>A currency or validity condition has been breached or questioned (a Continuing-Review or dependency event has fired)</td>
+</tr>
+<tr class="odd">
+<td><strong>Superseded</strong></td>
+<td>A successor object or version has replaced the object for defined use (Supersession Link recorded; lineage preserved)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules of use.</strong> 1. A user term may be shown only when its internal condition is satisfied; the interface does not assert states the architecture has not reached. 2. The mapping is many-to-one downward: several internal states may present as one user term (e.g. Evaluate and Justify both present as <em>Under Review</em>). It is never one-to-many: a single internal condition does not present as two contradictory user terms. 3. The internal state remains the source of truth for every governed decision. User terms are for comprehension, not for authority.</p>
+<hr />
+<h3 id="status-and-maintenance">Status and Maintenance</h3>
+<p>This document is <strong>Draft for Experiment</strong>. The five-state projection and the required distinctions are to be tested against the first vertical slice: does the five-state vocabulary suffice for a real user of a Consequential object, and do the distinctions hold up when one object is taken end to end? It moves to <em>Approved</em> after that evidence. The glossary is maintained as a controlled vocabulary in its own right — changes are governed, attributable and versioned, exactly as the architecture requires of any governed record.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-l001-c01.html">&#8592; Integrative Synthesis</a></nav>
+</main>
+</div>
+</body></html>

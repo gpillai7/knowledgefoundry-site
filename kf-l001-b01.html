@@ -1,0 +1,1041 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Information & Record Model &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html" class="active"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-3004 · Governed Information and Record Model</h1>
+<p class="deck">The Logical Information Architecture of the Knowledge Foundry</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.2</p>
+
+<pre class="text"><code>Reference Architecture (KF-3000)
+        ↓
+Architectural Rules (KF-3001)
+        ↓
+Capability and Service Models (KF-3002 / KF-3003)
+        ↓
+▸ Governed Information and Record Model (KF-3004)
+        ↓
+Control, Authority and Conformance Models (KF-3005–KF-3009)
+        ↓
+Implementation Schemas (KF-4000)</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the logical information objects, record classes, relationships, identity rules and temporal semantics required by the Knowledge Foundry architecture. It establishes what governed information must exist; how it is identified; how information objects relate; which single logical service maintains each authoritative record; how substantive, epistemic, governance, operational and assurance information remain distinguishable; how current and historical states are reconstructed; and how correction, supersession and retention operate without silent mutation.</p>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> does not prescribe database technology, table structure, file format, graph implementation, indexing strategy, API payload, physical partitioning, vendor platform or user-interface representation.</p>
+<p>It answers:</p>
+<blockquote>
+<p><em>What logical information must a conforming Knowledge Foundry implementation preserve?</em></p>
+</blockquote>
+<p>Every record family in this document resolves to <strong>exactly one authoritative maintaining service</strong> in the frozen <a href="kf-3003-service-architecture.html">KF-3003</a> nineteen-service catalogue. There is no dual authoritative ownership: where two services touch a concept, one holds the authoritative record and the other holds an adjacent, related or derived view (§7.1).</p>
+<h3 id="information-derivation">Information Derivation</h3>
+<pre class="text"><code>Canonical Obligation → Lifecycle/Practice Requirement → Invariant and Capability
+→ Logical Service Responsibility → Required Information Object
+→ Relationship and Temporal Semantics → Implementation Schema</code></pre>
+<p>Every principal information object must be traceable to a lifecycle or practice obligation; a <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> invariant or constraint; a <a href="kf-3002-capability-model.html">KF-3002</a> capability; a <a href="kf-3003-service-architecture.html">KF-3003</a> service responsibility; and a conformance or historical-reconstruction need.</p>
+<hr />
+<h2 id="part-i-information-architecture-foundations">Part I · Information Architecture Foundations</h2>
+<h3 id="core-information-concepts">1. Core Information Concepts</h3>
+<p><strong>1.1 Operational Knowledge Object.</strong> The enduring governed subject whose identity persists across versions, representations, assessments, releases and applications. The object is not identical to a document, file, row, model instance, prompt, version, actionable form or application result; it may be <em>represented</em> through one or more of these.</p>
+<p><strong>1.2 Object Version.</strong> An immutable represented state of an object. It belongs to exactly one enduring identity, captures a bounded substantive state, cannot be silently overwritten, may have several representations, may be evaluated/justified/accepted/released, and does not automatically inherit acceptance or release from another version.</p>
+<p><strong>1.3 Representation.</strong> An inspectable expression of the substantive content of a version — textual, symbolic, graphical, structured, computational, parametric, multimodal or hybrid. Representation identity is distinct from object and version identity.</p>
+<p><strong>1.4 Governed Record.</strong> An attributable, temporally situated information object preserving evidence of an event, decision, assessment, relationship, condition, assignment, action, outcome or conformance finding. It does not necessarily contain substantive knowledge.</p>
+<p><strong>1.5 Reference.</strong> A governed relationship to an information object maintained authoritatively elsewhere, preserving enough to resolve its target, identify the target version or effective state, detect broken resolution and preserve historical meaning.</p>
+<p><strong>1.6 Information Projection.</strong> A derived, cached or indexed view of authoritative information. A projection is not authoritative; it identifies its source records, preserves refresh/effective-state information, cannot silently override the authoritative record, and may be regenerated where required.</p>
+<h3 id="information-classes">2. Information Classes</h3>
+<p>Five classes, physically co-locatable but logically distinguishable: <strong>Substantive</strong> (what the object expresses); <strong>Epistemic</strong> (why, how strongly and under what uncertainty it may be believed); <strong>Governance</strong> (who may rely on it and under what conditions); <strong>Operational</strong> (how knowledge was transformed, used and observed); <strong>Assurance and continuity</strong> (how integrity, provenance, temporal continuity and conformance are demonstrated).</p>
+<h3 id="information-object-admission-test">3. Information Object Admission Test</h3>
+<p>Admitted where it is required to discharge an upstream obligation; has a distinct architectural meaning; has an identifiable single authoritative maintainer; has stateable identity or relationship semantics; has definable temporal behaviour; its absence would prevent control, traceability or conformance; it is not merely an undocumented attribute of another object; and it does not duplicate an existing authoritative record.</p>
+<h3 id="information-object-specification">4. Information Object Specification</h3>
+<p>Each principal information object may be specified through: Definition; Architectural purpose; Information class; Authoritative maintaining service; Identity rule; Required properties; Principal relationships; Lifecycle or status; Temporal semantics; Integrity and mutation rule; Retention and disposition; Protected invariants; Conformance test.</p>
+<h3 id="information-object-granularity-and-record-categories">4.1 Information Object Granularity and Record Categories</h3>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> identifies logical information obligations. A named information object may be implemented as an independently identified governed record, an immutable sub-record, an effective-dated status assertion, a governed relationship, a controlled property, or a non-authoritative projection. A named item requires <strong>independent record identity</strong> only where it has its own authority, effective period, correction history, provenance, retention obligation, lifecycle or conformance significance. KF-4000 determines physical normalisation while preserving these semantics — a record code is not a mandatory database table.</p>
+<p>Each named object carries one of six <strong>record categories</strong>, which sets the specification depth required:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Required specification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Core Record</strong></td>
+<td>all thirteen fields of §4</td>
+</tr>
+<tr class="even">
+<td><strong>Supporting Record</strong></td>
+<td>definition; maintainer; identity rule; required properties; parent/related core record; temporal and mutation rule</td>
+</tr>
+<tr class="odd">
+<td><strong>Projection</strong></td>
+<td>source records; freshness rule; invalidation rule; non-authoritative status</td>
+</tr>
+<tr class="even">
+<td><strong>Relationship Record</strong></td>
+<td>the §9.1 relationship-type specification</td>
+</tr>
+<tr class="odd">
+<td><strong>Status Assertion</strong></td>
+<td>controlled value set; the core record it qualifies; effective-dating rule</td>
+</tr>
+<tr class="even">
+<td><strong>Controlled Vocabulary</strong></td>
+<td>permitted values and their governing service</td>
+</tr>
+</tbody>
+</table>
+<p>Core records in this document are OBJ-01, VER-01, ACC-01, TRN-01, REL-01, ACT-01, APP-01, RET-01, PRO-01, CNF-05. All others are supporting records, projections, status assertions or relationship records as marked.</p>
+<h3 id="common-record-properties">5. Common Record Properties</h3>
+<p>Every governed record must contain or resolve to: stable record identity; record class; related object identity; related version identity where applicable; creator or originating service; initiating actor; accountable authority where applicable; recorded time; event time where distinct; effective time or period where applicable; status; provenance; integrity status; access classification; supersession or correction relationship; retention condition; authoritative maintaining service. A governed reference suffices where resolution and historical meaning are preserved.</p>
+<h3 id="material-information-activity">5.1 Material Information Activity</h3>
+<p>“Material” is defined, so implementations neither record everything nor lose accountability. An activity is <strong>material</strong> where it can affect: identity; substantive content; epistemic standing; authority; acceptance; lifecycle state; release eligibility; dependency disposition; operational application; outcome interpretation; access or integrity; historical reconstruction; or conformance. The authoritative definition of materiality, and the assurance-class scale that grades the <em>depth</em> to which material obligations must be discharged, are fixed by <strong><a href="kf-2003-materiality-and-assurance.html">KF-2003</a> · Materiality and Assurance</strong>; <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> or a domain governance profile may set additional thresholds within it.</p>
+<h3 id="event-native-conformance-evidence">5.2 Event-Native Conformance Evidence</h3>
+<p>Conformance evidence is, wherever possible, <strong>emitted by the governed act, not authored separately from it.</strong> The record that a governed act produces <em>is</em> its conformance evidence: an Acceptance Record is the evidence of acceptance; a Transition Record is the audit event; an Evaluation Verdict is the test result; a provenance link is the evidence of derivation; a Supersession Link is the evidence of lineage. A distinct evidence artefact is created only where the act’s own record cannot carry the required proof. This rule prevents a second knowledge-management problem — the management of evidence that the knowledge was managed — and is enforced architecturally by <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24 and realised in the transition pattern of <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> §35.</p>
+<h3 id="identity-layers">6. Identity Layers</h3>
+<pre class="text"><code>Object Identity → Version Identity → Representation Identity → Record Identity
+→ Actionable Form Identity → Application Identity → Outcome Identity</code></pre>
+<p>Identifiers are not interchangeable, and none may be reused for a different governed entity.</p>
+<h3 id="authoritative-maintenance">7. Authoritative Maintenance</h3>
+<p>Every information object class has one authoritative maintaining service, which creates or accepts the record, applies authorised change, preserves history, rejects unauthorised mutation, exposes current and historical state, records correction and supersession, and supplies assurance evidence. Other services may reference, annotate, request change, create supporting records or maintain projections — never overwrite the authoritative record. Maintenance responsibility does not confer human decision authority.</p>
+<h3 id="adjacent-information-responsibilities">7.1 Adjacent Information Responsibilities</h3>
+<p>There is no dual authoritative ownership. Where two services touch one concept, one holds the authoritative record and the other holds an adjacent, related or derived view. Enforced by IC-14 (Least Necessary Alteration).</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concern</th>
+<th>Authoritative record</th>
+<th>Authoritative service</th>
+<th>Related / derived information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Institutional authority / mandate / delegation</td>
+<td>AUT-01, AUT-02</td>
+<td><strong>SVC-06</strong> Authority and Acceptance</td>
+<td><a href="kf-3008-architectural-authority-framework.html">KF-3008</a> governs the authority <em>model</em>; SVC-16 assigns the technical permissions through which authorised actions execute</td>
+</tr>
+<tr class="even">
+<td>Technical permission</td>
+<td>ACS-02</td>
+<td><strong>SVC-16</strong> Access and Integrity</td>
+<td>executes actions authorised under AUT-01</td>
+</tr>
+<tr class="odd">
+<td>Effective period of a substantive record</td>
+<td>that record</td>
+<td><strong>its own maintaining service</strong></td>
+<td>SVC-19 governs the common temporal model, sequencing and reconstruction — not each record’s validity decision</td>
+</tr>
+<tr class="even">
+<td>Version correction</td>
+<td>COR-01</td>
+<td><strong>SVC-09</strong> Version and Lineage</td>
+<td>temporally reconstructed by SVC-19 (no separate “correction history” record)</td>
+</tr>
+<tr class="odd">
+<td>Version supersession</td>
+<td>SUP-01</td>
+<td><strong>SVC-09</strong> Version and Lineage</td>
+<td>release supersession is a distinct assertion held by SVC-10</td>
+</tr>
+<tr class="even">
+<td>Release supersession</td>
+<td>REL-01/REL-02</td>
+<td><strong>SVC-10</strong> Release</td>
+<td>references SUP-01 where a version supersession is involved</td>
+</tr>
+<tr class="odd">
+<td>Current custody</td>
+<td>PRO-03</td>
+<td><strong>SVC-15</strong> Provenance</td>
+<td>historical custody sequence reconstructed by SVC-19 (no separate “custody history” record)</td>
+</tr>
+<tr class="even">
+<td>Evaluation confidence</td>
+<td>EVA-02</td>
+<td><strong>SVC-04</strong> Evaluation</td>
+<td>distinct from epistemic confidence</td>
+</tr>
+<tr class="odd">
+<td>Epistemic standing / confidence</td>
+<td>EPS-01</td>
+<td><strong>SVC-05</strong> Justification</td>
+<td>distinct from evaluation confidence</td>
+</tr>
+<tr class="even">
+<td>Operational exception</td>
+<td>EXC-01</td>
+<td><strong>SVC-17</strong> Operating Condition</td>
+<td>governance exception GOV-01 is held by SVC-07; SVC-18 reads both</td>
+</tr>
+<tr class="odd">
+<td>Reactivation</td>
+<td>REA-01</td>
+<td><strong>SVC-14</strong> Retirement and Preservation</td>
+<td>enters governed evolution through a Change Record (CHG-01, SVC-09) — there is no separate “reactivation proposal” record</td>
+</tr>
+</tbody>
+</table>
+<p>Revalidation is not a separately owned record: it appears as a disposition value in DEP-03 (dependency-driven) and as a condition on REL-01 (release-side).</p>
+<h3 id="composite-decision-records">7.2 Composite Decision Records</h3>
+<p>A composite decision (for example a release, which relies on an accepted version, valid acceptance, applicable authority, standing governance, dependency disposition and operating condition) <strong>must reference the authoritative records on which it relied — their identity, applicable version or effective state and decision-time status — and must not reproduce their substantive content in a way that creates a competing source of truth.</strong> This rule is load-bearing for <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> gate definitions.</p>
+<hr />
+<h2 id="part-ii-relationship-architecture">Part II · Relationship Architecture</h2>
+<h3 id="relationship-types">8. Relationship Types</h3>
+<ul>
+<li><strong>Identity</strong> — VERSION_OF, REPRESENTS_VERSION, RECORD_CONCERNS_OBJECT.</li>
+<li><strong>Derivation</strong> — DERIVED_FROM, TRANSFORMED_FROM, GENERATED_USING, CONSOLIDATED_FROM.</li>
+<li><strong>Evidential</strong> — SUPPORTS, CHALLENGES, CONTEXTUALISES, EVALUATES, JUSTIFIES.</li>
+<li><strong>Governance</strong> — ACCEPTS, STEWARDS, AUTHORIZES_RELIANCE_ON, RELEASES, SUSPENDS, RETIRES.</li>
+<li><strong>Lifecycle</strong> — TRIGGERED_BY, EVALUATED_UNDER_GATE, TRANSITIONS_FROM, TRANSITIONS_TO, RETURNS_TO.</li>
+<li><strong>Dependency</strong> — DEPENDS_ON, IMPLEMENTS, USES, CONSTRAINED_BY, INVALIDATED_BY_CHANGE_TO.</li>
+<li><strong>Operational</strong> — DERIVES_FORM, APPLIES_FORM, PRODUCES_OUTCOME, EXPLAINED_BY, FEEDS_BACK_TO.</li>
+<li><strong>Historical</strong> — PRECEDES, SUCCEEDS, SUPERSEDES, CORRECTS, BRANCHES_FROM, CONSOLIDATES, REACTIVATES.</li>
+</ul>
+<h3 id="relationship-properties">9. Relationship Properties</h3>
+<p>Every material relationship must identify: relationship identity; <strong>source information object</strong>; <strong>target information object</strong>; relationship type; asserting actor/service; recorded time; effective period where relevant; provenance; status; confidence or qualification where applicable; supersession or correction history. (Relationships may connect records, versions, forms or outcomes — not only Operational Knowledge Objects.)</p>
+<h3 id="relationship-type-specification">9.1 Relationship-Type Specification</h3>
+<p>Each load-bearing relationship is specified through: relationship code; definition; permitted source class; permitted target class; direction; cardinality; symmetry; transitivity; effective-time behaviour; qualification or confidence; authoritative asserting service; correction and withdrawal rule. The most load-bearing relationships:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Relationship</th>
+<th>Source → Target</th>
+<th>Cardinality</th>
+<th>Sym.</th>
+<th>Trans.</th>
+<th>Asserting service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>VERSION_OF</td>
+<td>Version → Object</td>
+<td>many-to-one (exactly one target)</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-09</td>
+</tr>
+<tr class="even">
+<td>REPRESENTS_VERSION</td>
+<td>Representation → Version</td>
+<td>many-to-one</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-02</td>
+</tr>
+<tr class="odd">
+<td>SUPPORTS</td>
+<td>Evidence → Claim/Version</td>
+<td>many-to-many, qualified</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-03</td>
+</tr>
+<tr class="even">
+<td>CHALLENGES</td>
+<td>Evidence → Claim/Version</td>
+<td>many-to-many, qualified</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-03</td>
+</tr>
+<tr class="odd">
+<td>ACCEPTS</td>
+<td>Authority → Version</td>
+<td>many-to-one per decision</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-06</td>
+</tr>
+<tr class="even">
+<td>RELEASES</td>
+<td>Release → Version</td>
+<td>one-to-one per release</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-10</td>
+</tr>
+<tr class="odd">
+<td>DEPENDS_ON</td>
+<td>Object/Form/App → Object/Form</td>
+<td>many-to-many, directional</td>
+<td>no</td>
+<td>no (explicit only)</td>
+<td>SVC-11</td>
+</tr>
+<tr class="even">
+<td>DERIVED_FROM</td>
+<td>Info object → source input(s)</td>
+<td>many-to-many</td>
+<td>no</td>
+<td>yes (preserving basis)</td>
+<td>SVC-15</td>
+</tr>
+<tr class="odd">
+<td>APPLIES_FORM</td>
+<td>Application → Actionable Form</td>
+<td>many-to-one</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-13</td>
+</tr>
+<tr class="even">
+<td>PRODUCES_OUTCOME</td>
+<td>Application → Outcome</td>
+<td>one-to-many</td>
+<td>no</td>
+<td>no</td>
+<td>SVC-13</td>
+</tr>
+<tr class="odd">
+<td>SUPERSEDES</td>
+<td>Entity → prior Entity</td>
+<td>one-to-one per scope</td>
+<td>no</td>
+<td>yes (chain)</td>
+<td>service owning the superseded entity</td>
+</tr>
+</tbody>
+</table>
+<p>Remaining relationships are completed in a controlled relationship registry using the same template. <strong>SUPERSEDES is a shared relationship type</strong>: its assertion is maintained by the service responsible for the superseded entity (a superseded version by SVC-09, a superseded release by SVC-10, a superseded form by SVC-12).</p>
+<h3 id="relationship-integrity-rules">10. Relationship Integrity Rules</h3>
+<ol type="1">
+<li>Every relationship resolves to valid source and target identities.</li>
+<li>A relationship must not imply authority beyond its defined semantics.</li>
+<li>A broken relationship is represented explicitly.</li>
+<li>Historical relationships are not deleted when superseded.</li>
+<li>Derived relationships preserve their basis.</li>
+<li>Symmetry and transitivity are not assumed unless the type defines them.</li>
+<li>Dependency direction is explicit.</li>
+<li>Relationship status and object status remain distinct.</li>
+<li>Relationship correction creates a new governed state or correction record.</li>
+</ol>
+<hr />
+<h2 id="part-iii-temporal-and-historical-architecture">Part III · Temporal and Historical Architecture</h2>
+<h3 id="time-semantics">11. Time Semantics</h3>
+<p><strong>Event time</strong>, <strong>recorded time</strong>, <strong>effective time</strong>, <strong>decision time</strong> and <strong>processing time</strong> may coincide but must not be treated as identical by default.</p>
+<p><strong>SVC-19 (Temporal Continuity) governs the common temporal model, historical sequencing and reconstruction rules. Each authoritative maintaining service remains responsible for the effective period and temporal assertions of the records it maintains</strong> — SVC-06 for an Acceptance Record’s effective period, SVC-10 for a Release Record’s, SVC-07 for a Stewardship Assignment’s. SVC-19 owns temporal conventions, sequence integrity, reconstruction and migration history; it does not approve or maintain each substantive validity decision.</p>
+<h3 id="effective-periods">12. Effective Periods</h3>
+<p>A record governing continuing conditions must support effective-from, effective-to, open-ended validity, scheduled future effect, retrospective recording, revocation, supersession, suspension and reactivation. <strong>A later recorded fact may have an earlier effective time</strong>, so reconstruction must not rely solely on record-creation order.</p>
+<h3 id="historical-reconstruction">13. Historical Reconstruction</h3>
+<p>The architecture must reconstruct, at a specified time: substantive representation; epistemic standing; acceptance and release status; steward and applicable authority; lifecycle state; known dependencies; actionable forms; operating and integrity condition; relevant exceptions; and historical application eligibility. Reconstruction must distinguish <em>what the system knew then</em> from <em>what the system knows now about then</em>.</p>
+<h3 id="mutation-correction-and-supersession">14. Mutation, Correction and Supersession</h3>
+<p>Governed records are not silently overwritten. Permitted patterns: append; new immutable version; status transition; explicit correction; supersession; revocation; expiration; historical annotation. A correction must preserve the original record, correction reason, correcting actor/service, correction time, corrected content or interpretation, and the relationship between original and corrected state.</p>
+<h3 id="deletion-and-disposition">15. Deletion and Disposition</h3>
+<p>Logical deletion must not erase information required for identity continuity, accountability, provenance, historical reconstruction, legal/policy retention or conformance evidence. Disposition may include active/restricted retention, archival preservation, anonymisation, de-identification, cryptographic erasure of protected content, or deletion after retention expiry. The record of disposition remains governed where accountability requires it.</p>
+<h3 id="current-state-and-event-history">15.1 Current State and Event History</h3>
+<p>Where both a current-state record and an event history exist:</p>
+<ol type="1">
+<li>the event or transition record preserves the authoritative historical act;</li>
+<li>the current-state record represents the effective current state;</li>
+<li>both are updated or established within one governed operation;</li>
+<li>disagreement between them produces an indeterminate integrity condition;</li>
+<li>current state must be reconstructable from valid historical events;</li>
+<li>correction does not erase the original event.</li>
+</ol>
+<p>This applies to lifecycle state, release status, form status, epistemic standing, stewardship and operating condition. In each case the current-state record is an effective-dated assertion established transactionally with its event; it is not a free-standing mutable value.</p>
+<hr />
+<h2 id="part-iv-domain-a-identity-and-representation-information">Part IV · Domain A — Identity and Representation Information</h2>
+<h3 id="record-family-a1-object-identity-maintained-by-svc-01-object-registry">Record Family A1 · Object Identity — <em>maintained by SVC-01 · Object Registry</em></h3>
+<p><strong>OBJ-01 · Object Identity Record</strong> <em>(Core Record).</em> The authoritative record of an object’s enduring identity. <em>Required properties:</em> object identifier; object class; registration status; origin reference; registration time; registration decision; identity-resolution status; applicable predecessor or source relationship; current lifecycle-state projection or reference <em>(authoritative state is LIF-01, SVC-08)</em>. <em>Principal relationships:</em> HAS_VERSION; ORIGINATED_FROM; BRANCHES_FROM; CONSOLIDATES; HAS_STEWARD; HAS_LIFECYCLE_STATE. <em>Mutation rule:</em> object identifier immutable; classification and descriptive metadata may change through governed correction. <em>Conformance test:</em> <strong>every governed object resolves to exactly one enduring Object Identity Record, regardless of lifecycle state.</strong> <em>Protects:</em> INV-01, IC-05.</p>
+<p><strong>OBJ-02 · Intake Record</strong> <em>(Supporting).</em> Submitted material, source, intake context, initiating actor, classification request, duplicate-search result, routing decision.</p>
+<p><strong>OBJ-03 · Identity Resolution Decision</strong> <em>(Supporting).</em> Whether intake represents a new object, candidate version, branch candidate, consolidation candidate, duplicate or unresolved identity.</p>
+<h3 id="record-family-a2-representation-maintained-by-svc-02-representation">Record Family A2 · Representation — <em>maintained by SVC-02 · Representation</em></h3>
+<p><strong>REP-01 · Structured Representation</strong> <em>(Supporting).</em> Substantive content, semantic structure, constituent claims/elements, representation modality, limitations, object and version identity.</p>
+<p><strong>REP-02 · Semantic Type Record</strong> <em>(Controlled Vocabulary).</em> Semantic classification applied to an object, representation, claim or relationship.</p>
+<p><strong>REP-03 · Representation Limitation Record</strong> <em>(Supporting).</em> Known opacity, incompleteness, approximation, modality limitation, interpretation constraint, unsupported use.</p>
+<p><strong>REP-04 · Object Relationship Record</strong> <em>(Relationship Record).</em> Governed semantic relationships among objects, versions or elements.</p>
+<h3 id="record-family-a3-resolution-and-discovery-maintained-by-svc-01-object-registry-res-02-is-a-projection">Record Family A3 · Resolution and Discovery — <em>maintained by SVC-01 · Object Registry (RES-02 is a projection)</em></h3>
+<p><strong>RES-01 · Resolution Result</strong> <em>(Projection).</em> Query/identifier supplied; target resolved; ambiguity; resolution basis; current or historical context; access filtering; retrieval time.</p>
+<p><strong>RES-02 · Governed Context Package</strong> <em>(Projection).</em> A non-authoritative assembled view referencing identity, version, representation, epistemic standing, acceptance, release, lifecycle state, provenance, stewardship and restrictions.</p>
+<p><strong>RES-03 · Retrieval Provenance Record</strong> <em>(Supporting).</em> Requested information; requester; source records accessed; projection/cache use; version returned; retrieval time.</p>
+<hr />
+<h2 id="part-v-domain-b-evidence-and-justification-information">Part V · Domain B — Evidence and Justification Information</h2>
+<h3 id="record-family-b1-evidence-maintained-by-svc-03-evidence">Record Family B1 · Evidence — <em>maintained by SVC-03 · Evidence</em></h3>
+<p><strong>EVD-01 · Evidence Record</strong> <em>(Supporting).</em> Evidence identifier; type; origin; creator/source; content or source reference; custody; availability; integrity status; effective period where applicable.</p>
+<p><strong>EVD-02 · Evidence Relationship Record</strong> <em>(Relationship Record).</em> Relates evidence to claim, object, version, evaluation or justification; role: supports, challenges, limits, contextualises, corroborates. <strong>The “counter” quality belongs to this relationship role, not to the evidence object</strong> — the same evidence may support one claim and challenge another.</p>
+<p><strong>EVD-03 · Material Counter-Evidence Assertion</strong> <em>(Supporting).</em> Exists only where a material challenge must be made visible in acceptance and review. It preserves INV-06 without implying that an item is intrinsically “counter-evidence.” <em>Protects:</em> INV-06.</p>
+<p><strong>EVD-04 · Evidence Availability Status</strong> <em>(Status Assertion).</em> Available, restricted, unavailable, inaccessible, destroyed, unresolved, provenance-incomplete.</p>
+<h3 id="record-family-b2-evaluation-maintained-by-svc-04-evaluation">Record Family B2 · Evaluation — <em>maintained by SVC-04 · Evaluation</em></h3>
+<p><strong>EVA-01 · Evaluation Criteria Record</strong> <em>(Supporting).</em> Criterion; applicability; threshold; scoring/judgement method; effective period; exception rule.</p>
+<p><strong>EVA-02 · Quality Assessment Record</strong> <em>(Supporting).</em> Object/evidence assessed; criteria applied; evaluator; inputs; findings; <strong>evaluation confidence</strong> <em>(distinct from epistemic confidence — §7.1)</em>; limitations; assessment time. Includes an <strong>assessment-progression</strong> value: not assessed, pending, in progress, completed, reassessment required.</p>
+<p><strong>EVA-03 · Evaluation Verdict Record</strong> <em>(Status Assertion).</em> Pass, fail, return, pending, indeterminate; never inferred solely from score. <em>Protects:</em> INV-24.</p>
+<p><strong>EVA-04 · Evaluation Exception Record</strong> <em>(Supporting).</em> A permitted procedural deviation that does not convert an invariant violation into conformance.</p>
+<h3 id="record-family-b3-justification-and-epistemic-standing-maintained-by-svc-05-justification">Record Family B3 · Justification and Epistemic Standing — <em>maintained by SVC-05 · Justification</em></h3>
+<p><strong>JUS-01 · Justification Record</strong> <em>(Supporting).</em> Structured warrant referencing claims, evidence, counter-evidence assertions, evaluations, rationale, assumptions, unresolved challenges, confidence, limitations. <em>Protects:</em> INV-05, IC-09.</p>
+<p><strong>JUS-02 · Assumption Record</strong> <em>(Supporting).</em> Statement; source/basis; scope; confidence; materiality; review condition.</p>
+<p><strong>JUS-03 · Rationale Record</strong> <em>(Supporting).</em> The reasoning connecting evidence and assumptions to a conclusion.</p>
+<p><strong>JUS-04 · Challenge Record</strong> <em>(Supporting).</em> A resolved or unresolved challenge to the warrant.</p>
+<p><strong>EPS-01 · Epistemic Standing Record</strong> <em>(Status Assertion).</em> The current epistemic conclusion: unsupported, provisionally supported, supported, strongly supported, weakened, indeterminate. Independent of lifecycle, acceptance and release, <strong>and independent of assessment progression (held in EVA-02) and contestation (EPS-03)</strong>. <em>Protects:</em> INV-03, INV-07.</p>
+<p><strong>EPS-02 · Epistemic Standing Change Record</strong> <em>(Supporting).</em> Prior standing; new standing; triggering evidence or assessment; responsible actor/service; recorded and effective time.</p>
+<p><strong>EPS-03 · Contestation Status Record</strong> <em>(Status Assertion).</em> Not contested, contested, materially contested, resolved. An object may be <em>supported</em> and <em>contested</em> simultaneously; these are separate dimensions.</p>
+<hr />
+<h2 id="part-vi-domain-c-governance-and-change-information">Part VI · Domain C — Governance and Change Information</h2>
+<h3 id="record-family-c1-authority-and-acceptance-maintained-by-svc-06-authority-and-acceptance">Record Family C1 · Authority and Acceptance — <em>maintained by SVC-06 · Authority and Acceptance</em></h3>
+<p><strong>AUT-01 · Authority Mandate Record</strong> <em>(Supporting).</em> Authority holder or accountable body; source; mandate; scope; effective period; delegation; constraints; revocation status. <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> defines the full authority model; <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the information to represent it. <em>(Held by SVC-06, not SVC-16: institutional authority is not technical permission.)</em></p>
+<p><strong>AUT-02 · Accountable Body Record</strong> <em>(Supporting).</em> Body identity; formal mandate; membership; quorum or decision rule; effective period; delegated authority; decision-record requirements.</p>
+<p><strong>ACC-01 · Acceptance Record</strong> <em>(Core Record).</em> Object version accepted; accepting authority; decision; reliance scope; conditions; duration; justification reference; epistemic standing at decision time; decision rationale. <em>Protects:</em> INV-05, INV-08, INV-09.</p>
+<p><strong>ACC-02 · Refusal Record</strong> <em>(Supporting).</em> The refusal decision and reasons, without changing epistemic standing.</p>
+<p><strong>ACC-03 · Acceptance Condition Record</strong> <em>(Supporting).</em> Restricted use; provisional reliance; mandatory review; limited population; geographic scope; expiry; human-oversight requirement.</p>
+<h3 id="record-family-c2-stewardship-and-review-maintained-by-svc-07-stewardship-and-review">Record Family C2 · Stewardship and Review — <em>maintained by SVC-07 · Stewardship and Review</em></h3>
+<p><strong>STW-01 · Stewardship Assignment</strong> <em>(Supporting).</em> Object; steward; mandate; start/end time; assignment authority; responsibility scope; transfer history. <em>Protects:</em> INV-09, INV-10.</p>
+<p><strong>STW-02 · Stewardship Transfer Record</strong> <em>(Supporting).</em> Preserves transfer without creating an ownerless period.</p>
+<p><strong>REV-01 · Review Schedule</strong> <em>(Supporting).</em> Review type; frequency; trigger; due date; responsible party; escalation rule.</p>
+<p><strong>REV-02 · Review Record</strong> <em>(Supporting).</em> Review scope; reviewer; evidence considered; findings; disposition; required actions.</p>
+<p><strong>CMP-01 · Compliance Assessment</strong> <em>(Supporting).</em> Distinguishes formal compliance from substantive review.</p>
+<p><strong>GOV-01 · Governance Exception Record</strong> <em>(Supporting).</em> Rule or principle affected; scope; authority; rationale; duration; compensating control; expiry; review status. <em>(Distinct from operational exception EXC-01 — §7.1.)</em></p>
+<h3 id="record-family-c3-lifecycle-and-transition-maintained-by-svc-08-lifecycle-and-transition">Record Family C3 · Lifecycle and Transition — <em>maintained by SVC-08 · Lifecycle and Transition</em></h3>
+<p><strong>LIF-01 · Lifecycle State Record</strong> <em>(Status Assertion).</em> The authoritative current lifecycle state, established transactionally with its transition (§15.1). States are defined by <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> and are not inferred from epistemic standing, release, version status or application activity. <em>Protects:</em> INV-03, IC-01.</p>
+<p><strong>EVT-01 · Lifecycle Event Record</strong> <em>(Supporting).</em> A material event capable of triggering review, transition, suspension, evolution or retirement.</p>
+<p><strong>GAT-01 · Gate Decision Record</strong> <em>(Supporting).</em> Transition identifier; current state; proposed state; applicable gate; criteria; evidence; result; accountable authority; operating condition; decision time.</p>
+<p><strong>TRN-01 · Transition Record</strong> <em>(Core Record).</em> Transition identifier; prior state; resulting state; execution actor/service; accountable authority; gate-decision reference; effective time; completion status. <strong>Gate Decision and Transition Records are transactionally bound</strong> under one transition identifier. <em>Protects:</em> INV-08, INV-14, IC-01, IC-02.</p>
+<h3 id="record-family-c4-version-lineage-and-change-maintained-by-svc-09-version-and-lineage">Record Family C4 · Version, Lineage and Change — <em>maintained by SVC-09 · Version and Lineage</em></h3>
+<p><strong>VER-01 · Object Version Record</strong> <em>(Core Record).</em> Version identifier; object identifier; predecessor version; change rationale; creation event; substantive fingerprint; candidate or governed status; correction and supersession links. <em>Integrity rule:</em> substantive content immutable after establishment. <em>Protects:</em> INV-12, IC-06.</p>
+<p><strong>CHG-01 · Change Record</strong> <em>(Supporting).</em> Proposed change; trigger; rationale; affected content; responsible actor; resulting version or object; review route. Also the record through which a REA-01 reactivation enters governed evolution.</p>
+<p><strong>LIN-01 · Lineage Record</strong> <em>(Relationship Record).</em> Predecessor; successor; branch; consolidation; correction; supersession; reactivation. <em>Protects:</em> INV-13.</p>
+<p><strong>BRN-01 · Branch Record</strong> <em>(Supporting).</em> Creation of a new enduring object identity derived from an existing object <em>(successor identity assigned via SVC-01; IC-07)</em>.</p>
+<p><strong>CON-01 · Consolidation Record</strong> <em>(Supporting).</em> Creation of one successor object from multiple predecessors.</p>
+<p><strong>COR-01 · Correction Record</strong> <em>(Supporting).</em> Preserves the original record and the correction. <strong>The authoritative record of correction</strong>; SVC-19 reconstructs correction history from COR-01 plus recorded time, effective time, supersession relationships and provenance — there is no separate correction-history record. <em>Protects:</em> INV-14, IC-21.</p>
+<p><strong>SUP-01 · Supersession Record</strong> <em>(Relationship Record).</em> Version and lineage supersession. Supersession of a release or form is asserted by the service owning that entity (SVC-10, SVC-12) — see §9.1.</p>
+<h3 id="record-family-c5-release-maintained-by-svc-10-release">Record Family C5 · Release — <em>maintained by SVC-10 · Release</em></h3>
+<p><strong>REL-01 · Release Record</strong> <em>(Core Record).</em> Released object version; acceptance reference; release authority; release scope; effective period; conditions; status; withdrawal or supersession reference; revalidation condition. A composite decision record per §7.2. <em>Protects:</em> INV-17, IC-08.</p>
+<p><strong>REL-02 · Release Status Record</strong> <em>(Status Assertion).</em> Candidate, active, restricted, suspended, withdrawn, expired, superseded. Independent of object lifecycle state.</p>
+<h3 id="record-family-c6-dependency-and-impact-maintained-by-svc-11-dependency">Record Family C6 · Dependency and Impact — <em>maintained by SVC-11 · Dependency</em></h3>
+<p><strong>DEP-01 · Dependency Record</strong> <em>(Relationship Record).</em> Material reliance between objects, versions, representations, actionable forms, applications or controls.</p>
+<p><strong>DEP-02 · Dependency Impact Record</strong> <em>(Supporting).</em> Triggering change; affected dependants; impact classification; analysis basis; uncertainty; required action. <em>Protects:</em> INV-15.</p>
+<p><strong>DEP-03 · Dependency Disposition Record</strong> <em>(Supporting).</em> No action, review, revalidation, evolution, restriction, suspension, withdrawal, retirement.</p>
+<hr />
+<h2 id="part-vii-domain-d-operational-use-information">Part VII · Domain D — Operational Use Information</h2>
+<h3 id="record-family-d1-actionable-forms-maintained-by-svc-12-operationalisation">Record Family D1 · Actionable Forms — <em>maintained by SVC-12 · Operationalisation</em></h3>
+<p><strong>ACT-01 · Actionable Form Record</strong> <em>(Core Record).</em> Form identity; source object and version; form type; derivation method; warrant linkage; release status; intended context; prohibited use; effective period. <em>Protects:</em> INV-17, IC-10, IC-12.</p>
+<p><strong>ACT-02 · Derivation Record</strong> <em>(Supporting).</em> How the form was derived from its source knowledge.</p>
+<p><strong>ACT-03 · Actionable Form Release Record</strong> <em>(Supporting).</em> Form eligibility, independent of the underlying object release.</p>
+<p><strong>ACT-04 · Form Status Record</strong> <em>(Status Assertion).</em> Provisional, under review, eligible, restricted, suspended, withdrawn, superseded.</p>
+<h3 id="record-family-d2-application-maintained-by-svc-13-application-and-outcome">Record Family D2 · Application — <em>maintained by SVC-13 · Application and Outcome</em></h3>
+<p><strong>APP-01 · Application Record</strong> <em>(Core Record).</em> Application identity; form identity; source object version; <strong>applicable warrant/justification reference (resolved via the actionable form)</strong>; purpose; context; actor or system; effective eligibility decision; inputs; output or action; time; materiality. <em>Protects:</em> INV-18, INV-19, IC-12.</p>
+<p><strong>APP-02 · Eligibility Decision Record</strong> <em>(Supporting).</em> Whether application was permitted at the time of use. <em>Protects:</em> IC-11.</p>
+<p><strong>APP-03 · Use Context Record</strong> <em>(Supporting).</em> Population; environment; jurisdiction; process; materiality; risk; constraints; human-oversight condition.</p>
+<p><strong>APP-04 · Application Participant Record</strong> <em>(Supporting).</em> Initiating human; accountable human; executing service; computational model; reviewing human; affected party where governed.</p>
+<p><strong>EXP-01 · Explanation Record</strong> <em>(Supporting).</em> Proportionate to modality, materiality, risk, decision context and governance profile. <em>Protects:</em> INV-20.</p>
+<h3 id="record-family-d3-outcome-and-feedback-maintained-by-svc-13-application-and-outcome">Record Family D3 · Outcome and Feedback — <em>maintained by SVC-13 · Application and Outcome</em></h3>
+<p><strong>OUT-01 · Outcome Record</strong> <em>(Supporting).</em> An observed result; observation distinguishable from interpretation.</p>
+<p><strong>OUT-02 · Outcome Interpretation Record</strong> <em>(Supporting).</em> The meaning attributed to an outcome and its basis.</p>
+<p><strong>OUT-03 · Materiality Assessment</strong> <em>(Supporting).</em> No action, monitoring, review, evidence registration, restriction, suspension, evolution, retirement.</p>
+<p><strong>FDB-01 · Feedback Record</strong> <em>(Supporting).</em> Routes material learning back into evidence, review, evaluation or evolution.</p>
+<h3 id="record-family-d4-retirement-and-preservation-maintained-by-svc-14-retirement-and-preservation">Record Family D4 · Retirement and Preservation — <em>maintained by SVC-14 · Retirement and Preservation</em></h3>
+<p><strong>RET-01 · Retirement Record</strong> <em>(Core Record).</em> Object retired; retirement authority; rationale; effective time; successor where applicable; preservation disposition; reactivation conditions. <em>Protects:</em> INV-16, IC-04.</p>
+<p><strong>PRE-01 · Preservation Record</strong> <em>(Supporting).</em> How the retired object’s identity, versions, warrant, governance history, forms, applications, outcomes and provenance remain recoverable.</p>
+<p><strong>REA-01 · Reactivation Request</strong> <em>(Supporting).</em> Initiates governed evolution through CHG-01; does not restore operational status directly.</p>
+<p><strong>HIS-01 · Historical Object Record</strong> <em>(Projection).</em> A governed historical view or package used for retrieval after retirement.</p>
+<hr />
+<h2 id="part-viii-domain-e-assurance-and-continuity-information">Part VIII · Domain E — Assurance and Continuity Information</h2>
+<h3 id="record-family-e1-provenance-and-custody-maintained-by-svc-15-provenance-and-traceability">Record Family E1 · Provenance and Custody — <em>maintained by SVC-15 · Provenance and Traceability</em></h3>
+<p><strong>PRO-01 · Provenance Record</strong> <em>(Core Record).</em> Origin, derivation, attribution and custody across material information objects (why-, where-, how-, who-provenance). <em>Protects:</em> INV-04, IC-20.</p>
+<p><strong>PRO-02 · Derivation Link</strong> <em>(Relationship Record).</em> Relates a derived information object to its source inputs and transformation event.</p>
+<p><strong>PRO-03 · Custody Record</strong> <em>(Supporting).</em> A custody event or custody assignment. The ordered historical custody sequence is reconstructed by SVC-19 from these events.</p>
+<p><strong>PRO-04 · Provenance Gap Record</strong> <em>(Supporting).</em> Missing, incomplete, disputed or inaccessible provenance; never represented as complete lineage.</p>
+<h3 id="record-family-e2-access-and-integrity-maintained-by-svc-16-access-and-integrity">Record Family E2 · Access and Integrity — <em>maintained by SVC-16 · Access and Integrity</em></h3>
+<p><strong>ACS-01 · Access Policy Record</strong> <em>(Supporting).</em> Permitted access and action by actor/role, object class, service, information classification, action, context, effective period.</p>
+<p><strong>ACS-02 · Permission Assignment</strong> <em>(Supporting).</em> Technical permission, independent of institutional authority (AUT-01). <em>Protects:</em> IC-13.</p>
+<p><strong>ACS-03 · Disclosure Constraint</strong> <em>(Supporting).</em> Confidentiality, sharing and use limitations.</p>
+<p><strong>INT-01 · Integrity Status Record</strong> <em>(Status Assertion).</em> Verified, altered, corrupted, incomplete, unverifiable, under investigation.</p>
+<p><strong>ADM-01 · Administrative Action Record</strong> <em>(Supporting).</em> Material privileged actions affecting permissions, policies, configuration, retention, integrity or access. <em>Protects:</em> INV-11, IC-15.</p>
+<h3 id="record-family-e3-operating-condition-and-exception-maintained-by-svc-17-operating-condition-and-exception">Record Family E3 · Operating Condition and Exception — <em>maintained by SVC-17 · Operating Condition and Exception</em></h3>
+<p><strong>OPR-01 · Operating Condition Record</strong> <em>(Status Assertion).</em> Operational, degraded, unavailable, pending, failed, indeterminate. <em>Protects:</em> INV-24.</p>
+<p><strong>OPR-02 · Degradation Record</strong> <em>(Supporting).</em> Affected capability/service; scope; start time; consequence; fail-open or fail-closed rule; compensating control; recovery status.</p>
+<p><strong>OPR-03 · Failure Disposition Record</strong> <em>(Supporting).</em> The governed response to a failure or indeterminate condition.</p>
+<p><strong>EXC-01 · Operational Exception Record</strong> <em>(Supporting).</em> Distinguished from governance exceptions (GOV-01) and assurance exception references. <em>Protects:</em> IC-19.</p>
+<p><strong>REC-01 · Recovery and Reconciliation Record</strong> <em>(Supporting).</em> Recovered operations; deferred records; reconciliation checks; residual discrepancies; closure authority.</p>
+<h3 id="record-family-e4-temporal-continuity-maintained-by-svc-19-temporal-continuity">Record Family E4 · Temporal Continuity — <em>maintained by SVC-19 · Temporal Continuity</em></h3>
+<p><strong>TMP-01 · Temporal Metadata Record</strong> <em>(Supporting).</em> Recorded, event, effective, decision and processing time where applicable. <em>Protects:</em> IC-22.</p>
+<p><strong>TMP-02 · Effective Period Record</strong> <em>(Supporting).</em> The common effective-period <em>model</em> and scheduled-effect conventions. Substantive validity is asserted by each maintaining service (§11); TMP-02 provides the shared representation, not the decision.</p>
+<p><strong>TMP-03 · Historical Reconstruction Result</strong> <em>(Projection).</em> A generated, non-authoritative view of the object and its context at a specified point or interval.</p>
+<p><strong>TMP-04 · Retention Condition Record</strong> <em>(Supporting).</em> Retention, archive, restriction and disposition conditions.</p>
+<p><strong>TMP-05 · Format or Custody Migration Record</strong> <em>(Supporting).</em> Preserves authenticity through an actual format or custody migration event.</p>
+<h3 id="record-family-e5-conformance-and-audit-maintained-by-svc-18-conformance-and-audit">Record Family E5 · Conformance and Audit — <em>maintained by SVC-18 · Conformance and Audit</em></h3>
+<p><strong>CNF-01 · Conformance Assessment</strong> <em>(Supporting).</em> Scope, criteria, evidence, assessor, conclusion. <em>Protects:</em> INV-21, INV-22.</p>
+<p><strong>CNF-02 · Invariant Test Result</strong> <em>(Supporting).</em> Holds, fails, indeterminate, outside scope.</p>
+<p><strong>CNF-03 · Interaction Constraint Test Result</strong> <em>(Supporting).</em> Whether a prohibited or mandatory service path was respected.</p>
+<p><strong>CNF-04 · Assurance Finding</strong> <em>(Supporting).</em> No action, monitoring, correction, control improvement, suspension, formal non-conformance.</p>
+<p><strong>CNF-05 · Non-Conformance Record</strong> <em>(Core Record).</em> Violated obligation; affected scope; severity; evidence; corrective action; accountable authority; status.</p>
+<p><strong>CNF-06 · Corrective Action Record</strong> <em>(Supporting).</em> Required remediation and verification. SVC-18 must not alter the operational records assessed. <em>Protects:</em> INV-23, IC-17.</p>
+<hr />
+<h2 id="part-ix-information-integrity-rules">Part IX · Information Integrity Rules</h2>
+<p><strong>16. Object and version integrity.</strong> One enduring identity per object; every version belongs to one object; version content immutable after establishment; new versions do not create new object identities; branching and consolidation create successor identities; release and acceptance do not create versions; retirement does not erase identity.</p>
+<p><strong>17. Record integrity.</strong> Every material event and decision (per §5.1) has a governed record; records are attributable; material records preserve applicable authority; corrections do not erase originals; record status is explicit; missing information is not represented as affirmative evidence; projections do not supersede authoritative records; records under assurance review cannot be silently altered; a composite decision references rather than copies the records it relied on (§7.2).</p>
+<p><strong>18. State separation.</strong> These remain distinct, none inferred solely from another unless <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines a formal derivation rule: object lifecycle state; version status; representation status; epistemic standing; assessment progression; contestation; acceptance status; release status; actionable-form status; service operating condition; conformance status.</p>
+<p><strong>19. Authority and permission separation.</strong> A permission record (ACS-02, SVC-16) establishes that an actor/service may technically perform an action; an authority record (AUT-01, SVC-06) establishes that a human authority or accountable body may make a governed decision. Both may be required; neither substitutes for the other.</p>
+<p><strong>20. Provenance integrity.</strong> Every material information object preserves or resolves to origin, creator/source, derivation, custody, related object and version, material transformation and known gaps. Broken provenance is explicit.</p>
+<p><strong>21. Temporal integrity.</strong> Recorded time is never substituted for effective time; retrospective recording is identified; future-effective decisions are not treated as currently effective; expired decisions do not remain silently active; reconstruction preserves knowledge available at the target time; later correction is distinguishable from the earlier state; sequence ambiguity is represented as indeterminate where unresolved.</p>
+<hr />
+<h2 id="part-x-information-interaction-contracts">Part X · Information Interaction Contracts</h2>
+<p><strong>22. Record creation.</strong> A service may create an authoritative record only where <a href="kf-3003-service-architecture.html">KF-3003</a> assigns it maintenance responsibility. <strong>23. Record reference.</strong> A referencing service preserves target identity, target version or effective state, relationship type, reference time and resolution status. <strong>24. Change request.</strong> A service may request but not directly apply change to another service’s record. <strong>25. Event publication.</strong> Material creation, change, suspension, withdrawal, correction and retirement events are made available to affected services without transferring authority or mutating receiving records. <strong>26. Projection and caching.</strong> A projection identifies authoritative source, source version or effective state, creation time, freshness and invalidation conditions and access restrictions; a stale projection is never presented as current authoritative state.</p>
+<hr />
+<h2 id="part-xi-information-conformance">Part XI · Information Conformance</h2>
+<p><strong>27. Information conformance.</strong> Every required object class is represented; every authoritative record has one maintaining service; identity semantics are preserved; required relationships are resolvable; current and historical states are distinguishable; correction and supersession preserve prior states; temporal semantics are explicit; protected information is access-controlled; missing or indeterminate information is visible; and information supports all required invariant and interaction-constraint tests.</p>
+<p><strong>28. Information conformance evidence.</strong> Logical information model; authoritative-maintainer matrix; identity tests; relationship-integrity tests; temporal-reconstruction tests; correction and supersession tests; version-immutability tests; state-separation tests; access and authority checks; provenance-path reconstruction; cross-service reconciliation; retention and disposition evidence.</p>
+<p><strong>29. Representative reconstruction test.</strong></p>
+<pre class="text"><code>Outcome → Application → Actionable Form → Released Object Version →
+Acceptance Decision → Epistemic Standing → Justification →
+Evidence and Counter-Evidence → Representation → Object Identity and Origin</code></pre>
+<p>The reconstruction must also reveal the responsible human authority, applicable steward, lifecycle transitions, dependencies, access and integrity condition, operating condition, known provenance gaps, relevant exceptions and conformance findings.</p>
+<hr />
+<h2 id="part-xii-crosswalks">Part XII · Crosswalks</h2>
+<h3 id="information-object-to-service-crosswalk-frozen-kf-3003-catalogue-one-maintainer-per-family">30. Information-Object-to-Service Crosswalk <em>(frozen <a href="kf-3003-service-architecture.html">KF-3003</a> catalogue; one maintainer per family)</em></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Record family</th>
+<th>Authoritative maintaining service</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A1 Object Identity (OBJ)</td>
+<td>SVC-01 · Object Registry</td>
+</tr>
+<tr class="even">
+<td>A2 Representation (REP)</td>
+<td>SVC-02 · Representation</td>
+</tr>
+<tr class="odd">
+<td>A3 Resolution and Discovery (RES)</td>
+<td>SVC-01 · Object Registry</td>
+</tr>
+<tr class="even">
+<td>B1 Evidence (EVD)</td>
+<td>SVC-03 · Evidence</td>
+</tr>
+<tr class="odd">
+<td>B2 Evaluation (EVA)</td>
+<td>SVC-04 · Evaluation</td>
+</tr>
+<tr class="even">
+<td>B3 Justification and Epistemic Standing (JUS, EPS)</td>
+<td>SVC-05 · Justification</td>
+</tr>
+<tr class="odd">
+<td>C1 Authority and Acceptance (AUT, ACC)</td>
+<td>SVC-06 · Authority and Acceptance</td>
+</tr>
+<tr class="even">
+<td>C2 Stewardship and Review (STW, REV, CMP, GOV)</td>
+<td>SVC-07 · Stewardship and Review</td>
+</tr>
+<tr class="odd">
+<td>C3 Lifecycle and Transition (LIF, EVT, GAT, TRN)</td>
+<td>SVC-08 · Lifecycle and Transition</td>
+</tr>
+<tr class="even">
+<td>C4 Version, Lineage and Change (VER, CHG, LIN, BRN, CON, COR, SUP)</td>
+<td>SVC-09 · Version and Lineage</td>
+</tr>
+<tr class="odd">
+<td>C5 Release (REL)</td>
+<td>SVC-10 · Release</td>
+</tr>
+<tr class="even">
+<td>C6 Dependency and Impact (DEP)</td>
+<td>SVC-11 · Dependency</td>
+</tr>
+<tr class="odd">
+<td>D1 Actionable Forms (ACT)</td>
+<td>SVC-12 · Operationalisation</td>
+</tr>
+<tr class="even">
+<td>D2 Application (APP, EXP)</td>
+<td>SVC-13 · Application and Outcome</td>
+</tr>
+<tr class="odd">
+<td>D3 Outcome and Feedback (OUT, FDB)</td>
+<td>SVC-13 · Application and Outcome</td>
+</tr>
+<tr class="even">
+<td>D4 Retirement and Preservation (RET, PRE, REA, HIS)</td>
+<td>SVC-14 · Retirement and Preservation</td>
+</tr>
+<tr class="odd">
+<td>E1 Provenance and Custody (PRO)</td>
+<td>SVC-15 · Provenance and Traceability</td>
+</tr>
+<tr class="even">
+<td>E2 Access and Integrity (ACS, INT, ADM)</td>
+<td>SVC-16 · Access and Integrity</td>
+</tr>
+<tr class="odd">
+<td>E3 Operating Condition and Exception (OPR, EXC, REC)</td>
+<td>SVC-17 · Operating Condition and Exception</td>
+</tr>
+<tr class="even">
+<td>E4 Temporal Continuity (TMP)</td>
+<td>SVC-19 · Temporal Continuity</td>
+</tr>
+<tr class="odd">
+<td>E5 Conformance and Audit (CNF)</td>
+<td>SVC-18 · Conformance and Audit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="capability-to-information-crosswalk">31. Capability-to-Information Crosswalk</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Principal information objects</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A-CAP-01 Object Registration</td>
+<td>OBJ-01, OBJ-02, OBJ-03</td>
+</tr>
+<tr class="even">
+<td>A-CAP-02 Structured Representation</td>
+<td>REP-01, REP-02, REP-03, REP-04</td>
+</tr>
+<tr class="odd">
+<td>A-CAP-03 Resolution and Discovery</td>
+<td>RES-01, RES-02, RES-03</td>
+</tr>
+<tr class="even">
+<td>B-CAP-01 Evidence Registration</td>
+<td>EVD-01, EVD-02, EVD-03, EVD-04</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-02 Quality Evaluation</td>
+<td>EVA-01, EVA-02, EVA-03, EVA-04</td>
+</tr>
+<tr class="even">
+<td>B-CAP-03 Justification</td>
+<td>JUS-01, JUS-02, JUS-03, JUS-04</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-04 Epistemic Status</td>
+<td>EPS-01, EPS-02, EPS-03</td>
+</tr>
+<tr class="even">
+<td>C-CAP-01 Authority and Acceptance</td>
+<td>ACC-01, ACC-02, ACC-03, AUT-01, AUT-02</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-02 Stewardship</td>
+<td>STW-01, STW-02</td>
+</tr>
+<tr class="even">
+<td>C-CAP-03 Review and Compliance</td>
+<td>REV-01, REV-02, CMP-01, GOV-01</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-04 Version</td>
+<td>VER-01, CHG-01, COR-01</td>
+</tr>
+<tr class="even">
+<td>C-CAP-05 Release</td>
+<td>REL-01, REL-02</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-06 Lineage and Evolution</td>
+<td>LIN-01, BRN-01, CON-01, SUP-01, CHG-01</td>
+</tr>
+<tr class="even">
+<td>C-CAP-07 Dependency Impact</td>
+<td>DEP-01, DEP-02, DEP-03</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-08 Event, Gate and Transition</td>
+<td>EVT-01, GAT-01, TRN-01, LIF-01</td>
+</tr>
+<tr class="even">
+<td>D-CAP-01 Actionable Form</td>
+<td>ACT-01, ACT-02, ACT-03, ACT-04</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-02 Application</td>
+<td>APP-01, APP-02, APP-03, APP-04, EXP-01</td>
+</tr>
+<tr class="even">
+<td>D-CAP-03 Outcome</td>
+<td>OUT-01, OUT-02, OUT-03, FDB-01</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-04 Retirement</td>
+<td>RET-01, PRE-01, REA-01, HIS-01</td>
+</tr>
+<tr class="even">
+<td>E-CAP-01 Provenance</td>
+<td>PRO-01, PRO-02, PRO-03, PRO-04</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-02 Conformance</td>
+<td>CNF-01…CNF-06</td>
+</tr>
+<tr class="even">
+<td>E-CAP-03 Access and Integrity</td>
+<td>ACS-01, ACS-02, ACS-03, INT-01, ADM-01</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-04 Operating Condition</td>
+<td>OPR-01, OPR-02, OPR-03, EXC-01, REC-01</td>
+</tr>
+<tr class="even">
+<td>E-CAP-05 Temporal Continuity</td>
+<td>TMP-01, TMP-02, TMP-03, TMP-04, TMP-05</td>
+</tr>
+</tbody>
+</table>
+<h3 id="invariant-to-information-crosswalk">32. Invariant-to-Information Crosswalk</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Invariant</th>
+<th>Demonstrating records</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>INV-01 Unique Object Identity</td>
+<td>OBJ-01</td>
+</tr>
+<tr class="even">
+<td>INV-02 Representation Traceability</td>
+<td>REP-01, VER-01</td>
+</tr>
+<tr class="odd">
+<td>INV-03 Logical Distinction</td>
+<td>OBJ-01, VER-01, EPS-01, ACC-01, REL-02, LIF-01</td>
+</tr>
+<tr class="even">
+<td>INV-04 Provenance Persistence</td>
+<td>PRO-01, PRO-03, PRO-04</td>
+</tr>
+<tr class="odd">
+<td>INV-05 Justification before Reliance</td>
+<td>JUS-01, ACC-01, GAT-01</td>
+</tr>
+<tr class="even">
+<td>INV-06 Counter-Evidence Visibility</td>
+<td>EVD-02 (challenge role), EVD-03, JUS-04</td>
+</tr>
+<tr class="odd">
+<td>INV-07 Acceptance Does Not Rewrite Standing</td>
+<td>EPS-01, EPS-02, ACC-01</td>
+</tr>
+<tr class="even">
+<td>INV-08 Attributable Transition</td>
+<td>TRN-01, GAT-01</td>
+</tr>
+<tr class="odd">
+<td>INV-09 Human Accountability</td>
+<td>ACC-01, STW-01, AUT-01, TRN-01</td>
+</tr>
+<tr class="even">
+<td>INV-10 Standing Governance</td>
+<td>STW-01, REV-02, CMP-01</td>
+</tr>
+<tr class="odd">
+<td>INV-11 Authorised Change</td>
+<td>ADM-01, ACS-02, AUT-01, CHG-01, TRN-01, COR-01</td>
+</tr>
+<tr class="even">
+<td>INV-12 Version Preservation</td>
+<td>VER-01, COR-01</td>
+</tr>
+<tr class="odd">
+<td>INV-13 Lineage Preservation</td>
+<td>LIN-01, BRN-01, CON-01, SUP-01</td>
+</tr>
+<tr class="even">
+<td>INV-14 No Silent Mutation</td>
+<td>CHG-01, COR-01, TRN-01</td>
+</tr>
+<tr class="odd">
+<td>INV-15 Dependency Disposition</td>
+<td>DEP-02, DEP-03</td>
+</tr>
+<tr class="even">
+<td>INV-16 Retirement Preserves History</td>
+<td>RET-01, PRE-01, HIS-01</td>
+</tr>
+<tr class="odd">
+<td>INV-17 Warranted Actionable Form</td>
+<td>ACT-01, ACT-03, REL-01</td>
+</tr>
+<tr class="even">
+<td>INV-18 Governed Application</td>
+<td>APP-01, APP-02</td>
+</tr>
+<tr class="odd">
+<td>INV-19 Outcome Traceability</td>
+<td>OUT-01, APP-01, PRO-01</td>
+</tr>
+<tr class="even">
+<td>INV-20 Modality-Appropriate Explainability</td>
+<td>EXP-01, REP-03</td>
+</tr>
+<tr class="odd">
+<td>INV-21 Inspectable Conformance</td>
+<td>CNF-01, CNF-02, CNF-03</td>
+</tr>
+<tr class="even">
+<td>INV-22 Assurance Independence</td>
+<td>CNF-01, AUT-01, ACS-02, ADM-01, APP-04 (assurance participant)</td>
+</tr>
+<tr class="odd">
+<td>INV-23 Audit Non-Interference</td>
+<td>CNF-01, CNF-03, ACS-01, ACS-02, ADM-01, INT-01 (integrity fingerprints)</td>
+</tr>
+<tr class="even">
+<td>INV-24 No Silent Success</td>
+<td>OPR-01, EVA-03, GAT-01, CNF-02</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-constraint-to-information-crosswalk">33. Interaction-Constraint-to-Information Crosswalk</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constraint</th>
+<th>Records and relationships</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IC-01 Lifecycle State Authority</td>
+<td>LIF-01, TRN-01</td>
+</tr>
+<tr class="even">
+<td>IC-02 Gate Enforcement</td>
+<td>GAT-01 + TRN-01 (transactionally bound)</td>
+</tr>
+<tr class="odd">
+<td>IC-03 Suspension Ownership</td>
+<td>TRN-01, REL-02, ACT-04, OPR-03, GOV-01, DEP-03</td>
+</tr>
+<tr class="even">
+<td>IC-04 Reactivation through Evolution</td>
+<td>REA-01, CHG-01, ACC-01</td>
+</tr>
+<tr class="odd">
+<td>IC-05 Identity Immutability</td>
+<td>OBJ-01</td>
+</tr>
+<tr class="even">
+<td>IC-06 Version Immutability</td>
+<td>VER-01</td>
+</tr>
+<tr class="odd">
+<td>IC-07 Branch and Consolidation Identity</td>
+<td>BRN-01, CON-01, LIN-01</td>
+</tr>
+<tr class="even">
+<td>IC-08 Release Separation</td>
+<td>REL-01 (distinct from VER-01), ACC-01 ref</td>
+</tr>
+<tr class="odd">
+<td>IC-09 Justification–Acceptance Separation</td>
+<td>JUS-01 vs ACC-01</td>
+</tr>
+<tr class="even">
+<td>IC-10 Operationalisation Eligibility</td>
+<td>ACT-01 (warrant linkage)</td>
+</tr>
+<tr class="odd">
+<td>IC-11 Application Eligibility</td>
+<td>APP-02</td>
+</tr>
+<tr class="even">
+<td>IC-12 Warrant Link Preservation</td>
+<td>ACT-01, APP-01 (warrant reference)</td>
+</tr>
+<tr class="odd">
+<td>IC-13 Authority Is Not Permission</td>
+<td>AUT-01 (SVC-06) vs ACS-02 (SVC-16)</td>
+</tr>
+<tr class="even">
+<td>IC-14 Least Necessary Alteration</td>
+<td>§30 authoritative-maintainer matrix; §7.1</td>
+</tr>
+<tr class="odd">
+<td>IC-15 Material Administrative Action</td>
+<td>ADM-01</td>
+</tr>
+<tr class="even">
+<td>IC-16 Automated Authority Boundary</td>
+<td>ACC-01, APP-04</td>
+</tr>
+<tr class="odd">
+<td>IC-17 Read-Only Assurance Boundary</td>
+<td>CNF-01…06 (no mutation of assessed records)</td>
+</tr>
+<tr class="even">
+<td>IC-18 No Sole Self-Certification</td>
+<td>CNF-01 (independent evidence)</td>
+</tr>
+<tr class="odd">
+<td>IC-19 Exception Visibility</td>
+<td>EXC-01, GOV-01, OPR-03</td>
+</tr>
+<tr class="even">
+<td>IC-20 Provenance Continuity</td>
+<td>PRO-01, PRO-02</td>
+</tr>
+<tr class="odd">
+<td>IC-21 Append-Only Correction</td>
+<td>COR-01, supersession/correction relationship, TMP-01, PRO-01</td>
+</tr>
+<tr class="even">
+<td>IC-22 Time Semantics Preservation</td>
+<td>TMP-01, TMP-02</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lifecycle-to-information-crosswalk-kf-2001-stages">34. Lifecycle-to-Information Crosswalk <em>(<a href="kf-2001-oko-lifecycle.html">KF-2001</a> stages)</em></h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lifecycle stage</th>
+<th>Required records</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Capture</td>
+<td>OBJ-01, OBJ-02, OBJ-03, PRO-01</td>
+</tr>
+<tr class="even">
+<td>Structure</td>
+<td>REP-01, REP-02, VER-01</td>
+</tr>
+<tr class="odd">
+<td>Evaluate</td>
+<td>EVA-01, EVA-02, EVA-03</td>
+</tr>
+<tr class="even">
+<td>Justify</td>
+<td>JUS-01, JUS-02, JUS-03, EPS-01</td>
+</tr>
+<tr class="odd">
+<td>Accept (transition)</td>
+<td>ACC-01, GAT-01, TRN-01</td>
+</tr>
+<tr class="even">
+<td><strong>Release (eligibility)</strong></td>
+<td>REL-01, REL-02 <em>(shown as an eligibility step/gate between Accept and Operationalise, not part of Operationalise)</em></td>
+</tr>
+<tr class="odd">
+<td>Operationalise</td>
+<td>ACT-01, ACT-03</td>
+</tr>
+<tr class="even">
+<td>Govern (standing)</td>
+<td>STW-01, REV-02, CMP-01, GOV-01</td>
+</tr>
+<tr class="odd">
+<td>Apply</td>
+<td>APP-01, APP-02, APP-03, APP-04, EXP-01, OUT-01</td>
+</tr>
+<tr class="even">
+<td>Evolve</td>
+<td>CHG-01, LIN-01, DEP-02</td>
+</tr>
+<tr class="odd">
+<td>Retire</td>
+<td>RET-01, PRE-01, HIS-01</td>
+</tr>
+<tr class="even">
+<td>Cross-cutting (all stages)</td>
+<td>EVT-01, GAT-01, TRN-01 (transitions); PRO-01–04 (provenance); TMP-01–05 (temporal); OPR-01 (condition); CNF-01–06 (assurance)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-xiii-relationship-to-subsequent-documents">Part XIII · Relationship to Subsequent Documents</h2>
+<p><strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></strong> defines lifecycle states, gate conditions, transition rules and permissible/prohibited state changes; <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the records through which those controls are represented and evidenced, and the current-state/event-history rule (§15.1) they must honour. <strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> defines the authority model behind AUT-01/02 and the delegation, stewardship, access and computational-participation assignments; <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the logical records that represent them. <strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> defines the tests and evidence for information, service and system conformance. <strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></strong> preserves traceability from Canonical Principle through practice, invariant, capability, service, information object, control and implementation.</p>
+<p><strong>KF-4000</strong> may implement this logical architecture through relational, graph, document, event-stream, object-store, ledger, file or human-maintained structures, and may denormalise, replicate, index or distribute — provided it does not create conflicting authoritative records, collapse required semantic distinctions, overwrite immutable history, remove required provenance, substitute a projection for authoritative state, make historical reconstruction impossible, treat missing or indeterminate information as satisfied, or prevent independent conformance inspection.</p>
+<h3 id="closing-statement">Closing Statement</h3>
+<p>The Governed Information and Record Model defines the memory of the Knowledge Foundry architecture. It ensures that substantive knowledge, warrant, authority, operational use and assurance remain distinguishable yet connected; that every material decision and transition is evidenced; that history survives change; and that the architecture can reconstruct not merely what it currently holds, but how that state came to exist and why it was permitted to be relied upon. Each record family resolves to exactly one authoritative maintainer, each historical view is derived rather than duplicated, each status represents one conceptual dimension, and each crosswalk demonstrates the obligation it claims.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-3003-service-architecture.html">&#8592; Service Architecture</a><a class="nx" href="kf-3005-lifecycle-and-control-architecture.html">Lifecycle & Control &#8594;</a></nav>
+</main>
+</div>
+</body></html>

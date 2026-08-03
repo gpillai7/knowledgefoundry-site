@@ -1,43 +1,8 @@
-main.page{display:none}
-*{box-sizing:border-box}
-body{margin:0;background:#ECE9E0;color:#1B1A17;font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-size:18px;line-height:1.62;font-weight:380;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-::selection{background:#38574B;color:#ECE9E0}
-a{color:#1B1A17;text-decoration:none;transition:color .2s cubic-bezier(.2,.6,.2,1)}
-a:hover{color:#38574B}
-:focus-visible{outline:2px solid #38574B;outline-offset:3px}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-@media (max-width:900px){[data-nav-links] a[data-nav-item]{display:none}}
-
-/* restored hover states */
-.hv-1:hover{color:#1B1A17 !important}
-.hv-2:hover{color:#1B1A17 !important}
-.hv-3:hover{color:#1B1A17 !important}
-.hv-4:hover{color:#1B1A17 !important}
-.hv-5:hover{color:#1B1A17 !important}
-.hv-6:hover{color:#1B1A17 !important}
-.hv-7:hover{background:#38574B !important;color:#ECE9E0 !important}
-.hv-8:hover{background:#2B4339 !important;color:#ECE9E0 !important}
-.hv-9:hover{color:#BC6C2E !important}
-.hv-10:hover{color:#BC6C2E !important;border-color:#BC6C2E !important}
-.hv-11:hover{color:#BC6C2E !important;border-color:#BC6C2E !important}
-.hv-12:hover{background:#2B4339 !important;color:#ECE9E0 !important}
-.hv-13:hover{color:#BC6C2E !important}
-.hv-14:hover{background:#2B4339 !important;color:#ECE9E0 !important}
-.hv-15:hover{background:#2B4339 !important;color:#ECE9E0 !important}
-.hv-16:hover{background:#2B4339 !important;color:#ECE9E0 !important}
-.hv-17:hover{background:#2B4339 !important;color:#ECE9E0 !important}
-.hv-18:hover{color:#F1EEE6 !important}
-.hv-19:hover{color:#F1EEE6 !important}
-.hv-20:hover{color:#F1EEE6 !important}
-.hv-21:hover{color:#F1EEE6 !important}
-.hv-22:hover{color:#F1EEE6 !important}
-.hv-23:hover{color:#F1EEE6 !important}
-.hv-24:hover{color:#F1EEE6 !important}
-.hv-25:hover{color:#F1EEE6 !important}
-.hv-26:hover{color:#F1EEE6 !important}
-a{text-decoration:none}
-.hvL1:hover{color:#1B1A17 !important}
-.hvL2:hover{color:#BC6C2E !important;border-color:#BC6C2E !important}
-.hvL3:hover{background:#2B4339 !important}
-.hvL4:hover{color:#BC6C2E !important}
-.hvRef:hover{color:#1B1A17 !important}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+<rect width="32" height="32" rx="5" fill="#23221D"/>
+<line x1="16" y1="2.5" x2="16" y2="5.5" stroke="#BC6C2E" stroke-width="1.7"/>
+<path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#ECE9E0" stroke-width="1.6" fill="none"/>
+<line x1="9" y1="13" x2="23" y2="13" stroke="#ECE9E0" stroke-width="1" opacity=".4"/>
+<line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#ECE9E0" stroke-width="1" opacity=".65"/>
+<rect x="6" y="21" width="20" height="5" fill="#ECE9E0"/>
+</svg>

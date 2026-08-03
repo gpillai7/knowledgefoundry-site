@@ -1,0 +1,738 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Service Architecture &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html" class="active"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-3003 · Service Architecture</h1>
+<p class="deck">The Logical Services Through Which Capabilities Are Exposed and Governed</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.2</p>
+
+<pre class="text"><code>Reference Architecture (KF-3000)
+        ↓
+Architectural Rules (KF-3001)
+        ↓
+Capability Model (KF-3002)
+        ↓
+▸ Service Architecture (KF-3003)
+        ↓
+Information &amp; Record Model (KF-3004)
+        ↓
+Lifecycle &amp; Control (KF-3005)
+        ↓
+Implementation (KF-4000)</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p><a href="kf-3002-capability-model.html">KF-3002</a> defines <em>what</em> a governed knowledge architecture must be able to do. <a href="kf-3003-service-architecture.html">KF-3003</a> defines <em>through which logical services those abilities are exposed, coordinated and governed</em> — the execution architecture of the Knowledge Foundry.</p>
+<p><a href="kf-3003-service-architecture.html">KF-3003</a> introduces no new obligations. It does not weaken an invariant, relax an interaction constraint, or select a technology. Its single question is:</p>
+<blockquote>
+<p><em>Through which logical services are the capabilities exposed, coordinated and governed, without violating any interaction constraint?</em></p>
+</blockquote>
+<p>A logical service is a stable responsibility exposed to authorised actors and other services through defined operations, information objects and controls. A service may later be realised by software, assigned human work, or a governed combination of both; <a href="kf-3003-service-architecture.html">KF-3003</a> fixes the responsibility, not the realisation.</p>
+<h3 id="relationship-to-upstream-documents">Relationship to Upstream Documents</h3>
+<p><a href="kf-3003-service-architecture.html">KF-3003</a> is bounded on three sides and may not exceed any of them.</p>
+<ul>
+<li>From <strong><a href="kf-3002-capability-model.html">KF-3002</a></strong>, it inherits the twenty-four capabilities and their typed relationships. Every service realises one or more capabilities; no service exists without a capability basis.</li>
+<li>From <strong><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a></strong>, it inherits the twenty-two interaction constraints. Every constraint must be enforced at a defined service boundary; a service architecture that cannot enforce a constraint is non-conforming.</li>
+<li>From <strong><a href="kf-3000-reference-architecture.html">KF-3000</a></strong>, it inherits the intent of the service catalogue. <a href="kf-3000-reference-architecture.html">KF-3000</a> sketched a provisional service list and explicitly deferred the definitive catalogue to <a href="kf-3003-service-architecture.html">KF-3003</a>. This document establishes that definitive catalogue — nineteen logical services — and where it refines <a href="kf-3000-reference-architecture.html">KF-3000</a>’s provisional numbering, <a href="kf-3003-service-architecture.html">KF-3003</a> is authoritative and <a href="kf-3000-reference-architecture.html">KF-3000</a>’s §11–12 list and §22–24 crosswalks are read as pointing here.</li>
+</ul>
+<p>The direction of authority is strict: a service may choose <em>how</em> to expose a capability, but may never add to, weaken, or reinterpret the capability, invariant or constraint it inherits.</p>
+<h3 id="the-distinctive-property-interaction-governance">The Distinctive Property — Interaction Governance</h3>
+<p>A service architecture is not merely a decomposition of capabilities into components. Its distinctive and load-bearing property is <strong>interaction governance</strong>: it must guarantee that the interaction constraints IC-01–IC-22 hold <em>in execution</em>, not only on paper.</p>
+<p>Decomposition alone can satisfy every capability individually while allowing services to bypass one another — a version service that also releases, an application service that also accepts, an assurance service that authorises the transitions it audits. <a href="kf-3003-service-architecture.html">KF-3003</a> exists to make those bypasses structurally impossible by assigning each constraint to a boundary and each governed record to a single authoritative maintainer. Part VII is therefore the centre of this document, not an appendix to it.</p>
+<h3 id="service-admission-test">Service Admission Test</h3>
+<p>A proposed logical service is admitted only where:</p>
+<ol type="1">
+<li>it realises one or more <a href="kf-3002-capability-model.html">KF-3002</a> capabilities;</li>
+<li>every capability it realises names it as the single accountable service, or names another service and this one as a supporting collaborator;</li>
+<li>it is the authoritative maintainer of a defined, non-overlapping set of information objects;</li>
+<li>its operations can be stated without naming a technology or product;</li>
+<li>it enforces, or participates in enforcing, at least one interaction constraint, or is required by a capability that does;</li>
+<li>it acquires no authority beyond the capabilities it realises;</li>
+<li>its conformance can be demonstrated independently.</li>
+</ol>
+<h3 id="design-principles-for-service-definition">Design Principles for Service Definition</h3>
+<ul>
+<li><strong>SP-1 · Capability-derived services.</strong> Every service is justified by the capabilities it realises; none is admitted because a technology category suggests it.</li>
+<li><strong>SP-2 · Single accountable service.</strong> Each capability has exactly one accountable service; other services may support it, but accountability is not shared.</li>
+<li><strong>SP-3 · Authoritative information ownership.</strong> Each governed information object has exactly one authoritative-maintainer service; other services read it or request changes through a governed interaction.</li>
+<li><strong>SP-4 · Constraint enforcement at a boundary.</strong> Every <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> interaction constraint is enforced at a named service boundary, not left to convention.</li>
+<li><strong>SP-5 · No authority accrual.</strong> Execution capacity confers no authority. A service that performs an operation does not thereby gain the right to authorise it.</li>
+<li><strong>SP-6 · Coherent coarseness.</strong> Capabilities are grouped into one service only where they share information ownership and lifecycle role. Distinct governance obligations remain distinct services even where a single component might implement them. Version, acceptance and release are therefore three services, not one.</li>
+<li><strong>SP-7 · Logical, not physical.</strong> Services are logical responsibilities. One may be distributed across components and several combined into one, provided their boundaries and authoritative ownership remain inspectable.</li>
+<li><strong>SP-8 · Assurance independence.</strong> The conformance service is read-only with respect to the records it assesses and is never an operational prerequisite of the operations it audits.</li>
+</ul>
+<h3 id="service-specification">Service Specification</h3>
+<p>Each service is specified through ten fields: <strong>Service statement</strong>, <strong>Purpose</strong>, <strong>Realised capabilities</strong>, <strong>Authoritative information objects</strong>, <strong>Service operations</strong>, <strong>Collaborations</strong> (typed: prerequisite, collaborating, constraining, evidence), <strong>Enforced interaction constraints</strong>, <strong>Authority boundary</strong> (what the service must not do), <strong>Operating criticality</strong>, and <strong>Conformance condition</strong>.</p>
+<hr />
+<h2 id="part-i-service-taxonomy">Part I · Service Taxonomy</h2>
+<h3 id="the-logical-services">1. The Logical Services</h3>
+<p><a href="kf-3003-service-architecture.html">KF-3003</a> defines nineteen logical services, numbered sequentially and grouped by domain. Cross-cutting services are grouped together at the end of the sequence.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Service</th>
+<th>Domain</th>
+<th>Accountable capabilities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SVC-01 · Object Registry</td>
+<td>A</td>
+<td>A-CAP-01, A-CAP-03</td>
+</tr>
+<tr class="even">
+<td>SVC-02 · Representation</td>
+<td>A</td>
+<td>A-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>SVC-03 · Evidence</td>
+<td>B</td>
+<td>B-CAP-01</td>
+</tr>
+<tr class="even">
+<td>SVC-04 · Evaluation</td>
+<td>B</td>
+<td>B-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>SVC-05 · Justification</td>
+<td>B</td>
+<td>B-CAP-03, B-CAP-04</td>
+</tr>
+<tr class="even">
+<td>SVC-06 · Authority and Acceptance</td>
+<td>C</td>
+<td>C-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>SVC-07 · Stewardship and Review</td>
+<td>C</td>
+<td>C-CAP-02, C-CAP-03</td>
+</tr>
+<tr class="even">
+<td>SVC-08 · Lifecycle and Transition</td>
+<td>C</td>
+<td>C-CAP-08</td>
+</tr>
+<tr class="odd">
+<td>SVC-09 · Version and Lineage</td>
+<td>C</td>
+<td>C-CAP-04, C-CAP-06</td>
+</tr>
+<tr class="even">
+<td>SVC-10 · Release</td>
+<td>C</td>
+<td>C-CAP-05</td>
+</tr>
+<tr class="odd">
+<td>SVC-11 · Dependency</td>
+<td>C</td>
+<td>C-CAP-07</td>
+</tr>
+<tr class="even">
+<td>SVC-12 · Operationalisation</td>
+<td>D</td>
+<td>D-CAP-01</td>
+</tr>
+<tr class="odd">
+<td>SVC-13 · Application and Outcome</td>
+<td>D</td>
+<td>D-CAP-02, D-CAP-03</td>
+</tr>
+<tr class="even">
+<td>SVC-14 · Retirement and Preservation</td>
+<td>D</td>
+<td>D-CAP-04</td>
+</tr>
+<tr class="odd">
+<td>SVC-15 · Provenance and Traceability</td>
+<td>E</td>
+<td>E-CAP-01</td>
+</tr>
+<tr class="even">
+<td>SVC-16 · Access and Integrity</td>
+<td>E</td>
+<td>E-CAP-03</td>
+</tr>
+<tr class="odd">
+<td>SVC-17 · Operating Condition and Exception</td>
+<td>E</td>
+<td>E-CAP-04</td>
+</tr>
+<tr class="even">
+<td>SVC-18 · Conformance and Audit</td>
+<td>E</td>
+<td>E-CAP-02</td>
+</tr>
+<tr class="odd">
+<td>SVC-19 · Temporal Continuity</td>
+<td>E</td>
+<td>E-CAP-05</td>
+</tr>
+</tbody>
+</table>
+<p>Every one of the twenty-four capabilities names exactly one accountable service (§5). The five Domain E services are cross-cutting: Provenance, Access, Operating Condition and Temporal Continuity constrain or supply evidence to the others, and Conformance reads all of them without altering any.</p>
+<p><strong>Version, acceptance and release are three services.</strong> Version creation (SVC-09) is not acceptance (SVC-06) and neither is release (SVC-10). This three-way separation is the structural expression of IC-06, IC-08 and IC-09, and is the principal refinement of this document over the <a href="kf-3000-reference-architecture.html">KF-3000</a> sketch.</p>
+<hr />
+<h2 id="part-ii-domain-a-services">Part II · Domain A Services</h2>
+<h3 id="svc-01-object-registry-service">SVC-01 · Object Registry Service</h3>
+<p><strong>Service statement.</strong> Assigns and resolves durable object identity and routes intake to the responsible downstream service.</p>
+<p><strong>Purpose.</strong> Establish identity as the single anchor of governance, distinct from version, representation and record identity.</p>
+<p><strong>Realised capabilities.</strong> Accountable for A-CAP-01, A-CAP-03. Supports A-CAP-02.</p>
+<p><strong>Authoritative information objects.</strong> Object Identity Record; Intake Record; Identity Resolution Decision; Resolution Result.</p>
+<p><strong>Service operations.</strong> Register candidate; assign immutable identifier; resolve identifier to one object; assess intake relation to existing objects; retrieve current and historical governed context; expose unresolved identity conditions.</p>
+<p><strong>Collaborations.</strong> <em>Constrained by:</em> SVC-16, SVC-17. <em>Evidence from:</em> SVC-15. <em>Triggers:</em> SVC-09 (version or lineage creation). <em>Collaborates with:</em> SVC-02, SVC-05, SVC-08 (context for resolution).</p>
+<p><strong>Enforced interaction constraints.</strong> IC-05 (Identity Immutability).</p>
+<p><strong>Authority boundary.</strong> Does not create versions, branches or consolidated successors; does not accept, release or retire; does not alter representation content.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — no progression without a resolved, unique identity.</p>
+<p><strong>Conformance condition.</strong> Any registered object resolves to exactly one identity with recoverable origin and intake decision, and no identifier is reused.</p>
+<h3 id="svc-02-representation-service">SVC-02 · Representation Service</h3>
+<p><strong>Service statement.</strong> Creates and maintains the inspectable representation of an object’s content, type and relationships.</p>
+<p><strong>Purpose.</strong> Make objects inspectable so that evaluation, justification, governance and explanation can operate on explicit structure.</p>
+<p><strong>Realised capabilities.</strong> Accountable for A-CAP-02. Supports A-CAP-03.</p>
+<p><strong>Authoritative information objects.</strong> Structured Representation; Semantic Type Record; Metadata Record; Object Relationship Record; Representation Limitation Record.</p>
+<p><strong>Service operations.</strong> Assign semantic type; represent constituent elements and relationships; attach metadata; link representation to object version; declare modality limitations.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01. <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-15.</p>
+<p><strong>Enforced interaction constraints.</strong> Participates in INV-02, INV-03 preservation; no primary IC boundary.</p>
+<p><strong>Authority boundary.</strong> Does not evaluate, justify or accept; does not assign identity; does not conflate content with warrant.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — inspectability precedes all downstream governance.</p>
+<p><strong>Conformance condition.</strong> For any representation, a reviewer can determine what it expresses, which object version it represents, how its elements relate and what modality limitations apply.</p>
+<hr />
+<h2 id="part-iii-domain-b-services">Part III · Domain B Services</h2>
+<h3 id="svc-03-evidence-service">SVC-03 · Evidence Service</h3>
+<p><strong>Service statement.</strong> Registers evidence and counter-evidence as governed records related to claims and objects.</p>
+<p><strong>Purpose.</strong> Make evidential support, challenge and origin independently inspectable, distinct from the conclusions drawn from them.</p>
+<p><strong>Realised capabilities.</strong> Accountable for B-CAP-01.</p>
+<p><strong>Authoritative information objects.</strong> Evidence Record; Counter-Evidence Record; Evidence-to-Claim Link; Evidence Classification; Evidence Availability Status.</p>
+<p><strong>Service operations.</strong> Register evidence; classify support, challenge or context; relate evidence to claims and objects; record availability; retain conflicting evidence.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01, SVC-02. <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-15.</p>
+<p><strong>Enforced interaction constraints.</strong> Participates in IC-20 (provenance of evidence).</p>
+<p><strong>Authority boundary.</strong> Does not evaluate quality, construct justification or determine acceptance; does not delete counter-evidence.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — warrant depends on inspectable evidence.</p>
+<p><strong>Conformance condition.</strong> For each material claim, the related evidence and counter-evidence, their origins, roles and availability are recoverable.</p>
+<h3 id="svc-04-evaluation-service">SVC-04 · Evaluation Service</h3>
+<p><strong>Service statement.</strong> Assesses quality and fitness against explicit criteria and records the verdict.</p>
+<p><strong>Purpose.</strong> Determine whether an object is suitable to proceed toward justification, distinct from establishing why it may be believed.</p>
+<p><strong>Realised capabilities.</strong> Accountable for B-CAP-02.</p>
+<p><strong>Authoritative information objects.</strong> Evaluation Criteria Record; Quality Assessment; Evaluation Verdict; Evaluation Exception; Confidence Record.</p>
+<p><strong>Service operations.</strong> Apply criteria; assess quality, consistency, completeness and confidence; record pass, fail, return, pending or indeterminate; retain reasons; route incomplete assessments.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-02, SVC-03. <em>Constrained by:</em> SVC-17. <em>Evidence to:</em> SVC-18.</p>
+<p><strong>Enforced interaction constraints.</strong> Participates in INV-24 (no silent pass).</p>
+<p><strong>Authority boundary.</strong> Does not construct justification or accept; does not define organisational thresholds.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — the quality gate precedes justification.</p>
+<p><strong>Conformance condition.</strong> For any evaluation, the criteria, inputs, evaluator, result, confidence, reasons and disposition are recoverable.</p>
+<h3 id="svc-05-justification-service">SVC-05 · Justification Service</h3>
+<p><strong>Service statement.</strong> Assembles and exposes inspectable warrant, and maintains epistemic status distinct from acceptance.</p>
+<p><strong>Purpose.</strong> Establish why an object may be believed, and preserve uncertainty and dispute even where reliance is later permitted.</p>
+<p><strong>Realised capabilities.</strong> Accountable for B-CAP-03, B-CAP-04.</p>
+<p><strong>Authoritative information objects.</strong> Justification Record; Assumption Record; Rationale Record; Traceability Chain; Challenge Record; Epistemic Status Record; Confidence Record; Contestation Record; Epistemic Status Change Record.</p>
+<p><strong>Service operations.</strong> Relate claims to evidence and counter-evidence; record assumptions and rationale; construct traceability; represent epistemic status; preserve prior epistemic states; expose warrant for independent inspection.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-03, SVC-04. <em>Collaborating:</em> SVC-06 (justification–acceptance boundary). <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-15.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-09 (Justification–Acceptance Separation), enforced jointly with SVC-06.</p>
+<p><strong>Authority boundary.</strong> Does not accept, release or apply; does not let acceptance overwrite epistemic status; does not claim justification guarantees truth.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — justification is the warrant on which reliance rests.</p>
+<p><strong>Conformance condition.</strong> An independent reviewer can reconstruct the reasons for and against belief, the assumptions, and the object’s epistemic standing separately from its acceptance state.</p>
+<hr />
+<h2 id="part-iv-domain-c-services">Part IV · Domain C Services</h2>
+<h3 id="svc-06-authority-and-acceptance-service">SVC-06 · Authority and Acceptance Service</h3>
+<p><strong>Service statement.</strong> Records the governed decision by which an identified authority permits reliance upon a justified object.</p>
+<p><strong>Purpose.</strong> Separate epistemic warrant from institutional permission to rely.</p>
+<p><strong>Realised capabilities.</strong> Accountable for C-CAP-01.</p>
+<p><strong>Authoritative information objects.</strong> Acceptance Record; Refusal Record; Scope-of-Reliance Record; Authority Assignment Reference; Acceptance Condition Record.</p>
+<p><strong>Service operations.</strong> Identify accepting authority; verify mandate, scope and effective period; record acceptance, provisional acceptance or refusal; define reliance scope and conditions; route refusals.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-05, SVC-16. <em>Collaborating:</em> SVC-08. <em>Triggers:</em> SVC-10 (release), SVC-08 (transition). <em>Evidence from:</em> SVC-15.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-09 (with SVC-05); IC-13 (Authority Is Not Permission); IC-16 (Automated Authority Boundary).</p>
+<p><strong>Authority boundary.</strong> Does not construct justification; does not create or release versions itself; does not assign permissions (that is SVC-16); does not become the final accountable authority where a human authority is required.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — no acceptance without an applicable authority.</p>
+<p><strong>Conformance condition.</strong> Every accepted object carries a decision attributable to an authority whose mandate, scope and effective period applied, with reliance scope, conditions, date and supporting justification.</p>
+<h3 id="svc-07-stewardship-and-review-service">SVC-07 · Stewardship and Review Service</h3>
+<p><strong>Service statement.</strong> Maintains ownership and accountability and determines whether standing governance conditions remain satisfied.</p>
+<p><strong>Purpose.</strong> Preserve sustained human accountability and legitimacy across operational life.</p>
+<p><strong>Realised capabilities.</strong> Accountable for C-CAP-02, C-CAP-03.</p>
+<p><strong>Authoritative information objects.</strong> Stewardship Assignment; Responsibility Record; Stewardship History; Accountable Body Record; Review Schedule; Review Record; Compliance Assessment; Compliance Finding; Governance Exception.</p>
+<p><strong>Service operations.</strong> Assign and transfer stewardship; schedule and record reviews; detect overdue reviews; evaluate compliance; raise triggers for suspension, evolution or retirement.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01. <em>Collaborating:</em> SVC-08. <em>Constrained by:</em> SVC-16, SVC-17. <em>Triggers:</em> SVC-08, SVC-09. <em>Evidence from:</em> SVC-15; <em>Evidence to:</em> SVC-18.</p>
+<p><strong>Enforced interaction constraints.</strong> Participates in INV-10 (standing governance) upkeep; raises IC-03 suspension triggers.</p>
+<p><strong>Authority boundary.</strong> Does not accept or release; does not execute the transitions it triggers (that is SVC-08); does not assign access permissions.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; recoverable within a defined period — a late review is bounded and must be visible as overdue.</p>
+<p><strong>Conformance condition.</strong> Every operational object has a recoverable steward, review status and compliance standing, and no operational object is ownerless.</p>
+<h3 id="svc-08-lifecycle-and-transition-service">SVC-08 · Lifecycle and Transition Service</h3>
+<p><strong>Service statement.</strong> Registers lifecycle events, evaluates gates and executes attributable state transitions as one governed operation.</p>
+<p><strong>Purpose.</strong> Preserve controlled movement between lifecycle states and hold the sole right to change recorded state.</p>
+<p><strong>Realised capabilities.</strong> Accountable for C-CAP-08.</p>
+<p><strong>Authoritative information objects.</strong> Event Record; Gate Decision Record; Transition Record; Transition Warrant; Transition Status.</p>
+<p><strong>Service operations.</strong> Register events; identify applicable gate; evaluate eligibility; bind gate decision and transition transactionally; attribute execution and authority separately; execute forward, return, suspension and retirement transitions.</p>
+<p><strong>Collaborations.</strong> <em>Collaborating:</em> SVC-06, SVC-07, SVC-09, SVC-10, SVC-11, SVC-14. <em>Constrained by:</em> SVC-16, SVC-17. <em>Evidence from:</em> SVC-15, SVC-19; <em>Evidence to:</em> SVC-18.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-01 (Lifecycle State Authority); IC-02 (Gate Enforcement); IC-03 (Suspension Ownership).</p>
+<p><strong>Authority boundary.</strong> Does not make the acceptance decision (that is SVC-06); does not define gate criteria (that is <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>); does not disposition dependencies (that is SVC-11). Only SVC-08 may alter recorded lifecycle state.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — an indeterminate or unavailable gate does not silently pass.</p>
+<p><strong>Conformance condition.</strong> For every transition, the event, prior and proposed state, gate result, executor, accountable authority and outcome are recoverable under one transition identifier.</p>
+<h3 id="svc-09-version-and-lineage-service">SVC-09 · Version and Lineage Service</h3>
+<p><strong>Service statement.</strong> Creates immutable versions and preserves lineage across change, without altering enduring identity and without releasing anything.</p>
+<p><strong>Purpose.</strong> Preserve every state of content and warrant as an immutable, recoverable version, and preserve predecessor–successor lineage — kept strictly distinct from acceptance and release.</p>
+<p><strong>Realised capabilities.</strong> Accountable for C-CAP-04 (version), C-CAP-06 (evolution and lineage).</p>
+<p><strong>Authoritative information objects.</strong> Version Record; Version State; Predecessor–Successor Link; Correction Record; Change Record; Lineage Record; Branch Record; Consolidation Record; Reactivation Proposal.</p>
+<p><strong>Service operations.</strong> Create candidate and governed versions; preserve prior versions; prevent overwrite; identify predecessor and successor versions; branch, consolidate and supersede with explicit lineage; preserve correction history; route changed states for renewed warrant.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01, SVC-02. <em>Collaborating:</em> SVC-08, SVC-11. <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-15; <em>Evidence with:</em> SVC-19.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-06 (Version Immutability); IC-07 (Branch and Consolidation Identity); IC-21 (Append-Only Correction, with SVC-19).</p>
+<p><strong>Authority boundary.</strong> Does not accept, release or apply; does not create or mutate identity; version creation never implies release. A new version is never automatically released.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — no overwrite of a prior version.</p>
+<p><strong>Conformance condition.</strong> For any object, its immutable versions, their order, correction and supersession relationships and full lineage are recoverable, distinct from whether any version is accepted or released.</p>
+<h3 id="svc-10-release-service">SVC-10 · Release Service</h3>
+<p><strong>Service statement.</strong> Designates an accepted version as eligible for a defined scope and period of operational reliance, and governs withdrawal and supersession of that eligibility.</p>
+<p><strong>Purpose.</strong> Hold operational release as a distinct governed decision — separate from version creation and from acceptance — so that eligibility can be granted, retained, revalidated and withdrawn without touching version or identity.</p>
+<p><strong>Realised capabilities.</strong> Accountable for C-CAP-05.</p>
+<p><strong>Authoritative information objects.</strong> Release Record; Release Scope; Effective Period; Release Status; Withdrawal Record; Supersession Record; Revalidation Record.</p>
+<p><strong>Service operations.</strong> Verify an existing acceptance; bind release to a specific immutable version; define release scope and effective period; set and change release status; run eligibility checks; withdraw, supersede or revalidate a release; preserve release history.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-06 (acceptance), SVC-09 (version). <em>Collaborating:</em> SVC-08. <em>Constrained by:</em> SVC-16, SVC-17. <em>Evidence from:</em> SVC-15, SVC-19.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-08 (Release Separation).</p>
+<p><strong>Authority boundary.</strong> Does not create versions (that is SVC-09); does not make the acceptance decision (that is SVC-06); does not derive or apply actionable forms. Release requires an existing acceptance and never manufactures one.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — no release without a bound, accepted version, and no automatic inheritance of release by a new version.</p>
+<p><strong>Conformance condition.</strong> For every release, the immutable version released, its acceptance basis, scope, effective period, current status and predecessor or successor releases are recoverable, and no version is released without acceptance.</p>
+<h3 id="svc-11-dependency-service">SVC-11 · Dependency Service</h3>
+<p><strong>Service statement.</strong> Represents dependencies and dispositions objects and forms affected by change.</p>
+<p><strong>Purpose.</strong> Prevent locally correct change from silently invalidating dependent knowledge.</p>
+<p><strong>Realised capabilities.</strong> Accountable for C-CAP-07.</p>
+<p><strong>Authoritative information objects.</strong> Dependency Record; Dependency Impact Record; Revalidation Requirement; Dependency Disposition Record; Suspension Recommendation.</p>
+<p><strong>Service operations.</strong> Represent dependencies; determine impacted dependants; classify impact; disposition as revalidation, evolution, suspension or no-action; preserve impact decisions.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01 (resolution). <em>Collaborating:</em> SVC-09. <em>Triggers:</em> SVC-08 (suspension), SVC-09 (evolve dependants). <em>Evidence to:</em> SVC-18.</p>
+<p><strong>Enforced interaction constraints.</strong> Participates in INV-15 (dependency disposition); raises IC-03 suspension triggers.</p>
+<p><strong>Authority boundary.</strong> Does not execute change or transition; does not accept or release; does not itself apply forms.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — a changed object does not return to use with undispositioned dependants.</p>
+<p><strong>Conformance condition.</strong> For every material change, affected dependants and their recorded disposition are recoverable before the changed object returns to operational use.</p>
+<hr />
+<h2 id="part-v-domain-d-services">Part V · Domain D Services</h2>
+<h3 id="svc-12-operationalisation-service">SVC-12 · Operationalisation Service</h3>
+<p><strong>Service statement.</strong> Derives actionable forms from governed objects and controls their eligibility for use.</p>
+<p><strong>Purpose.</strong> Convert represented knowledge into usable forms without severing warrant. Form-level release governed here is distinct from object-level release (SVC-10).</p>
+<p><strong>Realised capabilities.</strong> Accountable for D-CAP-01.</p>
+<p><strong>Authoritative information objects.</strong> Actionable Form; Derivation Record; Warrant Linkage; Form Release Record; Form Status.</p>
+<p><strong>Service operations.</strong> Derive forms; distinguish provisional from released; link forms to source version, justification and acceptance; withdraw or replace forms on source change.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-06, SVC-09. <em>Collaborating:</em> SVC-10 (release alignment). <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-15.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-10 (Operationalisation Eligibility); IC-12 (Warrant Link Preservation).</p>
+<p><strong>Authority boundary.</strong> Does not accept or release the underlying object; does not apply forms; does not permit provisional forms into use.</p>
+<p><strong>Operating criticality.</strong> Operationally critical; fail-closed for release — a form is not made usable without a warrant linkage.</p>
+<p><strong>Conformance condition.</strong> Every operationally eligible form traces to an accepted object version and carries an inspectable warrant linkage.</p>
+<h3 id="svc-13-application-and-outcome-service">SVC-13 · Application and Outcome Service</h3>
+<p><strong>Service statement.</strong> Governs material use of actionable forms and captures outcomes as governed evidence.</p>
+<p><strong>Purpose.</strong> Keep use authorised, traceable and explainable, and close the loop back to the lifecycle.</p>
+<p><strong>Realised capabilities.</strong> Accountable for D-CAP-02, D-CAP-03.</p>
+<p><strong>Authoritative information objects.</strong> Application Record; Use Context Record; Eligibility Decision; Explanation Record; Application Participant Record; Outcome Record; Interpretation Record; Feedback Record; Materiality Assessment; Disposition Record; Lifecycle Trigger.</p>
+<p><strong>Service operations.</strong> Verify eligibility before use; record context and participants; preserve input-to-result path; produce modality-appropriate explanation; capture outcomes; assess materiality; assign disposition; raise lifecycle triggers.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-12. <em>Collaborating:</em> SVC-08. <em>Constrained by:</em> SVC-07 (governance status), SVC-16. <em>Triggers:</em> SVC-07, SVC-09, SVC-08. <em>Evidence from:</em> SVC-15.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-11 (Application Eligibility); IC-12 (Warrant Link Preservation).</p>
+<p><strong>Authority boundary.</strong> Does not derive forms; does not accept or release; does not execute evolution or retirement, only trigger them.</p>
+<p><strong>Operating criticality.</strong> Operationally critical; fail-closed for use — an ineligible object is not applied. Outcome capture is recoverable within a defined, visible period.</p>
+<p><strong>Conformance condition.</strong> For each material application, what was used, why it was eligible, who participated, the result and a proportionate explanation are recoverable, and every material outcome has a recorded disposition.</p>
+<h3 id="svc-14-retirement-and-preservation-service">SVC-14 · Retirement and Preservation Service</h3>
+<p><strong>Service statement.</strong> Concludes operational use of an object while preserving identity, records and lineage.</p>
+<p><strong>Purpose.</strong> Remove knowledge from active reliance without destroying institutional memory.</p>
+<p><strong>Realised capabilities.</strong> Accountable for D-CAP-04.</p>
+<p><strong>Authoritative information objects.</strong> Retirement Record; Historical Object Record; Preservation Record; Reactivation Request; Successor Link.</p>
+<p><strong>Service operations.</strong> Record retirement reason and authority; remove object and forms from active eligibility; preserve the historical record; maintain successor links; support historical retrieval; route reactivation through evolution.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01. <em>Collaborating:</em> SVC-08. <em>Constrained by:</em> SVC-16. <em>Evidence from:</em> SVC-19. <em>Triggers:</em> SVC-09 (reactivation via evolution).</p>
+<p><strong>Enforced interaction constraints.</strong> IC-04 (Reactivation through Evolution).</p>
+<p><strong>Authority boundary.</strong> Does not delete governed history; does not accept; does not permit reactivation outside governed evolution.</p>
+<p><strong>Operating criticality.</strong> Governance-critical — destructive deletion of governed history is prohibited.</p>
+<p><strong>Conformance condition.</strong> A retired object cannot be used operationally, yet its identity, versions, warrant, governance history and lineage remain recoverable.</p>
+<hr />
+<h2 id="part-vi-domain-e-services-cross-cutting">Part VI · Domain E Services (Cross-Cutting)</h2>
+<p>The five Domain E services preserve and evaluate the governed context surrounding substantive knowledge. None authors or alters substantive content, and none independently authorises a lifecycle transition. They are ordered here from the most foundational (provenance) to the most derived (temporal reconstruction).</p>
+<h3 id="svc-15-provenance-and-traceability-service">SVC-15 · Provenance and Traceability Service</h3>
+<p><strong>Service statement.</strong> Preserves origin, derivation, custody, attribution and end-to-end traceability across all objects, records, transitions and applications.</p>
+<p><strong>Purpose.</strong> Make current states and historical change reconstructable.</p>
+<p><strong>Realised capabilities.</strong> Accountable for E-CAP-01.</p>
+<p><strong>Authoritative information objects.</strong> Provenance Record; Custody Record; Derivation Link; Attribution Link; Traceability Path; Provenance Gap Record.</p>
+<p><strong>Service operations.</strong> Preserve origin and derivation; trace representations, changes, forms, applications and outcomes; carry provenance across modality hand-offs; identify provenance gaps explicitly.</p>
+<p><strong>Collaborations.</strong> <em>Prerequisite:</em> SVC-01. <em>Constrained by:</em> SVC-16. <em>Evidence to:</em> all services.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-20 (Provenance Continuity).</p>
+<p><strong>Authority boundary.</strong> Does not author or alter substantive content; does not authorise transitions; does not evaluate conformance.</p>
+<p><strong>Operating criticality.</strong> Governance- and conformance-critical; fail-closed at hand-offs — a hand-off that cannot preserve provenance is not silently completed.</p>
+<p><strong>Conformance condition.</strong> For a representative outcome, the path from source and creation through use and outcome is reconstructable, with any provenance gaps exposed.</p>
+<h3 id="svc-16-access-and-integrity-service">SVC-16 · Access and Integrity Service</h3>
+<p><strong>Service statement.</strong> Restricts access and material action by assigned permission while preserving the permission ≠ authority distinction, and protects record integrity.</p>
+<p><strong>Purpose.</strong> Protect governed records and operations against unauthorised access, alteration or disclosure.</p>
+<p><strong>Realised capabilities.</strong> Accountable for E-CAP-03.</p>
+<p><strong>Authoritative information objects.</strong> Access Policy; Permission Assignment; Authority Assignment Reference; Disclosure Constraint; Integrity Status; Administrative Action Record.</p>
+<p><strong>Service operations.</strong> Identify actors; assign and revoke permissions; enforce action permissions; protect integrity; enforce disclosure and use restrictions; record administrative action.</p>
+<p><strong>Collaborations.</strong> <em>Collaborating:</em> SVC-07. <em>Constrains:</em> all services performing a material action. <em>Evidence from:</em> SVC-19.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-13 (Authority Is Not Permission); IC-14 (Least Necessary Alteration); IC-15 (Material Administrative Action); IC-16 (Automated Authority Boundary).</p>
+<p><strong>Authority boundary.</strong> Does not make governance decisions (acceptance, stewardship, retirement); grants permission, never authority; does not select security technologies.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; fail-closed — an unauthorised material action is refused by default.</p>
+<p><strong>Conformance condition.</strong> For every material action, the actor’s required permission and, where applicable, the separate valid authority decision are demonstrable.</p>
+<h3 id="svc-17-operating-condition-and-exception-service">SVC-17 · Operating Condition and Exception Service</h3>
+<p><strong>Service statement.</strong> Determines and exposes whether required services, controls and evidence are operational, degraded, failed, pending or indeterminate, and governs the consequences.</p>
+<p><strong>Purpose.</strong> Prevent absent evidence, failed controls or unavailable services from appearing as success. This responsibility is materially different from provenance or protection: it is the architecture’s fail-safe determinant, and it directly protects INV-24 (No Silent Success).</p>
+<p><strong>Realised capabilities.</strong> Accountable for E-CAP-04.</p>
+<p><strong>Authoritative information objects.</strong> Operating Condition Record; Degradation Record; Exception Record; Compensating Control Record; Recovery Record; Failure Disposition Record.</p>
+<p><strong>Service operations.</strong> Distinguish pass, fail, pending and indeterminate; represent degradation; determine fail-open or fail-closed posture; raise and bound exceptions; preserve compensating controls; trigger suspension or correction.</p>
+<p><strong>Collaborations.</strong> <em>Collaborating:</em> SVC-08. <em>Constrains:</em> SVC-08, SVC-07, SVC-04, SVC-10 (fail-posture on gates, reviews, evaluations and release). <em>Triggers:</em> SVC-08. <em>Evidence to:</em> SVC-18.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-19 (Exception Visibility); participates in IC-02 (fail-posture at gates).</p>
+<p><strong>Authority boundary.</strong> Does not execute the corrective transition (that is SVC-08); does not define organisational risk acceptance.</p>
+<p><strong>Operating criticality.</strong> Conformance- and governance-critical; its own degradation defaults to fail-closed.</p>
+<p><strong>Conformance condition.</strong> When a condition cannot be evaluated or a service is degraded, the condition is recorded explicitly and the predefined consequence applied, rather than treated as satisfied.</p>
+<h3 id="svc-18-conformance-and-audit-service">SVC-18 · Conformance and Audit Service</h3>
+<p><strong>Service statement.</strong> Determines and demonstrates whether required capabilities, invariants, gates, controls and constraints are satisfied.</p>
+<p><strong>Purpose.</strong> Prevent compliance from resting on structural resemblance or self-assertion.</p>
+<p><strong>Realised capabilities.</strong> Accountable for E-CAP-02.</p>
+<p><strong>Authoritative information objects.</strong> Conformance Assessment; Invariant Test Result; Constraint Test Result; Assurance Finding; Non-Conformance Record; Exception Reference.</p>
+<p><strong>Service operations.</strong> Inspect records and control evidence; test invariants and prohibited paths; reconcile evidence across services; record findings; distinguish conformance, variation, exception and non-conformance; recommend suspension or correction.</p>
+<p><strong>Collaborations.</strong> <em>Evidence from:</em> all services. <em>Triggers:</em> SVC-08 (via suspension recommendation), SVC-17.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-17 (Read-Only Assurance Boundary); IC-18 (No Sole Self-Certification).</p>
+<p><strong>Authority boundary.</strong> Does not alter the records it examines; does not authorise transitions; is never an operational prerequisite of an operation it audits; does not certify its own outputs without independent evidence.</p>
+<p><strong>Operating criticality.</strong> Conformance-critical but not transaction-blocking — its unavailability renders operations unproven, not halted.</p>
+<p><strong>Conformance condition.</strong> The architecture can produce independently generated evidence for every required capability and report unmet, indeterminate or violated conditions without modifying the evidence assessed.</p>
+<h3 id="svc-19-temporal-continuity-service">SVC-19 · Temporal Continuity Service</h3>
+<p><strong>Service statement.</strong> Owns the governed temporal contract of the architecture: the meaning, sequence and authenticity of governed records and states across time, including as-of reconstruction.</p>
+<p><strong>Purpose.</strong> Maintain trust where events, records and effective conditions occur at different times. This is a distinct authoritative responsibility, not a timestamp utility: it owns effective dating, event sequencing, as-of reconstruction, retention and correction history, and it alone can answer “what did the governed record say, and hold true, as of a stated time.”</p>
+<p><strong>Realised capabilities.</strong> Accountable for E-CAP-05.</p>
+<p><strong>Authoritative information objects.</strong> Temporal Metadata Record; Effective Period; Event-Time Record; Custody History; Retention Condition; Correction History; Historical Reconstruction Result.</p>
+<p><strong>Service operations.</strong> Preserve recorded, effective and event time as three distinct semantics; sequence transitions and decisions; maintain correction history; preserve authenticity across format and custody change; reconstruct governed state as of a specified time; enforce retention and disposition.</p>
+<p><strong>Collaborations.</strong> <em>Collaborating:</em> SVC-09 (append-only correction). <em>Evidence from:</em> SVC-15; <em>Evidence to:</em> SVC-18.</p>
+<p><strong>Enforced interaction constraints.</strong> IC-21 (Append-Only Correction, with SVC-09); IC-22 (Time Semantics Preservation).</p>
+<p><strong>Authority boundary.</strong> Does not perform version mechanics (that is SVC-09); does not select storage technology; does not alter substantive content. It owns <em>time semantics and reconstruction</em>, not the records’ substantive content.</p>
+<p><strong>Operating criticality.</strong> Governance-critical; recoverable with bounded manual control, but never by relying on overwritten records.</p>
+<p><strong>Conformance condition.</strong> The object’s content, warrant, acceptance, governance and operational state can be reconstructed as of a specified historical point — using recorded, effective and event time — without relying on overwritten current records.</p>
+<hr />
+<h2 id="part-vii-interaction-governance">Part VII · Interaction Governance</h2>
+<p>This part is the centre of <a href="kf-3003-service-architecture.html">KF-3003</a>. It fixes how services interact so that the interaction constraints hold in execution.</p>
+<h3 id="service-interaction-principles">2. Service Interaction Principles</h3>
+<ol type="1">
+<li>Only the accountable service may alter an information object it authoritatively maintains; others request change through a governed interaction.</li>
+<li>Only SVC-08 may alter recorded lifecycle state.</li>
+<li>No transition executes without a gate decision bound to it in the same operation.</li>
+<li>No object is released (SVC-10) without an existing acceptance recorded by SVC-06 and a version created by SVC-09.</li>
+<li>No actionable form is derived or applied without a preserved warrant linkage.</li>
+<li>No governed record is overwritten; corrections append or version.</li>
+<li>No service acquires authority by holding permission.</li>
+<li>No automated service is the final accountable authority where human authority is required.</li>
+<li>SVC-18 reads all services and alters none, and is never a prerequisite of the operation it audits.</li>
+<li>Every material inter-service action is attributable and carries provenance.</li>
+<li>When a required condition is unavailable or indeterminate, SVC-17 determines the fail-posture; the default is fail-closed for governance-critical operations.</li>
+</ol>
+<h3 id="constraint-enforcement-matrix">3. Constraint Enforcement Matrix</h3>
+<p>Every interaction constraint is enforced at a named service boundary.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constraint</th>
+<th>Enforcing boundary</th>
+<th>Enforcement mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IC-01 · Lifecycle State Authority</td>
+<td>SVC-08</td>
+<td>sole authority to write lifecycle state</td>
+</tr>
+<tr class="even">
+<td>IC-02 · Gate Enforcement</td>
+<td>SVC-08 (with SVC-17)</td>
+<td>gate decision bound to transition; fail-posture on indeterminacy</td>
+</tr>
+<tr class="odd">
+<td>IC-03 · Suspension Ownership</td>
+<td>SVC-08</td>
+<td>owns suspension; SVC-07/11/18 supply reason</td>
+</tr>
+<tr class="even">
+<td>IC-04 · Reactivation through Evolution</td>
+<td>SVC-14 → SVC-09 → SVC-08</td>
+<td>reactivation routed through evolution and re-acceptance</td>
+</tr>
+<tr class="odd">
+<td>IC-05 · Identity Immutability</td>
+<td>SVC-01</td>
+<td>write-once identifier</td>
+</tr>
+<tr class="even">
+<td>IC-06 · Version Immutability</td>
+<td>SVC-09</td>
+<td>immutable version records</td>
+</tr>
+<tr class="odd">
+<td>IC-07 · Branch and Consolidation Identity</td>
+<td>SVC-09 (with SVC-01)</td>
+<td>successor identity with lineage links</td>
+</tr>
+<tr class="even">
+<td>IC-08 · Release Separation</td>
+<td>SVC-10 (with SVC-06, SVC-09)</td>
+<td>release record distinct from version, bound to acceptance</td>
+</tr>
+<tr class="odd">
+<td>IC-09 · Justification–Acceptance Separation</td>
+<td>SVC-05 and SVC-06</td>
+<td>separate authoritative maintainers; boundary tested by SVC-18</td>
+</tr>
+<tr class="even">
+<td>IC-10 · Operationalisation Eligibility</td>
+<td>SVC-12</td>
+<td>warrant linkage required before release</td>
+</tr>
+<tr class="odd">
+<td>IC-11 · Application Eligibility</td>
+<td>SVC-13</td>
+<td>eligibility check recorded before use</td>
+</tr>
+<tr class="even">
+<td>IC-12 · Warrant Link Preservation</td>
+<td>SVC-12, SVC-13</td>
+<td>non-nullable warrant links</td>
+</tr>
+<tr class="odd">
+<td>IC-13 · Authority Is Not Permission</td>
+<td>SVC-16 (with SVC-06)</td>
+<td>permission and authority held as separate records</td>
+</tr>
+<tr class="even">
+<td>IC-14 · Least Necessary Alteration</td>
+<td>SVC-16</td>
+<td>authoritative-maintainer boundary enforced</td>
+</tr>
+<tr class="odd">
+<td>IC-15 · Material Administrative Action</td>
+<td>SVC-16</td>
+<td>administrative action log</td>
+</tr>
+<tr class="even">
+<td>IC-16 · Automated Authority Boundary</td>
+<td>SVC-06, SVC-16</td>
+<td>final authority resolves to a human role</td>
+</tr>
+<tr class="odd">
+<td>IC-17 · Read-Only Assurance Boundary</td>
+<td>SVC-18</td>
+<td>read-only access to examined records</td>
+</tr>
+<tr class="even">
+<td>IC-18 · No Sole Self-Certification</td>
+<td>SVC-18</td>
+<td>independent evidence required per judgement</td>
+</tr>
+<tr class="odd">
+<td>IC-19 · Exception Visibility</td>
+<td>SVC-17</td>
+<td>exception persists until closed</td>
+</tr>
+<tr class="even">
+<td>IC-20 · Provenance Continuity</td>
+<td>SVC-15</td>
+<td>provenance carried, not regenerated, at hand-off</td>
+</tr>
+<tr class="odd">
+<td>IC-21 · Append-Only Correction</td>
+<td>SVC-09, SVC-19</td>
+<td>corrections append</td>
+</tr>
+<tr class="even">
+<td>IC-22 · Time Semantics Preservation</td>
+<td>SVC-19</td>
+<td>recorded, effective and event time preserved</td>
+</tr>
+</tbody>
+</table>
+<h3 id="prohibited-cross-service-actions">4. Prohibited Cross-Service Actions</h3>
+<p>No service may accept on behalf of another; write another service’s authoritative records directly; change lifecycle state outside SVC-08; release a version without an SVC-06 acceptance and an SVC-09 version; treat a permission from SVC-16 as an authority; present an SVC-18 assessment as an authorisation; or complete a hand-off that SVC-15 cannot make traceable.</p>
+<hr />
+<h2 id="part-viii-completeness">Part VIII · Completeness</h2>
+<h3 id="capability-to-service-crosswalk">5. Capability-to-Service Crosswalk</h3>
+<p>Each capability names exactly one accountable service.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Capability</th>
+<th>Accountable service</th>
+<th>Supporting services</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A-CAP-01</td>
+<td>SVC-01</td>
+<td>SVC-15, SVC-16</td>
+</tr>
+<tr class="even">
+<td>A-CAP-02</td>
+<td>SVC-02</td>
+<td>SVC-01, SVC-15</td>
+</tr>
+<tr class="odd">
+<td>A-CAP-03</td>
+<td>SVC-01</td>
+<td>SVC-02, SVC-05, SVC-08</td>
+</tr>
+<tr class="even">
+<td>B-CAP-01</td>
+<td>SVC-03</td>
+<td>SVC-15</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-02</td>
+<td>SVC-04</td>
+<td>SVC-17</td>
+</tr>
+<tr class="even">
+<td>B-CAP-03</td>
+<td>SVC-05</td>
+<td>SVC-03, SVC-04</td>
+</tr>
+<tr class="odd">
+<td>B-CAP-04</td>
+<td>SVC-05</td>
+<td>SVC-06</td>
+</tr>
+<tr class="even">
+<td>C-CAP-01</td>
+<td>SVC-06</td>
+<td>SVC-05, SVC-16, SVC-08</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-02</td>
+<td>SVC-07</td>
+<td>SVC-16</td>
+</tr>
+<tr class="even">
+<td>C-CAP-03</td>
+<td>SVC-07</td>
+<td>SVC-08, SVC-17</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-04</td>
+<td>SVC-09</td>
+<td>SVC-01, SVC-19</td>
+</tr>
+<tr class="even">
+<td>C-CAP-05</td>
+<td>SVC-10</td>
+<td>SVC-06, SVC-09</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-06</td>
+<td>SVC-09</td>
+<td>SVC-11, SVC-08</td>
+</tr>
+<tr class="even">
+<td>C-CAP-07</td>
+<td>SVC-11</td>
+<td>SVC-01, SVC-09</td>
+</tr>
+<tr class="odd">
+<td>C-CAP-08</td>
+<td>SVC-08</td>
+<td>SVC-06, SVC-16, SVC-17</td>
+</tr>
+<tr class="even">
+<td>D-CAP-01</td>
+<td>SVC-12</td>
+<td>SVC-06, SVC-09, SVC-10</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-02</td>
+<td>SVC-13</td>
+<td>SVC-07, SVC-16</td>
+</tr>
+<tr class="even">
+<td>D-CAP-03</td>
+<td>SVC-13</td>
+<td>SVC-15</td>
+</tr>
+<tr class="odd">
+<td>D-CAP-04</td>
+<td>SVC-14</td>
+<td>SVC-08, SVC-19</td>
+</tr>
+<tr class="even">
+<td>E-CAP-01</td>
+<td>SVC-15</td>
+<td>SVC-01</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-02</td>
+<td>SVC-18</td>
+<td>all</td>
+</tr>
+<tr class="even">
+<td>E-CAP-03</td>
+<td>SVC-16</td>
+<td>SVC-07</td>
+</tr>
+<tr class="odd">
+<td>E-CAP-04</td>
+<td>SVC-17</td>
+<td>SVC-08</td>
+</tr>
+<tr class="even">
+<td>E-CAP-05</td>
+<td>SVC-19</td>
+<td>SVC-15, SVC-09</td>
+</tr>
+</tbody>
+</table>
+<p>Every capability has exactly one accountable service; no capability is unassigned and no service is without a capability basis.</p>
+<h3 id="coverage-test">6. Coverage Test</h3>
+<p>The service architecture is complete when: every capability names exactly one accountable service; every governed information object has exactly one authoritative-maintainer service; every interaction constraint is enforced at a named boundary (§3); no service holds authority beyond its capabilities; no prohibited cross-service action is structurally possible; and the conformance service is read-only and non-prerequisite.</p>
+<hr />
+<h2 id="part-ix-service-conformance">Part IX · Service Conformance</h2>
+<h3 id="service-conformance">7. Service Conformance</h3>
+<p>A service conforms when it realises its accountable capabilities; is the sole authoritative maintainer of its information objects; exposes its operations without technology dependence; enforces its assigned interaction constraints; performs no prohibited action; and can demonstrate its conformance condition. As in <a href="kf-3002-capability-model.html">KF-3002</a>, conformance is systemic: a service is not conformant where an unmet collaboration prevents a constraint it must enforce.</p>
+<h3 id="service-evidence">8. Service Evidence</h3>
+<p>Evidence includes authoritative-ownership maps; operation traces; constraint-enforcement tests; prohibited-path tests; attribution and provenance checks; and independent assurance from SVC-18. Physical consolidation of services is permitted only where the authoritative-ownership boundary and constraint enforcement remain inspectable.</p>
+<hr />
+<h2 id="part-x-relationship-to-subsequent-documents">Part X · Relationship to Subsequent Documents</h2>
+<p><strong><a href="kf-3004-information-and-record-model.html">KF-3004</a></strong> defines the information objects and record classes named here and fixes their authoritative-maintainer assignments and the recorded/effective/event time semantics owned by SVC-19. <strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></strong> defines the gate logic and lifecycle controls that SVC-08 and SVC-17 apply, including the transactional gate–transition binding and the release eligibility checks of SVC-10. <strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> defines the human authority and accountability model that SVC-06 and SVC-07 depend upon, kept distinct from the technical permission SVC-16 assigns. <strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> defines the tests and evidence for service and constraint conformance. <strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></strong> preserves traceability from principle through capability, service, record and control.</p>
+<h3 id="closing-statement">Closing Statement</h3>
+<p>The Service Architecture converts the twenty-four capabilities into nineteen governed logical services and, more importantly, into a set of enforced boundaries. Its contribution is not that the capabilities are exposed, but that they cannot be exercised in a way that bypasses one another: version is not release, release is not acceptance, permission is not authority, and assurance never authorises what it audits. Every interaction constraint is enforced at a named boundary; every governed record has a single authoritative maintainer; and no service holds authority it was not given. That is what makes this an execution architecture for governed knowledge rather than a catalogue of components.</p>
+
+<nav class="prevnext"><a class="pv" href="kf-3002-capability-model.html">&#8592; Capability Model</a><a class="nx" href="kf-3004-information-and-record-model.html">Information & Record Model &#8594;</a></nav>
+</main>
+</div>
+</body></html>

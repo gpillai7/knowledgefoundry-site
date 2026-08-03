@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Governing Knowledge Change &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html" class="active"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-L001-B04 · Governing Knowledge Change</h1>
+<p class="deck">How Knowledge Change Becomes Legitimate</p>
+<p class="docmeta">Evidence &#183; Final &#183; v1.0</p>
+
+<pre><code>Question  →  Corpus  →  Evidence  →  Patterns  →  Candidate Insight</code></pre>
+<h3 id="purpose">Purpose</h3>
+<p>To examine the principal intellectual traditions concerned with governing knowledge change, and to evaluate how different disciplines preserve trust, legitimacy, provenance, authenticity and continuity as knowledge evolves over time. This chapter writes out the eight traditions of Section 4 as analytical prose through the chapter’s analytical lens of six recurring questions. Each tradition is allowed to conclude on its own terms; explicit integration with the earlier chapters is reserved for the closing sections, in keeping with the Literature Landscape’s separation of evidence from theory. Unlike B02, which examined the engineering of knowledge systems, and B03, which examined knowledge as enduring collective capability, this chapter investigates the mature traditions that govern change itself. Its purpose is not to develop a governance methodology, but to establish what existing scholarship already contributes toward understanding how knowledge change is authorised, validated, preserved and controlled.</p>
+<h3 id="executive-summary">Executive Summary</h3>
+<p>Knowledge does not remain static. Scientific theories are revised, ontologies evolve, records are appraised, software is versioned, beliefs are updated, and machine-learning models are retrained. Across many disciplines, mature mechanisms already exist for governing these changes. Yet they have largely developed independently, each addressing only a particular layer of knowledge change, and rarely in conversation with one another.</p>
+<p>This chapter investigates those governance traditions through a common analytical lens. Rather than asking how knowledge is represented (B02) or how it becomes collective capability (B03), it asks a different question: how is knowledge change governed? It examines eight traditions — belief revision, truth maintenance, ontology evolution, provenance, configuration and version control, records governance, knowledge quality, and AI model governance — and asks, of each, what governance capability it contributes, where it overlaps with the others, and what it leaves unresolved.</p>
+<p>The central observation the chapter advances — offered as the review’s interpretation rather than as a claim of the traditions themselves — is that the primitives of governed change are, individually, mature. Belief revision supplies the logic of consistent change; truth maintenance the machinery of dependency and retraction; provenance the record of derivation; configuration management the discipline of controlled, reversible release; records governance the theory of appraisal and authenticity over time; knowledge quality the criteria of acceptance; and AI model governance the first attempts to carry all of this into the parametric layer. What is not established is whether these layer-specific mechanisms compose into a coherent architecture for governing change across layers and communities at once. Consistent with the Literature Landscape methodology, that question — whether governed knowledge change is an unsolved problem or an unintegrated one — is reserved for C01.</p>
+<p>As with the preceding chapters, this document defines evidence rather than theory, and establishes part of the burden of proof that any later methodology would have to satisfy.</p>
+<h3 id="orientation-for-the-standalone-reader">Orientation for the Standalone Reader</h3>
+<p>This chapter builds upon the previous two evidence reviews but is intended to be read independently.</p>
+<p>B02 examined how Knowledge Engineering progressively expanded the object being engineered — from expert reasoning to formal knowledge to knowledge-intensive systems to shared meaning to connected ecosystems and, most recently, to hybrid systems that combine symbolic representations (documents, rules, ontologies, graphs) with the parametric representations of machine-learning models. It concluded that the constituent technical capabilities for governed knowledge systems are individually mature but not yet integrated.</p>
+<p>B03 examined complementary social and institutional traditions, arguing that they explain how knowledge becomes enduring collective capability through learning, stewardship, participation, justification and governance.</p>
+<p>This chapter investigates a different dimension. Rather than asking how knowledge is engineered, or how it becomes collective capability, it asks how change itself is governed: how a proposed alteration to what a system or institution holds is authorised, validated, traced, released and preserved, so that trust survives the change. Where terms such as “justified state,” “layer” or “governed evolution” appear below, they carry the sense given in B02; a reader who has not read the earlier chapters loses none of this chapter’s argument.</p>
+<h3 id="introduction">1. Introduction</h3>
+<p>Knowledge continually changes. New evidence emerges, errors are corrected, classifications evolve, records accumulate, models are retrained, and communities revise what they take to be settled. The ability to govern these transitions — to change what is held while keeping it trustworthy — is fundamental to every mature knowledge discipline.</p>
+<p>Yet the governance of change has never emerged as a single unified field. Instead, different scholarly traditions developed specialised mechanisms addressing particular aspects of it. Some emphasise logical consistency, some the traceability of origin, others authenticity, versioning, quality or authority. Each grew up around a particular kind of knowledge object — a belief set, an ontology, a database, a workflow, a software system, an institutional record, a dataset, a trained model — and around a particular professional community, with its own vocabulary and standards.</p>
+<p>The purpose of this chapter is to investigate these governance traditions comparatively rather than individually: to place them side by side, ask the same questions of each, and see what governance capabilities they hold in common, where they diverge, and what — taken together — they do not yet address.</p>
+<h3 id="central-research-question">2. Central Research Question</h3>
+<p>The chapter is organised around one guiding question.</p>
+<blockquote>
+<p><strong>How is knowledge change governed?</strong></p>
+</blockquote>
+<p>Supporting questions include: What constitutes legitimate knowledge change? How are revisions authorised? How is provenance maintained? How is authenticity preserved? How are previous knowledge states retained? How is trust maintained through change? And which governance mechanisms have become mature across disciplines?</p>
+<h3 id="analytical-lens">3. Analytical Lens</h3>
+<p>Each tradition is examined through six recurring analytical questions — a flexible lens rather than a rigid scoring scheme. As is normal in scholarly writing, some traditions invite fuller treatment of one question than another; the lens structures comparison without forcing equal coverage of every dimension.</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Guiding Question</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Primary Object</td>
+<td>What changes?</td>
+</tr>
+<tr class="even">
+<td>Primary Problem</td>
+<td>Why is governing change difficult?</td>
+</tr>
+<tr class="odd">
+<td>Core Contribution</td>
+<td>What governance capability emerged?</td>
+</tr>
+<tr class="even">
+<td>Remaining Limitations</td>
+<td>What remains unresolved?</td>
+</tr>
+<tr class="odd">
+<td>Relationship to Other Traditions</td>
+<td>Complement, overlap or divergence?</td>
+</tr>
+<tr class="even">
+<td>Relevance to Governed Knowledge Evolution</td>
+<td>What should be inherited, adapted or challenged?</td>
+</tr>
+</tbody>
+</table>
+<p>The purpose of the lens is not to compare traditions competitively but to identify complementary governance capabilities across otherwise diverse bodies of scholarship.</p>
+<pre><code>        The KF-L001 Method
+    ───────────────────────────
+         Research Question
+                ↓
+              Corpus
+                ↓
+          Analytical Lens
+                ↓
+        Comparative Analysis
+                ↓
+           Cross-patterns
+                ↓
+     Candidate Integrative Insight</code></pre>
+<p><em>Figure B04·1 — the recurring KF-L001 review method, applied uniformly across every evidence chapter of the Landscape.</em></p>
+<h3 id="corpus-of-investigation">4. Corpus of Investigation</h3>
+<p>Unlike B02, whose corpus consisted of engineering traditions, and B03, whose corpus consisted of adjacent knowledge traditions, the corpus here consists of eight traditions concerned primarily with governing knowledge change. Each is now examined in full through the analytical lens of Section 3.</p>
+<h4 id="belief-revision">4.1 Belief Revision</h4>
+<p><strong>Central question:</strong> How should rational beliefs change when new evidence appears?</p>
+<p><strong>Development and key figures.</strong> Belief revision is the formal study of how a rational body of belief should change under new information. Its canonical form is the AGM theory, named for Alchourrón, Gärdenfors and Makinson, whose 1985 paper set out the logic of theory change through a small set of rationality postulates (Alchourrón, Gärdenfors &amp; Makinson 1985). Gärdenfors developed the framework at book length in <em>Knowledge in Flux</em> (Gärdenfors 1988), and a large subsequent literature has refined and generalised it.</p>
+<p><strong>Primary object.</strong> What changes is a logically structured body of belief — a belief set or theory — as new information arrives, sometimes in conflict with what is already held.</p>
+<p><strong>Primary problem.</strong> The difficulty is to incorporate new information while preserving consistency and giving up as little as possible. When a new belief contradicts existing ones, something must be retracted; the question is what, and on what principled basis, so that the result is both consistent and minimally disruptive.</p>
+<p><strong>Core contribution.</strong> AGM distinguishes three operations — expansion (adding a belief), contraction (removing one) and revision (adding one while restoring consistency) — and constrains them with rationality postulates, chief among them the principle of <em>minimal change</em>: a rational agent surrenders as little of its prior commitment as consistency allows. This gives the field its enduring contribution: a precise, normative account of what it means for one justified state of belief to give way rationally to another.</p>
+<p><strong>Remaining limitations.</strong> Classical AGM idealises: it assumes a well-defined logical representation, a single agent, and belief measured without regard to source, cost or authority. It says nothing about who is entitled to authorise a change, how the change is recorded for later inspection, or how belief change is managed across time and custody. It is a theory of the logic of change, not of its governance as a social or institutional process.</p>
+<p><strong>Relationship to other traditions.</strong> Belief revision provides the logical core that several other traditions presuppose. Truth maintenance (4.2) is, in part, its computational realisation; provenance (4.4) records the derivations that revision leaves implicit; and knowledge quality (4.7) supplies the acceptance criteria that revision assumes are already settled.</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> Belief revision offers the most rigorous available grammar for a justified transition — the operations by which one consistent state becomes another with minimal loss. Any system that claims to govern change to a body of knowledge is, at some level, performing revision, and would do well to inherit AGM’s discipline of minimal, principled change. The demanding extension is that real knowledge systems are only partly logical: they hold representations that are graph-structured, statistical or parametric, for which the clean postulates of AGM have no direct analogue, and in which “minimal change” is far harder to define.</p>
+<h4 id="truth-maintenance-systems">4.2 Truth Maintenance Systems</h4>
+<p><strong>Central question:</strong> How can a knowledge system remain logically consistent after revision?</p>
+<p><strong>Development and key figures.</strong> Truth maintenance systems (TMS), also called reason maintenance systems, are the computational counterpart to belief revision, developed within artificial intelligence. Doyle’s original TMS recorded the justifications linking beliefs, so that when one was withdrawn the consequences could be recomputed (Doyle 1979). De Kleer’s assumption-based TMS (ATMS) generalised this by tracking the sets of assumptions under which beliefs hold, allowing a system to reason about several possible states at once (de Kleer 1986).</p>
+<p><strong>Primary object.</strong> What changes is the set of currently held beliefs in a working reasoning system, together with the dependency structure that records why each is held.</p>
+<p><strong>Primary problem.</strong> When a belief is retracted or added, its consequences must be updated consistently and efficiently. Recomputing everything from scratch is infeasible; the system needs to know exactly what depended on what, so that retraction propagates correctly and no longer-supported belief silently persists.</p>
+<p><strong>Core contribution.</strong> The enduring contribution is <em>dependency-directed maintenance</em>: the explicit recording of justifications (Doyle) or assumption sets (de Kleer) so that consistency can be restored incrementally after change, and so that the support for any belief can be inspected. The ATMS adds the ability to hold multiple contexts simultaneously, distinguishing what follows under different assumptions without committing to one.</p>
+<p><strong>Remaining limitations.</strong> TMS techniques are computationally expensive at scale and assume a symbolic, rule-like representation. They maintain consistency but do not decide whether a change is warranted, who may make it, or how it should be preserved; they are mechanisms of propagation, not of authority or stewardship.</p>
+<p><strong>Relationship to other traditions.</strong> TMS operationalises belief revision (4.1) and anticipates provenance (4.4): the justification network is, in effect, a fine-grained provenance record of a reasoning process. It shares with configuration management (4.5) the concern for tracking dependencies through change.</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> Truth maintenance contributes the idea that every held belief should carry its support with it, so that change can propagate correctly and any state can be explained by the justifications behind it. This is a powerful primitive for governed change — a system that records why it holds what it holds can revise itself coherently. The open challenge is to extend dependency tracking beyond symbolic rules to the mixed symbolic–parametric representations of contemporary systems, where the “justification” for a piece of knowledge may lie in training data rather than in an inspectable inference.</p>
+<h4 id="ontology-evolution">4.3 Ontology Evolution</h4>
+<p><strong>Central question:</strong> How should conceptual structures evolve over time?</p>
+<p><strong>Development and key figures.</strong> Ontology evolution is the study of how shared conceptual models — the classes, relations and axioms through which a domain is represented — should change while remaining usable. Noy and Klein argued that ontology evolution is not the same as database schema evolution, because ontologies carry richer semantics and are reused by distributed, independent parties (Noy &amp; Klein 2004). Flouris and colleagues surveyed and classified the varieties of ontology change (Flouris et al. 2008), and a related strand, including work associated with Stuckenschmidt and with Klein and Fensel, addressed ontology versioning and compatibility on the Semantic Web (Klein &amp; Fensel 2001). The database tradition on schema versioning and temporal data (Roddick 1995; Snodgrass 1999) is the close technical cousin of this work at the data layer.</p>
+<p><strong>Primary object.</strong> What changes is the conceptual model itself — the schema of meaning — as understanding of a domain develops, corrects itself or expands.</p>
+<p><strong>Primary problem.</strong> Changing an ontology can invalidate the data described by it, the mappings that connect it to other ontologies, and the dependent systems that consume it. Because ontologies are reused by parties the author does not control, a change can ripple unpredictably. The tradition must therefore distinguish evolution (changing while keeping the ontology and its instances consistent) from versioning (tracking the identity and compatibility of successive versions), and manage the propagation of change.</p>
+<p><strong>Core contribution.</strong> The tradition contributes a vocabulary and taxonomy of ontology change, the crucial recognition that meaning-level change differs from structural change, and a set of versioning and compatibility strategies — change logs, impact analysis, and compatibility relations between versions — for keeping a conceptual model usable as it evolves.</p>
+<p><strong>Remaining limitations.</strong> Tooling remains immature; preserving semantics across change is hard; and distributed reuse means the full effect of a change is often unknowable in advance. The tradition addresses the mechanics of change well but says little about the authority to make it, or about appraisal — which changes are worth making and which should be resisted.</p>
+<p><strong>Relationship to other traditions.</strong> Ontology evolution extends belief revision (4.1) from individual beliefs to the schema that gives them meaning, and shares versioning concerns with configuration management (4.5) and the schema-evolution strand of databases. It depends on provenance (4.4) to record why a conceptual change was made.</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> Ontology evolution is change governance at the level of shared meaning — the layer that sits between raw data and human concepts. Its evolution/versioning distinction, and its insistence that semantic change is not reducible to structural change, are directly inheritable. The open challenge, and one that recurs throughout this chapter, is coordinating change at the meaning layer with change at the data layer beneath it and the model layer beside it, so that a revision in one does not silently invalidate the others.</p>
+<h4 id="provenance">4.4 Provenance</h4>
+<p><strong>Central question:</strong> How should knowledge changes remain traceable?</p>
+<p><strong>Development and key figures.</strong> Provenance is the record of where knowledge came from and how it was produced. The database tradition characterised data provenance precisely — Buneman, Khanna and Tan distinguished “why” and “where” provenance, identifying which source data explained a result and where it originated (Buneman, Khanna &amp; Tan 2001). The e-science community developed workflow provenance, capturing the computational steps by which a result was derived (Davidson &amp; Freire 2008). These strands converged in an interoperability standard, the W3C PROV data model, which represents provenance in terms of entities, activities and agents so that it can be exchanged across systems (Moreau &amp; Missier 2013).</p>
+<p><strong>Primary object.</strong> What is recorded is the origin and derivation of a piece of knowledge — the trail connecting a current state to the sources, processes and actors that produced it.</p>
+<p><strong>Primary problem.</strong> Without provenance, the trustworthiness of a result cannot be assessed, reproduced or audited, and a change cannot be explained after the fact. Capturing derivation across heterogeneous queries, workflows and systems — at a useful granularity and in a form others can interpret — is genuinely hard.</p>
+<p><strong>Core contribution.</strong> The tradition contributes precise characterisations of provenance (why-, where- and how-provenance), techniques for capturing the derivation of computational results, and, in PROV, a shared vocabulary that lets provenance travel between systems. Its deeper contribution is the principle that a knowledge state should be accompanied by an inspectable account of how it came to be.</p>
+<p><strong>Remaining limitations.</strong> Provenance capture is costly and frequently incomplete; there are hard trade-offs of granularity and storage; and the provenance of machine-learning outputs — whose derivation is diffuse across training data and parameters — remains only partially tractable. Standards adoption is uneven.</p>
+<p><strong>Relationship to other traditions.</strong> Provenance is the connective tissue of change governance: it records the <em>why</em> behind changes that belief revision performs, that configuration management releases, and that records governance preserves. It is the computational descendant of archival provenance and respect des fonds (4.6), and closely related to the justification networks of truth maintenance (4.2).</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> Provenance is arguably the single most important primitive for governed change: it is what makes a transition auditable and a state’s justification inspectable after the fact. A system that governs change must carry provenance across all its layers — including the hard case of parametric knowledge, where derivation cannot be read off an inference but must be reconstructed from data and training history. Inheriting provenance is not optional for a governed knowledge system; extending it to the model layer is one of its central unsolved problems.</p>
+<h4 id="configuration-and-version-control">4.5 Configuration and Version Control</h4>
+<p><strong>Central question:</strong> How should controlled releases be governed?</p>
+<p><strong>Development and key figures.</strong> Software configuration management (SCM) is the engineering discipline of controlling change to complex, evolving artefacts. Conradi and Westfechtel’s survey of version models gave the field its conceptual map — versions, variants and configurations, and the operations that relate them (Conradi &amp; Westfechtel 1998). In practice the tradition is realised in version-control systems, branching and merging workflows, baselines, and the release-engineering practices that govern what is published and when.</p>
+<p><strong>Primary object.</strong> What changes is a complex artefact composed of many interdependent parts, altered concurrently by many contributors over time.</p>
+<p><strong>Primary problem.</strong> The difficulty is to coordinate concurrent change without losing consistency or history: to let many people modify an artefact in parallel, reconcile their changes, control what is released, and be able to return to any previous state.</p>
+<p><strong>Core contribution.</strong> SCM contributes the most mature account anywhere of controlled, attributable, reversible change: version models that capture how states relate; the disciplines of check-in and check-out, branching and merging, baselines and controlled releases; and the principle that every change is recorded, attributable to an author, and — crucially — reversible. Release engineering adds the governance of when and what to publish, separating work in progress from what is declared trustworthy.</p>
+<p><strong>Remaining limitations.</strong> SCM was designed for files and code, where change is textual and merges are largely mechanical. Merging <em>semantic</em> change — two incompatible revisions of meaning rather than of text — is far harder, and rollback of semantic change can leave dependent knowledge inconsistent. The release discipline is also process-heavy, presupposing human review.</p>
+<p><strong>Relationship to other traditions.</strong> Configuration management provides the process backbone the other traditions lack: the release and rollback machinery that turns a proposed change into a governed one. It shares versioning concerns with ontology and schema evolution (4.3), and its check-in review is a form of the authority that records governance (4.6) exercises through appraisal.</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> SCM contributes the discipline of controlled release — proposal, review, baseline, publication and rollback — which a governed knowledge system can borrow largely intact as the process spine of governed change. What SCM does not solve, and such a system must, is <em>semantic merge and rollback</em>: reconciling and, if necessary, undoing changes to meaning-bearing knowledge whose parts are interdependent in ways that text is not.</p>
+<h4 id="records-governance">4.6 Records Governance</h4>
+<p><strong>Central question:</strong> How should authenticity survive continual change?</p>
+<p><strong>Development and key figures.</strong> Records governance — the archival and records-management tradition — is the institutional theory of keeping records trustworthy over time. Its classical poles are Jenkinson’s custodial account, with its emphasis on the impartiality and authenticity of records (Jenkinson 1922), and Schellenberg’s theory of appraisal, which asks what records have enduring value and should be retained (Schellenberg 1956). The modern tradition adds Duranti’s diplomatics-based analysis of reliability and authenticity (Duranti 1995), the records continuum’s treatment of change as constitutive rather than incidental (Upward 1996), Cook’s account of shifting archival paradigms (Cook 2013), and digital-preservation reference models such as OAIS for maintaining authenticity across technological change (CCSDS 2012). Information governance is the contemporary organisational umbrella for these concerns.</p>
+<p><strong>Primary object.</strong> What is governed is the institution’s records over time — what is captured, appraised, retained, preserved authentically, and eventually disposed of.</p>
+<p><strong>Primary problem.</strong> Not everything can or should be kept. The tradition must decide what to retain (appraisal), preserve the authenticity and reliability of what is kept as it passes through custodians and formats, and maintain an unbroken chain of evidence across decades or centuries — a far longer horizon than any computational tradition contemplates.</p>
+<p><strong>Core contribution.</strong> Records governance contributes what the technical traditions omit: appraisal (a principled account of deciding what has enduring value), the paired concepts of reliability and authenticity (Duranti), provenance and respect des fonds as organising principles, and reference models for sustaining authenticity through format and custody change. Its deeper contribution is to treat trust-over-time as the central problem rather than an afterthought.</p>
+<p><strong>Remaining limitations.</strong> Appraisal is inescapably value-laden and labour-intensive; the tradition is historically document-centric; and adapting its methods to dynamic, computational and machine-generated records is an ongoing project rather than a settled achievement.</p>
+<p><strong>Relationship to other traditions.</strong> Records governance is the institutional counterpart to the technical traditions: where provenance (4.4) records derivation and configuration management (4.5) controls release, appraisal decides what is worth keeping and authenticity certifies that what is kept can be trusted. It asks the question — what should we retain? — that belief revision and truth maintenance never pose.</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> Records governance contributes appraisal and authenticity over long horizons — precisely the problem of keeping knowledge trustworthy as it changes, which the computational traditions treat only in passing. A governed knowledge system should inherit appraisal (deciding what to promote, retain and retire) and the reliability/authenticity apparatus, and extend them from documents to hybrid symbolic–parametric knowledge, where establishing that a model or dataset is what it purports to be, and has not been tampered with, is markedly harder than for a record.</p>
+<h4 id="knowledge-quality">4.7 Knowledge Quality</h4>
+<p><strong>Central question:</strong> When should knowledge be accepted?</p>
+<p><strong>Development and key figures.</strong> The knowledge-quality tradition — spanning information, data and knowledge quality — asks by what criteria a body of knowledge is judged fit for use. Wang and Strong’s foundational study derived quality dimensions from the perspective of the data consumer, grouping them into intrinsic, contextual, representational and accessibility categories (Wang &amp; Strong 1996). Redman connected data quality to organisational and economic consequences (Redman 1996), and Batini and colleagues later surveyed the methodologies developed for assessing and improving it (Batini et al. 2009).</p>
+<p><strong>Primary object.</strong> What is assessed is the fitness-for-use of data and information — the criteria by which a candidate knowledge state is judged acceptable or not.</p>
+<p><strong>Primary problem.</strong> When should a piece of knowledge be accepted, and when rejected? Quality is multi-dimensional and relative to use: the same data may be adequate for one purpose and inadequate for another. The tradition must therefore make quality assessable rather than merely asserted.</p>
+<p><strong>Core contribution.</strong> The tradition contributes multi-dimensional models of quality — accuracy, completeness, timeliness, consistency, relevance and more, organised into coherent categories — together with assessment and improvement methodologies. Its conceptual advance is the reframing of quality as <em>fitness-for-use</em> rather than intrinsic accuracy, which makes acceptance a judgement relative to purpose and consumer rather than an absolute.</p>
+<p><strong>Remaining limitations.</strong> Because quality is context-dependent, it resists fully objective measurement; assessment is resource-intensive; and the tradition says more about whether knowledge is fit than about who is authorised to declare it so.</p>
+<p><strong>Relationship to other traditions.</strong> Knowledge quality supplies the acceptance criteria that gate change — the validation step that belief revision (4.1), provenance (4.4) and controlled release (4.5) all presuppose but do not themselves define. It complements records appraisal (4.6): quality asks whether knowledge is fit for present use, appraisal whether it has enduring value.</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> Knowledge quality contributes the validation dimension of governed change — the criteria by which a proposed new state is judged fit to become the accepted one. A controlled transition from one justified state to another needs an explicit account of acceptance, and this tradition supplies its most developed vocabulary. What it leaves open, and any such system must address, is how fitness-for-use is assessed for knowledge whose consumers and purposes are many and changing, and for parametric knowledge whose quality cannot be inspected directly.</p>
+<h4 id="ai-model-governance">4.8 AI Model Governance</h4>
+<p><strong>Central question:</strong> How should machine-learning systems evolve responsibly?</p>
+<p><strong>Development and key figures.</strong> AI model governance is the youngest of the traditions surveyed here, and the one most directly concerned with the parametric layer that B02 identified as newly central. Standardised documentation artefacts have been its most visible contribution: model cards, which report a model’s intended use, performance across conditions and limitations (Mitchell et al. 2019), and datasheets for datasets, which document a dataset’s motivation, composition and collection (Gebru et al. 2021). Alongside these sit the recognition of machine-learning-specific maintenance burdens and “technical debt” (Sculley et al. 2015), the extension of established model risk management practice from finance (as codified in supervisory guidance such as SR 11-7) to machine learning, and risk-management frameworks such as the NIST AI Risk Management Framework (NIST 2023).</p>
+<p><strong>Primary object.</strong> What is governed is the knowledge embedded in machine-learning models and their datasets — how it is documented, evaluated, released and controlled across a lifecycle of training, deployment and retraining.</p>
+<p><strong>Primary problem.</strong> Parametric knowledge is opaque, data-dependent and prone to drift; retraining can change a model’s behaviour in ways that are hard to predict or explain; and accountability for those changes is difficult to assign. Governing change responsibly, when the knowledge in question cannot be read directly, is the core challenge.</p>
+<p><strong>Core contribution.</strong> The tradition’s contribution so far is to make model and dataset knowledge legible through standardised documentation (model cards, datasheets), to import lifecycle and risk-management discipline from older fields, and to name the specific maintenance and governance problems of machine-learning systems. It is, in effect, an attempt to bring provenance, appraisal, quality assessment and controlled release to bear on the parametric layer.</p>
+<p><strong>Remaining limitations.</strong> The tradition is nascent. Documentation is largely voluntary and unevenly practised; parametric knowledge resists provenance and versioning in the ways the older traditions assume; evaluation of drift, bias and harm is immature; and the governing standards are still forming rather than settled.</p>
+<p><strong>Relationship to other traditions.</strong> AI model governance is best understood as importing the other traditions into a new setting: model cards and datasheets are a form of provenance and documentation (4.4); lifecycle management echoes configuration management (4.5); model risk management echoes appraisal and quality (4.6, 4.7); and the underlying problem — governing change to knowledge that is held implicitly — is a parametric analogue of belief revision (4.1).</p>
+<p><strong>Relevance to governed knowledge evolution.</strong> AI model governance is where change governance meets the parametric layer, and therefore where the cross-layer ambition of governed knowledge evolution is most severely tested. Its documentation artefacts gesture toward provenance and appraisal for models, but governing change to parametric knowledge with the rigour the older traditions bring to symbolic knowledge remains substantially unsolved. A governed knowledge system should inherit the tradition’s instinct — that model and dataset knowledge must be documented, evaluated and released under governance — while recognising that the mechanisms for doing so are the least mature of any surveyed here.</p>
+<h3 id="comparative-analysis">5. Comparative Analysis</h3>
+<p>Compared through the lens of Section 3, the eight traditions resolve into a small, recurring set of <strong>Governance Primitives</strong> — the elementary functions that any act of governed change performs. Six recur across the traditions clearly enough to be named as a set:</p>
+<blockquote>
+<p><strong>The Six Governance Primitives</strong> - <strong>Evidence / Justification</strong> — the grounds on which a change is made - <strong>Authority</strong> — who is entitled to make it - <strong>Provenance / Traceability</strong> — the record of what changed and why - <strong>Validation / Quality</strong> — the criteria by which the new state is judged acceptable - <strong>Versioning / Release</strong> — how the new state is published and distinguished from its predecessors - <strong>Reversibility / Audit</strong> — how a change can be reviewed or undone</p>
+</blockquote>
+<p>These six are offered as a provisional analytical vocabulary rather than a settled taxonomy; they may prove useful beyond this chapter as a shared language for comparing governance across the Literature Landscape. The matrix below maps where each tradition contributes most strongly against them, distinguishing a principal (●) from a meaningful secondary (○) contribution. It is a map of complementarity, not a scoring exercise: a blank cell means the tradition has little to say on that primitive, not that it is deficient.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tradition</th>
+<th style="text-align: center;">Evidence / Justification</th>
+<th style="text-align: center;">Authority</th>
+<th style="text-align: center;">Provenance / Traceability</th>
+<th style="text-align: center;">Validation / Quality</th>
+<th style="text-align: center;">Versioning / Release</th>
+<th style="text-align: center;">Reversibility / Audit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Belief Revision</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+</tr>
+<tr class="even">
+<td>Truth Maintenance Systems</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+</tr>
+<tr class="odd">
+<td>Ontology Evolution</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Provenance</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+</tr>
+<tr class="odd">
+<td>Configuration &amp; Version Control</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+</tr>
+<tr class="even">
+<td>Records Governance</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">○</td>
+</tr>
+<tr class="odd">
+<td>Knowledge Quality</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">●</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>AI Model Governance</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;">○</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>AI Model Governance is marked with several secondary contributions and no principal one by design: it is an emerging tradition that imports primitives from the others into the parametric layer rather than originating any of them.</p>
+<p><strong>Recurring governance principles.</strong> Across the traditions, the same primitives recur under different names. Every tradition assumes some notion of evidence or justification for a change; most record provenance or traceability; several provide validation against acceptance criteria; several manage versioning and controlled release; and several support reversibility or audit. Only two — records governance and, in a nascent way, AI model governance — foreground authority: the question of who is entitled to make a change.</p>
+<p><strong>Complementary mechanisms.</strong> The traditions divide the labour of governance. Belief revision and truth maintenance govern logical consistency through change; ontology evolution governs meaning; provenance governs traceability; configuration management governs release and reversibility; records governance governs retention and authenticity over time; knowledge quality governs acceptance; and AI model governance attempts all of these for the parametric layer. Read together, they cover the space of what governing a change requires.</p>
+<p><strong>Overlaps and differences in authority.</strong> The mechanisms overlap productively — provenance underlies audit, versioning enables rollback, quality gates acceptance — but they differ sharply in their treatment of authority. The computational traditions largely assume that <em>whether</em> a change is warranted is settled elsewhere; they mechanise its propagation, not its authorisation. It is the institutional tradition, records governance, that treats the decision to change — appraisal — as itself a governed act. This asymmetry is one of the chapter’s more striking findings.</p>
+<p><strong>Treatment of provenance and trust over time.</strong> Provenance appears, in some form, in almost every tradition — as justification networks (truth maintenance), derivation records (data and workflow provenance), change logs (ontology and configuration management), and chains of custody (records governance). Trust over time, by contrast, is the special province of records governance and digital preservation; most computational traditions govern change in the present and treat the retention of past states as a secondary concern.</p>
+<p><strong>Mature capabilities.</strong> Several capabilities are, across these traditions, genuinely mature: the logic of consistent revision (belief revision, truth maintenance); the recording of derivation (provenance); controlled, reversible release (configuration management); appraisal and authenticity over long horizons (records governance); and multi-dimensional quality assessment (knowledge quality). This maturity is the precondition for stating precisely what is not yet established.</p>
+<h3 id="cross-tradition-patterns">6. Cross-Tradition Patterns</h3>
+<p>The scaffold for this chapter proposed a set of candidate dimensions along which the traditions might be compared — evidence, authority, provenance, versioning, validation, release, accountability and traceability — and asked whether common governance principles emerge across otherwise independent traditions. Evaluated against the literature, they do, though not as a chronological progression.</p>
+<p>Consolidating the scaffold’s candidates yields exactly the six Governance Primitives named in Section 5 — evidence/justification, authority, provenance/traceability, validation/quality, versioning/release, and reversibility/audit — offered here as a provisional pattern supported by the present review rather than a validated finding.</p>
+<p>No single tradition instantiates all six. Belief revision and truth maintenance are strongest on evidence and consistency; provenance on traceability; configuration management on versioning and reversibility; records governance on authority and authenticity; knowledge quality on validation. The traditions do not form a succession in which each supersedes the last; they form a <strong>division of governance labour</strong> — an accretion of complementary primitives, each matured by a different community around a different kind of knowledge object.</p>
+<p>This reading connects to the three-axis lens introduced in B03 — <strong>Scale → Capability → Time</strong>. The Governance Primitives elaborate chiefly the Capability axis (the operations by which knowledge is changed and controlled) and the Time axis (provenance, retention and authenticity, by which trust is maintained across time). The Scale axis appears more faintly, surfacing mainly where authority is at stake — the point at which governing a change becomes a social and institutional act rather than a computational one. That the computational traditions populate Capability densely while leaving Scale (authority) thin is, on this reading, the characteristic shape of the field.</p>
+<h4 id="limitations-of-this-review">6.1 Limitations of This Review</h4>
+<p>As with the preceding chapters, this review is a work of interpretive synthesis and its conclusions should be read with four limitations in mind.</p>
+<p>First, it is a <strong>selective narrative synthesis</strong> rather than a systematic review: the eight traditions and their representative works were chosen for canonical standing and bearing on the guiding question, not assembled through an exhaustive, protocol-driven search. The absence of a tradition or source here is not evidence of its absence from the field.</p>
+<p>Second, it is organised around a <strong>single interpretive lens</strong> — knowledge change and its governance. A different organising principle (for example, the economics of data, regulatory compliance, or the philosophy of scientific change) would foreground different traditions and yield a different, equally legitimate synthesis.</p>
+<p>Third, it is weighted toward <strong>computational, English-language scholarship</strong>, with the institutional tradition of records governance the main counterweight. It under-represents legal, regulatory and non-Western treatments of authority over knowledge, and bodies of work in the history and sociology of science that address how accepted knowledge changes.</p>
+<p>Fourth, it is <strong>not a complete treatment of any of the eight traditions</strong>, each of which sustains its own internal debates — the refinements and rivals of AGM, the varieties of provenance, the custodial–postcustodial division in archival science, the fast-moving state of AI governance — that are only gestured at here. The Position Paper and the Literature Synthesis will need to engage these literatures more fully than an evidence chapter can.</p>
+<p>These limitations bound the chapter’s claims without undermining its argument: what is offered is a defensible comparative reading of the change-governance traditions and of what they contribute, not a settled or exhaustive account.</p>
+<h3 id="existing-contributions">7. Existing Contributions</h3>
+<p>Across these traditions, several governance capabilities can reasonably be regarded as mature bodies of scholarship rather than emerging ideas. They are set out plainly here, so that no unsupported claim of novelty can later be made on their behalf:</p>
+<ul>
+<li><strong>logical belief revision</strong> — the rational operations of expansion, contraction and revision under minimal change (Belief Revision);</li>
+<li><strong>dependency maintenance</strong> — justification networks and assumption-based contexts that keep a reasoning system consistent through change (Truth Maintenance Systems);</li>
+<li><strong>ontology evolution and versioning</strong> — managed change to conceptual models, distinguished from schema change, with compatibility across versions (Ontology Evolution);</li>
+<li><strong>provenance</strong> — why-, where- and how-provenance, workflow provenance, and the interoperable PROV model (Provenance);</li>
+<li><strong>controlled, reversible release</strong> — version models, branching and merging, baselines and release engineering (Configuration and Version Control);</li>
+<li><strong>appraisal and authenticity over time</strong> — retention decisions, reliability and authenticity, the records continuum, and digital-preservation models (Records Governance);</li>
+<li><strong>quality assessment</strong> — multi-dimensional, fitness-for-use models of data and information quality and the methodologies to assess them (Knowledge Quality); and</li>
+<li><strong>model and dataset governance</strong> — model cards, datasheets, lifecycle and risk-management practices for machine-learning knowledge (AI Model Governance).</li>
+</ul>
+<p>This inventory, together with those of B02 and B03, defines the stock of established governance capability against which any claim of novelty must be tested.</p>
+<h3 id="candidate-integrative-insight">8. Candidate Integrative Insight</h3>
+<p>Only after analysing the traditions can the chapter state its candidate integrative observation — and, as in the preceding chapters, it is stated with restraint, and as an interpretation advanced by the review rather than a claim drawn from the traditions themselves.</p>
+<p>The traditions surveyed here do not describe themselves as a single field; each governs change to a particular kind of knowledge object, within a particular community. The interpretive move this chapter makes is to read them together and observe that, between them, they already supply mature mechanisms for every individual facet of governed change: justification and consistency, provenance, controlled and reversible release, appraisal and authenticity, and validation. On the evidence assembled here, governing a knowledge change is not, in any single layer, an unsolved problem.</p>
+<p>What is not established is whether these mechanisms <strong>compose</strong>. Each was developed for a particular representational layer — logical belief, conceptual model, dataset, software artefact, institutional record, trained model — and around a particular professional community, largely in isolation from the others. They share primitives (evidence, provenance, versioning, validation) but not a common architecture, vocabulary or point of authority. The candidate integrative insight is therefore the more modest and more precise observation that governed knowledge change appears to be <strong>less an unsolved problem within any layer than an unintegrated one across layers</strong>: the primitives exist, but whether they can be composed into a coherent architecture that governs change across the human, symbolic and parametric layers at once is not something any of these traditions, alone, establishes.</p>
+<p>Consistent with the Literature Landscape methodology, whether such composition is achievable — and whether achieving it would be a genuinely distinct contribution or a recombination of mature parts — is reserved for C01. This chapter’s task is the narrower evidential one: to establish what the change-governance traditions contribute, and where the seams between them lie.</p>
+<h3 id="burden-of-proof">9. Burden of Proof</h3>
+<p>Consistent with the Literature Landscape methodology, this chapter defines evidence, not theory. It establishes the portion of the evidential burden — arising from the traditions surveyed here — that any methodology claiming to govern continuously evolving knowledge would have to discharge, structured around the three standard questions.</p>
+<p><strong>Established (what is mature).</strong> Each facet of governed change is mature within its own layer: the logic of consistent revision (belief revision, truth maintenance); the recording of derivation (provenance); controlled, reversible release (configuration management); appraisal and authenticity over long horizons (records governance); and multi-dimensional quality assessment (knowledge quality).</p>
+<p><strong>Unresolved (what remains open).</strong> These mechanisms have not been shown to compose across layers. On the evidence of this chapter, a methodology governing continuously evolving knowledge would need to show that it can:</p>
+<ul>
+<li><strong>authorise change</strong> — specify who or what is entitled to alter the accepted state, a question only records governance foregrounds (Records Governance);</li>
+<li><strong>validate change</strong> — judge a proposed state fit to be accepted, by explicit criteria (Knowledge Quality);</li>
+<li><strong>preserve provenance</strong> — carry an inspectable record of what changed and why (Provenance; Truth Maintenance Systems);</li>
+<li><strong>maintain trust over time</strong> — preserve authenticity and reliability across custody and format change (Records Governance);</li>
+<li><strong>record history</strong> — retain and reconstruct previous states (Configuration and Version Control; the temporal-data strand of Ontology Evolution);</li>
+<li><strong>coordinate multiple governance layers</strong> — reconcile change across logical, conceptual, data, artefact, institutional and parametric representations, which no surveyed tradition does; and</li>
+<li><strong>accommodate human and machine knowledge simultaneously</strong> — govern symbolic and parametric knowledge under one regime, which AI model governance only begins to attempt (AI Model Governance).</li>
+</ul>
+<p>None of the surveyed traditions claims responsibility for all seven simultaneously.</p>
+<p><strong>Implication (what the synthesis must explain).</strong> The synthesis must determine whether the six Governance Primitives can be composed into one architecture governing change across the human, symbolic and parametric layers at once — and whether doing so is a genuinely distinct contribution or a recombination of mature parts. This chapter asserts neither; the verdict is left to the Position Paper and to C01.</p>
+<h3 id="relationship-to-previous-and-subsequent-chapters">10. Relationship to Previous and Subsequent Chapters</h3>
+<p>B02 examined the engineering of knowledge systems; B03 examined how knowledge becomes enduring collective capability; B04 examines how change to that knowledge is governed. Together the three chapters assemble three complementary bodies of evidence — engineering, collective capability, and the governance of change — none sufficient alone. B04 stands in a particularly close relation to B02, whose survey of knowledge-revision traditions it deepens and extends: where B02 noted these mechanisms in passing as evidence that change can be engineered layer by layer, this chapter examines them in their own right and finds the same pattern of layer-confined maturity. The remaining evidence chapters extend the survey further, and it is the Literature Synthesis, rather than any single chapter, that weighs the combined evidence and identifies the overall gap, if any.</p>
+<h3 id="guiding-principle">11. Guiding Principle</h3>
+<p>The organising principle of this chapter is intentionally simple.</p>
+<blockquote>
+<p>Knowledge systems remain trustworthy only because their changes are governed.</p>
+</blockquote>
+<p>Knowledge systems do not merely accumulate information; they continuously change, and it is the governance of that change — its authorisation, validation, provenance, release and audit — that allows trust to survive it. The mature traditions surveyed here show that governing knowledge change has long been recognised as fundamental. But they show something more particular too: that the labour has been divided. Each tradition matured one part of governance within one layer of knowledge, so that what exists today is a division of governance labour rather than a single architecture — and the governance of change across layers is the question these traditions leave for others to answer.</p>
+<p><em>The emergence of foundation models raises the question of whether these governance mechanisms remain adequate. B05 investigates this directly.</em></p>
+<h3 id="references">References</h3>
+<p>Alchourrón, C. E., Gärdenfors, P. &amp; Makinson, D. (1985). On the logic of theory change: partial meet contraction and revision functions. <em>The Journal of Symbolic Logic</em>, 50(2), 510–530. https://doi.org/10.2307/2274239</p>
+<p>Batini, C., Cappiello, C., Francalanci, C. &amp; Maurino, A. (2009). Methodologies for data quality assessment and improvement. <em>ACM Computing Surveys</em>, 41(3), Article 16, 1–52. https://doi.org/10.1145/1541880.1541883</p>
+<p>Board of Governors of the Federal Reserve System &amp; Office of the Comptroller of the Currency (2011). <em>Supervisory Guidance on Model Risk Management</em>. SR Letter 11-7 / OCC Bulletin 2011-12. Washington, DC.</p>
+<p>Buneman, P., Khanna, S. &amp; Tan, W.-C. (2001). Why and where: a characterization of data provenance. In <em>Proceedings of the 8th International Conference on Database Theory (ICDT 2001)</em>, LNCS 1973, 316–330. Berlin: Springer. https://doi.org/10.1007/3-540-44503-X_20</p>
+<p>Consultative Committee for Space Data Systems (CCSDS) (2012). <em>Reference Model for an Open Archival Information System (OAIS)</em>, CCSDS 650.0-M-2 (Magenta Book). Also published as ISO 14721:2012.</p>
+<p>Conradi, R. &amp; Westfechtel, B. (1998). Version models for software configuration management. <em>ACM Computing Surveys</em>, 30(2), 232–282. https://doi.org/10.1145/280277.280280</p>
+<p>Cook, T. (2013). Evidence, memory, identity, and community: four shifting archival paradigms. <em>Archival Science</em>, 13(2–3), 95–120. https://doi.org/10.1007/s10502-012-9180-7</p>
+<p>Davidson, S. B. &amp; Freire, J. (2008). Provenance and scientific workflows: challenges and opportunities. In <em>Proceedings of the 2008 ACM SIGMOD International Conference on Management of Data</em>, 1345–1350. https://doi.org/10.1145/1376616.1376772</p>
+<p>de Kleer, J. (1986). An assumption-based TMS. <em>Artificial Intelligence</em>, 28(2), 127–162. https://doi.org/10.1016/0004-3702(86)90080-9</p>
+<p>Doyle, J. (1979). A truth maintenance system. <em>Artificial Intelligence</em>, 12(3), 231–272. https://doi.org/10.1016/0004-3702(79)90008-0</p>
+<p>Duranti, L. (1995). Reliability and authenticity: the concepts and their implications. <em>Archivaria</em>, 39, 5–10.</p>
+<p>Flouris, G., Manakanatas, D., Kondylakis, H., Plexousakis, D. &amp; Antoniou, G. (2008). Ontology change: classification and survey. <em>The Knowledge Engineering Review</em>, 23(2), 117–152. https://doi.org/10.1017/S0269888908001367</p>
+<p>Gärdenfors, P. (1988). <em>Knowledge in Flux: Modeling the Dynamics of Epistemic States</em>. Cambridge, MA: MIT Press.</p>
+<p>Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H. &amp; Crawford, K. (2021). Datasheets for datasets. <em>Communications of the ACM</em>, 64(12), 86–92. https://doi.org/10.1145/3458723</p>
+<p>Jenkinson, H. (1922). <em>A Manual of Archive Administration</em>. Oxford: Clarendon Press.</p>
+<p>Klein, M. &amp; Fensel, D. (2001). Ontology versioning on the Semantic Web. In <em>Proceedings of the First International Semantic Web Working Symposium (SWWS)</em>, 75–91.</p>
+<p>Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D. &amp; Gebru, T. (2019). Model cards for model reporting. In <em>Proceedings of the Conference on Fairness, Accountability, and Transparency (FAT* ’19)</em>, 220–229. https://doi.org/10.1145/3287560.3287596</p>
+<p>Moreau, L. &amp; Missier, P. (eds.) (2013). <em>PROV-DM: The PROV Data Model</em>. W3C Recommendation, 30 April 2013.</p>
+<p>National Institute of Standards and Technology (NIST) (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>, NIST AI 100-1. Gaithersburg, MD: NIST. https://doi.org/10.6028/NIST.AI.100-1</p>
+<p>Noy, N. F. &amp; Klein, M. (2004). Ontology evolution: not the same as schema evolution. <em>Knowledge and Information Systems</em>, 6(4), 428–440. https://doi.org/10.1007/s10115-003-0137-2</p>
+<p>Redman, T. C. (1996). <em>Data Quality for the Information Age</em>. Boston: Artech House.</p>
+<p>Roddick, J. F. (1995). A survey of schema versioning issues for database systems. <em>Information and Software Technology</em>, 37(7), 383–393. https://doi.org/10.1016/0950-5849(95)91494-K</p>
+<p>Schellenberg, T. R. (1956). <em>Modern Archives: Principles and Techniques</em>. Chicago: University of Chicago Press.</p>
+<p>Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J.-F. &amp; Dennison, D. (2015). Hidden technical debt in machine learning systems. In <em>Advances in Neural Information Processing Systems 28 (NeurIPS 2015)</em>, 2503–2511.</p>
+<p>Snodgrass, R. T. (1999). <em>Developing Time-Oriented Database Applications in SQL</em>. San Francisco: Morgan Kaufmann.</p>
+<p>Upward, F. (1996). Structuring the records continuum, part one: postcustodial principles and properties. <em>Archives and Manuscripts</em>, 24(2), 268–285.</p>
+<p>Wang, R. Y. &amp; Strong, D. M. (1996). Beyond accuracy: what data quality means to data consumers. <em>Journal of Management Information Systems</em>, 12(4), 5–33. https://doi.org/10.1080/07421222.1996.11518099</p>
+
+<nav class="prevnext"><a class="pv" href="kf-l001-b03.html">&#8592; Knowledge Beyond Engineering</a><a class="nx" href="kf-l001-b05.html">Foundation Models & the Knowledge Sciences &#8594;</a></nav>
+</main>
+</div>
+</body></html>

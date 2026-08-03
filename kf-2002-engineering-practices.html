@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exemplars & Case Studies &#183; Knowledge Foundry Reference</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,400..600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="reference.css">
+</head><body>
+<header class="topbar"><a class="home" href="../"><svg width="24" height="24" viewBox="0 0 32 32" style="flex:none" aria-hidden="true"><line x1="16" y1="1.5" x2="16" y2="5" stroke="#BC6C2E" stroke-width="1.7"/><path d="M6 6 H12.5 M19.5 6 H26 M26 6 V26 M6 26 H26 M6 26 V6" stroke="#1B1A17" stroke-width="1.6" fill="none"/><line x1="9" y1="13" x2="23" y2="13" stroke="#1B1A17" stroke-width="1" opacity=".38"/><line x1="9" y1="17.5" x2="23" y2="17.5" stroke="#1B1A17" stroke-width="1" opacity=".62"/><rect x="6" y="21" width="20" height="5" fill="#1B1A17"/></svg>Knowledge Foundry</a><span class="tag">Reference</span><span class="draft">Public Review 0.1</span></header>
+<div class="doc">
+<details class="sidewrap" open><summary>Contents</summary>
+<nav class="side">
+<div class="grp">Orientation</div>
+<a href="kf-0000-reference-architecture-overview.html"><span class="id">KF-0000</span>Overview</a>
+<a href="kf-0001-architecture-map.html"><span class="id">KF-0001</span>Architecture Map</a>
+<div class="grp">Constitution</div>
+<a href="kf-1000-canon.html"><span class="id">KF-1000</span>Canon</a>
+<div class="grp">Method</div>
+<a href="kf-2001-oko-lifecycle.html"><span class="id">KF-2001</span>Lifecycle</a>
+<a href="kf-2002-engineering-practices.html"><span class="id">KF-2002</span>Engineering Practices</a>
+<a href="kf-2003-materiality-and-assurance.html"><span class="id">KF-2003</span>Materiality & Assurance</a>
+<div class="grp">Architecture</div>
+<a href="kf-3000-reference-architecture.html"><span class="id">KF-3000</span>Reference Architecture</a>
+<a href="kf-3001-architectural-principles-and-invariants.html"><span class="id">KF-3001</span>Principles & Invariants</a>
+<a href="kf-3002-capability-model.html"><span class="id">KF-3002</span>Capability Model</a>
+<a href="kf-3003-service-architecture.html"><span class="id">KF-3003</span>Service Architecture</a>
+<a href="kf-3004-information-and-record-model.html"><span class="id">KF-3004</span>Information & Record Model</a>
+<a href="kf-3005-lifecycle-and-control-architecture.html"><span class="id">KF-3005</span>Lifecycle & Control</a>
+<a href="kf-3006-architectural-integration-model.html"><span class="id">KF-3006</span>Integration</a>
+<a href="kf-3007-architectural-conformance-framework.html"><span class="id">KF-3007</span>Conformance</a>
+<a href="kf-3008-architectural-authority-framework.html"><span class="id">KF-3008</span>Authority</a>
+<a href="kf-3009-architectural-crosswalks-and-traceability.html"><span class="id">KF-3009</span>Crosswalks & Traceability</a>
+<div class="grp">Exemplars</div>
+<a href="kf-5000-exemplars-and-case-studies.html" class="active"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
+<a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
+<div class="grp">Appendix</div>
+<a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
+</nav>
+</details>
+<main class="article">
+<h1>KF-5000 · Exemplars & Case Studies</h1>
+<p class="deck">Worked instantiations of the architecture — illustrative, not normative</p>
+<p class="docmeta">Series Note (Illustrative) &#183; Draft &#183; v0.1</p>
+
+<h3 id="purpose">Purpose</h3>
+<p>The <a href="kf-5000-exemplars-and-case-studies.html">KF-5000</a> series shows the Knowledge Foundry architecture <strong>at work on concrete Operational Knowledge Objects</strong>. Its documents teach and demonstrate; they do not legislate. Like the <a href="kf-0000-reference-architecture-overview.html">KF-0000</a> navigation series, <a href="kf-5000-exemplars-and-case-studies.html">KF-5000</a> <strong>introduces no new architectural concept</strong> — every element it shows is defined in its home document (Canon, Lifecycle, Materiality, and the <a href="kf-3000-reference-architecture.html">KF-3000</a> series) and is only <em>instantiated</em> here.</p>
+<p>The series exists because an architecture is easier to trust once it has been seen to run. A reader who has followed one governed object from capture to retirement understands the whole shape of the system before studying any single part in depth.</p>
+<h3 id="the-distinction-the-series-preserves">The distinction the series preserves</h3>
+<ul>
+<li><strong><a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> · Canonical Vertical Slice</strong> is <em>illustrative</em>: a domain-neutral object (a four-day-week Knowledge Brief) constructed to make every architectural stage visible. It proves the parts fit together and that the architecture is subject-independent. It does <strong>not</strong> validate the architecture — a constructed object cannot surprise its designer.</li>
+<li><strong>KF-5002+ · Case Studies</strong> are <em>evaluative</em>: real domain instantiations — beginning with MacroLab’s Singapore Business Impact Assessment — in which the architecture meets uncontrolled reality. These are where the architecture is stress-tested, and where the <em>Draft for Experiment</em> documents (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>, <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>, <a href="kf-0002-controlled-vocabulary.html">KF-0002</a>) are eventually validated before baselining.</li>
+</ul>
+<p>The order is deliberate: <strong>understand the architecture on the canonical slice; then evaluate it on real cases.</strong> MacroLab is thereby positioned as <em>a</em> case study of Knowledge Foundry, not as its defining example.</p>
+<h3 id="contents">Contents</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Title</th>
+<th>Kind</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="kf-5001-canonical-vertical-slice.html">KF-5001</a></td>
+<td>Canonical Vertical Slice — the four-day-week Knowledge Brief</td>
+<td>Illustrative exemplar</td>
+</tr>
+<tr class="even">
+<td>KF-5002+</td>
+<td>Case Studies (MacroLab Singapore Business Impact Assessment, and others)</td>
+<td>Evaluative case studies</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relationship-to-the-rest-of-the-programme">Relationship to the rest of the programme</h3>
+<p><a href="kf-5000-exemplars-and-case-studies.html">KF-5000</a> sits beside KF-4000 (Implementation): where KF-4000 defines how the architecture is <em>built</em> in a deployment, <a href="kf-5000-exemplars-and-case-studies.html">KF-5000</a> shows how it <em>behaves</em> on individual objects. Both are downstream of the architecture and neither may revise it. For where every concept is defined, see <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> (Crosswalks) and <a href="kf-0002-controlled-vocabulary.html">KF-0002</a> (Controlled Vocabulary).</p>
+
+<nav class="prevnext"><a class="pv" href="kf-3009-architectural-crosswalks-and-traceability.html">&#8592; Crosswalks & Traceability</a><a class="nx" href="kf-5001-canonical-vertical-slice.html">Canonical Vertical Slice &#8594;</a></nav>
+</main>
+</div>
+</body></html>
