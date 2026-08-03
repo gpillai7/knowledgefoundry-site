@@ -32,23 +32,30 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-2003 · Materiality and Assurance</h1>
+<p class="deck">How reliance and consequence determine the depth to which a governed knowledge object must be assured</p>
+<p class="docmeta">Methodology &#183; <span style="color:#BC6C2E">Draft for Experiment</span> &#183; v0.1</p>
 
-<h4 id="how-reliance-and-consequence-determine-the-depth-to-which-a-governed-knowledge-object-must-be-assured">How reliance and consequence determine the depth to which a governed knowledge object must be assured</h4>
-<p><em>Document Class: Methodology · Parent Programme: Knowledge Foundry · Parent Document: KF-2000 · Status: Draft for Experiment · Version: 0.1</em></p>
 <pre><code>Principle (KF-1000)  →  ▸ Method (KF-2000)  →  Architecture (KF-3000)  →  Implementation (KF-4000)</code></pre>
 <h3 id="purpose">Purpose</h3>
 <p>This document defines <strong>materiality</strong> in Knowledge Foundry and the <strong>assurance classes</strong> through which materiality is operationalised. It fixes, in one place, the depth to which a governed knowledge object’s obligations must be discharged as a function of the reliance placed on it and the consequences of its being wrong.</p>
-<p>It exists because the lifecycle (KF-2001), the practices (KF-2002) and the architecture (KF-3000 series) each state obligations without stating <em>how much</em> rigour each obligation demands for a given object. Uniform rigour is the wrong answer in both directions: it over-governs exploratory notes and under-governs consequential advice. Materiality supplies the missing dimension, and it supplies it once, so that gates, controls, reviews, evidence and traceability do not each invent their own interpretation.</p>
-<p>A single rule governs everything below: <strong>materiality grades the depth of assurance; it never grades the invariants.</strong> The six lifecycle invariants of KF-2001 hold identically for every object at every class. What scales is the evidence, review, authority and reconstruction depth layered above that floor.</p>
+<p>It exists because the lifecycle (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>), the practices (<a href="kf-2002-engineering-practices.html">KF-2002</a>) and the architecture (<a href="kf-3000-reference-architecture.html">KF-3000</a> series) each state obligations without stating <em>how much</em> rigour each obligation demands for a given object. Uniform rigour is the wrong answer in both directions: it over-governs exploratory notes and under-governs consequential advice. Materiality supplies the missing dimension, and it supplies it once, so that gates, controls, reviews, evidence and traceability do not each invent their own interpretation.</p>
+<p>A single rule governs everything below: <strong>materiality grades the depth of assurance; it never grades the invariants.</strong> The six lifecycle invariants of <a href="kf-2001-oko-lifecycle.html">KF-2001</a> hold identically for every object at every class. What scales is the evidence, review, authority and reconstruction depth layered above that floor.</p>
 <h3 id="how-this-document-sits-in-the-programme">How This Document Sits in the Programme</h3>
-<p>KF-2003 is a <strong>Method-level</strong> document. It defines an obligation <em>shape</em> — proportionality — that the architecture then realises. Its architectural realisation is fixed by <strong>KF-3001 IC-23 (Proportionate Discharge)</strong>, <strong>KF-3005</strong> (gates and controls read the class), and the <strong>Scope-of-Reliance Record (SVC-06)</strong> to which class attaches. Its conformance consequences are carried by <strong>KF-3007</strong>. This document names no technologies and no deployments.</p>
-<p>Assurance classes are one operational expression of materiality — the principal one — but they are not the whole of it. Materiality also informs which activities are recorded (KF-3004 §5.1), which decisions require independent review, and how deep a reconstruction must go (KF-3007). The classes make materiality actionable at the gate; the concept remains broader than the scale.</p>
+<p><a href="kf-2003-materiality-and-assurance.html">KF-2003</a> is a <strong>Method-level</strong> document. It defines an obligation <em>shape</em> — proportionality — that the architecture then realises. Its architectural realisation is fixed by <strong><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-23 (Proportionate Discharge)</strong>, <strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></strong> (gates and controls read the class), and the <strong>Scope-of-Reliance Record (SVC-06)</strong> to which class attaches. Its conformance consequences are carried by <strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong>. This document names no technologies and no deployments.</p>
+<p>Assurance classes are one operational expression of materiality — the principal one — but they are not the whole of it. Materiality also informs which activities are recorded (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.1), which decisions require independent review, and how deep a reconstruction must go (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>). The classes make materiality actionable at the gate; the concept remains broader than the scale.</p>
 <hr />
 <h2 id="part-i-materiality">Part I · Materiality</h2>
 <h3 id="definition">1. Definition</h3>
@@ -69,7 +76,7 @@
 <p>No dimension alone fixes the class. The assessment takes the class that the highest-weighing dimensions justify.</p>
 <h3 id="materiality-is-contextual-and-version-specific">3. Materiality Is Contextual and Version-Specific</h3>
 <p>Materiality attaches primarily to an object’s <strong>intended use and reliance context</strong>, not permanently to the object itself. The same content may begin exploratory and become consequential when it enters a board paper, a policy submission or a client recommendation.</p>
-<p>Accordingly, <strong>assurance class attaches to the release / scope of reliance</strong>, not to the immutable object identity (KF-3000 §2; SVC-06). A new intended use is a new reliance context and may carry a different class. This preserves the single-identity invariant: the object does not change identity when its class changes; a differently-classed reliance is a property of the release, recorded against it.</p>
+<p>Accordingly, <strong>assurance class attaches to the release / scope of reliance</strong>, not to the immutable object identity (<a href="kf-3000-reference-architecture.html">KF-3000</a> §2; SVC-06). A new intended use is a new reliance context and may carry a different class. This preserves the single-identity invariant: the object does not change identity when its class changes; a differently-classed reliance is a property of the release, recorded against it.</p>
 <hr />
 <h2 id="part-ii-assurance-classes">Part II · Assurance Classes</h2>
 <h3 id="the-scale">4. The Scale</h3>
@@ -116,7 +123,7 @@
 </tbody>
 </table>
 <blockquote>
-<p><strong>Naming note (A2).</strong> “Operational” was rejected for A2 because the term is already load-bearing three ways in the programme — in “Operational Knowledge Object”, as the Stage-5 lifecycle state, and as the KF-3000 §20 maturity profile. A2 is provisionally named <strong>Routine</strong> (alternatively <strong>Standard</strong>); the name may be settled at first review without affecting the scale.</p>
+<p><strong>Naming note (A2).</strong> “Operational” was rejected for A2 because the term is already load-bearing three ways in the programme — in “Operational Knowledge Object”, as the Stage-5 lifecycle state, and as the <a href="kf-3000-reference-architecture.html">KF-3000</a> §20 maturity profile. A2 is provisionally named <strong>Routine</strong> (alternatively <strong>Standard</strong>); the name may be settled at first review without affecting the scale.</p>
 </blockquote>
 <h3 id="governance-overlays">5. Governance Overlays</h3>
 <p>Certain conditions are <strong>not</strong> degrees of reliance and must not be modelled as higher classes. Regulation, confidentiality, public exposure, client-facing status and legal privilege are <strong>overlays</strong>: orthogonal attributes that add specific obligations without moving the object up the scale. A low-consequence administrative record may be regulated; a high-consequence internal strategy may not be.</p>
@@ -162,7 +169,7 @@
 </tr>
 </tbody>
 </table>
-<p>The obligations are stated as <em>outcomes a reviewer can confirm</em>, not as fixed metrics. Thresholds and cadences are set by the applicable domain profile (KF-4000), consistent with KF-2002’s treatment of success criteria.</p>
+<p>The obligations are stated as <em>outcomes a reviewer can confirm</em>, not as fixed metrics. Thresholds and cadences are set by the applicable domain profile (KF-4000), consistent with <a href="kf-2002-engineering-practices.html">KF-2002</a>’s treatment of success criteria.</p>
 <hr />
 <h2 id="part-iii-assigning-and-changing-class">Part III · Assigning and Changing Class</h2>
 <h3 id="who-assigns-the-class">7. Who Assigns the Class</h3>
@@ -170,7 +177,7 @@
 <p>Assignment is itself a governed, attributable transition: it records who proposed, who confirmed, when, and on what basis. There is no silent classification.</p>
 <h3 id="raising-and-lowering-class">8. Raising and Lowering Class</h3>
 <p><strong>Raising</strong> class is expected whenever reliance or consequence increases — a new audience, a new decision context, a new obligation. It is recorded as an attributable transition and re-tests the gates to the new depth.</p>
-<p><strong>Lowering</strong> class is permitted only through an attributable decision that records the changed scope of reliance — for example, when a Consequential object becomes a historical reference no longer relied upon operationally. <strong>Historical evidence obligations are not retrospectively removed:</strong> a lowered class governs only future reliance; the evidence already required at the higher class remains preserved (lineage invariant, KF-2001).</p>
+<p><strong>Lowering</strong> class is permitted only through an attributable decision that records the changed scope of reliance — for example, when a Consequential object becomes a historical reference no longer relied upon operationally. <strong>Historical evidence obligations are not retrospectively removed:</strong> a lowered class governs only future reliance; the evidence already required at the higher class remains preserved (lineage invariant, <a href="kf-2001-oko-lifecycle.html">KF-2001</a>).</p>
 <hr />
 <h2 id="part-iv-universality-of-invariants">Part IV · Universality of Invariants</h2>
 <h3 id="what-class-never-touches">9. What Class Never Touches</h3>
@@ -179,19 +186,19 @@
 <hr />
 <h2 id="part-v-exceptions-and-escalation">Part V · Exceptions and Escalation</h2>
 <h3 id="exceptions">10. Exceptions</h3>
-<p>A time-limited, attributable <strong>governance exception</strong> may permit an object to operate one step below the class its use would otherwise require, provided: the gap is recorded; a named authority accepts the residual risk; the exception is visible until closed (KF-3001 IC-19); and <strong>no invariant is waived</strong>. An exception may reduce required depth for a bounded period; it may never convert an invariant violation into conformance.</p>
+<p>A time-limited, attributable <strong>governance exception</strong> may permit an object to operate one step below the class its use would otherwise require, provided: the gap is recorded; a named authority accepts the residual risk; the exception is visible until closed (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-19); and <strong>no invariant is waived</strong>. An exception may reduce required depth for a bounded period; it may never convert an invariant violation into conformance.</p>
 <h3 id="escalation">11. Escalation</h3>
-<p>Where evidence of a mis-classification arises — an object relied upon beyond its class, or a class assigned below its dimensions — any actor may raise an escalation event (KF-2001 event model). Escalation obliges the authority to re-confirm or re-assign the class before the contested reliance proceeds.</p>
+<p>Where evidence of a mis-classification arises — an object relied upon beyond its class, or a class assigned below its dimensions — any actor may raise an escalation event (<a href="kf-2001-oko-lifecycle.html">KF-2001</a> event model). Escalation obliges the authority to re-confirm or re-assign the class before the contested reliance proceeds.</p>
 <hr />
 <h2 id="part-vi-relationship-to-other-documents">Part VI · Relationship to Other Documents</h2>
 <ul>
-<li><strong>KF-2001</strong> — the invariants that class never grades, and the gates whose depth it sets.</li>
-<li><strong>KF-2002</strong> — success criteria whose required depth is fixed here.</li>
-<li><strong>KF-3001 · IC-23</strong> — the architectural constraint that discharges obligations to class depth; <strong>IC-24</strong> — event-native evidence, whose volume this document keeps proportionate.</li>
-<li><strong>KF-3004 · §5.1</strong> — the material-activity definition this document governs.</li>
-<li><strong>KF-3005 · §28, §32</strong> — gates and controls read the class.</li>
-<li><strong>KF-3008</strong> — the authority model that confirms A3/A4 classes.</li>
-<li><strong>KF-3007</strong> — the conformance model whose Integrity and Reconstructability tests are graded by class.</li>
+<li><strong><a href="kf-2001-oko-lifecycle.html">KF-2001</a></strong> — the invariants that class never grades, and the gates whose depth it sets.</li>
+<li><strong><a href="kf-2002-engineering-practices.html">KF-2002</a></strong> — success criteria whose required depth is fixed here.</li>
+<li><strong><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> · IC-23</strong> — the architectural constraint that discharges obligations to class depth; <strong>IC-24</strong> — event-native evidence, whose volume this document keeps proportionate.</li>
+<li><strong><a href="kf-3004-information-and-record-model.html">KF-3004</a> · §5.1</strong> — the material-activity definition this document governs.</li>
+<li><strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> · §28, §32</strong> — gates and controls read the class.</li>
+<li><strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> — the authority model that confirms A3/A4 classes.</li>
+<li><strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> — the conformance model whose Integrity and Reconstructability tests are graded by class.</li>
 </ul>
 <h3 id="status-and-next-step">Status and Next Step</h3>
 <p>This document is <strong>Draft for Experiment</strong>. Its scale, minimum-obligation table and assignment rules are hypotheses to be tested by the first vertical slice (a MacroLab Singapore Business Impact Assessment, provisionally A3 Consequential). The slice is expected to show whether the class minimums are workable, whether the dimensions are sufficient, and whether A2’s name should be settled. The document moves to <em>Validated with Exceptions</em>, then <em>Approved</em>, only after that evidence is in.</p>

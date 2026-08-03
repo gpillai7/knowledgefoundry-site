@@ -32,6 +32,13 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
@@ -39,8 +46,10 @@
 <main class="article">
 <h1>KF-3005 · Lifecycle and Control Architecture</h1>
 
+
+
 <h4 id="the-state-transition-gate-and-control-model-of-the-knowledge-foundry">The State, Transition, Gate and Control Model of the Knowledge Foundry</h4>
-<p><em>Document Class: Reference Architecture · Parent Document: KF-3000 · Governed By: KF-3001 · Derived From: KF-2001, KF-2002, KF-3002, KF-3003 and KF-3004 · Status: Draft · Version: 0.2</em></p>
+<p><em>Document Class: Reference Architecture · Parent Document: <a href="kf-3000-reference-architecture.html">KF-3000</a> · Governed By: <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> · Derived From: <a href="kf-2001-oko-lifecycle.html">KF-2001</a>, <a href="kf-2002-engineering-practices.html">KF-2002</a>, <a href="kf-3002-capability-model.html">KF-3002</a>, <a href="kf-3003-service-architecture.html">KF-3003</a> and <a href="kf-3004-information-and-record-model.html">KF-3004</a> · Status: Draft · Version: 0.2</em></p>
 <pre class="text"><code>Canon and Method (KF-1000 / KF-2001 / KF-2002)
         ↓
 Architectural Rules (KF-3001)
@@ -55,28 +64,28 @@ Conformance, Authority and Traceability (KF-3007 / KF-3008 / KF-3009)
         ↓
 Implementation (KF-4000)</code></pre>
 <h3 id="editorial-position">Editorial Position</h3>
-<p>KF-3005 is the <strong>behavioural architecture</strong> of the Knowledge Foundry. The documents before it are largely structural: KF-3001 states what must remain true, KF-3002 what the architecture must be able to do, KF-3003 where logical responsibility resides, and KF-3004 what information exists and how it is preserved. KF-3005 defines <em>how governed change is permitted and executed</em>.</p>
-<p>It is therefore neither a restatement of the nine-stage methodology lifecycle in KF-2001 nor a workflow specification for a particular implementation. KF-2001 defines the lifecycle <strong>method</strong>; KF-3005 defines the architectural <strong>machinery</strong> that makes that lifecycle enforceable.</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> is the <strong>behavioural architecture</strong> of the Knowledge Foundry. The documents before it are largely structural: <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> states what must remain true, <a href="kf-3002-capability-model.html">KF-3002</a> what the architecture must be able to do, <a href="kf-3003-service-architecture.html">KF-3003</a> where logical responsibility resides, and <a href="kf-3004-information-and-record-model.html">KF-3004</a> what information exists and how it is preserved. <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines <em>how governed change is permitted and executed</em>.</p>
+<p>It is therefore neither a restatement of the nine-stage methodology lifecycle in <a href="kf-2001-oko-lifecycle.html">KF-2001</a> nor a workflow specification for a particular implementation. <a href="kf-2001-oko-lifecycle.html">KF-2001</a> defines the lifecycle <strong>method</strong>; <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines the architectural <strong>machinery</strong> that makes that lifecycle enforceable.</p>
 <h3 id="purpose">Purpose</h3>
-<p>KF-3005 defines the behavioural architecture through which governed entities move between valid states. It specifies lifecycle domains; state machines; permitted transitions; transition-request semantics; gate compositions; reusable controls; execution and persistence rules; exception and degraded-state behaviour; recovery and reconciliation; concurrency and conflict handling; and control and transition evidence.</p>
-<p>KF-3004 defines <em>what</em> governed information exists. KF-3005 defines <em>how</em> that information may change. KF-3005 introduces no new authoritative information classes; it uses the KF-3004 objects and governs their creation, update, correction, status change and historical preservation.</p>
-<p>The document is centred on the <strong>transition</strong> rather than on the state. A state is a governed condition; a transition is the operation through which the architecture changes that condition. Accordingly, KF-3005 answers a single, narrow question:</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines the behavioural architecture through which governed entities move between valid states. It specifies lifecycle domains; state machines; permitted transitions; transition-request semantics; gate compositions; reusable controls; execution and persistence rules; exception and degraded-state behaviour; recovery and reconciliation; concurrency and conflict handling; and control and transition evidence.</p>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> defines <em>what</em> governed information exists. <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines <em>how</em> that information may change. <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> introduces no new authoritative information classes; it uses the <a href="kf-3004-information-and-record-model.html">KF-3004</a> objects and governs their creation, update, correction, status change and historical preservation.</p>
+<p>The document is centred on the <strong>transition</strong> rather than on the state. A state is a governed condition; a transition is the operation through which the architecture changes that condition. Accordingly, <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> answers a single, narrow question:</p>
 <blockquote>
 <p><em>Under what conditions may a governed entity move from one state to another; which authority may permit that movement; which controls must be satisfied; how is the transition executed; and what evidence must remain afterwards?</em></p>
 </blockquote>
 <h3 id="alignment-and-reconciliation-note">Alignment and Reconciliation Note</h3>
-<p>This document is reconciled against the <strong>nineteen-service catalogue</strong> shared by KF-3002 and the KF-3004 v0.2 record model (SVC-01 … SVC-19), in which the authoritative owners referenced here are: <strong>SVC-05</strong> Justification (epistemic standing); <strong>SVC-06</strong> Authority and Acceptance; <strong>SVC-08</strong> Lifecycle and Transition; <strong>SVC-09</strong> Version and Lineage; <strong>SVC-10</strong> Release; <strong>SVC-12</strong> Operationalisation; <strong>SVC-13</strong> Application and Outcome; <strong>SVC-14</strong> Retirement and Preservation; <strong>SVC-15</strong> Provenance; <strong>SVC-16</strong> Access and Integrity; <strong>SVC-17</strong> Operating Condition and Exception; <strong>SVC-18</strong> Conformance and Audit; <strong>SVC-19</strong> Temporal Continuity. All service, record (KF-3004), invariant (KF-3001, <code>INV-*</code>) and interaction-constraint (<code>IC-*</code>) references in this document use that catalogue and the KF-3004 v0.2 record codes, including its §15.1 current-state / event-history rule and its §7.2 composite-decision rule.</p>
-<p><em>Upstream caution.</em> Where the scaffold named services that do not exist under a single owner — an “Epistemic Status Service,” a standalone “Release Service,” an “Operating Condition and Exception Service” — this document binds them to the frozen catalogue owners above. Any copy of KF-3003 that still enumerates only sixteen services predates this catalogue and should be read as superseded by the KF-3002 / KF-3004 v0.2 service model; the mismatch is an upstream KF-3003 versioning item, not a KF-3005 divergence.</p>
+<p>This document is reconciled against the <strong>nineteen-service catalogue</strong> shared by <a href="kf-3002-capability-model.html">KF-3002</a> and the <a href="kf-3004-information-and-record-model.html">KF-3004</a> v0.2 record model (SVC-01 … SVC-19), in which the authoritative owners referenced here are: <strong>SVC-05</strong> Justification (epistemic standing); <strong>SVC-06</strong> Authority and Acceptance; <strong>SVC-08</strong> Lifecycle and Transition; <strong>SVC-09</strong> Version and Lineage; <strong>SVC-10</strong> Release; <strong>SVC-12</strong> Operationalisation; <strong>SVC-13</strong> Application and Outcome; <strong>SVC-14</strong> Retirement and Preservation; <strong>SVC-15</strong> Provenance; <strong>SVC-16</strong> Access and Integrity; <strong>SVC-17</strong> Operating Condition and Exception; <strong>SVC-18</strong> Conformance and Audit; <strong>SVC-19</strong> Temporal Continuity. All service, record (<a href="kf-3004-information-and-record-model.html">KF-3004</a>), invariant (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>, <code>INV-*</code>) and interaction-constraint (<code>IC-*</code>) references in this document use that catalogue and the <a href="kf-3004-information-and-record-model.html">KF-3004</a> v0.2 record codes, including its §15.1 current-state / event-history rule and its §7.2 composite-decision rule.</p>
+<p><em>Upstream caution.</em> Where the scaffold named services that do not exist under a single owner — an “Epistemic Status Service,” a standalone “Release Service,” an “Operating Condition and Exception Service” — this document binds them to the frozen catalogue owners above. Any copy of <a href="kf-3003-service-architecture.html">KF-3003</a> that still enumerates only sixteen services predates this catalogue and should be read as superseded by the <a href="kf-3002-capability-model.html">KF-3002</a> / <a href="kf-3004-information-and-record-model.html">KF-3004</a> v0.2 service model; the mismatch is an upstream <a href="kf-3003-service-architecture.html">KF-3003</a> versioning item, not a <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> divergence.</p>
 <h3 id="changes-in-v0.2">Changes in v0.2</h3>
 <p>Relative to v0.1: the abnormal-condition vocabulary (failure, exception, violation, degradation, indeterminate, conflict) is consolidated into a single distinction table (§3); the “no single universal state machine” and “recovery is forward restoration, not historical erasure” principles are made explicit (§7, §44); “gates orchestrate reusable controls” is stated directly with a worked decomposition (§29); the three governed catalogues — Transition, Gate and Control — are named as an organising principle (§21); and the mis-labelled state-assertion clause is relocated to its proper place at the end of the state architecture (§20). Substantive content, identifiers and crosswalks from v0.1 are preserved.</p>
 <hr />
 <h2 id="part-i-behavioural-architecture-foundations">Part I · Behavioural Architecture Foundations</h2>
 <h3 id="scope">1. Scope</h3>
-<p>KF-3005 governs changes involving Operational Knowledge Objects; object versions; representations; epistemic standing; acceptance; release; stewardship and governance standing; actionable forms; applications; retirement; service operating condition; and conformance standing.</p>
-<p>It excludes organisational workflow design; user-interface sequence; technology-specific transaction management; physical event-bus design; database locking; service deployment; detailed authority assignment (KF-3008); and assurance methodology (KF-3007).</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> governs changes involving Operational Knowledge Objects; object versions; representations; epistemic standing; acceptance; release; stewardship and governance standing; actionable forms; applications; retirement; service operating condition; and conformance standing.</p>
+<p>It excludes organisational workflow design; user-interface sequence; technology-specific transaction management; physical event-bus design; database locking; service deployment; detailed authority assignment (<a href="kf-3008-architectural-authority-framework.html">KF-3008</a>); and assurance methodology (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>).</p>
 <h3 id="core-behavioural-concepts">2. Core Behavioural Concepts</h3>
 <p><strong>2.1 Lifecycle</strong> — the permitted broad phases through which a governed entity may pass. <strong>2.2 State</strong> — the effective governed condition of one entity within one state machine. <strong>2.3 Transition</strong> — a governed operation attempting to move an entity from a valid source state to a permitted target state. <strong>2.4 Gate</strong> — the authoritative decision composition determining whether a proposed transition may execute. <strong>2.5 Control</strong> — a reusable mechanism that validates, prevents, detects, constrains, records or evidences one condition required by a gate or transition. <strong>2.6 Trigger</strong> — an event, request, decision, elapsed period or condition initiating consideration of a transition. <strong>2.7 Transition Request</strong> — the governed proposal to perform a specific transition on an identified entity. <strong>2.8 Exception</strong> — a formally approved, bounded departure from normal control behaviour that does not violate an invariant. <strong>2.9 Failure</strong> — an unsuccessful attempt to execute an otherwise valid operation. <strong>2.10 Violation</strong> — a breach of a Canonical Principle, invariant or mandatory interaction constraint. <strong>2.11 Recovery</strong> — the governed restoration of architectural consistency following interruption, failure, degradation or conflict.</p>
-<p>The five terms are canonical throughout KF-3005 and subsequent documents:</p>
+<p>The five terms are canonical throughout <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> and subsequent documents:</p>
 <pre class="text"><code>Lifecycle    defines the permitted journey
 State        records the present condition
 Transition   attempts governed change
@@ -124,7 +133,7 @@ Control      establishes whether required conditions hold</code></pre>
 </table>
 <p>Two rules govern the boundary between them. First, <strong>an exception cannot convert an invariant violation into conformance</strong> — an authorised departure and a breach of an invariant are different in kind, not degree. Second, <strong>an indeterminate condition is never treated as satisfied</strong>: it is surfaced, not resolved by default (see §30, §43).</p>
 <h3 id="behavioural-grammar">4. Behavioural Grammar</h3>
-<p>The signature behavioural sequence of KF-3005 is centred on the <strong>transition</strong> — the transition, not the state, is the unit of governed change:</p>
+<p>The signature behavioural sequence of <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> is centred on the <strong>transition</strong> — the transition, not the state, is the unit of governed change:</p>
 <pre class="text"><code>Trigger → Transition Request → Entity and Current-State Resolution
 → Transition Eligibility → Required Evidence Assembly
 → Authority and Permission Validation → Control Execution → Gate Decision
@@ -133,11 +142,11 @@ Control      establishes whether required conditions hold</code></pre>
 <h3 id="behavioural-invariants">5. Behavioural Invariants</h3>
 <p>Every transition must preserve: (1) the affected entity is uniquely identified; (2) the authoritative current state is resolved; (3) the transition is legally permitted by the applicable state machine; (4) required evidence is available or explicitly indeterminate; (5) applicable permission and authority are valid; (6) gate controls are executed; (7) Gate Decision and Transition Records are bound to one transition identifier; (8) no completed transition is partially recorded; (9) prior history remains recoverable; (10) affected services receive the resulting event; (11) failures and indeterminate outcomes remain visible; (12) conformance evidence is produced; (13) no transition bypasses a protected invariant; (14) semantic reversal does not erase the original transition.</p>
 <h3 id="behavioural-specification-types">6. Behavioural Specification Types</h3>
-<p>KF-3005 defines four specification types: <strong>State-Machine Specification</strong> (permitted states and transitions for one entity class); <strong>Transition Specification</strong> (one governed state change); <strong>Gate Specification</strong> (the decision composition controlling one or more transitions); <strong>Control Specification</strong> (one reusable validation or enforcement mechanism).</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines four specification types: <strong>State-Machine Specification</strong> (permitted states and transitions for one entity class); <strong>Transition Specification</strong> (one governed state change); <strong>Gate Specification</strong> (the decision composition controlling one or more transitions); <strong>Control Specification</strong> (one reusable validation or enforcement mechanism).</p>
 <hr />
 <h2 id="part-ii-lifecycle-domain-architecture">Part II · Lifecycle Domain Architecture</h2>
 <h3 id="no-single-universal-state-machine">7. No Single Universal State Machine</h3>
-<p>The architecture defines <strong>no single universal state machine</strong>. KF-3004 has already established that several state dimensions remain distinct, and KF-3005 preserves that separation: each governed condition belongs to its own state machine, and an entity may occupy states across several machines simultaneously. None of these states silently determines another. For one Operational Knowledge Object at one instant:</p>
+<p>The architecture defines <strong>no single universal state machine</strong>. <a href="kf-3004-information-and-record-model.html">KF-3004</a> has already established that several state dimensions remain distinct, and <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> preserves that separation: each governed condition belongs to its own state machine, and an entity may occupy states across several machines simultaneously. None of these states silently determines another. For one Operational Knowledge Object at one instant:</p>
 <pre class="text"><code>Object lifecycle state:   Operational
 Version status:           Released
 Epistemic standing:       Supported but contested
@@ -146,7 +155,7 @@ Operating condition:      Degraded
 Conformance status:       Exception open</code></pre>
 <p>Each of the six values above is owned by a different authoritative service and changes only through its own governed transition.</p>
 <h3 id="lifecycle-domains">8. Lifecycle Domains</h3>
-<p>KF-3005 defines several related but independent lifecycle domains, each with an authoritative state service drawn from the frozen KF-3003 catalogue.</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines several related but independent lifecycle domains, each with an authoritative state service drawn from the frozen <a href="kf-3003-service-architecture.html">KF-3003</a> catalogue.</p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -224,7 +233,7 @@ Conformance status:       Exception open</code></pre>
 <p><strong>States:</strong> Candidate → Registered → Structured → Under Evaluation → Justified → Accepted → Operational; with Suspended, Evolving, Retired and Historical.</p>
 <p><strong>Key transitions:</strong> Register, Structure, Begin Evaluation, Justify, Accept, Operationalise, Suspend, Evolve, Retire, Historicise, Reactivate.</p>
 <p><strong>Cross-domain:</strong> Operational status depends on an active release (SM-REL) but does not equal it.</p>
-<p><em>Editorial note (retained):</em> the final state list must be derived carefully from KF-2001 and KF-3004; some terms may ultimately be represented as <strong>stage participation</strong> rather than durable states. This machine must remain aligned with KF-2001 while distinguishing architectural state from method-stage activity.</p>
+<p><em>Editorial note (retained):</em> the final state list must be derived carefully from <a href="kf-2001-oko-lifecycle.html">KF-2001</a> and <a href="kf-3004-information-and-record-model.html">KF-3004</a>; some terms may ultimately be represented as <strong>stage participation</strong> rather than durable states. This machine must remain aligned with <a href="kf-2001-oko-lifecycle.html">KF-2001</a> while distinguishing architectural state from method-stage activity.</p>
 <h3 id="sm-ver-object-version-state">12. SM-VER · Object Version State</h3>
 <p><em>Authoritative: SVC-09; record VER-01.</em></p>
 <p><strong>States:</strong> Draft → Established → Under Evaluation → Justified → Accepted → Released; with Superseded, Withdrawn, Historical.</p>
@@ -250,12 +259,12 @@ Conformance status:       Exception open</code></pre>
 <h3 id="sm-cnf-conformance-standing">19. SM-CNF · Conformance Standing</h3>
 <p><em>Authoritative: SVC-18; record CNF-01 / CNF-05.</em></p>
 <p><strong>States:</strong> Not Assessed, Assessment Pending, Conformant, Conformant with Approved Exception, Indeterminate, Non-Conformant, Remediation in Progress, Remediated.</p>
-<h3 id="state-assertion-rule-applying-kf-3004-15.1">20. State-Assertion Rule <em>(applying KF-3004 §15.1)</em></h3>
+<h3 id="state-assertion-rule-applying-kf-3004-15.1">20. State-Assertion Rule <em>(applying <a href="kf-3004-information-and-record-model.html">KF-3004</a> §15.1)</em></h3>
 <p>A <strong>transition record preserves the historical act</strong>; a <strong>state record represents the effective current condition</strong>; both are established consistently through <strong>one</strong> governed transition operation. A discrepancy between transition history and current state must produce an integrity or indeterminate condition (a Conflict, per §3). Consistent with §7, none of the state dimensions silently determines another: an object may simultaneously be Operational, Released, Supported-but-Contested, Restricted (form), Degraded (condition) and Exception-Open (conformance).</p>
 <hr />
 <h2 id="part-iv-transition-architecture">Part IV · Transition Architecture</h2>
 <h3 id="three-governed-catalogues">21. Three Governed Catalogues</h3>
-<p>KF-3005 defines its permitted behaviour through <strong>three distinct catalogues</strong>, deliberately kept separate rather than flattened into one control list:</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines its permitted behaviour through <strong>three distinct catalogues</strong>, deliberately kept separate rather than flattened into one control list:</p>
 <ul>
 <li>the <strong>Transition Catalogue</strong> (§27) — the permitted governed changes;</li>
 <li>the <strong>Gate Catalogue</strong> (§31) — the decision compositions controlling those changes;</li>
@@ -411,7 +420,7 @@ Conformance status:       Exception open</code></pre>
 <h2 id="part-v-gate-architecture">Part V · Gate Architecture</h2>
 <h3 id="gate-specification">28. Gate Specification</h3>
 <p>Each gate is specified through: identifier; name; purpose; applicable transitions; required entry state; required information objects; required authority; required controls; decision composition; permitted decision outcomes; blocking conditions; exception rules; records produced; events published; conformance evidence.</p>
-<p><strong>Assurance-class parameterisation.</strong> A gate’s exit criteria, the depth of evidence it requires, and the review or authority it demands are applied to the depth the object’s <strong>assurance class</strong> requires (KF-2003), resolved at the release / scope-of-reliance to which the class attaches and enforced by KF-3001 IC-23. A higher class raises required rigour; it does not add new gates. The gate’s protection of the six ungraded lifecycle invariants is identical at every class — only the depth above that floor scales.</p>
+<p><strong>Assurance-class parameterisation.</strong> A gate’s exit criteria, the depth of evidence it requires, and the review or authority it demands are applied to the depth the object’s <strong>assurance class</strong> requires (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>), resolved at the release / scope-of-reliance to which the class attaches and enforced by <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-23. A higher class raises required rigour; it does not add new gates. The gate’s protection of the six ungraded lifecycle invariants is identical at every class — only the depth above that floor scales.</p>
 <h3 id="gates-orchestrate-controls">29. Gates Orchestrate Controls</h3>
 <p>A gate is <strong>not</strong> one large control. A gate <em>orchestrates</em> several reusable controls, each of which establishes whether one required condition holds. This is what permits the same control to be reused across several gates. The Release Gate illustrates the pattern:</p>
 <pre class="text"><code>GATE-REL-01 · Release Gate
@@ -501,7 +510,7 @@ Conformance status:       Exception open</code></pre>
 <h2 id="part-vi-control-pattern-library">Part VI · Control Pattern Library</h2>
 <h3 id="control-specification">32. Control Specification</h3>
 <p>Each control is specified through: identifier; name; type; purpose; input condition; information required; executing service; authority dependency; evaluation logic; possible results; failure behaviour; evidence produced; protected invariants; enforced interaction constraints; reused by gates; conformance test.</p>
-<p><strong>Class-graded strength.</strong> Where a control’s evaluation depends on a threshold — evidence sufficiency, review independence, monitoring frequency — that threshold scales with the object’s assurance class (KF-2003) under IC-23. A control that protects an invariant enforces it at every class without relaxation; a control that discharges a graded obligation applies the minimum for the object’s class. The same control is thereby reused across classes at different depths, just as it is reused across gates (§29).</p>
+<p><strong>Class-graded strength.</strong> Where a control’s evaluation depends on a threshold — evidence sufficiency, review independence, monitoring frequency — that threshold scales with the object’s assurance class (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>) under IC-23. A control that protects an invariant enforces it at every class without relaxation; a control that discharges a graded obligation applies the minimum for the object’s class. The same control is thereby reused across classes at different depths, just as it is reused across gates (§29).</p>
 <h3 id="control-types">33. Control Types</h3>
 <p><strong>Preventive</strong> (blocks an invalid action); <strong>Detective</strong> (identifies an invalid, missing or degraded condition); <strong>Corrective</strong> (returns the architecture to a governed condition); <strong>Evidentiary</strong> (produces inspectable proof); <strong>Historical</strong> (preserves prior states and reconstructability); <strong>Directive</strong> (defines required behaviour or routing).</p>
 <h3 id="control-families">34. Control Families</h3>
@@ -518,13 +527,13 @@ Conformance status:       Exception open</code></pre>
 → Validate Dependencies and Operating Condition → Execute Gate Controls
 → Record Gate Decision → Execute Transition → Persist State and Transition Records
 → Publish Events → Record Conformance Evidence</code></pre>
-<p>The final step, <strong>Record Conformance Evidence</strong>, is the <em>emission</em> of evidence the preceding steps already produced — the gate decision, the transition record, the published events — not the separate authoring of an evidence artefact. The governed act is its own evidence (KF-3001 IC-24; KF-3004 §5.2). A distinct artefact is added only where the act’s own records cannot carry the required proof.</p>
+<p>The final step, <strong>Record Conformance Evidence</strong>, is the <em>emission</em> of evidence the preceding steps already produced — the gate decision, the transition record, the published events — not the separate authoring of an evidence artefact. The governed act is its own evidence (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24; <a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2). A distinct artefact is added only where the act’s own records cannot carry the required proof.</p>
 <h3 id="specialised-patterns">36. Specialised Patterns</h3>
 <p><strong>Creation</strong> (creates a governed entity where none existed); <strong>Promotion</strong> (moves an entity into a more operationally eligible state after satisfying additional obligations — candidate→evaluated, accepted→released, provisional form→eligible); <strong>Restriction</strong> (reduces permitted reliance without removing all eligibility); <strong>Suspension</strong> (temporarily removes eligibility pending review, recovery or correction); <strong>Withdrawal</strong> (ends a release, acceptance or form eligibility without retiring the object); <strong>Supersession</strong> (replaces a version, release, representation or form with a successor, preserving lineage); <strong>Correction</strong> (creates a governed correction without erasing the original); <strong>Retirement</strong> (ends active eligibility of the enduring object while preserving history); <strong>Reactivation</strong> (routes a retired or suspended entity through renewed evolution before eligibility is restored); <strong>Recovery</strong> (restores a failed, interrupted or degraded operation to a consistent governed condition).</p>
 <hr />
 <h2 id="part-viii-composite-decision-architecture">Part VIII · Composite Decision Architecture</h2>
 <h3 id="composite-decisions">37. Composite Decisions</h3>
-<p>A gate decision may depend on several independently authoritative conditions. <strong>The gate records references to those authoritative records rather than reproducing them</strong> (KF-3004 §7.2), so no gate becomes a competing source of truth.</p>
+<p>A gate decision may depend on several independently authoritative conditions. <strong>The gate records references to those authoritative records rather than reproducing them</strong> (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §7.2), so no gate becomes a competing source of truth.</p>
 <h3 id="release-decision-composition-gate-rel-01">38. Release Decision Composition (GATE-REL-01)</h3>
 <pre class="text"><code>Eligible Object Version + Valid Justification + Applicable Epistemic Standing
 + Valid Acceptance + Applicable Authority + Assigned Steward
@@ -585,7 +594,7 @@ Conformance status:       Exception open</code></pre>
 <tr class="header">
 <th>State machine</th>
 <th>Authoritative service</th>
-<th>Principal KF-3004 records</th>
+<th>Principal <a href="kf-3004-information-and-record-model.html">KF-3004</a> records</th>
 </tr>
 </thead>
 <tbody>
@@ -1014,7 +1023,7 @@ Conformance status:       Exception open</code></pre>
 <thead>
 <tr class="header">
 <th>Gate</th>
-<th>Required KF-3004 records</th>
+<th>Required <a href="kf-3004-information-and-record-model.html">KF-3004</a> records</th>
 </tr>
 </thead>
 <tbody>
@@ -1076,7 +1085,7 @@ Conformance status:       Exception open</code></pre>
 </tr>
 </tbody>
 </table>
-<h3 id="transition-to-authority-crosswalk-abstract-classes-for-kf-3008">60. Transition-to-Authority Crosswalk <em>(abstract classes for KF-3008)</em></h3>
+<h3 id="transition-to-authority-crosswalk-abstract-classes-for-kf-3008">60. Transition-to-Authority Crosswalk <em>(abstract classes for <a href="kf-3008-architectural-authority-framework.html">KF-3008</a>)</em></h3>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -1133,8 +1142,8 @@ Conformance status:       Exception open</code></pre>
 </tr>
 </tbody>
 </table>
-<h3 id="transition-to-conformance-evidence-crosswalk-for-kf-3007">61. Transition-to-Conformance-Evidence Crosswalk <em>(for KF-3007)</em></h3>
-<p>Every material transition produces, at minimum: Gate Decision Record (GAT-01); Transition Record (TRN-01); the resulting authoritative state record; provenance (PRO-01); an event-publication record; and conformance evidence (CNF-01 / CNF-02). KF-3007 defines how this evidence is sampled, tested and judged.</p>
+<h3 id="transition-to-conformance-evidence-crosswalk-for-kf-3007">61. Transition-to-Conformance-Evidence Crosswalk <em>(for <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>)</em></h3>
+<p>Every material transition produces, at minimum: Gate Decision Record (GAT-01); Transition Record (TRN-01); the resulting authoritative state record; provenance (PRO-01); an event-publication record; and conformance evidence (CNF-01 / CNF-02). <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> defines how this evidence is sampled, tested and judged.</p>
 <h3 id="lifecycle-to-capability-crosswalk">62. Lifecycle-to-Capability Crosswalk</h3>
 <table>
 <colgroup>
@@ -1144,7 +1153,7 @@ Conformance status:       Exception open</code></pre>
 <thead>
 <tr class="header">
 <th>Behaviour</th>
-<th>KF-3002 capability</th>
+<th><a href="kf-3002-capability-model.html">KF-3002</a> capability</th>
 </tr>
 </thead>
 <tbody>
@@ -1199,7 +1208,7 @@ Conformance status:       Exception open</code></pre>
 <thead>
 <tr class="header">
 <th>Behaviour</th>
-<th>KF-3003 service</th>
+<th><a href="kf-3003-service-architecture.html">KF-3003</a> service</th>
 </tr>
 </thead>
 <tbody>
@@ -1263,12 +1272,12 @@ Conformance status:       Exception open</code></pre>
 </table>
 <hr />
 <h2 id="part-xiv-relationship-to-subsequent-documents">Part XIV · Relationship to Subsequent Documents</h2>
-<p><strong>KF-3008</strong> defines the authority and accountability model — authority sources, delegation, accountable-body composition, separation of duties, mandate validity and role assignment — satisfying the abstract authority classes KF-3005 identifies in the Transition-to-Authority Crosswalk (§60). KF-3005 references authority only in abstract form (Required Authority Class, Required Decision Role, Required Separation Condition); KF-3008 defines who may occupy those roles.</p>
-<p><strong>KF-3007</strong> defines how the evidence produced by state changes, gates and controls (§61) is assessed — sampling, assessment procedure, assurance independence, severity and conformance judgement. KF-3005 defines <em>what evidence must exist</em>; KF-3007 defines <em>how it is tested</em>.</p>
-<p><strong>KF-3009</strong> maps every state, transition, gate and control back to the Canon, lifecycle, practice, capability, service and information obligations from which it derives.</p>
+<p><strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> defines the authority and accountability model — authority sources, delegation, accountable-body composition, separation of duties, mandate validity and role assignment — satisfying the abstract authority classes <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> identifies in the Transition-to-Authority Crosswalk (§60). <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> references authority only in abstract form (Required Authority Class, Required Decision Role, Required Separation Condition); <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> defines who may occupy those roles.</p>
+<p><strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> defines how the evidence produced by state changes, gates and controls (§61) is assessed — sampling, assessment procedure, assurance independence, severity and conformance judgement. <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines <em>what evidence must exist</em>; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> defines <em>how it is tested</em>.</p>
+<p><strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></strong> maps every state, transition, gate and control back to the Canon, lifecycle, practice, capability, service and information obligations from which it derives.</p>
 <p><strong>KF-4000</strong> may implement this behavioural architecture through state machines, workflow engines, rules engines, transaction managers, event-driven architectures, human approval processes, AI-agent orchestration, manually maintained registers, or combinations. It may not bypass a required gate; collapse gate decision and transition execution; treat indeterminate evidence as satisfied; permit silent state mutation; erase failed transitions or recovery history; infer authority from permission; release or apply ineligible knowledge; create conflicting authoritative states; make transition history unreconstructable; or substitute automation for accountability.</p>
 <h3 id="closing-statement">Closing Statement</h3>
-<p>KF-3005 defines the governed behaviour of the Knowledge Foundry architecture. It establishes how state may change, how transitions are requested and executed, how gates compose authoritative decisions from independently owned records, how controls preserve invariants, how failures and exceptions remain visible, and how every material change leaves sufficient evidence for historical reconstruction and assurance. KF-3004 defines the architecture’s memory; KF-3005 defines the disciplined behaviour through which that memory is allowed to change.</p>
+<p><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines the governed behaviour of the Knowledge Foundry architecture. It establishes how state may change, how transitions are requested and executed, how gates compose authoritative decisions from independently owned records, how controls preserve invariants, how failures and exceptions remain visible, and how every material change leaves sufficient evidence for historical reconstruction and assurance. <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the architecture’s memory; <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines the disciplined behaviour through which that memory is allowed to change.</p>
 
 <nav class="prevnext"><a class="pv" href="kf-3004-information-and-record-model.html">&#8592; Information & Record Model</a><a class="nx" href="kf-3006-architectural-integration-model.html">Integration &#8594;</a></nav>
 </main>

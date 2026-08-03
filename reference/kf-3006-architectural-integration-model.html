@@ -32,30 +32,37 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-3006 · Architectural Integration Model</h1>
+<p class="deck">How the architectural elements collaborate to produce, govern, evolve and retire an Operational Knowledge Object</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.1</p>
 
-<h4 id="how-the-architectural-elements-collaborate-to-produce-govern-evolve-and-retire-an-operational-knowledge-object">How the architectural elements collaborate to produce, govern, evolve and retire an Operational Knowledge Object</h4>
-<p><em>Document Class: Reference Architecture · Parent Programme: Knowledge Foundry · Parent Document: KF-3000 · Status: Draft · Version: 0.1</em></p>
 <pre class="text"><code>Principle (KF-1000) → Lifecycle (KF-2001) → Practices (KF-2002)
         → Reference Architecture (KF-3000)
               → Domains (KF-3001 principles · KF-3002 capabilities · KF-3003 services · KF-3004 records · KF-3005 control)
               → ▸ Architectural Integration Model (KF-3006)
               → Architectural Conformance Framework (KF-3007)
         → Implementation (KF-4000)</code></pre>
-<p>The Knowledge Foundry Reference Architecture is intentionally modular. Each document defines one architectural concern in isolation, so that responsibilities stay clear and the architecture can evolve without unnecessary coupling. Integration therefore cannot be inferred from any single document: it is itself an architectural concern, and must be described as one. KF-3006 provides that description.</p>
+<p>The Knowledge Foundry Reference Architecture is intentionally modular. Each document defines one architectural concern in isolation, so that responsibilities stay clear and the architecture can evolve without unnecessary coupling. Integration therefore cannot be inferred from any single document: it is itself an architectural concern, and must be described as one. <a href="kf-3006-architectural-integration-model.html">KF-3006</a> provides that description.</p>
 <h3 id="purpose">Purpose</h3>
-<p>The documents before this one describe the architecture <strong>part by part</strong>: what must remain true (KF-3001), what it must be able to do (KF-3002), where responsibility sits (KF-3003), what information exists (KF-3004), and how governed change is permitted and executed (KF-3005). Each is complete in its domain and silent on the others.</p>
-<p>KF-3006 describes the architecture <strong>as one working system</strong>. It answers a single question:</p>
+<p>The documents before this one describe the architecture <strong>part by part</strong>: what must remain true (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>), what it must be able to do (<a href="kf-3002-capability-model.html">KF-3002</a>), where responsibility sits (<a href="kf-3003-service-architecture.html">KF-3003</a>), what information exists (<a href="kf-3004-information-and-record-model.html">KF-3004</a>), and how governed change is permitted and executed (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>). Each is complete in its domain and silent on the others.</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> describes the architecture <strong>as one working system</strong>. It answers a single question:</p>
 <blockquote>
 <p><em>How do all architectural elements collaborate to produce a governed Operational Knowledge Object?</em></p>
 </blockquote>
-<p>It is the point in the KF-3000 series where the reader should feel the machine come alive: capabilities are realised by services, services are invoked by transitions, transitions pass gates, gates orchestrate controls, controls protect obligations, obligations emit evidence, evidence accumulates as traceability, and traceability is what conformance later inspects. None of that collaboration is visible from any single domain document. This one makes it visible.</p>
-<p>KF-3006 <strong>summarises, never redefines.</strong> Where it names a service, a gate, a control, an invariant or a record, the authoritative definition remains in its home document; this model shows only how the element participates in the whole. Its value is integrative, not additive.</p>
+<p>It is the point in the <a href="kf-3000-reference-architecture.html">KF-3000</a> series where the reader should feel the machine come alive: capabilities are realised by services, services are invoked by transitions, transitions pass gates, gates orchestrate controls, controls protect obligations, obligations emit evidence, evidence accumulates as traceability, and traceability is what conformance later inspects. None of that collaboration is visible from any single domain document. This one makes it visible.</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> <strong>summarises, never redefines.</strong> Where it names a service, a gate, a control, an invariant or a record, the authoritative definition remains in its home document; this model shows only how the element participates in the whole. Its value is integrative, not additive.</p>
 <h4 id="figure-1-the-integration-spine">Figure 1 · The Integration Spine</h4>
 <p>One flow carries the whole architecture, from the obligations the Canon imposes to the conformance that inspects the result:</p>
 <pre class="text"><code>Canonical Principles
@@ -79,13 +86,13 @@ Evidence
 Traceability
         ▼
 Conformance</code></pre>
-<p>Every element in the KF-3000 series occupies one band of this spine, and every chapter of this document explains one of its arrows. A reader who holds this figure in mind can place any architectural element by asking only where on the spine it acts.</p>
+<p>Every element in the <a href="kf-3000-reference-architecture.html">KF-3000</a> series occupies one band of this spine, and every chapter of this document explains one of its arrows. A reader who holds this figure in mind can place any architectural element by asking only where on the spine it acts.</p>
 <h3 id="scope-and-the-integration-admission-test">Scope and the Integration Admission Test</h3>
-<p>KF-3006 is technology-neutral and deployment-neutral. It describes collaboration between architectural elements, not the components, products or topologies that realise them (those are KF-4000). A statement belongs in KF-3006 only if:</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> is technology-neutral and deployment-neutral. It describes collaboration between architectural elements, not the components, products or topologies that realise them (those are KF-4000). A statement belongs in <a href="kf-3006-architectural-integration-model.html">KF-3006</a> only if:</p>
 <ol type="1">
 <li>it describes an interaction between two or more architectural elements defined elsewhere in the series;</li>
 <li>it can be stated without naming a specific technology, product or deployment; and</li>
-<li>it preserves — never relaxes — the lifecycle invariants and interaction constraints of KF-2001 and KF-3001.</li>
+<li>it preserves — never relaxes — the lifecycle invariants and interaction constraints of <a href="kf-2001-oko-lifecycle.html">KF-2001</a> and <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>.</li>
 </ol>
 <p>A statement that redefines an element belongs in that element’s home document; a statement that names a technology belongs in KF-4000.</p>
 <hr />
@@ -94,7 +101,7 @@ Conformance</code></pre>
 <p>To demonstrate that the Knowledge Foundry architecture functions as a coherent system rather than a collection of independent components, by describing the relationships and behaviours through which its elements collaborate over the life of an Operational Knowledge Object (OKO).</p>
 <h3 id="scope">1.2 Scope</h3>
 <p>In scope: the relationship types between architectural elements; the behaviour of the architecture over time; the integrated journey of one OKO; the recurring integration patterns; the architectural event catalogue; and the way evidence, traceability and assurance are produced as by-products of ordinary architectural work.</p>
-<p>Out of scope: redefinition of any element; component design; technology selection; workflow, cadence and staffing (KF-4000); and the <em>judgement</em> of whether an operation conforms (KF-3007).</p>
+<p>Out of scope: redefinition of any element; component design; technology selection; workflow, cadence and staffing (KF-4000); and the <em>judgement</em> of whether an operation conforms (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>).</p>
 <h3 id="relationship-to-other-documents">1.3 Relationship to Other Documents</h3>
 <pre class="text"><code>Canon (KF-1000)
      ↓ obligations
@@ -107,17 +114,17 @@ Architectural Integration Model (KF-3006)   ← how the architecture operates
 Architectural Conformance Framework (KF-3007)  ← whether it conforms
      ↓
 Implementation (KF-4000)</code></pre>
-<p>KF-3006 depends on all five domain documents and on KF-2003 (assurance). It is depended upon by KF-3007, which inspects the traceability this model shows the architecture producing.</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> depends on all five domain documents and on <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> (assurance). It is depended upon by <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>, which inspects the traceability this model shows the architecture producing.</p>
 <hr />
 <h2 id="principles-of-architectural-integration">2 · Principles of Architectural Integration</h2>
 <p>These are the philosophy of integration, not its mechanics. Each is inherited from a higher level and constrains how the elements may be wired together.</p>
 <ol type="1">
 <li><strong>Integration follows the Canon.</strong> Elements may be combined only in ways consistent with the Canonical Principles. Integration is not free wiring; it is constrained composition.</li>
-<li><strong>Every interaction preserves the lifecycle invariants.</strong> No collaboration between elements may break single identity, attributable transitions, justified transitions, inspectable transitions, provenance or preserved lineage. The invariants are the floor beneath every interaction (KF-2001; KF-3001).</li>
-<li><strong>Integration is event-driven, not document-driven.</strong> Elements collaborate by raising and responding to events that trigger governed transitions, not by passing documents hand to hand. What moves through the system is a governed state change, not a file (KF-2001 event model).</li>
-<li><strong>Evidence is a by-product of behaviour.</strong> Conformance evidence is emitted by the governed act, not authored by a separate administrative step (KF-3001 IC-24; KF-3004 §5.2). Integration is designed so that doing the work <em>is</em> recording the work.</li>
-<li><strong>Integration preserves traceability.</strong> Every interaction leaves the relationships, events and evidence needed to reconstruct what happened, to the depth the object’s assurance class requires (KF-2003; KF-3007 Test 4).</li>
-<li><strong>Responsibilities remain loosely coupled.</strong> Each capability has one accountable service and each record family one authoritative maintainer; services collaborate through governed interactions across named boundaries, never by reaching into one another’s records (KF-3003 SP-2/SP-3; KF-3004 §7). Loose coupling is what lets an implementation substitute one service without disturbing the others.</li>
+<li><strong>Every interaction preserves the lifecycle invariants.</strong> No collaboration between elements may break single identity, attributable transitions, justified transitions, inspectable transitions, provenance or preserved lineage. The invariants are the floor beneath every interaction (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>; <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>).</li>
+<li><strong>Integration is event-driven, not document-driven.</strong> Elements collaborate by raising and responding to events that trigger governed transitions, not by passing documents hand to hand. What moves through the system is a governed state change, not a file (<a href="kf-2001-oko-lifecycle.html">KF-2001</a> event model).</li>
+<li><strong>Evidence is a by-product of behaviour.</strong> Conformance evidence is emitted by the governed act, not authored by a separate administrative step (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24; <a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2). Integration is designed so that doing the work <em>is</em> recording the work.</li>
+<li><strong>Integration preserves traceability.</strong> Every interaction leaves the relationships, events and evidence needed to reconstruct what happened, to the depth the object’s assurance class requires (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> Test 4).</li>
+<li><strong>Responsibilities remain loosely coupled.</strong> Each capability has one accountable service and each record family one authoritative maintainer; services collaborate through governed interactions across named boundaries, never by reaching into one another’s records (<a href="kf-3003-service-architecture.html">KF-3003</a> SP-2/SP-3; <a href="kf-3004-information-and-record-model.html">KF-3004</a> §7). Loose coupling is what lets an implementation substitute one service without disturbing the others.</li>
 </ol>
 <hr />
 <h2 id="participating-architectural-elements">3 · Participating Architectural Elements</h2>
@@ -144,73 +151,73 @@ Implementation (KF-4000)</code></pre>
 <tr class="even">
 <td><strong>Lifecycle</strong></td>
 <td>the staged progression Capture → … → Retire through which an OKO evolves</td>
-<td>KF-2001</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a></td>
 </tr>
 <tr class="odd">
 <td><strong>Capability</strong></td>
 <td>an enduring ability the architecture must possess</td>
-<td>KF-3002</td>
+<td><a href="kf-3002-capability-model.html">KF-3002</a></td>
 </tr>
 <tr class="even">
 <td><strong>Service</strong></td>
 <td>a logical mechanism that realises capabilities and maintains records</td>
-<td>KF-3003</td>
+<td><a href="kf-3003-service-architecture.html">KF-3003</a></td>
 </tr>
 <tr class="odd">
 <td><strong>Information / Record object</strong></td>
 <td>a governed unit of information with one authoritative maintainer</td>
-<td>KF-3004</td>
+<td><a href="kf-3004-information-and-record-model.html">KF-3004</a></td>
 </tr>
 <tr class="even">
 <td><strong>Actor</strong></td>
 <td>a person or agent that raises events and performs work</td>
-<td>KF-2001</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a></td>
 </tr>
 <tr class="odd">
 <td><strong>Role</strong></td>
 <td>a bundle of responsibilities an actor holds</td>
-<td>KF-2001</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a></td>
 </tr>
 <tr class="even">
 <td><strong>Authority</strong></td>
 <td>the human right to certify, accept, release, steward or retire</td>
-<td>KF-1103; KF-3006 §5.3</td>
+<td>KF-1103; <a href="kf-3006-architectural-integration-model.html">KF-3006</a> §5.3</td>
 </tr>
 <tr class="odd">
 <td><strong>Gate</strong></td>
 <td>a justification checkpoint that decides whether an OKO may advance</td>
-<td>KF-2001; KF-3005</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a>; <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></td>
 </tr>
 <tr class="even">
 <td><strong>Control</strong></td>
 <td>a reusable test of one required condition</td>
-<td>KF-3005</td>
+<td><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></td>
 </tr>
 <tr class="odd">
 <td><strong>Invariant</strong></td>
 <td>a property that must hold at every instant</td>
-<td>KF-2001; KF-3001</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a>; <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a></td>
 </tr>
 <tr class="even">
 <td><strong>Evidence</strong></td>
 <td>the durable record that an obligation was discharged, emitted by the act</td>
-<td>KF-3004 §5.2</td>
+<td><a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2</td>
 </tr>
 <tr class="odd">
 <td><strong>Traceability</strong></td>
 <td>the reconstructable web of relationships, events and evidence</td>
-<td>KF-3006 §10</td>
+<td><a href="kf-3006-architectural-integration-model.html">KF-3006</a> §10</td>
 </tr>
 <tr class="even">
 <td><strong>Assurance class</strong></td>
 <td>the grade that sets how deep the above must go</td>
-<td>KF-2003</td>
+<td><a href="kf-2003-materiality-and-assurance.html">KF-2003</a></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="architectural-relationships">4 · Architectural Relationships</h2>
-<p>This chapter replaces the hundreds of arrows scattered across the domain documents with a <strong>controlled vocabulary of relationship types</strong>. Every legitimate interaction in the architecture is an instance of one of these types. (These are <em>element-level</em> integration relationships; the <em>record-level</em> relationship types — VERSION_OF, RELEASES, SUPERSEDES and the rest — remain KF-3004’s.)</p>
+<p>This chapter replaces the hundreds of arrows scattered across the domain documents with a <strong>controlled vocabulary of relationship types</strong>. Every legitimate interaction in the architecture is an instance of one of these types. (These are <em>element-level</em> integration relationships; the <em>record-level</em> relationship types — VERSION_OF, RELEASES, SUPERSEDES and the rest — remain <a href="kf-3004-information-and-record-model.html">KF-3004</a>’s.)</p>
 <h3 id="the-canonical-relationship-vocabulary">4.1 The Canonical Relationship Vocabulary</h3>
 <p>Every legitimate interaction is an instance of one of the nine canonical relationships below. Each belongs to a category that fixes what <em>kind</em> of relationship it is — so that “Service X invokes Y” and “Service X consumes Y” are never read as the same claim.</p>
 <table>
@@ -233,59 +240,59 @@ Implementation (KF-4000)</code></pre>
 <td><strong>constrains</strong></td>
 <td>normative</td>
 <td>Principle / interaction constraint → element</td>
-<td>composition must remain consistent with the Canon and the interaction constraints (KF-1000; KF-3001)</td>
+<td>composition must remain consistent with the Canon and the interaction constraints (<a href="kf-1000-canon.html">KF-1000</a>; <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>)</td>
 </tr>
 <tr class="even">
 <td><strong>realises</strong></td>
 <td>implementation</td>
 <td>Capability → Service</td>
-<td>each capability has exactly one <em>accountable</em> service; supporting services may assist (KF-3003 SP-2)</td>
+<td>each capability has exactly one <em>accountable</em> service; supporting services may assist (<a href="kf-3003-service-architecture.html">KF-3003</a> SP-2)</td>
 </tr>
 <tr class="odd">
 <td><strong>invokes</strong></td>
 <td>behavioural</td>
 <td>Transition → Service(s)</td>
-<td>each transition invokes one or more services; no transition is serviceless (KF-2001)</td>
+<td>each transition invokes one or more services; no transition is serviceless (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>)</td>
 </tr>
 <tr class="even">
 <td><strong>consumes</strong></td>
 <td>information</td>
 <td>Service → Information object</td>
-<td>a service reads an authoritative record through a governed interaction, never by overwriting it (KF-3004 §7)</td>
+<td>a service reads an authoritative record through a governed interaction, never by overwriting it (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §7)</td>
 </tr>
 <tr class="odd">
 <td><strong>produces</strong></td>
 <td>information</td>
 <td>Service / Transition → Information object</td>
-<td>the authoritative maintainer produces and maintains its records (KF-3004 §7)</td>
+<td>the authoritative maintainer produces and maintains its records (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §7)</td>
 </tr>
 <tr class="even">
 <td><strong>evaluates</strong></td>
 <td>governance</td>
 <td>Gate → Control(s)</td>
-<td>a gate orchestrates several reusable controls; it does not re-implement them (KF-3005 §29)</td>
+<td>a gate orchestrates several reusable controls; it does not re-implement them (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> §29)</td>
 </tr>
 <tr class="odd">
 <td><strong>protects</strong></td>
 <td>assurance</td>
 <td>Control → Obligation / Invariant</td>
-<td>a control protects at least one explicit obligation, risk, policy or invariant (KF-3005 §32)</td>
+<td>a control protects at least one explicit obligation, risk, policy or invariant (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> §32)</td>
 </tr>
 <tr class="even">
 <td><strong>generates</strong></td>
 <td>evidential</td>
 <td>Transition / Obligation → Conformance Evidence</td>
-<td>evidence is emitted by the act — event-native and proportionate — not authored separately (KF-3001 IC-24; KF-3007 Test 3)</td>
+<td>evidence is emitted by the act — event-native and proportionate — not authored separately (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> Test 3)</td>
 </tr>
 <tr class="odd">
 <td><strong>traces</strong></td>
 <td>provenance</td>
 <td>derived state → source; successor → predecessor</td>
-<td>provenance and lineage links are carried through and preserved, never overwritten (KF-2001 invariants 5–6)</td>
+<td>provenance and lineage links are carried through and preserved, never overwritten (<a href="kf-2001-oko-lifecycle.html">KF-2001</a> invariants 5–6)</td>
 </tr>
 </tbody>
 </table>
-<p>Three further structural relationships support composite decisions and grading and are used throughout the model: <strong>references</strong> — a composite decision cites the authoritative records it relied on without copying their content (KF-3004 §7.2); <strong>attributed-to</strong> — every transition resolves to an identified actor or human authority (KF-2001 invariant 2); and <strong>graded-by</strong> — the depth to which a graded obligation is discharged is set by the object’s assurance class (KF-2003; KF-3001 IC-23).</p>
+<p>Three further structural relationships support composite decisions and grading and are used throughout the model: <strong>references</strong> — a composite decision cites the authoritative records it relied on without copying their content (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §7.2); <strong>attributed-to</strong> — every transition resolves to an identified actor or human authority (<a href="kf-2001-oko-lifecycle.html">KF-2001</a> invariant 2); and <strong>graded-by</strong> — the depth to which a graded obligation is discharged is set by the object’s assurance class (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>; <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-23).</p>
 <h3 id="the-core-relationship-chain">4.2 The Core Relationship Chain</h3>
 <p>Read end to end, twelve relationship types compose into one chain — the spine of the architecture:</p>
 <pre class="text"><code>Canonical Principle
@@ -308,13 +315,13 @@ Gate ── evaluates ──▶ Control(s)
 <li><strong>realises</strong> (Capability→Service): one <em>accountable</em> service per capability; a service may be accountable for several capabilities; supporting services are many-to-many. Accountability is single; realisation is shared.</li>
 <li><strong>evaluates</strong> (Gate→Control): many-to-many. One gate evaluates several controls; one control is reused across several gates.</li>
 <li><strong>protects</strong> (Control→Obligation): many-to-many. One control may protect several obligations; one obligation may be protected by several controls.</li>
-<li><strong>produces</strong> (Service→Record): one authoritative maintainer per record family; other services hold adjacent or derived views only (KF-3004 §7.1).</li>
+<li><strong>produces</strong> (Service→Record): one authoritative maintainer per record family; other services hold adjacent or derived views only (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §7.1).</li>
 </ul>
 <hr />
 <h2 id="behavioural-architecture">5 · Behavioural Architecture</h2>
 <p>Sections 3–4 are structural — what exists and how it relates. This section is behavioural — how the architecture acts over time.</p>
 <h3 id="the-event-model">5.1 The Event Model</h3>
-<p>The architecture does not move because a document is passed along; it moves because an <strong>event</strong> is raised. An event is what <em>happened</em>; the transition it triggers is the governed <em>move</em> it causes (KF-2001). Events divide into two kinds, and keeping them distinct is what locates automation safely:</p>
+<p>The architecture does not move because a document is passed along; it moves because an <strong>event</strong> is raised. An event is what <em>happened</em>; the transition it triggers is the governed <em>move</em> it causes (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>). Events divide into two kinds, and keeping them distinct is what locates automation safely:</p>
 <ul>
 <li><strong>Trigger events (engineering events)</strong> — occurrences that <em>oblige</em> the system to consider a transition: new evidence, a scheduled review, a policy change, a challenge, an AI recommendation, an application outcome, an authority decision. A trigger event may be raised by a human <strong>or an agent</strong>.</li>
 <li><strong>Emitted events (architectural events)</strong> — notifications the architecture <em>publishes</em> when a transition completes: Object Created, Acceptance Granted, Version Created, Superseded, Retired, and the rest of the catalogue in §8.</li>
@@ -335,7 +342,7 @@ Decision   (Pass · Fail · Return · Pending · Indeterminate · Pass-with-Rest
 Evidence emitted  +  Events published
    ↓
 State B</code></pre>
-<p>This is the KF-3005 standard transition pattern seen from the integration level. The decisive property: <strong>the evidence and events at the bottom are emitted by the act, not authored afterward</strong> (§9). An Indeterminate decision is never silently treated as Pass.</p>
+<p>This is the <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> standard transition pattern seen from the integration level. The decisive property: <strong>the evidence and events at the bottom are emitted by the act, not authored afterward</strong> (§9). An Indeterminate decision is never silently treated as Pass.</p>
 <h3 id="the-authority-model-integrated-view">5.3 The Authority Model (integrated view)</h3>
 <p>Transitions are not all equal. Some are engineering work an agent may perform under supervision; others are acts of authority that must resolve to an identifiable human. The architecture draws the line by transition, not by service:</p>
 <table>
@@ -374,7 +381,7 @@ State B</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Automation may <em>propose</em> any of these as a trigger event; it may not <em>hold the authority</em> for the acceptance, release, stewardship or retirement classes (KF-1103; KF-3000 §18; KF-3001 IC-16). The detailed authority, delegation and accountability model is KF-3008; this section shows only how authority gates the transition flow.</p>
+<p>Automation may <em>propose</em> any of these as a trigger event; it may not <em>hold the authority</em> for the acceptance, release, stewardship or retirement classes (KF-1103; <a href="kf-3000-reference-architecture.html">KF-3000</a> §18; <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-16). The detailed authority, delegation and accountability model is <a href="kf-3008-architectural-authority-framework.html">KF-3008</a>; this section shows only how authority gates the transition flow.</p>
 <h3 id="the-responsibility-model-integrated-view">5.4 The Responsibility Model (integrated view)</h3>
 <p>Authority is exercised through a chain that runs from a person to a lifecycle action:</p>
 <pre class="text"><code>Actor
@@ -386,11 +393,11 @@ Authority   (and, technically, Permission — assigned by SVC-16)
 Permitted Services
    ↓ perform
 Lifecycle Actions (transitions)</code></pre>
-<p>The chain is load-bearing in both directions: forward, it says who may act; backward, it makes every action attributable to a role, an authority and a person (invariant 2). Institutional authority (the <em>right</em>, held at SVC-06) and technical permission (the <em>ability</em>, assigned by SVC-16) are distinct and must not be conflated (KF-3001 IC-13: authority is not permission).</p>
+<p>The chain is load-bearing in both directions: forward, it says who may act; backward, it makes every action attributable to a role, an authority and a person (invariant 2). Institutional authority (the <em>right</em>, held at SVC-06) and technical permission (the <em>ability</em>, assigned by SVC-16) are distinct and must not be conflated (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-13: authority is not permission).</p>
 <hr />
 <h2 id="the-integrated-object-journey">6 · The Integrated Object Journey</h2>
 <blockquote>
-<p><strong>Worked example.</strong> KF-5001 instantiates this journey on a concrete Knowledge Brief, with the actual evidence, authority and records at each step.</p>
+<p><strong>Worked example.</strong> <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> instantiates this journey on a concrete Knowledge Brief, with the actual evidence, authority and records at each step.</p>
 </blockquote>
 <p>This is the heart of the document: one OKO walked through the whole architecture. For each step it shows current state, the services invoked, the records produced, the controls evaluated, the evidence emitted, the traceability updated, and the resulting state. The journey below is generic; it is the exact path the first vertical slice — a MacroLab Singapore Business Impact Assessment, provisionally A3 Consequential — is intended to instantiate and test.</p>
 <p><strong>This chapter is the canonical walkthrough of the architecture.</strong> Every subsequent implementation, demonstration and conformance assessment should be understandable as an instantiation of this journey. A deployment is not a different architecture; it is this journey run on particular technology. A conformance assessment is not a separate procedure; it is this journey read backwards through its evidence.</p>
@@ -488,7 +495,7 @@ Lifecycle Actions (transitions)</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Each emitted event carries, at minimum: the object and version identity, the transition, the responsible actor or authority, and recorded time (KF-3004 Common Record Properties). An event is therefore already a unit of evidence (§9). The authoritative event <em>records</em> are maintained by SVC-08 (Lifecycle and Transition) and the originating services; this catalogue is the shared vocabulary, not a new store.</p>
+<p>Each emitted event carries, at minimum: the object and version identity, the transition, the responsible actor or authority, and recorded time (<a href="kf-3004-information-and-record-model.html">KF-3004</a> Common Record Properties). An event is therefore already a unit of evidence (§9). The authoritative event <em>records</em> are maintained by SVC-08 (Lifecycle and Transition) and the originating services; this catalogue is the shared vocabulary, not a new store.</p>
 <hr />
 <h2 id="evidence-generation-model">9 · Evidence Generation Model</h2>
 <p>The principle, stated once at the integration level:</p>
@@ -498,7 +505,7 @@ Lifecycle Actions (transitions)</code></pre>
 <pre class="text"><code>Transition ──▶ Event ──▶ Evidence Record ──▶ Traceability Update</code></pre>
 <p>not</p>
 <pre class="text"><code>Transition ──▶ (stop) ──▶ author a separate evidence artefact</code></pre>
-<p>The acceptance record is the evidence of acceptance; the transition record is the audit event; the evaluation verdict is the test result; the provenance link is the evidence of derivation; the supersession link is the evidence of lineage (KF-3004 §5.2). A distinct evidence artefact is created only where the act’s own records cannot carry the required proof, and then against a recorded justification that they cannot (KF-3001 IC-24).</p>
+<p>The acceptance record is the evidence of acceptance; the transition record is the audit event; the evaluation verdict is the test result; the provenance link is the evidence of derivation; the supersession link is the evidence of lineage (<a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2). A distinct evidence artefact is created only where the act’s own records cannot carry the required proof, and then against a recorded justification that they cannot (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24).</p>
 <p>This is what keeps assurance affordable. Without it, a governed system generates a second knowledge-management problem — the management of evidence that the knowledge was managed. With it, the cost of assurance is folded into the cost of doing the work.</p>
 <hr />
 <h2 id="traceability-model">10 · Traceability Model</h2>
@@ -508,10 +515,10 @@ Lifecycle Actions (transitions)</code></pre>
 <li><strong>Behavioural traceability</strong> — the <em>events</em> (§8): the ordered history of what happened to the object and when. Produced as transitions emit events.</li>
 <li><strong>Evidential traceability</strong> — the <em>proof</em> (§9): the records demonstrating that each material obligation was discharged. Produced as the acts emit their evidence.</li>
 </ul>
-<p>A conformance claim (KF-3007) is reconstructed by reading the three layers together: the relationships say what is connected, the events say what happened in order, the evidence says on what basis. The <strong>depth</strong> to which each layer must be reconstructable is set by assurance class (§11): an A0 correction need not be traceable through every principle and control; an A4 acceptance must be reconstructable end to end.</p>
+<p>A conformance claim (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>) is reconstructed by reading the three layers together: the relationships say what is connected, the events say what happened in order, the evidence says on what basis. The <strong>depth</strong> to which each layer must be reconstructable is set by assurance class (§11): an A0 correction need not be traceable through every principle and control; an A4 acceptance must be reconstructable end to end.</p>
 <hr />
 <h2 id="assurance-integration">11 · Assurance Integration</h2>
-<p>This chapter bridges to KF-2003 without redefining it. It shows how assurance flows through the architecture as a single graded quantity:</p>
+<p>This chapter bridges to <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> without redefining it. It shows how assurance flows through the architecture as a single graded quantity:</p>
 <pre class="text"><code>Materiality (of the intended reliance)
    ↓ determines
 Assurance Class   (A0 … A4, + overlays)      ── KF-2003
@@ -521,7 +528,7 @@ Required Controls        (which controls, how strong)   ── KF-3005 §32
 Evidence                 (how much, how independent)     ── §9; KF-3007 Test 3
    ↓ sets the depth of
 Traceability             (how far back, how complete)    ── §10; KF-3007 Test 4</code></pre>
-<p>The class enters the architecture at one place — the scope of reliance recorded at Acceptance and Release (SVC-06/10) — and from there parameterises gate depth (KF-3005 §28), control strength (§32) and reconstruction depth (KF-3007), all under KF-3001 IC-23. <strong>The path is invariant; the depth is graded.</strong> Two objects of different classes traverse the same journey (§6), pass the same gates and satisfy the same six invariants; the higher-class object satisfies each to greater depth. Class never lowers the invariant floor.</p>
+<p>The class enters the architecture at one place — the scope of reliance recorded at Acceptance and Release (SVC-06/10) — and from there parameterises gate depth (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> §28), control strength (§32) and reconstruction depth (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>), all under <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-23. <strong>The path is invariant; the depth is graded.</strong> Two objects of different classes traverse the same journey (§6), pass the same gates and satisfy the same six invariants; the higher-class object satisfies each to greater depth. Class never lowers the invariant floor.</p>
 <hr />
 <h2 id="implementation-guidance">12 · Implementation Guidance</h2>
 <p>Technology-neutral obligations an implementation (KF-4000) must honour when realising this model. When implementing Knowledge Foundry, ensure that:</p>
@@ -535,12 +542,12 @@ Traceability             (how far back, how complete)    ── §10; KF-3007 Te
 <p>Which technologies deliver these is an implementation decision. That they are delivered is not.</p>
 <hr />
 <h2 id="relationship-with-the-conformance-framework">13 · Relationship with the Conformance Framework</h2>
-<p>KF-3006 and KF-3007 are complementary and must not be confused:</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> and <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> are complementary and must not be confused:</p>
 <ul>
-<li><strong>KF-3006 defines how the architecture <em>operates</em></strong> — the relationships, behaviours, events, evidence and traceability through which a governed OKO is produced.</li>
-<li><strong>KF-3007 determines <em>whether that operation conforms</em></strong> — applying the four proportionate tests (Constitutional, Operational, Integrity, Reconstructability) to the traceability this model shows the architecture producing.</li>
+<li><strong><a href="kf-3006-architectural-integration-model.html">KF-3006</a> defines how the architecture <em>operates</em></strong> — the relationships, behaviours, events, evidence and traceability through which a governed OKO is produced.</li>
+<li><strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> determines <em>whether that operation conforms</em></strong> — applying the four proportionate tests (Constitutional, Operational, Integrity, Reconstructability) to the traceability this model shows the architecture producing.</li>
 </ul>
-<p>KF-3006 makes the machine run; KF-3007 inspects the run. The traceability layers of §10 are exactly the material KF-3007 Test 4 reconstructs, and the event-native evidence of §9 is exactly what its Test 3 grades. An architecture that integrates as described here is one that can be found conformant there — the two documents are built to meet.</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> makes the machine run; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> inspects the run. The traceability layers of §10 are exactly the material <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> Test 4 reconstructs, and the event-native evidence of §9 is exactly what its Test 3 grades. An architecture that integrates as described here is one that can be found conformant there — the two documents are built to meet.</p>
 <hr />
 <h2 id="emergence-and-architectural-completeness">14 · Emergence and Architectural Completeness</h2>
 <h3 id="governance-is-an-emergent-property">14.1 Governance Is an Emergent Property</h3>
@@ -567,13 +574,13 @@ Traceability             (how far back, how complete)    ── §10; KF-3007 Te
 <hr />
 <h3 id="relationship-to-subsequent-documents">Relationship to Subsequent Documents</h3>
 <ul>
-<li><strong>KF-3007 · Architectural Conformance Framework</strong> applies the four tests to the traceability this model produces.</li>
-<li><strong>KF-3008 · Architectural Authority Framework</strong> holds the detailed authority, delegation and permission model this document views integrately in §5.3–§5.4.</li>
-<li><strong>KF-3009 · Architectural Crosswalks and Traceability</strong> holds the exhaustive element-to-element mappings this document summarises.</li>
+<li><strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> · Architectural Conformance Framework</strong> applies the four tests to the traceability this model produces.</li>
+<li><strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a> · Architectural Authority Framework</strong> holds the detailed authority, delegation and permission model this document views integrately in §5.3–§5.4.</li>
+<li><strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> · Architectural Crosswalks and Traceability</strong> holds the exhaustive element-to-element mappings this document summarises.</li>
 <li><strong>KF-4000 · Knowledge Operating System</strong> instantiates these relationships, behaviours and patterns in a particular deployment.</li>
 </ul>
 <h3 id="closing-statement">Closing Statement</h3>
-<p>KF-3006 is where the Reference Architecture stops being a set of specifications and becomes a system. It adds no new element and no new obligation; it shows that the elements already defined compose into a single governed behaviour — capability through service, transition through gate, control through evidence, evidence through traceability, traceability through conformance — and that this behaviour preserves, at every step and every assurance class, the invariants that make the object trustworthy. It is the systems view that the series needed before it could be inspected, and the map the first vertical slice will follow.</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> is where the Reference Architecture stops being a set of specifications and becomes a system. It adds no new element and no new obligation; it shows that the elements already defined compose into a single governed behaviour — capability through service, transition through gate, control through evidence, evidence through traceability, traceability through conformance — and that this behaviour preserves, at every step and every assurance class, the invariants that make the object trustworthy. It is the systems view that the series needed before it could be inspected, and the map the first vertical slice will follow.</p>
 
 <nav class="prevnext"><a class="pv" href="kf-3005-lifecycle-and-control-architecture.html">&#8592; Lifecycle & Control</a><a class="nx" href="kf-3007-architectural-conformance-framework.html">Conformance &#8594;</a></nav>
 </main>

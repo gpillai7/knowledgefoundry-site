@@ -32,15 +32,22 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-3001 · Architectural Principles and Invariants</h1>
+<p class="deck">Governing the Design and Behaviour of the Knowledge Foundry Architecture</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.1</p>
 
-<h4 id="governing-the-design-and-behaviour-of-the-knowledge-foundry-architecture">Governing the Design and Behaviour of the Knowledge Foundry Architecture</h4>
-<p><em>Document Class: Reference Architecture · Parent Document: KF-3000 · Status: Draft · Version: 0.1</em></p>
 <pre class="text"><code>Canon (KF-1000)
         ↓
 Lifecycle and Practices (KF-2001 / KF-2002)
@@ -53,7 +60,7 @@ Capability, Service and Record Models (KF-3002–KF-3009)
         ↓
 Implementation (KF-4000)</code></pre>
 <h3 id="purpose">Purpose</h3>
-<p>KF-3000 defines the logical architecture required to realise the Knowledge Foundry methodology. KF-3001 defines the rules that govern the design and behaviour of that architecture.</p>
+<p><a href="kf-3000-reference-architecture.html">KF-3000</a> defines the logical architecture required to realise the Knowledge Foundry methodology. <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> defines the rules that govern the design and behaviour of that architecture.</p>
 <p>It establishes:</p>
 <ul>
 <li>the <strong>principles</strong> that guide architectural decisions;</li>
@@ -61,7 +68,7 @@ Implementation (KF-4000)</code></pre>
 <li>the <strong>constraints</strong> that govern interactions among architectural services;</li>
 <li>the <strong>mechanisms</strong> — architectural decision and conformance — by which those rules are applied and demonstrated.</li>
 </ul>
-<p>KF-3001 does not prescribe technologies, products, deployment topologies or implementation procedures. Its purpose is to ensure that different implementations may vary in form without departing from the constitutional and engineering obligations of the Knowledge Foundry.</p>
+<p><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> does not prescribe technologies, products, deployment topologies or implementation procedures. Its purpose is to ensure that different implementations may vary in form without departing from the constitutional and engineering obligations of the Knowledge Foundry.</p>
 <p>It does not repeat the Canon, restate the lifecycle, or reproduce the capability catalogue. Its role is narrower and more technical: to translate constitutional commitment and system obligation into durable rules for architectural design.</p>
 <h3 id="the-organising-grammar">The Organising Grammar</h3>
 <p>The document has three primary forms of architectural rule — principle, invariant and interaction constraint — and two mechanisms through which those rules are applied and demonstrated: architectural decision and conformance.</p>
@@ -72,7 +79,7 @@ Decision     →  applies the rules to architectural choices
 Conformance  →  demonstrates that the rules are satisfied</code></pre>
 <p>A principle permits several conforming designs; an invariant permits none that violate it within its scope; a constraint keeps an invariant true while the system operates; a decision chooses among designs that all satisfy the rules; and conformance shows that all of it holds. Keeping the three rule forms distinct — and separating them from the two mechanisms that apply and demonstrate them — is what stops the architecture drifting into either <strong>component compliance</strong> (possessing all the named services while letting them bypass one another) or <strong>technology compliance</strong> (using sophisticated tooling while failing to preserve warrant, authority, provenance or history).</p>
 <h3 id="relationship-to-upstream-documents">Relationship to Upstream Documents</h3>
-<p>KF-3001 is derived from the Canonical Principles of KF-1000; the lifecycle stages, gates and invariants of KF-2001; the engineering obligations and governance checkpoints of KF-2002; and the architectural capabilities, services and controls of KF-3000.</p>
+<p><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> is derived from the Canonical Principles of <a href="kf-1000-canon.html">KF-1000</a>; the lifecycle stages, gates and invariants of <a href="kf-2001-oko-lifecycle.html">KF-2001</a>; the engineering obligations and governance checkpoints of <a href="kf-2002-engineering-practices.html">KF-2002</a>; and the architectural capabilities, services and controls of <a href="kf-3000-reference-architecture.html">KF-3000</a>.</p>
 <p>The derivation chain is:</p>
 <pre class="text"><code>Canonical Principle
         ↓
@@ -85,11 +92,11 @@ Architectural Principle
 System Invariant or Interaction Constraint
         ↓
 Conformance Evidence</code></pre>
-<p><strong>Admission test.</strong> A rule belongs in KF-3001 only where violating it could allow an implementation to reproduce the visible structure of KF-3000 while defeating its intended governance, epistemic or historical function. A rule that fails this test is a generic architecture slogan, a restated Canon principle, a data model, a security standard or an implementation guide — and belongs elsewhere.</p>
+<p><strong>Admission test.</strong> A rule belongs in <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> only where violating it could allow an implementation to reproduce the visible structure of <a href="kf-3000-reference-architecture.html">KF-3000</a> while defeating its intended governance, epistemic or historical function. A rule that fails this test is a generic architecture slogan, a restated Canon principle, a data model, a security standard or an implementation guide — and belongs elsewhere.</p>
 <hr />
 <h2 id="part-i-foundations">Part I · Foundations</h2>
 <h3 id="architectural-rule-types">1. Architectural Rule Types</h3>
-<p>KF-3001 defines three forms of architectural rule.</p>
+<p><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> defines three forms of architectural rule.</p>
 <h4 id="architectural-principle">1.1 Architectural Principle</h4>
 <p>A durable design rule that guides architectural choices. A principle constrains design judgement, permits more than one conforming solution, applies across capabilities and services, and is evaluated through the decisions it shapes.</p>
 <h4 id="system-invariant">1.2 System Invariant</h4>
@@ -130,14 +137,14 @@ System Invariants</code></pre>
 <li>implementation convenience.</li>
 </ol>
 <p>A lower-order rule may not be used to defeat a higher-order obligation.</p>
-<p>Applicable law and binding regulation remain external constraints on the architecture and cannot be displaced by this precedence order. KF-3001 governs architectural precedence, not legal conformance.</p>
+<p>Applicable law and binding regulation remain external constraints on the architecture and cannot be displaced by this precedence order. <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> governs architectural precedence, not legal conformance.</p>
 <hr />
 <h2 id="part-ii-architectural-principles">Part II · Architectural Principles</h2>
 <h3 id="family-a-derivation-and-sufficiency">Family A · Derivation and Sufficiency</h3>
 <h4 id="ap-01-obligation-derived-architecture">AP-01 · Obligation-Derived Architecture</h4>
 <p><strong>Statement.</strong> Every architectural element must be justified by an upstream Canonical, lifecycle, practice, artefact, checkpoint or conformance obligation.</p>
 <p><strong>Rationale.</strong> The architecture exists to realise the methodology, not to reproduce familiar technology categories.</p>
-<p><strong>Upstream basis.</strong> KF-1000; KF-2001; KF-2002; the KF-3000 Architectural Admission Test.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-1000-canon.html">KF-1000</a>; <a href="kf-2001-oko-lifecycle.html">KF-2001</a>; <a href="kf-2002-engineering-practices.html">KF-2002</a>; the <a href="kf-3000-reference-architecture.html">KF-3000</a> Architectural Admission Test.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>every capability and service carries an upstream basis;</li>
@@ -155,7 +162,7 @@ System Invariants</code></pre>
 <h4 id="ap-02-necessary-and-proportionate-architecture">AP-02 · Necessary and Proportionate Architecture</h4>
 <p><strong>Statement.</strong> The architecture includes every responsibility necessary to discharge its obligations reliably and excludes responsibilities that cannot be justified by an upstream obligation, dependency or assurance need.</p>
 <p><strong>Rationale.</strong> Architectural economy means proportionate commitment, not minimum component count. A capability that makes several obligations reliable, scalable or independently verifiable is justified even where it maps to no single lifecycle step.</p>
-<p><strong>Upstream basis.</strong> The method–architecture–implementation separation of KF-1000 and KF-3000.</p>
+<p><strong>Upstream basis.</strong> The method–architecture–implementation separation of <a href="kf-1000-canon.html">KF-1000</a> and <a href="kf-3000-reference-architecture.html">KF-3000</a>.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>capabilities are logical and non-duplicative;</li>
@@ -166,10 +173,10 @@ System Invariants</code></pre>
 <h4 id="ap-03-conformance-over-structural-resemblance">AP-03 · Conformance over Structural Resemblance</h4>
 <p><strong>Statement.</strong> Architectural conformance is established by discharged obligations and preserved invariants, not by reproducing a particular component diagram.</p>
 <p><strong>Rationale.</strong> Different implementations may realise the same logical architecture through different arrangements of people, software and models.</p>
-<p><strong>Upstream basis.</strong> KF-3000 Conformance Architecture.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-3000-reference-architecture.html">KF-3000</a> Conformance Architecture.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
-<li>conformance is judged against §19 of KF-3000 and the invariants of this document, not against a reference topology;</li>
+<li>conformance is judged against §19 of <a href="kf-3000-reference-architecture.html">KF-3000</a> and the invariants of this document, not against a reference topology;</li>
 <li>two structurally dissimilar implementations may both conform;</li>
 <li>resemblance to the service catalogue is neither necessary nor sufficient for conformance.</li>
 </ul>
@@ -177,12 +184,12 @@ System Invariants</code></pre>
 <h4 id="ap-04-preserve-semantic-distinctions">AP-04 · Preserve Semantic Distinctions</h4>
 <p><strong>Statement.</strong> Concepts that carry different governance or epistemic meanings remain logically distinct even where they share a physical representation. At minimum, the architecture distinguishes: object from representation; object from version; version from release; lifecycle state from epistemic status; justification from acceptance; authority from access permission; application from evolution; retirement from deletion; and service responsibility from human accountability.</p>
 <p><strong>Rationale.</strong> Collapsing these distinctions permits silent bypass of lifecycle and governance obligations.</p>
-<p><strong>Upstream basis.</strong> KF-3000 §2 (Architectural Unit) and the separation-of-concerns invariant.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-3000-reference-architecture.html">KF-3000</a> §2 (Architectural Unit) and the separation-of-concerns invariant.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>a shared store may hold two concepts only if each remains independently addressable and changeable;</li>
 <li>no operation may alter one distinguished concept as an undocumented side effect of altering another;</li>
-<li>the information model of KF-3004 must preserve each distinction explicitly.</li>
+<li>the information model of <a href="kf-3004-information-and-record-model.html">KF-3004</a> must preserve each distinction explicitly.</li>
 </ul>
 <p><strong>Prohibited interpretations.</strong></p>
 <ul>
@@ -192,7 +199,7 @@ System Invariants</code></pre>
 <h4 id="ap-05-separate-knowledge-content-from-its-warrant">AP-05 · Separate Knowledge Content from Its Warrant</h4>
 <p><strong>Statement.</strong> The represented content of an object remains distinguishable from the evidence, rationale, assumptions, evaluation and acceptance that warrant its use.</p>
 <p><strong>Rationale.</strong> Warrant and content change on different schedules and under different authority; fusing them lets a content edit inherit stale warrant, or a warrant change mutate content.</p>
-<p><strong>Upstream basis.</strong> KF-2002 B1, B2, C1.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> B1, B2, C1.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>a content change does not silently inherit prior warrant;</li>
@@ -202,7 +209,7 @@ System Invariants</code></pre>
 <h4 id="ap-06-separate-execution-from-authority">AP-06 · Separate Execution from Authority</h4>
 <p><strong>Statement.</strong> The ability to perform an operation does not imply authority to approve it.</p>
 <p><strong>Rationale.</strong> Execution capacity is a technical property; authority is an institutional one. Conflating them lets whatever can act also decide.</p>
-<p><strong>Upstream basis.</strong> KF-2002 C1, C2; the human-accountability invariant.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> C1, C2; the human-accountability invariant.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>automated execution may support evaluation, transition or release;</li>
@@ -217,7 +224,7 @@ System Invariants</code></pre>
 <h4 id="ap-07-governance-is-continuous">AP-07 · Governance Is Continuous</h4>
 <p><strong>Statement.</strong> Governance conditions remain in force throughout operational life rather than being treated as one-time admission checks.</p>
 <p><strong>Rationale.</strong> Legitimacy decays; a check passed once does not stay passed.</p>
-<p><strong>Upstream basis.</strong> KF-2002 C2; the Govern standing gate; Canon Principle IV.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> C2; the Govern standing gate; Canon Principle IV.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>stewardship, review, compliance and acceptance validity are monitored;</li>
@@ -228,7 +235,7 @@ System Invariants</code></pre>
 <p><strong>Statement.</strong> Every material governance decision remains attributable to an identifiable human authority or accountable body.</p>
 <p><strong>Rationale.</strong> Computational systems may act, recommend and record, but they cannot absorb institutional accountability.</p>
 <p><strong>Definition.</strong> An <strong>accountable body</strong> is a formally constituted human decision-making body whose membership, mandate and decision record are recoverable. A system, an anonymous organisational function or an unminuted committee is not an accountable body.</p>
-<p><strong>Upstream basis.</strong> KF-1000 Principle III and the human-accountability invariant; KF-2002 C1.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-1000-canon.html">KF-1000</a> Principle III and the human-accountability invariant; <a href="kf-2002-engineering-practices.html">KF-2002</a> C1.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>acceptance, stewardship, release, suspension and retirement each resolve to a human authority or accountable body;</li>
@@ -242,7 +249,7 @@ System Invariants</code></pre>
 <h4 id="ap-09-control-must-produce-evidence">AP-09 · Control Must Produce Evidence</h4>
 <p><strong>Statement.</strong> Every material governance action and transition leaves an inspectable record sufficient to reconstruct what occurred, why it occurred and under whose authority.</p>
 <p><strong>Rationale.</strong> A control that leaves no evidence cannot be audited and therefore cannot be trusted to have operated.</p>
-<p><strong>Upstream basis.</strong> KF-2001 transition rules; KF-2002 artefact obligations.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2001-oko-lifecycle.html">KF-2001</a> transition rules; <a href="kf-2002-engineering-practices.html">KF-2002</a> artefact obligations.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>controls are evidentiary as well as preventive;</li>
@@ -253,7 +260,7 @@ System Invariants</code></pre>
 <h4 id="ap-10-identity-persists-through-change">AP-10 · Identity Persists Through Change</h4>
 <p><strong>Statement.</strong> Changes to representation, state, warrant or operational form do not silently alter object identity.</p>
 <p><strong>Rationale.</strong> Identity is the thread on which history is strung; if it moves, lineage breaks.</p>
-<p><strong>Upstream basis.</strong> KF-2002 A1, C3.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> A1, C3.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>versions inherit object identity;</li>
@@ -263,7 +270,7 @@ System Invariants</code></pre>
 <h4 id="ap-11-change-is-additive-to-history">AP-11 · Change Is Additive to History</h4>
 <p><strong>Statement.</strong> Governed change adds to the historical record rather than replacing it.</p>
 <p><strong>Rationale.</strong> Trust in a knowledge system is a property of its transitions over time; overwriting the past destroys the evidence of trustworthiness.</p>
-<p><strong>Upstream basis.</strong> KF-2002 C3, D3; Canon Principle VII.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> C3, D3; Canon Principle VII.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>prior versions and decisions remain recoverable;</li>
@@ -274,7 +281,7 @@ System Invariants</code></pre>
 <h4 id="ap-12-dependency-aware-evolution">AP-12 · Dependency-Aware Evolution</h4>
 <p><strong>Statement.</strong> Change to an object is assessed in relation to the objects, actionable forms and applications that depend upon it.</p>
 <p><strong>Rationale.</strong> A correctly versioned object can still leave its dependants silently inconsistent; provenance is the connective tissue that makes changed states, decisions and lineages reconstructable, and dependency is the reason a local change is never only local.</p>
-<p><strong>Upstream basis.</strong> KF-2002 C3; KF-L001 Literature Landscape (B04 · Governing Knowledge Change).</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> C3; KF-L001 Literature Landscape (B04 · Governing Knowledge Change).</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>dependencies are represented explicitly;</li>
@@ -285,8 +292,8 @@ System Invariants</code></pre>
 <h3 id="family-e-modality-implementation-and-failure">Family E · Modality, Implementation and Failure</h3>
 <h4 id="ap-13-modality-independent-obligation">AP-13 · Modality-Independent Obligation</h4>
 <p><strong>Statement.</strong> Governance and epistemic obligations apply regardless of whether knowledge is represented, interpreted or applied through human judgement, symbolic structures, parametric models or hybrid systems.</p>
-<p><strong>Rationale.</strong> The computational substrate may change while the epistemic obligations remain (KF-1000 Principle V).</p>
-<p><strong>Upstream basis.</strong> KF-1000 Principle V (modality independence); KF-L001 (B05 · Foundation Models and the Knowledge Sciences).</p>
+<p><strong>Rationale.</strong> The computational substrate may change while the epistemic obligations remain (<a href="kf-1000-canon.html">KF-1000</a> Principle V).</p>
+<p><strong>Upstream basis.</strong> <a href="kf-1000-canon.html">KF-1000</a> Principle V (modality independence); KF-L001 (B05 · Foundation Models and the Knowledge Sciences).</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>the architecture does not assume all knowledge is explicitly inspectable in the same way;</li>
@@ -301,7 +308,7 @@ System Invariants</code></pre>
 <h4 id="ap-14-logical-before-physical-design">AP-14 · Logical before Physical Design</h4>
 <p><strong>Statement.</strong> Logical responsibility is defined before selecting physical components, technologies or deployment patterns.</p>
 <p><strong>Rationale.</strong> Technology chosen ahead of responsibility tends to dictate — and quietly narrow — the responsibilities the architecture will admit.</p>
-<p><strong>Upstream basis.</strong> The logical-architecture boundary of KF-3000.</p>
+<p><strong>Upstream basis.</strong> The logical-architecture boundary of <a href="kf-3000-reference-architecture.html">KF-3000</a>.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>services are specified through responsibilities, inputs, outputs, records and controls;</li>
@@ -312,7 +319,7 @@ System Invariants</code></pre>
 <h4 id="ap-15-humans-and-machines-form-one-governed-system">AP-15 · Humans and Machines Form One Governed System</h4>
 <p><strong>Statement.</strong> Human and computational work are architected as one governed system rather than as separate formal and informal layers.</p>
 <p><strong>Rationale.</strong> An informal human layer outside the governed system is where provenance, attribution and accountability are lost.</p>
-<p><strong>Upstream basis.</strong> KF-1000 Principle III; the human–AI governance obligations of the Canon.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-1000-canon.html">KF-1000</a> Principle III; the human–AI governance obligations of the Canon.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>human decisions become governed records;</li>
@@ -323,7 +330,7 @@ System Invariants</code></pre>
 <h4 id="ap-16-explicit-failure-and-degraded-state">AP-16 · Explicit Failure and Degraded State</h4>
 <p><strong>Statement.</strong> The architecture represents failure, uncertainty and degraded governance explicitly rather than silently treating absence of evidence as evidence of conformance.</p>
 <p><strong>Rationale.</strong> A governed system must distinguish “condition satisfied” from “condition not checked”, “evidence unavailable” and “control failed”. These are different states, and collapsing them into an implicit pass is how silent failure enters a system that otherwise looks conformant.</p>
-<p><strong>Upstream basis.</strong> KF-2002 governance checkpoints; KF-3000 control architecture (detective and corrective controls); the continuous-conformance invariant.</p>
+<p><strong>Upstream basis.</strong> <a href="kf-2002-engineering-practices.html">KF-2002</a> governance checkpoints; <a href="kf-3000-reference-architecture.html">KF-3000</a> control architecture (detective and corrective controls); the continuous-conformance invariant.</p>
 <p><strong>Architectural consequences.</strong></p>
 <ul>
 <li>gate outcomes include pass, fail, pending and indeterminate where appropriate;</li>
@@ -426,7 +433,7 @@ System Invariants</code></pre>
 <h4 id="ic-13-authority-is-not-permission">IC-13 · Authority Is Not Permission</h4>
 <p>Possession of technical permission does not confer evaluation, acceptance, release, stewardship or retirement authority. <em>Protects:</em> INV-09, INV-11; AP-06. <em>Participants:</em> SVC-16, SVC-07. <em>Required control:</em> permission assignments and authority assignments are separate records.</p>
 <h4 id="ic-14-least-necessary-alteration">IC-14 · Least Necessary Alteration</h4>
-<p>A service may alter only the records and states assigned to its logical responsibility. <em>Protects:</em> INV-11. <em>Participants:</em> all services. <em>Required control:</em> each record class names its authoritative maintainer (KF-3000 §24); alteration outside it is rejected and logged.</p>
+<p>A service may alter only the records and states assigned to its logical responsibility. <em>Protects:</em> INV-11. <em>Participants:</em> all services. <em>Required control:</em> each record class names its authoritative maintainer (<a href="kf-3000-reference-architecture.html">KF-3000</a> §24); alteration outside it is rejected and logged.</p>
 <h4 id="ic-15-material-administrative-action">IC-15 · Material Administrative Action</h4>
 <p>Changes to authority, permissions, stewardship, retention, release or governance state are recorded and attributable. <em>Protects:</em> INV-09, INV-11. <em>Participants:</em> SVC-16 (with SVC-08). <em>Required control:</em> an Access and Administrative Action Log entry per material change.</p>
 <h4 id="ic-16-automated-authority-boundary">IC-16 · Automated Authority Boundary</h4>
@@ -439,16 +446,16 @@ System Invariants</code></pre>
 <h4 id="ic-19-exception-visibility">IC-19 · Exception Visibility</h4>
 <p>A failed control, waived requirement or unresolved exception remains visible until corrected, formally accepted as risk, or rendered irrelevant by retirement. <em>Protects:</em> INV-21, INV-24. <em>Participants:</em> SVC-15 (with SVC-08). <em>Required control:</em> an Exception Register entry persists until one of the three closure conditions is recorded.</p>
 <h4 id="ic-23-proportionate-discharge">IC-23 · Proportionate Discharge</h4>
-<p>The rigour to which a material obligation is discharged — gate exit depth, control strength, required evidence and reconstruction depth — is a function of the object’s assurance class (KF-2003), applied at the release / scope-of-reliance to which the class attaches. Higher assurance classes require deeper discharge; lower classes require less. <strong>The lifecycle invariants are not graded:</strong> single identity, attributable transitions, justified transitions, inspectable transitions, provenance and preserved lineage hold identically at every class. Only the depth of evidence and review scales. <em>Protects:</em> AP-02 (Necessary and Proportionate Architecture); the six lifecycle invariants (ungraded). <em>Participants:</em> SVC-08, SVC-18, and every gate-executing service. <em>Required control:</em> each gate and control resolves the object’s assurance class and applies the minimum obligations KF-2003 fixes for that class, never less than the ungraded-invariant floor.</p>
+<p>The rigour to which a material obligation is discharged — gate exit depth, control strength, required evidence and reconstruction depth — is a function of the object’s assurance class (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>), applied at the release / scope-of-reliance to which the class attaches. Higher assurance classes require deeper discharge; lower classes require less. <strong>The lifecycle invariants are not graded:</strong> single identity, attributable transitions, justified transitions, inspectable transitions, provenance and preserved lineage hold identically at every class. Only the depth of evidence and review scales. <em>Protects:</em> AP-02 (Necessary and Proportionate Architecture); the six lifecycle invariants (ungraded). <em>Participants:</em> SVC-08, SVC-18, and every gate-executing service. <em>Required control:</em> each gate and control resolves the object’s assurance class and applies the minimum obligations <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> fixes for that class, never less than the ungraded-invariant floor.</p>
 <h3 id="provenance-and-record-constraints">17. Provenance and Record Constraints</h3>
 <h4 id="ic-20-provenance-continuity">IC-20 · Provenance Continuity</h4>
 <p>Every material hand-off between actors or services preserves origin, derivation and attribution links. <em>Protects:</em> INV-04, INV-19. <em>Participants:</em> SVC-03; all services at hand-off. <em>Required control:</em> provenance links are carried through, not regenerated, at each hand-off.</p>
 <h4 id="ic-21-append-only-correction">IC-21 · Append-Only Correction</h4>
 <p>A material governed record may be corrected, but the original record and the correction relationship remain recoverable. <em>Protects:</em> INV-12, INV-14. <em>Participants:</em> all services maintaining records; SVC-10 for versioned corrections. <em>Required control:</em> corrections append; they do not overwrite.</p>
 <h4 id="ic-22-time-semantics-preservation">IC-22 · Time Semantics Preservation</h4>
-<p>Every governed record carries recorded time and, where relevant, effective time; where the underlying event occurred at a third distinct time, event time is also preserved. (<em>Recorded time</em> is when the system received the fact; <em>effective time</em> is when it is valid in the represented domain; <em>event time</em> is when the real-world event occurred.) <em>Protects:</em> INV-14; the Common Record Properties of KF-3000 §14.8; aligns with KF-3004. <em>Participants:</em> all services. <em>Required control:</em> recorded time is mandatory on every governed record; effective and event time are recorded where they differ.</p>
+<p>Every governed record carries recorded time and, where relevant, effective time; where the underlying event occurred at a third distinct time, event time is also preserved. (<em>Recorded time</em> is when the system received the fact; <em>effective time</em> is when it is valid in the represented domain; <em>event time</em> is when the real-world event occurred.) <em>Protects:</em> INV-14; the Common Record Properties of <a href="kf-3000-reference-architecture.html">KF-3000</a> §14.8; aligns with <a href="kf-3004-information-and-record-model.html">KF-3004</a>. <em>Participants:</em> all services. <em>Required control:</em> recorded time is mandatory on every governed record; effective and event time are recorded where they differ.</p>
 <h4 id="ic-24-event-native-evidence">IC-24 · Event-Native Evidence</h4>
-<p>Conformance evidence is emitted by the governed act, not authored as a separate artefact. The record a governed act produces is its conformance evidence: an acceptance record evidences acceptance, a transition record is the audit event, a validation is the test result, a provenance link evidences derivation, a supersession link evidences lineage. A distinct evidence artefact is admitted only where the act’s own record cannot carry the required proof. This constraint bounds the cost of assurance and prevents the accumulation of evidence-about-evidence. <em>Protects:</em> INV-22; the conformance-evidence obligation (CTRL-CNF-01, KF-3005). <em>Participants:</em> all services producing governed records; SVC-18 reads without re-authoring. <em>Required control:</em> the governed act’s own record is registered as the conformance evidence for that act; a separate artefact is produced only against a recorded justification that the act’s record is insufficient. Aligns with KF-3004 §5.2.</p>
+<p>Conformance evidence is emitted by the governed act, not authored as a separate artefact. The record a governed act produces is its conformance evidence: an acceptance record evidences acceptance, a transition record is the audit event, a validation is the test result, a provenance link evidences derivation, a supersession link evidences lineage. A distinct evidence artefact is admitted only where the act’s own record cannot carry the required proof. This constraint bounds the cost of assurance and prevents the accumulation of evidence-about-evidence. <em>Protects:</em> INV-22; the conformance-evidence obligation (CTRL-CNF-01, <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>). <em>Participants:</em> all services producing governed records; SVC-18 reads without re-authoring. <em>Required control:</em> the governed act’s own record is registered as the conformance evidence for that act; a separate artefact is produced only against a recorded justification that the act’s record is insufficient. Aligns with <a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2.</p>
 <hr />
 <h2 id="part-v-architectural-decision-rules">Part V · Architectural Decision Rules</h2>
 <h3 id="decision-record-requirement">18. Decision Record Requirement</h3>
@@ -458,7 +465,7 @@ System Invariants</code></pre>
 <ul>
 <li><strong>19.1 Obligation test.</strong> Which upstream obligation does the decision support?</li>
 <li><strong>19.2 Invariant test.</strong> Could the decision cause any invariant to cease to hold within its scope?</li>
-<li><strong>19.3 Separation test.</strong> Does the decision collapse concepts that KF-3000 requires to remain distinct?</li>
+<li><strong>19.3 Separation test.</strong> Does the decision collapse concepts that <a href="kf-3000-reference-architecture.html">KF-3000</a> requires to remain distinct?</li>
 <li><strong>19.4 Accountability test.</strong> Does it obscure who is answerable?</li>
 <li><strong>19.5 Traceability test.</strong> Can the resulting actions and records be reconstructed?</li>
 <li><strong>19.6 Reversibility test.</strong> Can the decision be revised without destroying history or lineage?</li>
@@ -483,7 +490,7 @@ System Invariants</code></pre>
 <h3 id="interaction-conformance">23. Interaction Conformance</h3>
 <p>Interaction conformance is demonstrated through service responsibility matrices; logical service contracts; transition and authorisation tests; audit records; prohibited-path testing; and evidence that services cannot silently bypass the required interaction constraints.</p>
 <h3 id="required-conformance-artefacts">24. Required Conformance Artefacts</h3>
-<p>A conforming architecture maintains: an Architectural Principle Register; an Invariant Register; a Service Interaction Constraint Register; an Assurance Class Register (recording each release’s assigned class and overlays, per KF-2003); an Architectural Decision Record Register; an Exception Register; an Invariant Test Register; a Principle-to-Capability crosswalk; an Invariant-to-Control crosswalk; and an Interaction Constraint-to-Service crosswalk.</p>
+<p>A conforming architecture maintains: an Architectural Principle Register; an Invariant Register; a Service Interaction Constraint Register; an Assurance Class Register (recording each release’s assigned class and overlays, per <a href="kf-2003-materiality-and-assurance.html">KF-2003</a>); an Architectural Decision Record Register; an Exception Register; an Invariant Test Register; a Principle-to-Capability crosswalk; an Invariant-to-Control crosswalk; and an Interaction Constraint-to-Service crosswalk.</p>
 <hr />
 <h2 id="part-vii-crosswalks">Part VII · Crosswalks</h2>
 <h3 id="principle-to-upstream-crosswalk">25. Principle-to-Upstream Crosswalk</h3>
@@ -497,7 +504,7 @@ System Invariants</code></pre>
 <tbody>
 <tr class="odd">
 <td>AP-01</td>
-<td>KF-1000; KF-2001; KF-2002; KF-3000 Admission Test</td>
+<td><a href="kf-1000-canon.html">KF-1000</a>; <a href="kf-2001-oko-lifecycle.html">KF-2001</a>; <a href="kf-2002-engineering-practices.html">KF-2002</a>; <a href="kf-3000-reference-architecture.html">KF-3000</a> Admission Test</td>
 </tr>
 <tr class="even">
 <td>AP-02</td>
@@ -505,59 +512,59 @@ System Invariants</code></pre>
 </tr>
 <tr class="odd">
 <td>AP-03</td>
-<td>KF-3000 Conformance Architecture</td>
+<td><a href="kf-3000-reference-architecture.html">KF-3000</a> Conformance Architecture</td>
 </tr>
 <tr class="even">
 <td>AP-04</td>
-<td>KF-3000 Architectural Unit (§2)</td>
+<td><a href="kf-3000-reference-architecture.html">KF-3000</a> Architectural Unit (§2)</td>
 </tr>
 <tr class="odd">
 <td>AP-05</td>
-<td>KF-2002 B1, B2, C1</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> B1, B2, C1</td>
 </tr>
 <tr class="even">
 <td>AP-06</td>
-<td>KF-2002 C1, C2; human-accountability invariant</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> C1, C2; human-accountability invariant</td>
 </tr>
 <tr class="odd">
 <td>AP-07</td>
-<td>KF-2002 C2; Govern standing gate</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> C2; Govern standing gate</td>
 </tr>
 <tr class="even">
 <td>AP-08</td>
-<td>KF-1000 Principle III; KF-2002 C1</td>
+<td><a href="kf-1000-canon.html">KF-1000</a> Principle III; <a href="kf-2002-engineering-practices.html">KF-2002</a> C1</td>
 </tr>
 <tr class="odd">
 <td>AP-09</td>
-<td>KF-2001 transition rules; KF-2002 artefact obligations</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a> transition rules; <a href="kf-2002-engineering-practices.html">KF-2002</a> artefact obligations</td>
 </tr>
 <tr class="even">
 <td>AP-10</td>
-<td>KF-2002 A1, C3</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> A1, C3</td>
 </tr>
 <tr class="odd">
 <td>AP-11</td>
-<td>KF-2002 C3, D3; Canon Principle VII</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> C3, D3; Canon Principle VII</td>
 </tr>
 <tr class="even">
 <td>AP-12</td>
-<td>KF-2002 C3; KF-L001 (B04)</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> C3; KF-L001 (B04)</td>
 </tr>
 <tr class="odd">
 <td>AP-13</td>
-<td>KF-1000 Principle V; KF-L001 (B05)</td>
+<td><a href="kf-1000-canon.html">KF-1000</a> Principle V; KF-L001 (B05)</td>
 </tr>
 <tr class="even">
 <td>AP-14</td>
-<td>KF-3000 logical-architecture boundary</td>
+<td><a href="kf-3000-reference-architecture.html">KF-3000</a> logical-architecture boundary</td>
 </tr>
 <tr class="odd">
 <td>AP-15</td>
-<td>KF-1000 Principle III; human–AI governance obligations</td>
+<td><a href="kf-1000-canon.html">KF-1000</a> Principle III; human–AI governance obligations</td>
 </tr>
 <tr class="even">
 <td>AP-16</td>
-<td>KF-2002 governance checkpoints; KF-3000 control architecture</td>
+<td><a href="kf-2002-engineering-practices.html">KF-2002</a> governance checkpoints; <a href="kf-3000-reference-architecture.html">KF-3000</a> control architecture</td>
 </tr>
 </tbody>
 </table>
@@ -601,7 +608,7 @@ System Invariants</code></pre>
 </tbody>
 </table>
 <h3 id="interaction-constraint-to-service-crosswalk">27. Interaction-Constraint-to-Service Crosswalk</h3>
-<p>Each constraint names the service that principally enforces it and the services that participate. (The detailed service contracts that carry these constraints are specified in KF-3003.)</p>
+<p>Each constraint names the service that principally enforces it and the services that participate. (The detailed service contracts that carry these constraints are specified in <a href="kf-3003-service-architecture.html">KF-3003</a>.)</p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -730,20 +737,20 @@ System Invariants</code></pre>
 </table>
 <hr />
 <h3 id="relationship-to-subsequent-documents">Relationship to Subsequent Documents</h3>
-<p>KF-3001 governs the documents that follow.</p>
+<p><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> governs the documents that follow.</p>
 <ul>
-<li><strong>KF-3002</strong> must derive capabilities consistent with these principles and sufficient to preserve all system invariants and enforce all interaction constraints.</li>
-<li><strong>KF-3003</strong> must define service responsibilities and contracts that enforce the interaction constraints, and complete the constraint-to-contract detail behind §27.</li>
-<li><strong>KF-3004</strong> must define records capable of proving invariant and transition conformance, and fix the recorded/effective/event time semantics of IC-22.</li>
-<li><strong>KF-3005</strong> must encode gates and lifecycle controls without permitting bypass, including the transactional binding of gate decision and transition (IC-02).</li>
-<li><strong>KF-3008</strong> must define authority and accountability, kept distinct from the technical permission assigned by SVC-16.</li>
-<li><strong>KF-3007</strong> must define tests and evidence for principle, invariant and interaction conformance.</li>
-<li><strong>KF-3009</strong> must preserve end-to-end traceability across all mappings.</li>
+<li><strong><a href="kf-3002-capability-model.html">KF-3002</a></strong> must derive capabilities consistent with these principles and sufficient to preserve all system invariants and enforce all interaction constraints.</li>
+<li><strong><a href="kf-3003-service-architecture.html">KF-3003</a></strong> must define service responsibilities and contracts that enforce the interaction constraints, and complete the constraint-to-contract detail behind §27.</li>
+<li><strong><a href="kf-3004-information-and-record-model.html">KF-3004</a></strong> must define records capable of proving invariant and transition conformance, and fix the recorded/effective/event time semantics of IC-22.</li>
+<li><strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></strong> must encode gates and lifecycle controls without permitting bypass, including the transactional binding of gate decision and transition (IC-02).</li>
+<li><strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> must define authority and accountability, kept distinct from the technical permission assigned by SVC-16.</li>
+<li><strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> must define tests and evidence for principle, invariant and interaction conformance.</li>
+<li><strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></strong> must preserve end-to-end traceability across all mappings.</li>
 </ul>
 <p>KF-4000 may choose technologies and physical designs freely within these boundaries.</p>
 <h3 id="closing-statement">Closing Statement</h3>
 <p>Architectural freedom exists within constitutional constraint. The Knowledge Foundry Reference Architecture does not require every implementation to look the same. It requires every implementation to preserve the same essential distinctions, responsibilities, histories and lines of accountability.</p>
-<p>KF-3001 defines those non-negotiable conditions, and fixes the grammar — principle, invariant, constraint; applied by decision, shown by conformance — in which the remainder of the architecture series is written.</p>
+<p><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> defines those non-negotiable conditions, and fixes the grammar — principle, invariant, constraint; applied by decision, shown by conformance — in which the remainder of the architecture series is written.</p>
 
 <nav class="prevnext"><a class="pv" href="kf-3000-reference-architecture.html">&#8592; Reference Architecture</a><a class="nx" href="kf-3002-capability-model.html">Capability Model &#8594;</a></nav>
 </main>

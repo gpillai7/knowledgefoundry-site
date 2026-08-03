@@ -56,3 +56,6 @@ a{color:var(--patina);text-decoration:none}a:hover{text-decoration:underline}
  .sidewrap[open]{padding-bottom:16px}
  .article{padding-top:22px}
 }
+.article .deck{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.4;color:var(--graphite);margin:.1em 0 .5em;font-weight:400}
+.article .docmeta{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);margin:0 0 1.8em}
+.article a[href$=".html"]{border-bottom:1px solid rgba(56,87,75,.35);white-space:nowrap}

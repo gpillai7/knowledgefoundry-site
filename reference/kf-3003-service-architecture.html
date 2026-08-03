@@ -32,15 +32,22 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-3003 · Service Architecture</h1>
+<p class="deck">The Logical Services Through Which Capabilities Are Exposed and Governed</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.2</p>
 
-<h4 id="the-logical-services-through-which-capabilities-are-exposed-and-governed">The Logical Services Through Which Capabilities Are Exposed and Governed</h4>
-<p><em>Document Class: Reference Architecture · Parent Document: KF-3000 · Governed By: KF-3001 and KF-3002 · Status: Draft · Version: 0.2</em></p>
 <pre class="text"><code>Reference Architecture (KF-3000)
         ↓
 Architectural Rules (KF-3001)
@@ -55,27 +62,27 @@ Lifecycle &amp; Control (KF-3005)
         ↓
 Implementation (KF-4000)</code></pre>
 <h3 id="purpose">Purpose</h3>
-<p>KF-3002 defines <em>what</em> a governed knowledge architecture must be able to do. KF-3003 defines <em>through which logical services those abilities are exposed, coordinated and governed</em> — the execution architecture of the Knowledge Foundry.</p>
-<p>KF-3003 introduces no new obligations. It does not weaken an invariant, relax an interaction constraint, or select a technology. Its single question is:</p>
+<p><a href="kf-3002-capability-model.html">KF-3002</a> defines <em>what</em> a governed knowledge architecture must be able to do. <a href="kf-3003-service-architecture.html">KF-3003</a> defines <em>through which logical services those abilities are exposed, coordinated and governed</em> — the execution architecture of the Knowledge Foundry.</p>
+<p><a href="kf-3003-service-architecture.html">KF-3003</a> introduces no new obligations. It does not weaken an invariant, relax an interaction constraint, or select a technology. Its single question is:</p>
 <blockquote>
 <p><em>Through which logical services are the capabilities exposed, coordinated and governed, without violating any interaction constraint?</em></p>
 </blockquote>
-<p>A logical service is a stable responsibility exposed to authorised actors and other services through defined operations, information objects and controls. A service may later be realised by software, assigned human work, or a governed combination of both; KF-3003 fixes the responsibility, not the realisation.</p>
+<p>A logical service is a stable responsibility exposed to authorised actors and other services through defined operations, information objects and controls. A service may later be realised by software, assigned human work, or a governed combination of both; <a href="kf-3003-service-architecture.html">KF-3003</a> fixes the responsibility, not the realisation.</p>
 <h3 id="relationship-to-upstream-documents">Relationship to Upstream Documents</h3>
-<p>KF-3003 is bounded on three sides and may not exceed any of them.</p>
+<p><a href="kf-3003-service-architecture.html">KF-3003</a> is bounded on three sides and may not exceed any of them.</p>
 <ul>
-<li>From <strong>KF-3002</strong>, it inherits the twenty-four capabilities and their typed relationships. Every service realises one or more capabilities; no service exists without a capability basis.</li>
-<li>From <strong>KF-3001</strong>, it inherits the twenty-two interaction constraints. Every constraint must be enforced at a defined service boundary; a service architecture that cannot enforce a constraint is non-conforming.</li>
-<li>From <strong>KF-3000</strong>, it inherits the intent of the service catalogue. KF-3000 sketched a provisional service list and explicitly deferred the definitive catalogue to KF-3003. This document establishes that definitive catalogue — nineteen logical services — and where it refines KF-3000’s provisional numbering, KF-3003 is authoritative and KF-3000’s §11–12 list and §22–24 crosswalks are read as pointing here.</li>
+<li>From <strong><a href="kf-3002-capability-model.html">KF-3002</a></strong>, it inherits the twenty-four capabilities and their typed relationships. Every service realises one or more capabilities; no service exists without a capability basis.</li>
+<li>From <strong><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a></strong>, it inherits the twenty-two interaction constraints. Every constraint must be enforced at a defined service boundary; a service architecture that cannot enforce a constraint is non-conforming.</li>
+<li>From <strong><a href="kf-3000-reference-architecture.html">KF-3000</a></strong>, it inherits the intent of the service catalogue. <a href="kf-3000-reference-architecture.html">KF-3000</a> sketched a provisional service list and explicitly deferred the definitive catalogue to <a href="kf-3003-service-architecture.html">KF-3003</a>. This document establishes that definitive catalogue — nineteen logical services — and where it refines <a href="kf-3000-reference-architecture.html">KF-3000</a>’s provisional numbering, <a href="kf-3003-service-architecture.html">KF-3003</a> is authoritative and <a href="kf-3000-reference-architecture.html">KF-3000</a>’s §11–12 list and §22–24 crosswalks are read as pointing here.</li>
 </ul>
 <p>The direction of authority is strict: a service may choose <em>how</em> to expose a capability, but may never add to, weaken, or reinterpret the capability, invariant or constraint it inherits.</p>
 <h3 id="the-distinctive-property-interaction-governance">The Distinctive Property — Interaction Governance</h3>
 <p>A service architecture is not merely a decomposition of capabilities into components. Its distinctive and load-bearing property is <strong>interaction governance</strong>: it must guarantee that the interaction constraints IC-01–IC-22 hold <em>in execution</em>, not only on paper.</p>
-<p>Decomposition alone can satisfy every capability individually while allowing services to bypass one another — a version service that also releases, an application service that also accepts, an assurance service that authorises the transitions it audits. KF-3003 exists to make those bypasses structurally impossible by assigning each constraint to a boundary and each governed record to a single authoritative maintainer. Part VII is therefore the centre of this document, not an appendix to it.</p>
+<p>Decomposition alone can satisfy every capability individually while allowing services to bypass one another — a version service that also releases, an application service that also accepts, an assurance service that authorises the transitions it audits. <a href="kf-3003-service-architecture.html">KF-3003</a> exists to make those bypasses structurally impossible by assigning each constraint to a boundary and each governed record to a single authoritative maintainer. Part VII is therefore the centre of this document, not an appendix to it.</p>
 <h3 id="service-admission-test">Service Admission Test</h3>
 <p>A proposed logical service is admitted only where:</p>
 <ol type="1">
-<li>it realises one or more KF-3002 capabilities;</li>
+<li>it realises one or more <a href="kf-3002-capability-model.html">KF-3002</a> capabilities;</li>
 <li>every capability it realises names it as the single accountable service, or names another service and this one as a supporting collaborator;</li>
 <li>it is the authoritative maintainer of a defined, non-overlapping set of information objects;</li>
 <li>its operations can be stated without naming a technology or product;</li>
@@ -88,7 +95,7 @@ Implementation (KF-4000)</code></pre>
 <li><strong>SP-1 · Capability-derived services.</strong> Every service is justified by the capabilities it realises; none is admitted because a technology category suggests it.</li>
 <li><strong>SP-2 · Single accountable service.</strong> Each capability has exactly one accountable service; other services may support it, but accountability is not shared.</li>
 <li><strong>SP-3 · Authoritative information ownership.</strong> Each governed information object has exactly one authoritative-maintainer service; other services read it or request changes through a governed interaction.</li>
-<li><strong>SP-4 · Constraint enforcement at a boundary.</strong> Every KF-3001 interaction constraint is enforced at a named service boundary, not left to convention.</li>
+<li><strong>SP-4 · Constraint enforcement at a boundary.</strong> Every <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> interaction constraint is enforced at a named service boundary, not left to convention.</li>
 <li><strong>SP-5 · No authority accrual.</strong> Execution capacity confers no authority. A service that performs an operation does not thereby gain the right to authorise it.</li>
 <li><strong>SP-6 · Coherent coarseness.</strong> Capabilities are grouped into one service only where they share information ownership and lifecycle role. Distinct governance obligations remain distinct services even where a single component might implement them. Version, acceptance and release are therefore three services, not one.</li>
 <li><strong>SP-7 · Logical, not physical.</strong> Services are logical responsibilities. One may be distributed across components and several combined into one, provided their boundaries and authoritative ownership remain inspectable.</li>
@@ -99,7 +106,7 @@ Implementation (KF-4000)</code></pre>
 <hr />
 <h2 id="part-i-service-taxonomy">Part I · Service Taxonomy</h2>
 <h3 id="the-logical-services">1. The Logical Services</h3>
-<p>KF-3003 defines nineteen logical services, numbered sequentially and grouped by domain. Cross-cutting services are grouped together at the end of the sequence.</p>
+<p><a href="kf-3003-service-architecture.html">KF-3003</a> defines nineteen logical services, numbered sequentially and grouped by domain. Cross-cutting services are grouped together at the end of the sequence.</p>
 <table>
 <thead>
 <tr class="header">
@@ -207,7 +214,7 @@ Implementation (KF-4000)</code></pre>
 </tbody>
 </table>
 <p>Every one of the twenty-four capabilities names exactly one accountable service (§5). The five Domain E services are cross-cutting: Provenance, Access, Operating Condition and Temporal Continuity constrain or supply evidence to the others, and Conformance reads all of them without altering any.</p>
-<p><strong>Version, acceptance and release are three services.</strong> Version creation (SVC-09) is not acceptance (SVC-06) and neither is release (SVC-10). This three-way separation is the structural expression of IC-06, IC-08 and IC-09, and is the principal refinement of this document over the KF-3000 sketch.</p>
+<p><strong>Version, acceptance and release are three services.</strong> Version creation (SVC-09) is not acceptance (SVC-06) and neither is release (SVC-10). This three-way separation is the structural expression of IC-06, IC-08 and IC-09, and is the principal refinement of this document over the <a href="kf-3000-reference-architecture.html">KF-3000</a> sketch.</p>
 <hr />
 <h2 id="part-ii-domain-a-services">Part II · Domain A Services</h2>
 <h3 id="svc-01-object-registry-service">SVC-01 · Object Registry Service</h3>
@@ -299,7 +306,7 @@ Implementation (KF-4000)</code></pre>
 <p><strong>Service operations.</strong> Register events; identify applicable gate; evaluate eligibility; bind gate decision and transition transactionally; attribute execution and authority separately; execute forward, return, suspension and retirement transitions.</p>
 <p><strong>Collaborations.</strong> <em>Collaborating:</em> SVC-06, SVC-07, SVC-09, SVC-10, SVC-11, SVC-14. <em>Constrained by:</em> SVC-16, SVC-17. <em>Evidence from:</em> SVC-15, SVC-19; <em>Evidence to:</em> SVC-18.</p>
 <p><strong>Enforced interaction constraints.</strong> IC-01 (Lifecycle State Authority); IC-02 (Gate Enforcement); IC-03 (Suspension Ownership).</p>
-<p><strong>Authority boundary.</strong> Does not make the acceptance decision (that is SVC-06); does not define gate criteria (that is KF-3005); does not disposition dependencies (that is SVC-11). Only SVC-08 may alter recorded lifecycle state.</p>
+<p><strong>Authority boundary.</strong> Does not make the acceptance decision (that is SVC-06); does not define gate criteria (that is <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>); does not disposition dependencies (that is SVC-11). Only SVC-08 may alter recorded lifecycle state.</p>
 <p><strong>Operating criticality.</strong> Governance-critical; fail-closed — an indeterminate or unavailable gate does not silently pass.</p>
 <p><strong>Conformance condition.</strong> For every transition, the event, prior and proposed state, gate result, executor, accountable authority and outcome are recoverable under one transition identifier.</p>
 <h3 id="svc-09-version-and-lineage-service">SVC-09 · Version and Lineage Service</h3>
@@ -430,7 +437,7 @@ Implementation (KF-4000)</code></pre>
 <p><strong>Conformance condition.</strong> The object’s content, warrant, acceptance, governance and operational state can be reconstructed as of a specified historical point — using recorded, effective and event time — without relying on overwritten current records.</p>
 <hr />
 <h2 id="part-vii-interaction-governance">Part VII · Interaction Governance</h2>
-<p>This part is the centre of KF-3003. It fixes how services interact so that the interaction constraints hold in execution.</p>
+<p>This part is the centre of <a href="kf-3003-service-architecture.html">KF-3003</a>. It fixes how services interact so that the interaction constraints hold in execution.</p>
 <h3 id="service-interaction-principles">2. Service Interaction Principles</h3>
 <ol type="1">
 <li>Only the accountable service may alter an information object it authoritatively maintains; others request change through a governed interaction.</li>
@@ -716,12 +723,12 @@ Implementation (KF-4000)</code></pre>
 <hr />
 <h2 id="part-ix-service-conformance">Part IX · Service Conformance</h2>
 <h3 id="service-conformance">7. Service Conformance</h3>
-<p>A service conforms when it realises its accountable capabilities; is the sole authoritative maintainer of its information objects; exposes its operations without technology dependence; enforces its assigned interaction constraints; performs no prohibited action; and can demonstrate its conformance condition. As in KF-3002, conformance is systemic: a service is not conformant where an unmet collaboration prevents a constraint it must enforce.</p>
+<p>A service conforms when it realises its accountable capabilities; is the sole authoritative maintainer of its information objects; exposes its operations without technology dependence; enforces its assigned interaction constraints; performs no prohibited action; and can demonstrate its conformance condition. As in <a href="kf-3002-capability-model.html">KF-3002</a>, conformance is systemic: a service is not conformant where an unmet collaboration prevents a constraint it must enforce.</p>
 <h3 id="service-evidence">8. Service Evidence</h3>
 <p>Evidence includes authoritative-ownership maps; operation traces; constraint-enforcement tests; prohibited-path tests; attribution and provenance checks; and independent assurance from SVC-18. Physical consolidation of services is permitted only where the authoritative-ownership boundary and constraint enforcement remain inspectable.</p>
 <hr />
 <h2 id="part-x-relationship-to-subsequent-documents">Part X · Relationship to Subsequent Documents</h2>
-<p><strong>KF-3004</strong> defines the information objects and record classes named here and fixes their authoritative-maintainer assignments and the recorded/effective/event time semantics owned by SVC-19. <strong>KF-3005</strong> defines the gate logic and lifecycle controls that SVC-08 and SVC-17 apply, including the transactional gate–transition binding and the release eligibility checks of SVC-10. <strong>KF-3008</strong> defines the human authority and accountability model that SVC-06 and SVC-07 depend upon, kept distinct from the technical permission SVC-16 assigns. <strong>KF-3007</strong> defines the tests and evidence for service and constraint conformance. <strong>KF-3009</strong> preserves traceability from principle through capability, service, record and control.</p>
+<p><strong><a href="kf-3004-information-and-record-model.html">KF-3004</a></strong> defines the information objects and record classes named here and fixes their authoritative-maintainer assignments and the recorded/effective/event time semantics owned by SVC-19. <strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></strong> defines the gate logic and lifecycle controls that SVC-08 and SVC-17 apply, including the transactional gate–transition binding and the release eligibility checks of SVC-10. <strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> defines the human authority and accountability model that SVC-06 and SVC-07 depend upon, kept distinct from the technical permission SVC-16 assigns. <strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> defines the tests and evidence for service and constraint conformance. <strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></strong> preserves traceability from principle through capability, service, record and control.</p>
 <h3 id="closing-statement">Closing Statement</h3>
 <p>The Service Architecture converts the twenty-four capabilities into nineteen governed logical services and, more importantly, into a set of enforced boundaries. Its contribution is not that the capabilities are exposed, but that they cannot be exercised in a way that bypasses one another: version is not release, release is not acceptance, permission is not authority, and assurance never authorises what it audits. Every interaction constraint is enforced at a named boundary; every governed record has a single authoritative maintainer; and no service holds authority it was not given. That is what makes this an execution architecture for governed knowledge rather than a catalogue of components.</p>
 

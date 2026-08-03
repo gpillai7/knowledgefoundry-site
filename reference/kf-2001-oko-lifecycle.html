@@ -32,21 +32,28 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-2001 · Operational Knowledge Object Lifecycle</h1>
+<p class="deck">The canonical engineering lifecycle of a governed knowledge object, from capture to retirement</p>
+<p class="docmeta">Methodology &#183; Draft &#183; v0.1</p>
 
-<h4 id="the-canonical-engineering-lifecycle-of-a-governed-knowledge-object-from-capture-to-retirement">The canonical engineering lifecycle of a governed knowledge object, from capture to retirement</h4>
-<p><em>Document Class: Methodology · Parent Programme: Knowledge Foundry · Parent Document: KF-2000 · Status: Draft · Version: 0.1</em></p>
 <pre><code>Principle (KF-1000)  →  ▸ Method (KF-2000)  →  Architecture (KF-3000)  →  Implementation (KF-4000)</code></pre>
 <h3 id="purpose">Purpose</h3>
 <p>This document defines the canonical engineering lifecycle through which an Operational Knowledge Object evolves from initial capture to eventual retirement. It is the common engineering model beneath all Knowledge Foundry methods; the methods that follow in KF-2000 act on the stages defined here.</p>
 <p>The lifecycle models the evolution of <em>justified knowledge</em>, not the storage of <em>information</em>. A document-management system versions files and advances a record whenever it is saved; this lifecycle advances an object only when the obligations of its current stage are discharged. The difference is the gate. In a storage system a transition is a save event; here a transition is an act of warrant, and an object that has not earned the warrant of its stage does not advance, however complete it looks.</p>
 <h3 id="how-this-document-sits-in-the-programme">How This Document Sits in the Programme</h3>
-<p>KF-2001 is a <strong>Method-level</strong> document. It says <em>how the discipline acts</em> on the principles fixed by the Canon (KF-1000); it does not restate or revise them. Consistent with the four-level separation, this document names no technologies, stores or products — those are <strong>architecture</strong> (KF-3000) — and no deployments — those are <strong>implementation</strong> (KF-4000). Where a stage discharges a Canonical Principle, the principle is cited in a single <em>Canon basis</em> line; the authoritative stage-to-principle mapping is KF-2002, and is not duplicated here.</p>
+<p><a href="kf-2001-oko-lifecycle.html">KF-2001</a> is a <strong>Method-level</strong> document. It says <em>how the discipline acts</em> on the principles fixed by the Canon (<a href="kf-1000-canon.html">KF-1000</a>); it does not restate or revise them. Consistent with the four-level separation, this document names no technologies, stores or products — those are <strong>architecture</strong> (<a href="kf-3000-reference-architecture.html">KF-3000</a>) — and no deployments — those are <strong>implementation</strong> (KF-4000). Where a stage discharges a Canonical Principle, the principle is cited in a single <em>Canon basis</em> line; the authoritative stage-to-principle mapping is <a href="kf-2002-engineering-practices.html">KF-2002</a>, and is not duplicated here.</p>
 <h3 id="method-not-workflow">Method, Not Workflow</h3>
 <p>This lifecycle specifies the engineering <em>obligations</em> associated with each stage — what must be true for an object to advance — not the <em>workflow</em> by which any particular organisation satisfies them. Method fixes the obligation; workflow fixes the order of work, the tools, the hand-offs and the cadence by which a given deployment meets it. Workflow therefore belongs to implementation (KF-4000), not here.</p>
 <p>Conformance is not a matter of following a prescribed sequence of steps. It is whether, for every object, every obligation and every lifecycle invariant is met. Two organisations may run very different workflows — one manual and deliberative, another largely automated — and both conform to this lifecycle, provided no gate is passed unearned and no invariant is broken.</p>
@@ -57,7 +64,7 @@
 </blockquote>
 <h3 id="lifecycle-overview">Lifecycle Overview</h3>
 <blockquote>
-<p><strong>Worked example.</strong> KF-5001 walks a single Operational Knowledge Object — a four-day-week Knowledge Brief — through every stage below, from Capture to Supersession.</p>
+<p><strong>Worked example.</strong> <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> walks a single Operational Knowledge Object — a four-day-week Knowledge Brief — through every stage below, from Capture to Supersession.</p>
 </blockquote>
 <pre class="text"><code>Capture
    ↓
@@ -414,10 +421,10 @@ New State</code></pre>
 </tbody>
 </table>
 <h3 id="lifecycle-invariants">Lifecycle Invariants</h3>
-<p>The lifecycle principles below describe how the lifecycle <em>behaves</em>. The invariants here describe what must be true of an object <em>at every instant, regardless of stage</em>. An invariant is a continuously checkable property: an object that violates any invariant is non-conformant, whatever state it is in and however it reached it. These are the properties automated validation will assert, and the ground on which the Reference Architecture (KF-3000) is designed.</p>
+<p>The lifecycle principles below describe how the lifecycle <em>behaves</em>. The invariants here describe what must be true of an object <em>at every instant, regardless of stage</em>. An invariant is a continuously checkable property: an object that violates any invariant is non-conformant, whatever state it is in and however it reached it. These are the properties automated validation will assert, and the ground on which the Reference Architecture (<a href="kf-3000-reference-architecture.html">KF-3000</a>) is designed.</p>
 <p>Six invariants hold across the whole lifecycle.</p>
 <ol type="1">
-<li><strong>Single identity.</strong> Every Operational Knowledge Object has exactly one immutable identity for its entire life. Identity is assigned at Capture and is never reassigned, reused or mutated. Editing produces new <em>versions</em> under the same identity; branching, consolidation and supersession create <em>successor</em> objects with their own identities, linked to their predecessors. They do not split, merge or overwrite an existing identity. (Identity, version and lineage are distinct concerns, and KF-3000 realises them separately.)</li>
+<li><strong>Single identity.</strong> Every Operational Knowledge Object has exactly one immutable identity for its entire life. Identity is assigned at Capture and is never reassigned, reused or mutated. Editing produces new <em>versions</em> under the same identity; branching, consolidation and supersession create <em>successor</em> objects with their own identities, linked to their predecessors. They do not split, merge or overwrite an existing identity. (Identity, version and lineage are distinct concerns, and <a href="kf-3000-reference-architecture.html">KF-3000</a> realises them separately.)</li>
 <li><strong>Attributable transitions.</strong> Every state transition is attributable to an identified actor — a person, or an agent acting under a named human authority. No transition is anonymous.</li>
 <li><strong>Justified transitions.</strong> Every state transition carries a recorded justification. A transition without a recorded reason is not permitted, even when it is automatic.</li>
 <li><strong>Inspectable transitions.</strong> Every state transition is inspectable after the fact: what changed, why, by whom, and from which prior state can always be recovered.</li>
@@ -425,7 +432,7 @@ New State</code></pre>
 <li><strong>Lineage preserved.</strong> Retirement, supersession and consolidation never destroy lineage. History is append-only; states are superseded, never erased.</li>
 </ol>
 <p>Where an invariant appears to echo a principle — justification, for instance — the two do different work. The principle is the behavioural rule that a transition must <em>earn</em> its justification in order to proceed; the invariant is the checkable property that, once made, the transition <em>carries</em> that justification for all time. Principles govern progression; invariants govern conformance.</p>
-<p><strong>Invariants are ungraded.</strong> These six hold identically for every object, whatever its consequence or intended reliance. What <em>does</em> vary with reliance is the <em>depth</em> to which a gate’s obligations must be discharged — the strength of evaluation, the independence of review, the sufficiency of evidence. That depth is set by the object’s <strong>assurance class</strong>, defined in KF-2003 and attaching to the object’s scope of reliance at acceptance and release. An Exploratory object and a Consequential one cross the same gates and satisfy the same six invariants; the Consequential object must satisfy each gate to a greater depth. No assurance class ever lowers the invariant floor.</p>
+<p><strong>Invariants are ungraded.</strong> These six hold identically for every object, whatever its consequence or intended reliance. What <em>does</em> vary with reliance is the <em>depth</em> to which a gate’s obligations must be discharged — the strength of evaluation, the independence of review, the sufficiency of evidence. That depth is set by the object’s <strong>assurance class</strong>, defined in <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> and attaching to the object’s scope of reliance at acceptance and release. An Exploratory object and a Consequential one cross the same gates and satisfy the same six invariants; the Consequential object must satisfy each gate to a greater depth. No assurance class ever lowers the invariant floor.</p>
 <h3 id="lifecycle-principles">Lifecycle Principles</h3>
 <p>Beyond the invariants above, the lifecycle is governed by six behavioural rules, each a direct consequence of the Canon.</p>
 <ol type="1">
@@ -437,9 +444,9 @@ New State</code></pre>
 <li><strong>Retirement preserves history rather than erasing it.</strong> An object leaves active use with its record intact, because trust is a property of transitions over time. (Principle VII.)</li>
 </ol>
 <h3 id="relationship-to-the-canon">Relationship to the Canon</h3>
-<p>Each lifecycle stage operationalises one or more Canonical Principles: the per-stage <em>Canon basis</em> lines above indicate the principal derivation. The lifecycle as a whole is the method by which the Canon’s central operation — the controlled transition of a knowledge object from one justified state to another — is carried out in practice. The authoritative, complete stage-to-principle mapping is defined in <strong>KF-2002</strong> and is not reproduced here, so that a change to the mapping has a single home.</p>
+<p>Each lifecycle stage operationalises one or more Canonical Principles: the per-stage <em>Canon basis</em> lines above indicate the principal derivation. The lifecycle as a whole is the method by which the Canon’s central operation — the controlled transition of a knowledge object from one justified state to another — is carried out in practice. The authoritative, complete stage-to-principle mapping is defined in <strong><a href="kf-2002-engineering-practices.html">KF-2002</a></strong> and is not reproduced here, so that a change to the mapping has a single home.</p>
 <h3 id="relationship-to-the-reference-architecture">Relationship to the Reference Architecture</h3>
-<p>Each lifecycle stage is realised through one or more architectural services — for capture, structuring, evaluation, justification, acceptance, governance, versioning and retirement. This document fixes <em>what each stage must achieve and when it may advance</em>; it does not specify the services, stores or technologies that achieve it. That mapping is defined in <strong>KF-3000</strong>, which a given deployment (KF-4000, and domain instantiations such as MacroLab) then implements. KF-3000 must also enforce the lifecycle invariants as continuous conformance checks, and handle the engineering events as the triggers its services respond to.</p>
+<p>Each lifecycle stage is realised through one or more architectural services — for capture, structuring, evaluation, justification, acceptance, governance, versioning and retirement. This document fixes <em>what each stage must achieve and when it may advance</em>; it does not specify the services, stores or technologies that achieve it. That mapping is defined in <strong><a href="kf-3000-reference-architecture.html">KF-3000</a></strong>, which a given deployment (KF-4000, and domain instantiations such as MacroLab) then implements. <a href="kf-3000-reference-architecture.html">KF-3000</a> must also enforce the lifecycle invariants as continuous conformance checks, and handle the engineering events as the triggers its services respond to.</p>
 
 <nav class="prevnext"><a class="pv" href="kf-1000-canon.html">&#8592; Canon</a><a class="nx" href="kf-2002-engineering-practices.html">Engineering Practices &#8594;</a></nav>
 </main>

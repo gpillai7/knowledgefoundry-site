@@ -32,21 +32,28 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-3007 · Architectural Conformance Framework</h1>
+<p class="deck">How the Knowledge Foundry Reference Architecture is demonstrated to conform to its own architectural commitments</p>
+<p class="docmeta">Reference Architecture &#183; <span style="color:#BC6C2E">Draft for Experiment</span> &#183; v0.2</p>
 
-<h4 id="how-the-knowledge-foundry-reference-architecture-is-demonstrated-to-conform-to-its-own-architectural-commitments">How the Knowledge Foundry Reference Architecture is demonstrated to conform to its own architectural commitments</h4>
-<p><em>Document Class: Reference Architecture · Parent Programme: Knowledge Foundry · Parent Document: KF-3000 · Status: Draft for Experiment · Version: 0.2</em></p>
 <pre class="text"><code>Principle (KF-1000) → Lifecycle (KF-2001) → Materiality (KF-2003)
         → Reference Architecture (KF-3000)
               → Architectural Integration Model (KF-3006)     ← how the architecture works
               → ▸ Architectural Conformance Framework (KF-3007) ← how we know it is working
         → Implementation (KF-4000)</code></pre>
-<p>Up to KF-3006 the programme has been <em>designing</em> the architecture. KF-3007 is where the architecture becomes <em>demonstrable</em> — where it can show, from its own operation, that it is working as intended. It answers the question that distinguishes Knowledge Foundry from a document store, a personal knowledge tool or an AI answer engine: not <em>does the system hold knowledge</em>, but <strong>how can an institution demonstrate — rather than merely assert — that its knowledge architecture is functioning as intended?</strong></p>
+<p>Up to <a href="kf-3006-architectural-integration-model.html">KF-3006</a> the programme has been <em>designing</em> the architecture. <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> is where the architecture becomes <em>demonstrable</em> — where it can show, from its own operation, that it is working as intended. It answers the question that distinguishes Knowledge Foundry from a document store, a personal knowledge tool or an AI answer engine: not <em>does the system hold knowledge</em>, but <strong>how can an institution demonstrate — rather than merely assert — that its knowledge architecture is functioning as intended?</strong></p>
 <p>A conformant architecture is not one that is believed to be correct, nor one that merely claims to satisfy its design intent. It is one whose architectural commitments can be demonstrated from observable evidence. The architecture has, in effect, begun to distinguish <em>truth</em> from <em>proof</em>: the purpose of this framework is not to establish trust by declaration, but to make trust continuously demonstrable.</p>
 <h3 id="purpose">Purpose</h3>
 <p>The Architectural Conformance Framework defines how the Knowledge Foundry Reference Architecture is evaluated against its own architectural commitments. It establishes the principles, criteria, evidence requirements and assessment methods through which architectural conformance may be <strong>demonstrated, monitored and reconstructed</strong> over time.</p>
@@ -72,7 +79,7 @@ Assessment          (the four tests, graded by materiality)
 Finding</code></pre>
 <p>Each chapter that follows populates one link of this chain: the obligation (§5), the claim (§9), the evidence (§10), the assessment (§7), the finding (§13). The Conformance Claim is the bridge the framework turns on: obligations are architectural facts, but conformance is always a statement <em>about a claim</em>, supported or not by what the architecture recorded while it worked.</p>
 <h3 id="scope-and-the-conformance-admission-test">Scope and the Conformance Admission Test</h3>
-<p>KF-3007 is technology-neutral. It defines <em>how conformance is demonstrated</em>, not the tools that store or compute the evidence (KF-4000), and not the obligations themselves (those are defined in their home documents). A statement belongs in KF-3007 only if:</p>
+<p><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> is technology-neutral. It defines <em>how conformance is demonstrated</em>, not the tools that store or compute the evidence (KF-4000), and not the obligations themselves (those are defined in their home documents). A statement belongs in <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> only if:</p>
 <ol type="1">
 <li>it concerns how architectural conformance is demonstrated, evidenced, judged or reconstructed;</li>
 <li>it can be stated without naming a specific technology, product or deployment; and</li>
@@ -82,7 +89,7 @@ Finding</code></pre>
 <hr />
 <h2 id="introduction">1 · Introduction</h2>
 <blockquote>
-<p><strong>Worked example.</strong> KF-5001 §4 demonstrates these tests, and a reconstructed Conformance Claim, on a single governed object.</p>
+<p><strong>Worked example.</strong> <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> §4 demonstrates these tests, and a reconstructed Conformance Claim, on a single governed object.</p>
 </blockquote>
 <h3 id="purpose-1">1.1 Purpose</h3>
 <p>To make the architecture demonstrable: to define the obligations against which an implementation is assessed, the dimensions and tests through which assessment proceeds, the evidence on which it draws, and the findings it yields — all proportionate to the reliance placed on the knowledge governed.</p>
@@ -91,22 +98,22 @@ Finding</code></pre>
 <p>Out of scope: the definition of any obligation (its home document); organisational compliance, HR or process audit; technology, tooling and deployment (KF-4000); and the <em>judgement calls</em> of a particular assessment, which this framework structures but does not pre-decide.</p>
 <h3 id="relationship-to-other-documents">1.3 Relationship to Other Documents</h3>
 <ul>
-<li><strong>KF-1000 · Canon</strong> — the principles from which every architectural obligation ultimately derives; conformance preserves architectural intent, and intent originates here.</li>
-<li><strong>KF-2001 · Lifecycle</strong> — the gates, transitions and invariants whose preservation is the substance of behavioural and lifecycle conformance.</li>
-<li><strong>KF-2003 · Materiality and Assurance</strong> — the assurance classes that grade how deep evidence, assessment and review must go (§11).</li>
-<li><strong>KF-3006 · Architectural Integration Model</strong> — describes how the architecture <em>operates</em>; KF-3007 determines <em>whether that operation conforms</em>. The traceability layers of KF-3006 §10 are exactly what this framework reconstructs.</li>
-<li><strong>KF-3001–3005, 3008, 3009</strong> — the domains whose obligations are assessed and whose records supply the evidence.</li>
+<li><strong><a href="kf-1000-canon.html">KF-1000</a> · Canon</strong> — the principles from which every architectural obligation ultimately derives; conformance preserves architectural intent, and intent originates here.</li>
+<li><strong><a href="kf-2001-oko-lifecycle.html">KF-2001</a> · Lifecycle</strong> — the gates, transitions and invariants whose preservation is the substance of behavioural and lifecycle conformance.</li>
+<li><strong><a href="kf-2003-materiality-and-assurance.html">KF-2003</a> · Materiality and Assurance</strong> — the assurance classes that grade how deep evidence, assessment and review must go (§11).</li>
+<li><strong><a href="kf-3006-architectural-integration-model.html">KF-3006</a> · Architectural Integration Model</strong> — describes how the architecture <em>operates</em>; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> determines <em>whether that operation conforms</em>. The traceability layers of <a href="kf-3006-architectural-integration-model.html">KF-3006</a> §10 are exactly what this framework reconstructs.</li>
+<li><strong><a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a>–3005, 3008, 3009</strong> — the domains whose obligations are assessed and whose records supply the evidence.</li>
 </ul>
-<p>KF-3006 makes the machine run; KF-3007 inspects the run. The two are built to meet.</p>
+<p><a href="kf-3006-architectural-integration-model.html">KF-3006</a> makes the machine run; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> inspects the run. The two are built to meet.</p>
 <hr />
 <h2 id="philosophy-of-conformance">2 · Philosophy of Conformance</h2>
 <p>Seven convictions set the tone of everything that follows.</p>
 <ol type="1">
 <li><strong>Architecture is judged by behaviour, not by documentation.</strong> A conformant architecture is one that <em>behaves</em> as intended on real objects, not one that merely describes itself well. Assessment reads behaviour, not intentions.</li>
 <li><strong>Conformance is evidence-based.</strong> A claim of conformance stands only on observable evidence. Absent evidence, an obligation is <em>not assessable</em>, which is a finding in itself — never a silent pass.</li>
-<li><strong>Conformance is proportional.</strong> The depth of assurance demanded matches the reliance placed on the object (KF-2003). Exploratory work is not held to the standard of a board decision, and a board decision is not held to less. Proportionality applies to the depth of evidence, review and assessment — <strong>not to the architectural obligations themselves.</strong> The Canon and the lifecycle invariants remain universal; only the level of demonstration varies. Low assurance never means “no provenance”; it means less depth above an unchanged invariant floor.</li>
+<li><strong>Conformance is proportional.</strong> The depth of assurance demanded matches the reliance placed on the object (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>). Exploratory work is not held to the standard of a board decision, and a board decision is not held to less. Proportionality applies to the depth of evidence, review and assessment — <strong>not to the architectural obligations themselves.</strong> The Canon and the lifecycle invariants remain universal; only the level of demonstration varies. Low assurance never means “no provenance”; it means less depth above an unchanged invariant floor.</li>
 <li><strong>Conformance is reconstructable.</strong> It is not enough that the system behaved correctly; a reviewer must be able to reconstruct <em>that</em> it did, after the fact, from the record.</li>
-<li><strong>Assessment minimises administrative burden.</strong> Because evidence is event-native (KF-3001 IC-24), assessment reads the records the architecture already produced. Conformance does not commission a parallel paperwork exercise; that would be a second knowledge-management problem.</li>
+<li><strong>Assessment minimises administrative burden.</strong> Because evidence is event-native (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24), assessment reads the records the architecture already produced. Conformance does not commission a parallel paperwork exercise; that would be a second knowledge-management problem.</li>
 <li><strong>Conformance emerges from normal operation.</strong> A well-integrated architecture is <em>continuously</em> demonstrating conformance simply by working. Assessment formalises and inspects that stream; it does not create it.</li>
 <li><strong>Assessment strengthens the architecture.</strong> Findings are not merely reports on implementation quality; they are architectural feedback that informs future revisions of the Reference Architecture itself. The architecture is a learning system, not a static specification — and its conformance framework is one of the instruments through which it learns.</li>
 </ol>
@@ -115,7 +122,7 @@ Finding</code></pre>
 <blockquote>
 <p><strong>Architectural conformance is the observable correspondence between the intended behaviour of the Knowledge Foundry Reference Architecture and the observable behaviour of an implemented system.</strong></p>
 </blockquote>
-<p>The operative word is <strong>correspondence</strong>, not <em>compliance</em>. Compliance suggests obedience to an external rulebook; correspondence asserts that what the architecture <em>intends</em> and what the system <em>does</em> are the same, and that the sameness can be shown. An implementation is free to differ from the reference architecture in structure, technology and arrangement (KF-3000 Part VIII); it is not free to differ in behaviour where that behaviour discharges an obligation. Conformance is the demonstrable claim that, behaviourally, it does not.</p>
+<p>The operative word is <strong>correspondence</strong>, not <em>compliance</em>. Compliance suggests obedience to an external rulebook; correspondence asserts that what the architecture <em>intends</em> and what the system <em>does</em> are the same, and that the sameness can be shown. An implementation is free to differ from the reference architecture in structure, technology and arrangement (<a href="kf-3000-reference-architecture.html">KF-3000</a> Part VIII); it is not free to differ in behaviour where that behaviour discharges an obligation. Conformance is the demonstrable claim that, behaviourally, it does not.</p>
 <hr />
 <h2 id="conformance-principles">4 · Conformance Principles</h2>
 <p>Every assessment conducted under this framework shall:</p>
@@ -125,14 +132,14 @@ Finding</code></pre>
 <li><strong>rely on observable evidence</strong> — ground every finding in a record that exists, not in inference or reputation;</li>
 <li><strong>distinguish objective finding from judgement</strong> — separate <em>what the evidence shows</em> from <em>what the assessor concludes from it</em>, and record both;</li>
 <li><strong>remain reconstructable</strong> — leave its own trail, so that an assessment can itself be reviewed;</li>
-<li><strong>respect assurance class</strong> — demand exactly the depth KF-2003 fixes for the object, no more and no less;</li>
+<li><strong>respect assurance class</strong> — demand exactly the depth <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> fixes for the object, no more and no less;</li>
 <li><strong>preserve traceability</strong> — never break, in the act of assessing, the traceability it depends on.</li>
 </ul>
 <hr />
 <h2 id="architectural-obligations">5 · Architectural Obligations</h2>
 <p>The Canon establishes principles. The architecture translates them into <strong>obligations</strong>. The framework assesses whether those obligations are satisfied. The obligation is therefore the unit of conformance — the thing an assessment is <em>of</em>.</p>
 <h3 id="where-obligations-come-from">5.1 Where obligations come from</h3>
-<p>Obligations are not invented here; they are gathered from where they already live: Canonical Principles (via the handoff of KF-1301), lifecycle gates and the six invariants (KF-2001), engineering practices (KF-2002), the architectural principles, invariants and interaction constraints (KF-3001 AP / INV / IC), the six Governance Primitives (KF-1104), and the proportionality rules of KF-2003. The authoritative enumeration and its upstream tracing are held by KF-3009 (Crosswalks); this framework defines how any obligation is specified and assessed.</p>
+<p>Obligations are not invented here; they are gathered from where they already live: Canonical Principles (via the handoff of KF-1301), lifecycle gates and the six invariants (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>), engineering practices (<a href="kf-2002-engineering-practices.html">KF-2002</a>), the architectural principles, invariants and interaction constraints (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> AP / INV / IC), the six Governance Primitives (KF-1104), and the proportionality rules of <a href="kf-2003-materiality-and-assurance.html">KF-2003</a>. The authoritative enumeration and its upstream tracing are held by <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> (Crosswalks); this framework defines how any obligation is specified and assessed.</p>
 <h3 id="obligation-specification">5.2 Obligation specification</h3>
 <p>Each architectural obligation is specified through five fields:</p>
 <ul>
@@ -250,9 +257,9 @@ Finding             (§13)</code></pre>
 <hr />
 <h2 id="the-evidence-model">10 · The Evidence Model</h2>
 <h3 id="what-counts-as-evidence">10.1 What counts as evidence</h3>
-<p>Evidence is the observable record that an obligation was discharged. The framework draws on the records the architecture already maintains (KF-3004):</p>
+<p>Evidence is the observable record that an obligation was discharged. The framework draws on the records the architecture already maintains (<a href="kf-3004-information-and-record-model.html">KF-3004</a>):</p>
 <ul>
-<li><strong>event records</strong> — the emitted architectural events (KF-3006 §8);</li>
+<li><strong>event records</strong> — the emitted architectural events (<a href="kf-3006-architectural-integration-model.html">KF-3006</a> §8);</li>
 <li><strong>decision records</strong> — gate decisions and their composed control results;</li>
 <li><strong>approval / acceptance records</strong> — authority, scope of reliance and refusals;</li>
 <li><strong>traceability and provenance records</strong> — origin, derivation, custody;</li>
@@ -261,9 +268,9 @@ Finding             (§13)</code></pre>
 <li><strong>relationship graphs</strong> — the structural links among objects, versions and claims.</li>
 </ul>
 <h3 id="evidence-is-event-native">10.2 Evidence is event-native</h3>
-<p>Wherever possible, evidence is emitted by the governed act, not authored separately (KF-3001 IC-24; KF-3004 §5.2): the acceptance record <em>is</em> the evidence of acceptance, the transition record <em>is</em> the event record of the act, the evaluation verdict <em>is</em> the test result. A distinct evidence artefact is created only where the act’s own records cannot carry the required proof. This is what makes assessment affordable and continuous rather than periodic and burdensome.</p>
+<p>Wherever possible, evidence is emitted by the governed act, not authored separately (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24; <a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2): the acceptance record <em>is</em> the evidence of acceptance, the transition record <em>is</em> the event record of the act, the evaluation verdict <em>is</em> the test result. A distinct evidence artefact is created only where the act’s own records cannot carry the required proof. This is what makes assessment affordable and continuous rather than periodic and burdensome.</p>
 <h3 id="independence-of-evidence">10.3 Independence of evidence</h3>
-<p>A conformance judgement may not rest solely on the self-assertion of the service or actor being assessed (KF-3001 IC-18). Each material judgement cites at least one independently generated source — record inspection, cross-service reconciliation, control testing or external review — and the assurance function reads records without altering them (IC-17). The Conformance and Audit Service (SVC-18) is the architectural means by which evidence is gathered and kept current; it is read-only over everything it assesses.</p>
+<p>A conformance judgement may not rest solely on the self-assertion of the service or actor being assessed (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-18). Each material judgement cites at least one independently generated source — record inspection, cross-service reconciliation, control testing or external review — and the assurance function reads records without altering them (IC-17). The Conformance and Audit Service (SVC-18) is the architectural means by which evidence is gathered and kept current; it is read-only over everything it assesses.</p>
 <hr />
 <h2 id="materiality-and-assurance">11 · Materiality and Assurance</h2>
 <p>This framework does not redefine materiality; it consumes it. Assurance flows as one graded quantity, entering at the scope of reliance recorded at acceptance and release:</p>
@@ -314,7 +321,7 @@ Reassessment     re-demonstrate after remediation or at the next cadence</code><
 <li><strong>Non-Conformant</strong> — one or more material obligations unsatisfied, or an invariant breached.</li>
 <li><strong>Not Assessable</strong> — evidence is insufficient to demonstrate the claim. This is a real outcome, never silently converted to Conformant, and never to Non-Conformant either: it obliges either evidence or escalation.</li>
 </ul>
-<p>Consistent with KF-3005, a Not-Assessable / Indeterminate condition is never treated as Pass, and an exception never converts an invariant breach into conformance.</p>
+<p>Consistent with <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>, a Not-Assessable / Indeterminate condition is never treated as Pass, and an exception never converts an invariant breach into conformance.</p>
 <h3 id="confidence-in-findings">13.3 Confidence in Findings</h3>
 <p>Conformance and <em>confidence in the finding</em> are not the same thing, and the framework keeps them distinct. Two objects may both be found Conformant while warranting very different confidence: one with complete, event-native evidence, unbroken traceability and strong provenance; another with sparse evidence, partially reconstructed history and thin traceability. Both may satisfy their obligations; our confidence that they do differs.</p>
 <p>Every material finding therefore carries a <strong>confidence qualifier</strong> reflecting the completeness, independence and directness of the evidence it rests on — for example <em>high</em> (complete, event-native, independently corroborated), <em>moderate</em> (adequate but partly reconstructed) or <em>low</em> (sparse, or reliant on the assessed party’s own assertion). Confidence never changes the finding, but it travels with it: a Conformant-at-low-confidence result is a signal to strengthen evidence, not a defect in the object.</p>
@@ -329,22 +336,22 @@ Reassessment     re-demonstrate after remediation or at the next cadence</code><
 <li><strong>compensating controls</strong> — an alternative control that discharges the obligation where the standard mechanism cannot;</li>
 <li><strong>future remediation</strong> — the recorded plan and owner for closing a gap.</li>
 </ul>
-<p>Every exception is attributable, bounded and <strong>visible until closed, formally accepted as risk, or rendered irrelevant by retirement</strong> (KF-3001 IC-19). No exception may waive an invariant: an invariant breach is a Non-Conformance, not an exception.</p>
+<p>Every exception is attributable, bounded and <strong>visible until closed, formally accepted as risk, or rendered irrelevant by retirement</strong> (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-19). No exception may waive an invariant: an invariant breach is a Non-Conformance, not an exception.</p>
 <hr />
 <h2 id="architectural-review">15 · Architectural Review</h2>
 <p>This chapter institutionalises architectural governance and is the home of the “completeness” discipline — recast, as elsewhere, from an absolute proof into a periodic, materiality-graded review. Review occurs at defined moments:</p>
 <ul>
 <li><strong>Continuous review</strong> — the event-native checks of §16, running as the architecture operates.</li>
-<li><strong>Vertical-slice review</strong> — assessment of a real object taken end to end (the first being the MacroLab Singapore assessment); the primary means by which this framework and KF-2003 are themselves validated before being frozen.</li>
+<li><strong>Vertical-slice review</strong> — assessment of a real object taken end to end (the first being the MacroLab Singapore assessment); the primary means by which this framework and <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> are themselves validated before being frozen.</li>
 <li><strong>Major-release review</strong> — before a release enters consequential reliance.</li>
 <li><strong>Periodic architecture review</strong> — at a cadence set by the highest assurance class in scope.</li>
 <li><strong>Reference-architecture revision</strong> — when a domain document changes, to confirm coverage still holds.</li>
 <li><strong>Independent review</strong> — conducted without sole reliance on the assessed parties (IC-18), for A4 and regulated overlays.</li>
 </ul>
-<p>Completeness is demonstrated here not by showing that every element maps to another, but by showing that <strong>every material obligation is discharged by the integrated behaviour of the architecture, to the depth its class requires</strong> — the spine of KF-3006 Figure 1 running unbroken, tested against real objects.</p>
+<p>Completeness is demonstrated here not by showing that every element maps to another, but by showing that <strong>every material obligation is discharged by the integrated behaviour of the architecture, to the depth its class requires</strong> — the spine of <a href="kf-3006-architectural-integration-model.html">KF-3006</a> Figure 1 running unbroken, tested against real objects.</p>
 <hr />
 <h2 id="continuous-conformance">16 · Continuous Conformance</h2>
-<p>The architectural invariant of <em>continuous conformance</em> (KF-3000 §3) means conformance is maintained over time, not verified once. Because evidence is event-native, much of it can be demonstrated continuously by detective controls that watch the record stream and raise findings automatically:</p>
+<p>The architectural invariant of <em>continuous conformance</em> (<a href="kf-3000-reference-architecture.html">KF-3000</a> §3) means conformance is maintained over time, not verified once. Because evidence is event-native, much of it can be demonstrated continuously by detective controls that watch the record stream and raise findings automatically:</p>
 <ul>
 <li>missing or incomplete provenance;</li>
 <li>broken or unreconstructable traceability;</li>
@@ -357,7 +364,7 @@ Reassessment     re-demonstrate after remediation or at the next cadence</code><
 <p>Each detected condition is raised as an event and recorded as a finding, exactly as a manual assessment would record it. Continuous conformance is periodic assessment’s complement, not its replacement: the stream catches drift as it happens; the reviews (§15) judge the whole.</p>
 <hr />
 <h2 id="relationship-with-implementation">17 · Relationship with Implementation</h2>
-<p>An implementation is <strong>free to innovate</strong> — to choose technologies, combine or distribute services, and arrange components as it sees fit — <strong>provided the architectural obligations remain satisfied and demonstrable.</strong> KF-3007 never dictates <em>how</em> an obligation is met; it requires only that its being met can be shown from evidence through traceability. Two structurally dissimilar implementations may both be fully conformant. Conformance constrains behaviour and its demonstration; it does not constrain design.</p>
+<p>An implementation is <strong>free to innovate</strong> — to choose technologies, combine or distribute services, and arrange components as it sees fit — <strong>provided the architectural obligations remain satisfied and demonstrable.</strong> <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> never dictates <em>how</em> an obligation is met; it requires only that its being met can be shown from evidence through traceability. Two structurally dissimilar implementations may both be fully conformant. Conformance constrains behaviour and its demonstration; it does not constrain design.</p>
 <hr />
 <h2 id="summary">18 · Summary</h2>
 <p>Architectural conformance is <strong>not the objective</strong> of the Knowledge Foundry architecture. It is the <strong>means</strong> by which the architecture preserves trust, accountability and institutional reliance throughout its evolution. The framework:</p>
@@ -375,12 +382,12 @@ Reassessment     re-demonstrate after remediation or at the next cadence</code><
 <hr />
 <h3 id="relationship-to-subsequent-documents">Relationship to Subsequent Documents</h3>
 <ul>
-<li><strong>KF-3008 · Architectural Authority Framework</strong> defines the authority whose sufficiency the Authority dimension assesses.</li>
-<li><strong>KF-3009 · Architectural Crosswalks and Traceability</strong> holds the authoritative obligation enumeration and upstream tracing this framework assesses against.</li>
+<li><strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a> · Architectural Authority Framework</strong> defines the authority whose sufficiency the Authority dimension assesses.</li>
+<li><strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> · Architectural Crosswalks and Traceability</strong> holds the authoritative obligation enumeration and upstream tracing this framework assesses against.</li>
 <li><strong>KF-4000 · Knowledge Operating System</strong> instantiates the evidence sources and continuous checks in a particular deployment.</li>
 </ul>
 <h3 id="closing-statement">Closing Statement</h3>
-<p>Across the KF-3000 series a pattern has completed: KF-3000–3005 answer <em>what exists</em>; KF-3006 answers <em>how it works</em>; KF-3007 answers <em>how we know</em>. Structure, then behaviour, then assurance. KF-3007 is therefore not an audit checklist appended to the architecture — it is the culmination of the architectural argument, the point at which a governed knowledge system can turn to those who rely on it and <em>demonstrate</em>, from its own ordinary operation, that their reliance is warranted.</p>
+<p>Across the <a href="kf-3000-reference-architecture.html">KF-3000</a> series a pattern has completed: <a href="kf-3000-reference-architecture.html">KF-3000</a>–3005 answer <em>what exists</em>; <a href="kf-3006-architectural-integration-model.html">KF-3006</a> answers <em>how it works</em>; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> answers <em>how we know</em>. Structure, then behaviour, then assurance. <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> is therefore not an audit checklist appended to the architecture — it is the culmination of the architectural argument, the point at which a governed knowledge system can turn to those who rely on it and <em>demonstrate</em>, from its own ordinary operation, that their reliance is warranted.</p>
 <h3 id="status-and-next-step">Status and Next Step</h3>
 <p>This document is <strong>Draft for Experiment</strong>. Its dimensions, tests, criteria, evidence model and the Conformance Claim are hypotheses the first vertical slice is designed to test: whether evidence arises event-natively at sufficient depth, whether the four tests apply cleanly to a real object, whether the findings taxonomy is workable, and which criteria matter most in practice. It advances to <em>Validated with Exceptions</em> after the slice, and to <em>Approved</em> only after the resulting revisions and a formal architecture review. Finalising it ahead of the slice would repeat the error it corrects — deepening assurance in advance of proven use.</p>
 

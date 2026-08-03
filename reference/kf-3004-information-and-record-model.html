@@ -32,15 +32,22 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-3004 · Governed Information and Record Model</h1>
+<p class="deck">The Logical Information Architecture of the Knowledge Foundry</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.2</p>
 
-<h4 id="the-logical-information-architecture-of-the-knowledge-foundry">The Logical Information Architecture of the Knowledge Foundry</h4>
-<p><em>Document Class: Reference Architecture · Parent Document: KF-3000 · Governed By: KF-3001 · Derived From: KF-3002 and KF-3003 · Status: Draft · Version: 0.2</em></p>
 <pre class="text"><code>Reference Architecture (KF-3000)
         ↓
 Architectural Rules (KF-3001)
@@ -53,18 +60,18 @@ Control, Authority and Conformance Models (KF-3005–KF-3009)
         ↓
 Implementation Schemas (KF-4000)</code></pre>
 <h3 id="purpose">Purpose</h3>
-<p>KF-3004 defines the logical information objects, record classes, relationships, identity rules and temporal semantics required by the Knowledge Foundry architecture. It establishes what governed information must exist; how it is identified; how information objects relate; which single logical service maintains each authoritative record; how substantive, epistemic, governance, operational and assurance information remain distinguishable; how current and historical states are reconstructed; and how correction, supersession and retention operate without silent mutation.</p>
-<p>KF-3004 does not prescribe database technology, table structure, file format, graph implementation, indexing strategy, API payload, physical partitioning, vendor platform or user-interface representation.</p>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the logical information objects, record classes, relationships, identity rules and temporal semantics required by the Knowledge Foundry architecture. It establishes what governed information must exist; how it is identified; how information objects relate; which single logical service maintains each authoritative record; how substantive, epistemic, governance, operational and assurance information remain distinguishable; how current and historical states are reconstructed; and how correction, supersession and retention operate without silent mutation.</p>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> does not prescribe database technology, table structure, file format, graph implementation, indexing strategy, API payload, physical partitioning, vendor platform or user-interface representation.</p>
 <p>It answers:</p>
 <blockquote>
 <p><em>What logical information must a conforming Knowledge Foundry implementation preserve?</em></p>
 </blockquote>
-<p>Every record family in this document resolves to <strong>exactly one authoritative maintaining service</strong> in the frozen KF-3003 nineteen-service catalogue. There is no dual authoritative ownership: where two services touch a concept, one holds the authoritative record and the other holds an adjacent, related or derived view (§7.1).</p>
+<p>Every record family in this document resolves to <strong>exactly one authoritative maintaining service</strong> in the frozen <a href="kf-3003-service-architecture.html">KF-3003</a> nineteen-service catalogue. There is no dual authoritative ownership: where two services touch a concept, one holds the authoritative record and the other holds an adjacent, related or derived view (§7.1).</p>
 <h3 id="information-derivation">Information Derivation</h3>
 <pre class="text"><code>Canonical Obligation → Lifecycle/Practice Requirement → Invariant and Capability
 → Logical Service Responsibility → Required Information Object
 → Relationship and Temporal Semantics → Implementation Schema</code></pre>
-<p>Every principal information object must be traceable to a lifecycle or practice obligation; a KF-3001 invariant or constraint; a KF-3002 capability; a KF-3003 service responsibility; and a conformance or historical-reconstruction need.</p>
+<p>Every principal information object must be traceable to a lifecycle or practice obligation; a <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> invariant or constraint; a <a href="kf-3002-capability-model.html">KF-3002</a> capability; a <a href="kf-3003-service-architecture.html">KF-3003</a> service responsibility; and a conformance or historical-reconstruction need.</p>
 <hr />
 <h2 id="part-i-information-architecture-foundations">Part I · Information Architecture Foundations</h2>
 <h3 id="core-information-concepts">1. Core Information Concepts</h3>
@@ -81,7 +88,7 @@ Implementation Schemas (KF-4000)</code></pre>
 <h3 id="information-object-specification">4. Information Object Specification</h3>
 <p>Each principal information object may be specified through: Definition; Architectural purpose; Information class; Authoritative maintaining service; Identity rule; Required properties; Principal relationships; Lifecycle or status; Temporal semantics; Integrity and mutation rule; Retention and disposition; Protected invariants; Conformance test.</p>
 <h3 id="information-object-granularity-and-record-categories">4.1 Information Object Granularity and Record Categories</h3>
-<p>KF-3004 identifies logical information obligations. A named information object may be implemented as an independently identified governed record, an immutable sub-record, an effective-dated status assertion, a governed relationship, a controlled property, or a non-authoritative projection. A named item requires <strong>independent record identity</strong> only where it has its own authority, effective period, correction history, provenance, retention obligation, lifecycle or conformance significance. KF-4000 determines physical normalisation while preserving these semantics — a record code is not a mandatory database table.</p>
+<p><a href="kf-3004-information-and-record-model.html">KF-3004</a> identifies logical information obligations. A named information object may be implemented as an independently identified governed record, an immutable sub-record, an effective-dated status assertion, a governed relationship, a controlled property, or a non-authoritative projection. A named item requires <strong>independent record identity</strong> only where it has its own authority, effective period, correction history, provenance, retention obligation, lifecycle or conformance significance. KF-4000 determines physical normalisation while preserving these semantics — a record code is not a mandatory database table.</p>
 <p>Each named object carries one of six <strong>record categories</strong>, which sets the specification depth required:</p>
 <table>
 <colgroup>
@@ -125,9 +132,9 @@ Implementation Schemas (KF-4000)</code></pre>
 <h3 id="common-record-properties">5. Common Record Properties</h3>
 <p>Every governed record must contain or resolve to: stable record identity; record class; related object identity; related version identity where applicable; creator or originating service; initiating actor; accountable authority where applicable; recorded time; event time where distinct; effective time or period where applicable; status; provenance; integrity status; access classification; supersession or correction relationship; retention condition; authoritative maintaining service. A governed reference suffices where resolution and historical meaning are preserved.</p>
 <h3 id="material-information-activity">5.1 Material Information Activity</h3>
-<p>“Material” is defined, so implementations neither record everything nor lose accountability. An activity is <strong>material</strong> where it can affect: identity; substantive content; epistemic standing; authority; acceptance; lifecycle state; release eligibility; dependency disposition; operational application; outcome interpretation; access or integrity; historical reconstruction; or conformance. The authoritative definition of materiality, and the assurance-class scale that grades the <em>depth</em> to which material obligations must be discharged, are fixed by <strong>KF-2003 · Materiality and Assurance</strong>; KF-3005 or a domain governance profile may set additional thresholds within it.</p>
+<p>“Material” is defined, so implementations neither record everything nor lose accountability. An activity is <strong>material</strong> where it can affect: identity; substantive content; epistemic standing; authority; acceptance; lifecycle state; release eligibility; dependency disposition; operational application; outcome interpretation; access or integrity; historical reconstruction; or conformance. The authoritative definition of materiality, and the assurance-class scale that grades the <em>depth</em> to which material obligations must be discharged, are fixed by <strong><a href="kf-2003-materiality-and-assurance.html">KF-2003</a> · Materiality and Assurance</strong>; <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> or a domain governance profile may set additional thresholds within it.</p>
 <h3 id="event-native-conformance-evidence">5.2 Event-Native Conformance Evidence</h3>
-<p>Conformance evidence is, wherever possible, <strong>emitted by the governed act, not authored separately from it.</strong> The record that a governed act produces <em>is</em> its conformance evidence: an Acceptance Record is the evidence of acceptance; a Transition Record is the audit event; an Evaluation Verdict is the test result; a provenance link is the evidence of derivation; a Supersession Link is the evidence of lineage. A distinct evidence artefact is created only where the act’s own record cannot carry the required proof. This rule prevents a second knowledge-management problem — the management of evidence that the knowledge was managed — and is enforced architecturally by KF-3001 IC-24 and realised in the transition pattern of KF-3005 §35.</p>
+<p>Conformance evidence is, wherever possible, <strong>emitted by the governed act, not authored separately from it.</strong> The record that a governed act produces <em>is</em> its conformance evidence: an Acceptance Record is the evidence of acceptance; a Transition Record is the audit event; an Evaluation Verdict is the test result; a provenance link is the evidence of derivation; a Supersession Link is the evidence of lineage. A distinct evidence artefact is created only where the act’s own record cannot carry the required proof. This rule prevents a second knowledge-management problem — the management of evidence that the knowledge was managed — and is enforced architecturally by <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24 and realised in the transition pattern of <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> §35.</p>
 <h3 id="identity-layers">6. Identity Layers</h3>
 <pre class="text"><code>Object Identity → Version Identity → Representation Identity → Record Identity
 → Actionable Form Identity → Application Identity → Outcome Identity</code></pre>
@@ -156,7 +163,7 @@ Implementation Schemas (KF-4000)</code></pre>
 <td>Institutional authority / mandate / delegation</td>
 <td>AUT-01, AUT-02</td>
 <td><strong>SVC-06</strong> Authority and Acceptance</td>
-<td>KF-3008 governs the authority <em>model</em>; SVC-16 assigns the technical permissions through which authorised actions execute</td>
+<td><a href="kf-3008-architectural-authority-framework.html">KF-3008</a> governs the authority <em>model</em>; SVC-16 assigns the technical permissions through which authorised actions execute</td>
 </tr>
 <tr class="even">
 <td>Technical permission</td>
@@ -222,7 +229,7 @@ Implementation Schemas (KF-4000)</code></pre>
 </table>
 <p>Revalidation is not a separately owned record: it appears as a disposition value in DEP-03 (dependency-driven) and as a condition on REL-01 (release-side).</p>
 <h3 id="composite-decision-records">7.2 Composite Decision Records</h3>
-<p>A composite decision (for example a release, which relies on an accepted version, valid acceptance, applicable authority, standing governance, dependency disposition and operating condition) <strong>must reference the authoritative records on which it relied — their identity, applicable version or effective state and decision-time status — and must not reproduce their substantive content in a way that creates a competing source of truth.</strong> This rule is load-bearing for KF-3005 gate definitions.</p>
+<p>A composite decision (for example a release, which relies on an accepted version, valid acceptance, applicable authority, standing governance, dependency disposition and operating condition) <strong>must reference the authoritative records on which it relied — their identity, applicable version or effective state and decision-time status — and must not reproduce their substantive content in a way that creates a competing source of truth.</strong> This rule is load-bearing for <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> gate definitions.</p>
 <hr />
 <h2 id="part-ii-relationship-architecture">Part II · Relationship Architecture</h2>
 <h3 id="relationship-types">8. Relationship Types</h3>
@@ -425,7 +432,7 @@ Implementation Schemas (KF-4000)</code></pre>
 <hr />
 <h2 id="part-vi-domain-c-governance-and-change-information">Part VI · Domain C — Governance and Change Information</h2>
 <h3 id="record-family-c1-authority-and-acceptance-maintained-by-svc-06-authority-and-acceptance">Record Family C1 · Authority and Acceptance — <em>maintained by SVC-06 · Authority and Acceptance</em></h3>
-<p><strong>AUT-01 · Authority Mandate Record</strong> <em>(Supporting).</em> Authority holder or accountable body; source; mandate; scope; effective period; delegation; constraints; revocation status. KF-3008 defines the full authority model; KF-3004 defines the information to represent it. <em>(Held by SVC-06, not SVC-16: institutional authority is not technical permission.)</em></p>
+<p><strong>AUT-01 · Authority Mandate Record</strong> <em>(Supporting).</em> Authority holder or accountable body; source; mandate; scope; effective period; delegation; constraints; revocation status. <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> defines the full authority model; <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the information to represent it. <em>(Held by SVC-06, not SVC-16: institutional authority is not technical permission.)</em></p>
 <p><strong>AUT-02 · Accountable Body Record</strong> <em>(Supporting).</em> Body identity; formal mandate; membership; quorum or decision rule; effective period; delegated authority; decision-record requirements.</p>
 <p><strong>ACC-01 · Acceptance Record</strong> <em>(Core Record).</em> Object version accepted; accepting authority; decision; reliance scope; conditions; duration; justification reference; epistemic standing at decision time; decision rationale. <em>Protects:</em> INV-05, INV-08, INV-09.</p>
 <p><strong>ACC-02 · Refusal Record</strong> <em>(Supporting).</em> The refusal decision and reasons, without changing epistemic standing.</p>
@@ -438,7 +445,7 @@ Implementation Schemas (KF-4000)</code></pre>
 <p><strong>CMP-01 · Compliance Assessment</strong> <em>(Supporting).</em> Distinguishes formal compliance from substantive review.</p>
 <p><strong>GOV-01 · Governance Exception Record</strong> <em>(Supporting).</em> Rule or principle affected; scope; authority; rationale; duration; compensating control; expiry; review status. <em>(Distinct from operational exception EXC-01 — §7.1.)</em></p>
 <h3 id="record-family-c3-lifecycle-and-transition-maintained-by-svc-08-lifecycle-and-transition">Record Family C3 · Lifecycle and Transition — <em>maintained by SVC-08 · Lifecycle and Transition</em></h3>
-<p><strong>LIF-01 · Lifecycle State Record</strong> <em>(Status Assertion).</em> The authoritative current lifecycle state, established transactionally with its transition (§15.1). States are defined by KF-3005 and are not inferred from epistemic standing, release, version status or application activity. <em>Protects:</em> INV-03, IC-01.</p>
+<p><strong>LIF-01 · Lifecycle State Record</strong> <em>(Status Assertion).</em> The authoritative current lifecycle state, established transactionally with its transition (§15.1). States are defined by <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> and are not inferred from epistemic standing, release, version status or application activity. <em>Protects:</em> INV-03, IC-01.</p>
 <p><strong>EVT-01 · Lifecycle Event Record</strong> <em>(Supporting).</em> A material event capable of triggering review, transition, suspension, evolution or retirement.</p>
 <p><strong>GAT-01 · Gate Decision Record</strong> <em>(Supporting).</em> Transition identifier; current state; proposed state; applicable gate; criteria; evidence; result; accountable authority; operating condition; decision time.</p>
 <p><strong>TRN-01 · Transition Record</strong> <em>(Core Record).</em> Transition identifier; prior state; resulting state; execution actor/service; accountable authority; gate-decision reference; effective time; completion status. <strong>Gate Decision and Transition Records are transactionally bound</strong> under one transition identifier. <em>Protects:</em> INV-08, INV-14, IC-01, IC-02.</p>
@@ -516,13 +523,13 @@ Implementation Schemas (KF-4000)</code></pre>
 <h2 id="part-ix-information-integrity-rules">Part IX · Information Integrity Rules</h2>
 <p><strong>16. Object and version integrity.</strong> One enduring identity per object; every version belongs to one object; version content immutable after establishment; new versions do not create new object identities; branching and consolidation create successor identities; release and acceptance do not create versions; retirement does not erase identity.</p>
 <p><strong>17. Record integrity.</strong> Every material event and decision (per §5.1) has a governed record; records are attributable; material records preserve applicable authority; corrections do not erase originals; record status is explicit; missing information is not represented as affirmative evidence; projections do not supersede authoritative records; records under assurance review cannot be silently altered; a composite decision references rather than copies the records it relied on (§7.2).</p>
-<p><strong>18. State separation.</strong> These remain distinct, none inferred solely from another unless KF-3005 defines a formal derivation rule: object lifecycle state; version status; representation status; epistemic standing; assessment progression; contestation; acceptance status; release status; actionable-form status; service operating condition; conformance status.</p>
+<p><strong>18. State separation.</strong> These remain distinct, none inferred solely from another unless <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> defines a formal derivation rule: object lifecycle state; version status; representation status; epistemic standing; assessment progression; contestation; acceptance status; release status; actionable-form status; service operating condition; conformance status.</p>
 <p><strong>19. Authority and permission separation.</strong> A permission record (ACS-02, SVC-16) establishes that an actor/service may technically perform an action; an authority record (AUT-01, SVC-06) establishes that a human authority or accountable body may make a governed decision. Both may be required; neither substitutes for the other.</p>
 <p><strong>20. Provenance integrity.</strong> Every material information object preserves or resolves to origin, creator/source, derivation, custody, related object and version, material transformation and known gaps. Broken provenance is explicit.</p>
 <p><strong>21. Temporal integrity.</strong> Recorded time is never substituted for effective time; retrospective recording is identified; future-effective decisions are not treated as currently effective; expired decisions do not remain silently active; reconstruction preserves knowledge available at the target time; later correction is distinguishable from the earlier state; sequence ambiguity is represented as indeterminate where unresolved.</p>
 <hr />
 <h2 id="part-x-information-interaction-contracts">Part X · Information Interaction Contracts</h2>
-<p><strong>22. Record creation.</strong> A service may create an authoritative record only where KF-3003 assigns it maintenance responsibility. <strong>23. Record reference.</strong> A referencing service preserves target identity, target version or effective state, relationship type, reference time and resolution status. <strong>24. Change request.</strong> A service may request but not directly apply change to another service’s record. <strong>25. Event publication.</strong> Material creation, change, suspension, withdrawal, correction and retirement events are made available to affected services without transferring authority or mutating receiving records. <strong>26. Projection and caching.</strong> A projection identifies authoritative source, source version or effective state, creation time, freshness and invalidation conditions and access restrictions; a stale projection is never presented as current authoritative state.</p>
+<p><strong>22. Record creation.</strong> A service may create an authoritative record only where <a href="kf-3003-service-architecture.html">KF-3003</a> assigns it maintenance responsibility. <strong>23. Record reference.</strong> A referencing service preserves target identity, target version or effective state, relationship type, reference time and resolution status. <strong>24. Change request.</strong> A service may request but not directly apply change to another service’s record. <strong>25. Event publication.</strong> Material creation, change, suspension, withdrawal, correction and retirement events are made available to affected services without transferring authority or mutating receiving records. <strong>26. Projection and caching.</strong> A projection identifies authoritative source, source version or effective state, creation time, freshness and invalidation conditions and access restrictions; a stale projection is never presented as current authoritative state.</p>
 <hr />
 <h2 id="part-xi-information-conformance">Part XI · Information Conformance</h2>
 <p><strong>27. Information conformance.</strong> Every required object class is represented; every authoritative record has one maintaining service; identity semantics are preserved; required relationships are resolvable; current and historical states are distinguishable; correction and supersession preserve prior states; temporal semantics are explicit; protected information is access-controlled; missing or indeterminate information is visible; and information supports all required invariant and interaction-constraint tests.</p>
@@ -534,7 +541,7 @@ Evidence and Counter-Evidence → Representation → Object Identity and Origin<
 <p>The reconstruction must also reveal the responsible human authority, applicable steward, lifecycle transitions, dependencies, access and integrity condition, operating condition, known provenance gaps, relevant exceptions and conformance findings.</p>
 <hr />
 <h2 id="part-xii-crosswalks">Part XII · Crosswalks</h2>
-<h3 id="information-object-to-service-crosswalk-frozen-kf-3003-catalogue-one-maintainer-per-family">30. Information-Object-to-Service Crosswalk <em>(frozen KF-3003 catalogue; one maintainer per family)</em></h3>
+<h3 id="information-object-to-service-crosswalk-frozen-kf-3003-catalogue-one-maintainer-per-family">30. Information-Object-to-Service Crosswalk <em>(frozen <a href="kf-3003-service-architecture.html">KF-3003</a> catalogue; one maintainer per family)</em></h3>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -958,7 +965,7 @@ Evidence and Counter-Evidence → Representation → Object Identity and Origin<
 </tr>
 </tbody>
 </table>
-<h3 id="lifecycle-to-information-crosswalk-kf-2001-stages">34. Lifecycle-to-Information Crosswalk <em>(KF-2001 stages)</em></h3>
+<h3 id="lifecycle-to-information-crosswalk-kf-2001-stages">34. Lifecycle-to-Information Crosswalk <em>(<a href="kf-2001-oko-lifecycle.html">KF-2001</a> stages)</em></h3>
 <table>
 <colgroup>
 <col style="width: 50%" />
@@ -1023,7 +1030,7 @@ Evidence and Counter-Evidence → Representation → Object Identity and Origin<
 </table>
 <hr />
 <h2 id="part-xiii-relationship-to-subsequent-documents">Part XIII · Relationship to Subsequent Documents</h2>
-<p><strong>KF-3005</strong> defines lifecycle states, gate conditions, transition rules and permissible/prohibited state changes; KF-3004 defines the records through which those controls are represented and evidenced, and the current-state/event-history rule (§15.1) they must honour. <strong>KF-3008</strong> defines the authority model behind AUT-01/02 and the delegation, stewardship, access and computational-participation assignments; KF-3004 defines the logical records that represent them. <strong>KF-3007</strong> defines the tests and evidence for information, service and system conformance. <strong>KF-3009</strong> preserves traceability from Canonical Principle through practice, invariant, capability, service, information object, control and implementation.</p>
+<p><strong><a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a></strong> defines lifecycle states, gate conditions, transition rules and permissible/prohibited state changes; <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the records through which those controls are represented and evidenced, and the current-state/event-history rule (§15.1) they must honour. <strong><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></strong> defines the authority model behind AUT-01/02 and the delegation, stewardship, access and computational-participation assignments; <a href="kf-3004-information-and-record-model.html">KF-3004</a> defines the logical records that represent them. <strong><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></strong> defines the tests and evidence for information, service and system conformance. <strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a></strong> preserves traceability from Canonical Principle through practice, invariant, capability, service, information object, control and implementation.</p>
 <p><strong>KF-4000</strong> may implement this logical architecture through relational, graph, document, event-stream, object-store, ledger, file or human-maintained structures, and may denormalise, replicate, index or distribute — provided it does not create conflicting authoritative records, collapse required semantic distinctions, overwrite immutable history, remove required provenance, substitute a projection for authoritative state, make historical reconstruction impossible, treat missing or indeterminate information as satisfied, or prevent independent conformance inspection.</p>
 <h3 id="closing-statement">Closing Statement</h3>
 <p>The Governed Information and Record Model defines the memory of the Knowledge Foundry architecture. It ensures that substantive knowledge, warrant, authority, operational use and assurance remain distinguishable yet connected; that every material decision and transition is evidenced; that history survives change; and that the architecture can reconstruct not merely what it currently holds, but how that state came to exist and why it was permitted to be relied upon. Each record family resolves to exactly one authoritative maintainer, each historical view is derived rather than duplicated, each status represents one conceptual dimension, and each crosswalk demonstrates the obligation it claims.</p>

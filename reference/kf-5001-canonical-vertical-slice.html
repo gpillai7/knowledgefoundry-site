@@ -32,15 +32,22 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html" class="active"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-5001 · Canonical Vertical Slice</h1>
+<p class="deck">One governed knowledge object, walked from capture to retirement — the "Hello, World!" of Knowledge Foundry</p>
+<p class="docmeta">Exemplar (Illustrative) &#183; Draft &#183; v0.1</p>
 
-<h4 id="one-governed-knowledge-object-walked-from-capture-to-retirement-the-hello-world-of-knowledge-foundry">One governed knowledge object, walked from capture to retirement — the “Hello, World!” of Knowledge Foundry</h4>
-<p><em>Document Class: Exemplar (Illustrative) · Parent Programme: Knowledge Foundry · Parent Series: KF-5000 · Status: Draft · Version: 0.1</em></p>
 <pre class="text"><code>Instantiates, on one Operational Knowledge Object:
    Canon (KF-1000) · Lifecycle (KF-2001) · Materiality (KF-2003)
    · Reference Architecture and its domains (KF-3000–3005)
@@ -48,7 +55,7 @@
 <p>Programming has a tradition: before the language reference, a tiny complete program — <em>“Hello, World!”</em> — proves the language, compiler and runtime work together, and lets a newcomer see the whole shape of a thing before learning its parts. This document is that program for Knowledge Foundry.</p>
 <p>It takes <strong>one</strong> Operational Knowledge Object and follows it from the moment it enters the system to the moment it leaves, showing at every step which services act on it, which records it leaves behind, which gates and controls it must pass, who holds the authority to make it consequential, and how its conformance can later be reconstructed. The reader never has to swap objects out of mind.</p>
 <blockquote>
-<p><strong>This document teaches Knowledge Foundry, not the four-day week.</strong> The subject is incidental. A reader should finish understanding <em>how governed knowledge works</em> — not holding a view on working hours. Like KF-3009, KF-5001 introduces no new architectural concept; it only instantiates concepts defined in their home documents, cited as it goes.</p>
+<p><strong>This document teaches Knowledge Foundry, not the four-day week.</strong> The subject is incidental. A reader should finish understanding <em>how governed knowledge works</em> — not holding a view on working hours. Like <a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a>, <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> introduces no new architectural concept; it only instantiates concepts defined in their home documents, cited as it goes.</p>
 </blockquote>
 <p>The example is a <strong>Knowledge Brief</strong> — a governed statement that answers one consequential question — because a brief is the simplest object that still exercises the whole architecture: several kinds of evidence, genuine counter-evidence, an authority that must accept reliance, and a life that continues after acceptance.</p>
 <hr />
@@ -82,7 +89,7 @@
 </tr>
 <tr class="even">
 <td><strong>Assurance class</strong></td>
-<td><strong>A3 Consequential</strong> (KF-2003) — it will materially influence a significant organisational decision</td>
+<td><strong>A3 Consequential</strong> (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>) — it will materially influence a significant organisational decision</td>
 </tr>
 <tr class="odd">
 <td><strong>Overlays</strong></td>
@@ -101,7 +108,7 @@
 <p>That single classification — <strong>A3</strong> — will quietly govern how deep every later step must go. Hold it in mind; §6 returns to it.</p>
 <hr />
 <h2 id="the-guided-journey">2 · The Guided Journey</h2>
-<p>The object advances one lifecycle stage at a time (KF-2001). At each stage below: what happens to the brief · the services that act (KF-3003) · the records it emits (KF-3004) · the gate and controls it passes (KF-3005) · the conformance dimension it exercises (KF-3007 §6). Every record named is <strong>emitted by the act itself</strong> — nobody stops to fill in a separate form (KF-3006 §9).</p>
+<p>The object advances one lifecycle stage at a time (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>). At each stage below: what happens to the brief · the services that act (<a href="kf-3003-service-architecture.html">KF-3003</a>) · the records it emits (<a href="kf-3004-information-and-record-model.html">KF-3004</a>) · the gate and controls it passes (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>) · the conformance dimension it exercises (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> §6). Every record named is <strong>emitted by the act itself</strong> — nobody stops to fill in a separate form (<a href="kf-3006-architectural-integration-model.html">KF-3006</a> §9).</p>
 <h4 id="capture-state-candidate">Capture — <em>state: Candidate</em></h4>
 <p>The question is posed and candidate material is admitted: the Iceland public-sector trials, the UK 2022 pilot, two single-firm case studies, several peer-reviewed studies, and our own retention and output data. Capture is deliberately permissive — nothing is trusted yet — but one thing cannot be deferred: <strong>origin</strong>. Each source is recorded with where it came from. <em>Services:</em> Object Registry (SVC-01), Provenance (SVC-15). <em>Records:</em> Identity Record (KB-4DW-01), Intake Record, Provenance Seed. <em>Gate:</em> GATE-REG-01; <em>controls:</em> identity resolution and duplicate detection (CTRL-ID-01/02). <em>Dimension:</em> Structural. <em>Authority:</em> Creation (the Steward) — light, because nothing is yet relied upon.</p>
 <h4 id="structure-state-structured">Structure — <em>state: Structured</em></h4>
@@ -141,7 +148,7 @@
 <p>Every arrow is a governed transition: recorded, attributed, justified. There are no silent moves — that is the single difference between this and a document that merely changes status.</p>
 <hr />
 <h2 id="conformance-demonstrated">4 · Conformance, Demonstrated</h2>
-<p>Long after the decision, someone asks: <em>was this brief properly governed?</em> KF-3007 answers it against the object, through four tests:</p>
+<p>Long after the decision, someone asks: <em>was this brief properly governed?</em> <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> answers it against the object, through four tests:</p>
 <ul>
 <li><strong>Constitutional coverage</strong> — every act traces to a Canonical Principle: the object was governed not as knowledge but as an OKO (I), engineered as a lifecycle (II), accepted by collective authority (III), justified before reliance (VIII).</li>
 <li><strong>Operational coverage</strong> — every transition has a trigger, an authority, criteria and a recorded outcome; every gate evaluated explicit exit conditions.</li>
@@ -150,12 +157,12 @@
 </ul>
 <p><strong>A worked Conformance Claim.</strong></p>
 <blockquote>
-<p><em>Claim:</em> “The acceptance of KB-4DW-01 held sufficient authority for A3 reliance.” <em>Supported by:</em> the Acceptance Record (authority = Executive Committee; scope = six-month trial; date), the Authority Mandate Record confirming the Committee’s remit for A3 decisions, and the independent-review record required at A3. <em>Assessment:</em> Constitutional + Operational + Integrity + Reconstructability all satisfied. <em>Finding:</em> <strong>Conformant</strong>, at <strong>high confidence</strong> — the evidence is complete, event-native and independently corroborated (KF-3007 §13.3).</p>
+<p><em>Claim:</em> “The acceptance of KB-4DW-01 held sufficient authority for A3 reliance.” <em>Supported by:</em> the Acceptance Record (authority = Executive Committee; scope = six-month trial; date), the Authority Mandate Record confirming the Committee’s remit for A3 decisions, and the independent-review record required at A3. <em>Assessment:</em> Constitutional + Operational + Integrity + Reconstructability all satisfied. <em>Finding:</em> <strong>Conformant</strong>, at <strong>high confidence</strong> — the evidence is complete, event-native and independently corroborated (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> §13.3).</p>
 </blockquote>
 <p>Had the independent review been missing, the same reconstruction would have returned <strong>Not Assessable</strong> for that claim — never a silent pass.</p>
 <hr />
 <h2 id="authority-demonstrated">5 · Authority, Demonstrated</h2>
-<p>The acceptance was made by the <strong>Executive Committee</strong>, and the architecture can resolve that authority all the way down (KF-3008 §5.1):</p>
+<p>The acceptance was made by the <strong>Executive Committee</strong>, and the architecture can resolve that authority all the way down (<a href="kf-3008-architectural-authority-framework.html">KF-3008</a> §5.1):</p>
 <pre class="text"><code>Decision: accept KB-4DW-01 for a six-month trial
      ▲ resolves to
 Acceptance Authority
@@ -165,10 +172,10 @@ Role: Executive Committee
 Governance Structure
      ▲ constituted by
 The Institution</code></pre>
-<p>Because the object is <strong>A3</strong>, three authority conditions applied that a lower class would not have required: the accepting authority was <strong>confirmed</strong>, an <strong>independent review</strong> stood between justification and acceptance, and <strong>separation</strong> held — the People &amp; Operations lead who <em>evaluated and justified</em> the brief was <strong>not</strong> the body that <em>accepted</em> it (KF-3008 §11). Authority here is not seniority: the Committee’s right to accept rests on its mandate for consequential decisions, not on rank.</p>
+<p>Because the object is <strong>A3</strong>, three authority conditions applied that a lower class would not have required: the accepting authority was <strong>confirmed</strong>, an <strong>independent review</strong> stood between justification and acceptance, and <strong>separation</strong> held — the People &amp; Operations lead who <em>evaluated and justified</em> the brief was <strong>not</strong> the body that <em>accepted</em> it (<a href="kf-3008-architectural-authority-framework.html">KF-3008</a> §11). Authority here is not seniority: the Committee’s right to accept rests on its mandate for consequential decisions, not on rank.</p>
 <hr />
 <h2 id="materiality-demonstrated">6 · Materiality, Demonstrated</h2>
-<p>Everything above was shaped by one value set at the very start: <strong>A3 Consequential.</strong> Materiality never changed the <em>path</em> — an A0 note and an A4 board paper cross the same gates — but it set the <em>depth</em> at each one (KF-2003; KF-3001 IC-23):</p>
+<p>Everything above was shaped by one value set at the very start: <strong>A3 Consequential.</strong> Materiality never changed the <em>path</em> — an A0 note and an A4 board paper cross the same gates — but it set the <em>depth</em> at each one (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>; <a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-23):</p>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -263,7 +270,7 @@ The Institution</code></pre>
 <thead>
 <tr class="header">
 <th>To see…</th>
-<th>Read KF-5001…</th>
+<th>Read <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a>…</th>
 <th>Alongside</th>
 </tr>
 </thead>
@@ -271,27 +278,27 @@ The Institution</code></pre>
 <tr class="odd">
 <td>the lifecycle on a real object</td>
 <td>§2</td>
-<td>KF-2001</td>
+<td><a href="kf-2001-oko-lifecycle.html">KF-2001</a></td>
 </tr>
 <tr class="even">
 <td>the elements collaborating</td>
 <td>§2–§3</td>
-<td>KF-3006 §6</td>
+<td><a href="kf-3006-architectural-integration-model.html">KF-3006</a> §6</td>
 </tr>
 <tr class="odd">
 <td>how conformance is demonstrated</td>
 <td>§4</td>
-<td>KF-3007</td>
+<td><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a></td>
 </tr>
 <tr class="even">
 <td>who may make it consequential</td>
 <td>§5</td>
-<td>KF-3008</td>
+<td><a href="kf-3008-architectural-authority-framework.html">KF-3008</a></td>
 </tr>
 <tr class="odd">
 <td>how reliance sets the depth</td>
 <td>§6</td>
-<td>KF-2003</td>
+<td><a href="kf-2003-materiality-and-assurance.html">KF-2003</a></td>
 </tr>
 <tr class="even">
 <td>that the architecture is domain-neutral</td>
@@ -301,9 +308,9 @@ The Institution</code></pre>
 </tbody>
 </table>
 <h3 id="status-and-honest-limits">Status and Honest Limits</h3>
-<p>This is a <strong>canonical illustration</strong>, and it illustrates — it does not validate. A constructed object confirms the architecture on an object built to succeed; it cannot <em>surprise</em> us, and surprise is what an experiment is for. The documents still marked <em>Draft for Experiment</em> (KF-2003, KF-3007, KF-0002) therefore remain provisional until one <strong>real, uncontrolled</strong> object has been run and allowed to break something. KF-5001 makes the architecture legible; it does not close that experiment. That is the honest boundary of a “Hello, World!” — it proves the parts fit together, not that they survive the world.</p>
+<p>This is a <strong>canonical illustration</strong>, and it illustrates — it does not validate. A constructed object confirms the architecture on an object built to succeed; it cannot <em>surprise</em> us, and surprise is what an experiment is for. The documents still marked <em>Draft for Experiment</em> (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a>, <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>, <a href="kf-0002-controlled-vocabulary.html">KF-0002</a>) therefore remain provisional until one <strong>real, uncontrolled</strong> object has been run and allowed to break something. <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> makes the architecture legible; it does not close that experiment. That is the honest boundary of a “Hello, World!” — it proves the parts fit together, not that they survive the world.</p>
 
-<nav class="prevnext"><a class="pv" href="kf-5000-exemplars-and-case-studies.html">&#8592; Exemplars & Case Studies</a><a class="nx" href="kf-0002-controlled-vocabulary.html">Controlled Vocabulary &#8594;</a></nav>
+<nav class="prevnext"><a class="pv" href="kf-5000-exemplars-and-case-studies.html">&#8592; Exemplars & Case Studies</a><a class="nx" href="kf-l001-b01.html">Knowledge as the Object &#8594;</a></nav>
 </main>
 </div>
 </body></html>

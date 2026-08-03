@@ -32,15 +32,22 @@
 <div class="grp">Exemplars</div>
 <a href="kf-5000-exemplars-and-case-studies.html"><span class="id">KF-5000</span>Exemplars & Case Studies</a>
 <a href="kf-5001-canonical-vertical-slice.html"><span class="id">KF-5001</span>Canonical Vertical Slice</a>
+<div class="grp">Literature Landscape</div>
+<a href="kf-l001-b01.html"><span class="id">KF-L001-B01</span>Knowledge as the Object</a>
+<a href="kf-l001-b02.html"><span class="id">KF-L001-B02</span>The Evolution of Knowledge Engineering</a>
+<a href="kf-l001-b03.html"><span class="id">KF-L001-B03</span>Knowledge Beyond Engineering</a>
+<a href="kf-l001-b04.html"><span class="id">KF-L001-B04</span>Governing Knowledge Change</a>
+<a href="kf-l001-b05.html"><span class="id">KF-L001-B05</span>Foundation Models & the Knowledge Sciences</a>
+<a href="kf-l001-c01.html"><span class="id">KF-L001-C01</span>Integrative Synthesis</a>
 <div class="grp">Appendix</div>
 <a href="kf-0002-controlled-vocabulary.html"><span class="id">KF-0002</span>Controlled Vocabulary</a>
 </nav>
 </details>
 <main class="article">
 <h1>KF-3008 · Architectural Authority Framework</h1>
+<p class="deck">How authority is established, exercised, delegated and evidenced within a governed knowledge system</p>
+<p class="docmeta">Reference Architecture &#183; Draft &#183; v0.1</p>
 
-<h4 id="how-authority-is-established-exercised-delegated-and-evidenced-within-a-governed-knowledge-system">How authority is established, exercised, delegated and evidenced within a governed knowledge system</h4>
-<p><em>Document Class: Reference Architecture · Parent Programme: Knowledge Foundry · Parent Document: KF-3000 · Status: Draft · Version: 0.1</em></p>
 <pre class="text"><code>Principle (KF-1000) → Lifecycle (KF-2001) → Materiality (KF-2003)
         → Reference Architecture (KF-3000)
               → Architectural Integration Model (KF-3006)      ← how the architecture behaves
@@ -55,7 +62,7 @@
 <p>It is titled a <strong>Framework</strong>, not a Model, because it establishes governing rules, not merely a description of relationships.</p>
 <h3 id="purpose">Purpose</h3>
 <p>The Architectural Authority Framework defines how authority is <strong>represented, exercised, delegated and evidenced</strong> within the Knowledge Foundry Reference Architecture. It establishes the architectural rules governing who may perform consequential lifecycle actions, under what conditions those actions are legitimate, and how authority itself becomes observable through traceable evidence.</p>
-<p>The document is about <em>authority itself</em> — not organisational charts, and not the technologies that authenticate people or enforce permissions. Where KF-3006 asked <em>how the architecture behaves</em> and KF-3007 asked <em>how that behaviour is evaluated</em>, KF-3008 asks <em>who possesses the legitimate authority to make that behaviour consequential.</em> Without it, acceptance — the act at the centre of the lifecycle — remains an abstract concept with no defined source.</p>
+<p>The document is about <em>authority itself</em> — not organisational charts, and not the technologies that authenticate people or enforce permissions. Where <a href="kf-3006-architectural-integration-model.html">KF-3006</a> asked <em>how the architecture behaves</em> and <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> asked <em>how that behaviour is evaluated</em>, <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> asks <em>who possesses the legitimate authority to make that behaviour consequential.</em> Without it, acceptance — the act at the centre of the lifecycle — remains an abstract concept with no defined source.</p>
 <p>Read together, these three documents answer three complementary questions — which is why they are three documents and not one long chapter:</p>
 <table>
 <colgroup>
@@ -71,21 +78,21 @@
 <tbody>
 <tr class="odd">
 <td>How does the architecture behave?</td>
-<td>KF-3006 · Integration</td>
+<td><a href="kf-3006-architectural-integration-model.html">KF-3006</a> · Integration</td>
 </tr>
 <tr class="even">
 <td>How do we know it behaved correctly?</td>
-<td>KF-3007 · Conformance</td>
+<td><a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> · Conformance</td>
 </tr>
 <tr class="odd">
 <td>Who had the legitimate right to make it behave that way?</td>
-<td>KF-3008 · Authority</td>
+<td><a href="kf-3008-architectural-authority-framework.html">KF-3008</a> · Authority</td>
 </tr>
 </tbody>
 </table>
 <h4 id="figure-1-why-authority-belongs-in-the-architecture">Figure 1 · Why Authority Belongs in the Architecture</h4>
 <blockquote>
-<p><strong>Worked example.</strong> KF-5001 §5 shows a real acceptance — who held the authority, and how it resolves from decision back to institution.</p>
+<p><strong>Worked example.</strong> <a href="kf-5001-canonical-vertical-slice.html">KF-5001</a> §5 shows a real acceptance — who held the authority, and how it resolves from decision back to institution.</p>
 </blockquote>
 <pre class="text"><code>Institution
      ▼ constitutes
@@ -104,13 +111,13 @@ Evidence
 Institutional Reliance</code></pre>
 <p>Read top to bottom, the figure explains authority’s architectural purpose in a single line: an institution constitutes governance, which defines roles, which carry authority, which legitimises the decisions that effect lifecycle transitions, which emit the evidence that warrants an institution in relying on what it knows. Authority is the link without which reliance has no legitimate source.</p>
 <h3 id="scope-and-the-authority-admission-test">Scope and the Authority Admission Test</h3>
-<p>KF-3008 is technology-neutral and institution-neutral. It defines architectural authority; it does not name the mechanisms that implement it. A statement belongs in KF-3008 only if:</p>
+<p><a href="kf-3008-architectural-authority-framework.html">KF-3008</a> is technology-neutral and institution-neutral. It defines architectural authority; it does not name the mechanisms that implement it. A statement belongs in <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> only if:</p>
 <ol type="1">
 <li>it concerns the establishment, exercise, delegation, scope, failure or evidence of architectural authority;</li>
 <li>it can be stated without naming a specific technology, product, directory or protocol; and</li>
 <li>it references elements defined elsewhere in the programme without redefining them.</li>
 </ol>
-<p><strong>Deliberately out of scope</strong>, because it belongs to implementation (KF-4000): Active Directory, IAM, OAuth, RBAC schemes, authentication, credential and permission stores. Also distinct is <em>technical permission</em> — the architectural ability to execute an action — which is owned by the Access and Integrity Service (SVC-16). This framework governs institutional <strong>authority</strong> (the <em>right</em>); SVC-16 governs <strong>permission</strong> (the <em>ability</em>); KF-4000 implements both. Authority is not permission (KF-3001 IC-13), and this document never conflates them.</p>
+<p><strong>Deliberately out of scope</strong>, because it belongs to implementation (KF-4000): Active Directory, IAM, OAuth, RBAC schemes, authentication, credential and permission stores. Also distinct is <em>technical permission</em> — the architectural ability to execute an action — which is owned by the Access and Integrity Service (SVC-16). This framework governs institutional <strong>authority</strong> (the <em>right</em>); SVC-16 governs <strong>permission</strong> (the <em>ability</em>); KF-4000 implements both. Authority is not permission (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-13), and this document never conflates them.</p>
 <hr />
 <h2 id="introduction">1 · Introduction</h2>
 <h3 id="purpose-1">1.1 Purpose</h3>
@@ -121,12 +128,12 @@ Institutional Reliance</code></pre>
 <h3 id="relationship-to-the-canon">1.3 Relationship to the Canon</h3>
 <p>Authority is the architectural realisation of <strong>Principle III</strong> — <em>knowledge becomes enduring capability only through collective authorisation</em> — and of the <strong>human-accountability invariant</strong>: labour may be distributed across people and machines, but accountability may not be discharged into a substrate (KF-1103; KF-1050). This framework fixes where that irreducible human authority sits and how it is exercised.</p>
 <h3 id="relationship-to-lifecycle">1.4 Relationship to Lifecycle</h3>
-<p>The lifecycle names an <strong>Authority</strong> role and an <strong>Accept</strong> transition and insists that acceptance is an act of authority <em>distinct from</em> justification (KF-2001). KF-3008 defines the authority that the Accept transition — and every other consequential transition — requires. KF-3005 identifies these needs abstractly, as <em>Required Authority Class</em>, <em>Required Decision Role</em> and <em>Required Separation Condition</em> in its Transition-to-Authority Crosswalk (§60); KF-3008 defines who may occupy those roles.</p>
+<p>The lifecycle names an <strong>Authority</strong> role and an <strong>Accept</strong> transition and insists that acceptance is an act of authority <em>distinct from</em> justification (<a href="kf-2001-oko-lifecycle.html">KF-2001</a>). <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> defines the authority that the Accept transition — and every other consequential transition — requires. <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a> identifies these needs abstractly, as <em>Required Authority Class</em>, <em>Required Decision Role</em> and <em>Required Separation Condition</em> in its Transition-to-Authority Crosswalk (§60); <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> defines who may occupy those roles.</p>
 <h3 id="relationship-to-conformance">1.5 Relationship to Conformance</h3>
-<p>Authority is itself assessable. KF-3007 lists an <strong>Authority</strong> conformance dimension; this framework supplies what that dimension tests — <em>was authority valid, was delegation valid, was acceptance legitimate, can authority be reconstructed?</em> (§15). Because authority is evidenced event-natively (§10), it is demonstrable on the same terms as everything else the architecture does.</p>
+<p>Authority is itself assessable. <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> lists an <strong>Authority</strong> conformance dimension; this framework supplies what that dimension tests — <em>was authority valid, was delegation valid, was acceptance legitimate, can authority be reconstructed?</em> (§15). Because authority is evidenced event-natively (§10), it is demonstrable on the same terms as everything else the architecture does.</p>
 <hr />
 <h2 id="philosophy-of-authority">2 · Philosophy of Authority</h2>
-<p>Before the principles, one distinction frames them. <strong>Authority establishes <em>who</em> may perform a consequential act; legitimacy concerns <em>whether</em> that act satisfies the architectural conditions governing its exercise.</strong> A decision may originate from a valid authority yet still fail to achieve architectural legitimacy if required obligations, controls or evidence are absent — just as a technically sound recommendation from an unauthorised source never acquires authority at all. Authority is the entitlement; legitimacy is the entitlement properly exercised. This framework defines authority; legitimacy is what the Conformance Framework (KF-3007) later assesses, which is why an “authority valid” finding and an “act legitimate” finding are distinct there.</p>
+<p>Before the principles, one distinction frames them. <strong>Authority establishes <em>who</em> may perform a consequential act; legitimacy concerns <em>whether</em> that act satisfies the architectural conditions governing its exercise.</strong> A decision may originate from a valid authority yet still fail to achieve architectural legitimacy if required obligations, controls or evidence are absent — just as a technically sound recommendation from an unauthorised source never acquires authority at all. Authority is the entitlement; legitimacy is the entitlement properly exercised. This framework defines authority; legitimacy is what the Conformance Framework (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>) later assesses, which is why an “authority valid” finding and an “act legitimate” finding are distinct there.</p>
 <p>Authority in Knowledge Foundry rests on nine convictions.</p>
 <ol type="1">
 <li><strong>Authority exists to protect institutional reliance.</strong> It is not an administrative convenience; it is the mechanism by which an institution may legitimately base action on what it knows. Authority exists <em>because</em> institutions rely — not the other way around.</li>
@@ -289,7 +296,7 @@ Institution</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Acceptance, Publication, Supersession and Retirement authorities are the consequential ones: they must resolve to an identifiable human authority and may never be discharged into a substrate (KF-3006 §5.3). Creation and Evaluation may be agent-assisted under a named role. <strong>Delegation authority is meta-authority</strong> — the authority to confer authority — and is the most tightly bounded of all.</p>
+<p>Acceptance, Publication, Supersession and Retirement authorities are the consequential ones: they must resolve to an identifiable human authority and may never be discharged into a substrate (<a href="kf-3006-architectural-integration-model.html">KF-3006</a> §5.3). Creation and Evaluation may be agent-assisted under a named role. <strong>Delegation authority is meta-authority</strong> — the authority to confer authority — and is the most tightly bounded of all.</p>
 <h3 id="authority-relationships">6.1 Authority Relationships</h3>
 <p>Authorities do not act in isolation; they stand in defined relationships to one another. Naming these relationships is the bridge from <em>what</em> authorities exist to <em>how far</em> each reaches (§7):</p>
 <ul>
@@ -363,7 +370,7 @@ Next Version ──(Revision Authority)──▶ change authorised, warrant re-e
 Superseded ──(Supersession Authority)──▶ successor installed, lineage preserved
      ▼
 Historical ──(Retirement Authority)──▶ active life ended, history intact</code></pre>
-<p>This is the concrete filling of KF-3005’s abstract Transition-to-Authority Crosswalk (§60). A transition presented without the authority its gate requires does not proceed; the gate returns <em>Fail</em> or <em>Not Assessable</em>, never a silent Pass (KF-3005; KF-3007 §13).</p>
+<p>This is the concrete filling of <a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>’s abstract Transition-to-Authority Crosswalk (§60). A transition presented without the authority its gate requires does not proceed; the gate returns <em>Fail</em> or <em>Not Assessable</em>, never a silent Pass (<a href="kf-3005-lifecycle-and-control-architecture.html">KF-3005</a>; <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> §13).</p>
 <hr />
 <h2 id="delegation">9 · Delegation</h2>
 <p>Delegation is how authority extends beyond a single role-holder without loss of attribution or accountability. The architecture recognises seven distinct constructs, and conflating them is a common source of authority failure:</p>
@@ -374,14 +381,14 @@ Historical ──(Retirement Authority)──▶ active life ended, history inta
 <li><strong>Revocation</strong> — conferred authority is withdrawn before its natural expiry, by an attributable act (§14).</li>
 <li><strong>Expiry</strong> — conferred or temporary authority lapses at the end of its effective period without further action.</li>
 <li><strong>Temporary authority</strong> — authority granted for a bounded period or purpose, expiring automatically.</li>
-<li><strong>Emergency authority</strong> — an exceptional, time-boxed grant permitting action under urgent conditions, recorded as a governance exception and visible until reviewed (KF-3001 IC-19); it may never waive an invariant.</li>
+<li><strong>Emergency authority</strong> — an exceptional, time-boxed grant permitting action under urgent conditions, recorded as a governance exception and visible until reviewed (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-19); it may never waive an invariant.</li>
 </ul>
 <p>Every delegation is itself an exercise of <strong>Delegation authority</strong> (§6), bounded by scope (§7) and evidenced (§10). Delegated authority can never exceed the delegator’s own scope: one cannot confer what one does not hold.</p>
 <hr />
 <h2 id="authority-evidence">10 · Authority Evidence</h2>
-<p>The framework’s connection to KF-3007: <strong>authority itself becomes evidence.</strong> Because authority must be observable (Principle 6), every mandate, delegation and exercise leaves a record — not because any particular technology requires it, but because the architecture requires authority to be reconstructable.</p>
-<p>Authority is evidenced through records the architecture already maintains (KF-3004): the <strong>Authority Mandate Record</strong> (AUT-01) and <strong>Delegation Record</strong> (AUT-02), maintained by SVC-06; the <strong>Acceptance Record</strong> and <strong>Scope-of-Reliance Record</strong>; role-assignment records; and the decision and transition records emitted by every gated act. In implementation these may take the form of an approval record, a signature, a delegation entry, a role assignment, an acceptance event or a decision log — but the architecture requires only that the mandate, its bounds and its exercise be recoverable.</p>
-<p>This evidence is <strong>event-native</strong> (KF-3001 IC-24; KF-3004 §5.2): the acceptance record <em>is</em> the evidence that acceptance authority was exercised; the delegation record <em>is</em> the evidence that delegation was valid. Authority does not commission a separate register of its own legitimacy; the exercise of authority generates its evidence as a natural consequence of the architectural event rather than through a parallel administrative process (KF-3006 §9), exactly as the rest of the architecture does.</p>
+<p>The framework’s connection to <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a>: <strong>authority itself becomes evidence.</strong> Because authority must be observable (Principle 6), every mandate, delegation and exercise leaves a record — not because any particular technology requires it, but because the architecture requires authority to be reconstructable.</p>
+<p>Authority is evidenced through records the architecture already maintains (<a href="kf-3004-information-and-record-model.html">KF-3004</a>): the <strong>Authority Mandate Record</strong> (AUT-01) and <strong>Delegation Record</strong> (AUT-02), maintained by SVC-06; the <strong>Acceptance Record</strong> and <strong>Scope-of-Reliance Record</strong>; role-assignment records; and the decision and transition records emitted by every gated act. In implementation these may take the form of an approval record, a signature, a delegation entry, a role assignment, an acceptance event or a decision log — but the architecture requires only that the mandate, its bounds and its exercise be recoverable.</p>
+<p>This evidence is <strong>event-native</strong> (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-24; <a href="kf-3004-information-and-record-model.html">KF-3004</a> §5.2): the acceptance record <em>is</em> the evidence that acceptance authority was exercised; the delegation record <em>is</em> the evidence that delegation was valid. Authority does not commission a separate register of its own legitimacy; the exercise of authority generates its evidence as a natural consequence of the architectural event rather than through a parallel administrative process (<a href="kf-3006-architectural-integration-model.html">KF-3006</a> §9), exactly as the rest of the architecture does.</p>
 <hr />
 <h2 id="separation-of-authority">11 · Separation of Authority</h2>
 <p>Some acts should not be authorised by the same role that produced the work. The architecture recognises separation as a <strong>pattern</strong>, applied where materiality warrants rather than mandated everywhere:</p>
@@ -393,7 +400,7 @@ Historical ──(Retirement Authority)──▶ active life ended, history inta
 <p>Whether separation is <em>required</em> is a function of assurance class (§12): Exploratory and Working objects may collapse these roles; Consequential and Critical objects increasingly require them, enforced by the Separation-of-Duties control (CTRL-SEG-01). Separation is thus proportional, like everything graded in the architecture — a floor that rises with reliance, not a uniform burden.</p>
 <hr />
 <h2 id="authority-and-materiality">12 · Authority and Materiality</h2>
-<p>Authority is one of the quantities materiality grades. The bridge to KF-2003 runs:</p>
+<p>Authority is one of the quantities materiality grades. The bridge to <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> runs:</p>
 <pre class="text"><code>Materiality (of the intended reliance)      ── KF-2003
      ▼ determines
 Assurance Class   (A0 … A4, + overlays)
@@ -403,7 +410,7 @@ Required Authority   (which type, whose confirmation, what separation)
 Evidence   (mandate, delegation, acceptance — event-native)
      ▼ enables
 Conformance   (the Authority dimension — KF-3007)</code></pre>
-<p>Concretely: the object <strong>owner proposes</strong> an assurance class; for <strong>A3 and A4</strong> the <strong>governance authority confirms</strong> it (KF-2003 §7). Higher classes demand higher and, where the pattern applies, <em>separated</em> authority; A4 Critical typically demands a formally constituted accountable body and independent review. The universal floor never moves — <em>some</em> identifiable human authority is always required — but its level, formality and separation rise with reliance. Automation may recommend a class or propose a transition, but may not hold the confirming authority for consequential or critical objects (KF-3001 IC-16).</p>
+<p>Concretely: the object <strong>owner proposes</strong> an assurance class; for <strong>A3 and A4</strong> the <strong>governance authority confirms</strong> it (<a href="kf-2003-materiality-and-assurance.html">KF-2003</a> §7). Higher classes demand higher and, where the pattern applies, <em>separated</em> authority; A4 Critical typically demands a formally constituted accountable body and independent review. The universal floor never moves — <em>some</em> identifiable human authority is always required — but its level, formality and separation rise with reliance. Automation may recommend a class or propose a transition, but may not hold the confirming authority for consequential or critical objects (<a href="kf-3001-architectural-principles-and-invariants.html">KF-3001</a> IC-16).</p>
 <p><strong>Authority scales with consequence, not seniority.</strong> Higher materiality does not necessarily demand a more <em>senior</em> individual; it demands authority <em>appropriate to the consequence and scope of reliance</em>. Seniority and authority often coincide in practice, but the architecture equates required authority with the reliance at stake, never with rank: an A4 acceptance needs an authority mandated for A4 consequence in that domain and scope, which may or may not be the most senior person available. Equating authority with hierarchy is a category error the scope rules of §7 exist to prevent.</p>
 <hr />
 <h2 id="authority-failures">13 · Authority Failures</h2>
@@ -481,17 +488,17 @@ Conformance   (the Authority dimension — KF-3007)</code></pre>
 <blockquote>
 <p><strong>A change in authority never invalidates historical evidence.</strong></p>
 </blockquote>
-<p>An acceptance made by a role that later ceased to exist remains a valid acceptance: it was legitimate at the time it was made, and the record carries the effective time at which the authority held (KF-3004 time semantics). Revocation, departure and reorganisation act <strong>forward</strong>, on future exercises of authority; they do not reach back to void past acts or erase the lineage of decisions already taken (the lineage invariant, KF-2001). This is what allows an institution to reconstruct, years later, that a decision was properly authorised <em>when it was made</em>, even though every person and role involved has since changed. Continuous validation keeps present authority current; append-only history keeps past authority true.</p>
+<p>An acceptance made by a role that later ceased to exist remains a valid acceptance: it was legitimate at the time it was made, and the record carries the effective time at which the authority held (<a href="kf-3004-information-and-record-model.html">KF-3004</a> time semantics). Revocation, departure and reorganisation act <strong>forward</strong>, on future exercises of authority; they do not reach back to void past acts or erase the lineage of decisions already taken (the lineage invariant, <a href="kf-2001-oko-lifecycle.html">KF-2001</a>). This is what allows an institution to reconstruct, years later, that a decision was properly authorised <em>when it was made</em>, even though every person and role involved has since changed. Continuous validation keeps present authority current; append-only history keeps past authority true.</p>
 <hr />
 <h2 id="relationship-with-conformance">15 · Relationship with Conformance</h2>
-<p>Authority is assessable on exactly the terms KF-3007 defines. The Authority conformance dimension reconstructs, from event-native evidence, the answers to four questions for any consequential act:</p>
+<p>Authority is assessable on exactly the terms <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> defines. The Authority conformance dimension reconstructs, from event-native evidence, the answers to four questions for any consequential act:</p>
 <ul>
 <li><strong>Was authority valid?</strong> — did a mandate exist, in scope and in its effective period?</li>
 <li><strong>Was delegation valid?</strong> — did any delegation stay within the delegator’s bounds?</li>
 <li><strong>Was acceptance legitimate?</strong> — did the accepting authority hold sufficient authority for the object’s assurance class?</li>
 <li><strong>Can authority be reconstructed?</strong> — to the depth the class requires, can the whole chain from institution to act be recovered?</li>
 </ul>
-<p>A “no” to any is a finding (KF-3007 §13), graded by materiality. Because authority is evidenced natively, these questions are answered from the record the act already produced — assessment reads authority, it does not re-interview it.</p>
+<p>A “no” to any is a finding (<a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> §13), graded by materiality. Because authority is evidenced natively, these questions are answered from the record the act already produced — assessment reads authority, it does not re-interview it.</p>
 <hr />
 <h2 id="summary">16 · Summary</h2>
 <p>Authority is <strong>not an administrative convenience.</strong> It is one of the architectural mechanisms through which institutional trust becomes possible. This framework:</p>
@@ -508,13 +515,13 @@ Conformance   (the Authority dimension — KF-3007)</code></pre>
 <hr />
 <h3 id="relationship-to-subsequent-documents">Relationship to Subsequent Documents</h3>
 <ul>
-<li><strong>KF-3009 · Architectural Crosswalks and Traceability</strong> carries the authoritative tracing from Canonical Principle III and the human-accountability invariant through the authority types, scopes and controls named here.</li>
+<li><strong><a href="kf-3009-architectural-crosswalks-and-traceability.html">KF-3009</a> · Architectural Crosswalks and Traceability</strong> carries the authoritative tracing from Canonical Principle III and the human-accountability invariant through the authority types, scopes and controls named here.</li>
 <li><strong>KF-4000 · Knowledge Operating System</strong> implements authority — identity, authentication, permission and delegation technology — within the architectural rules this framework fixes, and never in place of them.</li>
 </ul>
 <h3 id="closing-statement">Closing Statement</h3>
-<p>Across the KF-3000 series a three-layer structure has completed. KF-3000–3005 are the <strong>structural architecture</strong> — <em>what exists</em>. KF-3006 and KF-3007 are the <strong>behavioural architecture</strong> — <em>how it behaves and how we know</em>. KF-3008 is the <strong>institutional architecture</strong> — <em>who may legitimately make that behaviour consequential</em>. A knowledge architecture that can only represent and process knowledge is a sophisticated knowledge system; it becomes a framework for <strong>governed institutional knowledge</strong> only when it can establish who has the legitimate authority to create, evaluate, accept and rely upon what it holds. That is the layer KF-3008 supplies, and with it the conceptual core of Knowledge Foundry is complete.</p>
+<p>Across the <a href="kf-3000-reference-architecture.html">KF-3000</a> series a three-layer structure has completed. <a href="kf-3000-reference-architecture.html">KF-3000</a>–3005 are the <strong>structural architecture</strong> — <em>what exists</em>. <a href="kf-3006-architectural-integration-model.html">KF-3006</a> and <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> are the <strong>behavioural architecture</strong> — <em>how it behaves and how we know</em>. <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> is the <strong>institutional architecture</strong> — <em>who may legitimately make that behaviour consequential</em>. A knowledge architecture that can only represent and process knowledge is a sophisticated knowledge system; it becomes a framework for <strong>governed institutional knowledge</strong> only when it can establish who has the legitimate authority to create, evaluate, accept and rely upon what it holds. That is the layer <a href="kf-3008-architectural-authority-framework.html">KF-3008</a> supplies, and with it the conceptual core of Knowledge Foundry is complete.</p>
 <h3 id="status-and-next-step">Status and Next Step</h3>
-<p>This document is <strong>Draft · Version 0.1</strong>. Its authority types, scope dimensions, delegation constructs and failure modes are exercised directly by the first vertical slice, whose A3 Consequential object requires a confirmed acceptance authority and, under §11, the beginnings of separation. The slice is the occasion on which this framework — like KF-2003 and KF-3007 — is first tested against a real object rather than asserted, and revised before the series is baselined.</p>
+<p>This document is <strong>Draft · Version 0.1</strong>. Its authority types, scope dimensions, delegation constructs and failure modes are exercised directly by the first vertical slice, whose A3 Consequential object requires a confirmed acceptance authority and, under §11, the beginnings of separation. The slice is the occasion on which this framework — like <a href="kf-2003-materiality-and-assurance.html">KF-2003</a> and <a href="kf-3007-architectural-conformance-framework.html">KF-3007</a> — is first tested against a real object rather than asserted, and revised before the series is baselined.</p>
 
 <nav class="prevnext"><a class="pv" href="kf-3007-architectural-conformance-framework.html">&#8592; Conformance</a><a class="nx" href="kf-3009-architectural-crosswalks-and-traceability.html">Crosswalks & Traceability &#8594;</a></nav>
 </main>
