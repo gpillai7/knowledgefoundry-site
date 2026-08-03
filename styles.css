@@ -47,3 +47,16 @@ a{text-decoration:none}
 .skip:focus{left:8px;top:8px}
 a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #38574B;outline-offset:2px;border-radius:2px}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto !important;transition:none !important;animation:none !important}}
+.faqsec{border-top:1px solid #CDC9BC;margin-top:2.6em;padding-top:.7em}
+.faqsec-t{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#38574B;margin:0 0 .2em}
+details.faq{border-bottom:1px solid #CDC9BC}
+details.faq>summary{list-style:none;cursor:pointer;padding:17px 0;font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.35;color:#1B1A17;display:flex;justify-content:space-between;gap:18px;align-items:baseline}
+details.faq>summary::-webkit-details-marker{display:none}
+details.faq>summary::after{content:'+';font-family:'IBM Plex Mono',monospace;color:#BC6C2E;font-size:19px;line-height:1;flex:none}
+details.faq[open]>summary::after{content:'\2013'}
+details.faq>summary:hover{color:#38574B}
+.faq-a{padding:0 0 20px;max-width:66ch;color:#2A2822;line-height:1.62;font-size:16px}
+.faq-a a{color:#38574B;border-bottom:1px solid rgba(56,87,75,.35)}
+.faq-a p{margin:0}
+.hvFaq:hover{color:#1B1A17 !important}
+.hvFq:hover{color:#E7E3D8 !important}
