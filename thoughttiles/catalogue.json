@@ -1,0 +1,782 @@
+{
+  "version": "1.0-review",
+  "catalogueCount": 75,
+  "domains": [
+    {
+      "id": "human",
+      "name": "Human Cognition & Knowledge",
+      "num": "01",
+      "desc": "Reasoning, judgement, learning and the human condition"
+    },
+    {
+      "id": "technology",
+      "name": "Technology & Intelligence",
+      "num": "02",
+      "desc": "Artificial intelligence, its consequences and digital systems"
+    },
+    {
+      "id": "economies",
+      "name": "Economies, Institutions & Power",
+      "num": "03",
+      "desc": "Markets, public institutions and global power"
+    },
+    {
+      "id": "practice",
+      "name": "Applied Practice & Cultural Inquiry",
+      "num": "04",
+      "desc": "Business, scientific developments, music and culture"
+    }
+  ],
+  "items": [
+    {
+      "id": "btt-0001",
+      "number": 1,
+      "title": "A Brief History of Intelligence",
+      "author": "Max Bennett",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0001.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0001.webp"
+    },
+    {
+      "id": "btt-0002",
+      "number": 2,
+      "title": "AI Engineering",
+      "author": "Chip Huyen",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0002.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0002.webp"
+    },
+    {
+      "id": "btt-0003",
+      "number": 3,
+      "title": "Atlas of AI",
+      "author": "Kate Crawford",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0003.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0003.webp"
+    },
+    {
+      "id": "btt-0004",
+      "number": 4,
+      "title": "Being",
+      "author": "Menzies & Menzies",
+      "category": "Philosophy & the Human Condition",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0004.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0004.webp"
+    },
+    {
+      "id": "btt-0005",
+      "number": 5,
+      "title": "Beyond the Second Brain",
+      "author": "GP",
+      "category": "Knowledge Management & Learning Systems",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0005.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0005.webp"
+    },
+    {
+      "id": "btt-0006",
+      "number": 6,
+      "title": "Careless People",
+      "author": "Sarah Wynn-Williams",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0006.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0006.webp"
+    },
+    {
+      "id": "btt-0007",
+      "number": 7,
+      "title": "Change: How to Make Big Things Happen",
+      "author": "Damon Centola",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0007.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0007.webp"
+    },
+    {
+      "id": "btt-0008",
+      "number": 8,
+      "title": "Chokepoints",
+      "author": "Edward Fishman",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0008.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0008.webp"
+    },
+    {
+      "id": "btt-0009",
+      "number": 9,
+      "title": "Co-Intelligence",
+      "author": "Ethan Mollick",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0009.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0009.webp"
+    },
+    {
+      "id": "btt-0010",
+      "number": 10,
+      "title": "Critical Thinking",
+      "author": "Richard Paul & Linda Elder",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0010.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0010.webp"
+    },
+    {
+      "id": "btt-0011",
+      "number": 11,
+      "title": "Damn Right!",
+      "author": "Janet Lowe",
+      "category": "Business, Leadership & Commercial Strategy",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0011.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0011.webp"
+    },
+    {
+      "id": "btt-0012",
+      "number": 12,
+      "title": "Deaths of Despair and the Future of Capitalism",
+      "author": "Anne Case & Angus Deaton",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0012.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0012.webp"
+    },
+    {
+      "id": "btt-0013",
+      "number": 13,
+      "title": "Do Social Norms Substitute for Enforcement?",
+      "author": "Piskorski",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0013.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0013.webp"
+    },
+    {
+      "id": "btt-0014",
+      "number": 14,
+      "title": "Dooyeweerd's Philosophy",
+      "author": "Andrew Basden",
+      "category": "Philosophy & the Human Condition",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0014.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0014.webp"
+    },
+    {
+      "id": "btt-0015",
+      "number": 15,
+      "title": "Fixed: Why Personal Finance Is Broken and How to Make It Work for Everyone",
+      "author": "John Y. Campbell & Tarun Ramadorai",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0015.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0015.webp"
+    },
+    {
+      "id": "btt-0016",
+      "number": 16,
+      "title": "Geopolitics of Sustainability",
+      "author": "Linnér et al. (eds.)",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0016.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0016.webp"
+    },
+    {
+      "id": "btt-0017",
+      "number": 17,
+      "title": "Government in Business",
+      "author": "Lim Hwee Hua",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0017.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0017.webp"
+    },
+    {
+      "id": "btt-0018",
+      "number": 18,
+      "title": "Hayek's Bastards",
+      "author": "Quinn Slobodian",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0018.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0018.webp"
+    },
+    {
+      "id": "btt-0019",
+      "number": 19,
+      "title": "How to Survive the AI Shock",
+      "author": "Robinson et al.",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0019.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0019.webp"
+    },
+    {
+      "id": "btt-0020",
+      "number": 20,
+      "title": "How to Teach Critical Thinking",
+      "author": "Daniel T. Willingham",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0020.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0020.webp"
+    },
+    {
+      "id": "btt-0021",
+      "number": 21,
+      "title": "Human Compatible",
+      "author": "Stuart Russell",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0021.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0021.webp"
+    },
+    {
+      "id": "btt-0022",
+      "number": 22,
+      "title": "Innovative Approaches to Decision Making",
+      "author": "Yong Shi & Gang Kou",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0022.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0022.webp"
+    },
+    {
+      "id": "btt-0023",
+      "number": 23,
+      "title": "Iran's Grand Strategy",
+      "author": "Vali Nasr",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0023.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0023.webp"
+    },
+    {
+      "id": "btt-0024",
+      "number": 24,
+      "title": "Jazz-Rock History",
+      "author": "Newey",
+      "category": "Music, Culture & Creative Interpretation",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0024.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0024.webp"
+    },
+    {
+      "id": "btt-0025",
+      "number": 25,
+      "title": "Kant Machine",
+      "author": "Yuk Hui",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0025.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0025.webp"
+    },
+    {
+      "id": "btt-0026",
+      "number": 26,
+      "title": "Life 3.0",
+      "author": "Max Tegmark",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0026.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0026.webp"
+    },
+    {
+      "id": "btt-0027",
+      "number": 27,
+      "title": "Literature Criticism and Theory",
+      "author": "Bennett et al.",
+      "category": "Music, Culture & Creative Interpretation",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0027.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0027.webp"
+    },
+    {
+      "id": "btt-0028",
+      "number": 28,
+      "title": "Mastering Bitcoin",
+      "author": "Andreas M. Antonopoulos & David A. Harding",
+      "category": "Digital Assets & Blockchain",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0028.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0028.webp"
+    },
+    {
+      "id": "btt-0029",
+      "number": 29,
+      "title": "Models of My Life",
+      "author": "Herbert A. Simon",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0029.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0029.webp"
+    },
+    {
+      "id": "btt-0030",
+      "number": 30,
+      "title": "Nexus",
+      "author": "Yuval Noah Harari",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0030.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0030.webp"
+    },
+    {
+      "id": "btt-0031",
+      "number": 31,
+      "title": "Noise",
+      "author": "Daniel Kahneman, Olivier Sibony & Cass R. Sunstein",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0031.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0031.webp"
+    },
+    {
+      "id": "btt-0032",
+      "number": 32,
+      "title": "Off the Scales",
+      "author": "Aimee Donnellan",
+      "category": "Science, Medicine & Innovation",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0032.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0032.webp"
+    },
+    {
+      "id": "btt-0033",
+      "number": 33,
+      "title": "Personal Knowledge Management",
+      "author": "David J. Pauleen & G. E. Gorman (eds.)",
+      "category": "Knowledge Management & Learning Systems",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0033.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0033.webp"
+    },
+    {
+      "id": "btt-0034",
+      "number": 34,
+      "title": "Playing Possum",
+      "author": "Susana Monsó",
+      "category": "Philosophy & the Human Condition",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0034.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0034.webp"
+    },
+    {
+      "id": "btt-0035",
+      "number": 35,
+      "title": "Poor Charlie's Almanack",
+      "author": "Charles T. Munger",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0035.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0035.webp"
+    },
+    {
+      "id": "btt-0036",
+      "number": 36,
+      "title": "Quantum Mechanics",
+      "author": "Robert Scherrer",
+      "category": "Science, Medicine & Innovation",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0036.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0036.webp"
+    },
+    {
+      "id": "btt-0037",
+      "number": 37,
+      "title": "Refreshing the Singapore System",
+      "author": "Terence Wai Luen Ho",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0037.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0037.webp"
+    },
+    {
+      "id": "btt-0038",
+      "number": 38,
+      "title": "Samuelson Friedman",
+      "author": "Nicholas Wapshott",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0038.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0038.webp"
+    },
+    {
+      "id": "btt-0039",
+      "number": 39,
+      "title": "Shocks, Crises, and False Alarms",
+      "author": "Philipp Carlsson-Szlezak & Paul Swartz",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0039.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0039.webp"
+    },
+    {
+      "id": "btt-0040",
+      "number": 40,
+      "title": "Singapore's Productivity Challenge",
+      "author": "Lee Kuan Yew School of Public Policy",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0040.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0040.webp"
+    },
+    {
+      "id": "btt-0041",
+      "number": 41,
+      "title": "Sketch Your Mind",
+      "author": "Zsolt Viczian",
+      "category": "Knowledge Management & Learning Systems",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0041.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0041.webp"
+    },
+    {
+      "id": "btt-0042",
+      "number": 42,
+      "title": "Superforecasting",
+      "author": "Philip E. Tetlock & Dan Gardner",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0042.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0042.webp"
+    },
+    {
+      "id": "btt-0043",
+      "number": 43,
+      "title": "Superintelligence",
+      "author": "Nick Bostrom",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0043.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0043.webp"
+    },
+    {
+      "id": "btt-0044",
+      "number": 44,
+      "title": "Ten CFO Questions",
+      "author": "GP",
+      "category": "Business, Leadership & Commercial Strategy",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0044.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0044.webp"
+    },
+    {
+      "id": "btt-0045",
+      "number": 45,
+      "title": "The AI Mirror",
+      "author": "Shannon Vallor",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0045.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0045.webp"
+    },
+    {
+      "id": "btt-0046",
+      "number": 46,
+      "title": "The Alignment Problem",
+      "author": "Brian Christian",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0046.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0046.webp"
+    },
+    {
+      "id": "btt-0047",
+      "number": 47,
+      "title": "The Art of Uncertainty",
+      "author": "Dennis Merritt Jones",
+      "category": "Philosophy & the Human Condition",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0047.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0047.webp"
+    },
+    {
+      "id": "btt-0048",
+      "number": 48,
+      "title": "The Basics of Bitcoins and Blockchains",
+      "author": "Antony Lewis",
+      "category": "Digital Assets & Blockchain",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0048.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0048.webp"
+    },
+    {
+      "id": "btt-0049",
+      "number": 49,
+      "title": "The Broken China Dream",
+      "author": "Minxin Pei",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0049.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0049.webp"
+    },
+    {
+      "id": "btt-0050",
+      "number": 50,
+      "title": "The Coming Wave",
+      "author": "Mustafa Suleyman",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0050.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0050.webp"
+    },
+    {
+      "id": "btt-0051",
+      "number": 51,
+      "title": "The Formula",
+      "author": "Robinson & Clegg",
+      "category": "Business, Leadership & Commercial Strategy",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0051.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0051.webp"
+    },
+    {
+      "id": "btt-0052",
+      "number": 52,
+      "title": "The Geopolitics of Digital Sovereignty",
+      "author": "Georg Glasze et al.",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0052.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0052.webp"
+    },
+    {
+      "id": "btt-0053",
+      "number": 53,
+      "title": "The Great Mental Models, Volume 1: General Thinking Concepts",
+      "author": "Shane Parrish & Rhiannon Beaubien",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0053.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0053.webp"
+    },
+    {
+      "id": "btt-0054",
+      "number": 54,
+      "title": "The Great Mental Models, Volume 2: Physics, Chemistry and Biology",
+      "author": "Shane Parrish",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0054.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0054.webp"
+    },
+    {
+      "id": "btt-0055",
+      "number": 55,
+      "title": "The Great Mental Models, Volume 3: Systems and Mathematics",
+      "author": "Shane Parrish et al.",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0055.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0055.webp"
+    },
+    {
+      "id": "btt-0056",
+      "number": 56,
+      "title": "The Great Mental Models, Volume 4: Economics and Art",
+      "author": "Shane Parrish & Rhiannon Beaubien",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0056.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0056.webp"
+    },
+    {
+      "id": "btt-0057",
+      "number": 57,
+      "title": "The Model Thinker",
+      "author": "Scott E. Page",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0057.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0057.webp"
+    },
+    {
+      "id": "btt-0058",
+      "number": 58,
+      "title": "The New Geography of Innovation",
+      "author": "Mehran Gul",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0058.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0058.webp"
+    },
+    {
+      "id": "btt-0059",
+      "number": 59,
+      "title": "The Qualified Sales Leader",
+      "author": "John McMahon",
+      "category": "Business, Leadership & Commercial Strategy",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0059.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0059.webp"
+    },
+    {
+      "id": "btt-0060",
+      "number": 60,
+      "title": "The Real Economy",
+      "author": "Jonathan Levy",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0060.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0060.webp"
+    },
+    {
+      "id": "btt-0061",
+      "number": 61,
+      "title": "The Scout Mindset",
+      "author": "Julia Galef",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0061.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0061.webp"
+    },
+    {
+      "id": "btt-0062",
+      "number": 62,
+      "title": "The Singularity Is Nearer",
+      "author": "Ray Kurzweil",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0062.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0062.webp"
+    },
+    {
+      "id": "btt-0063",
+      "number": 63,
+      "title": "Thinking in Bets",
+      "author": "Annie Duke",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0063.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0063.webp"
+    },
+    {
+      "id": "btt-0064",
+      "number": 64,
+      "title": "Thinking in Systems",
+      "author": "Donella H. Meadows",
+      "category": "Thinking, Reasoning & Decision Science",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0064.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0064.webp"
+    },
+    {
+      "id": "btt-0065",
+      "number": 65,
+      "title": "Tools for Thought",
+      "author": "Howard Rheingold",
+      "category": "Knowledge Management & Learning Systems",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0065.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0065.webp"
+    },
+    {
+      "id": "btt-0066",
+      "number": 66,
+      "title": "Trade Wars Are Class Wars",
+      "author": "Matthew C. Klein & Michael Pettis",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0066.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0066.webp"
+    },
+    {
+      "id": "btt-0067",
+      "number": 67,
+      "title": "Unease",
+      "author": "Teo You Yenn",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0067.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0067.webp"
+    },
+    {
+      "id": "btt-0068",
+      "number": 68,
+      "title": "Unmasking AI",
+      "author": "Joy Buolamwini",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0068.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0068.webp"
+    },
+    {
+      "id": "btt-0069",
+      "number": 69,
+      "title": "Understanding Geoeconomics",
+      "author": "Clayton et al.",
+      "category": "Geopolitics, Geoeconomics & Global Change",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0069.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0069.webp"
+    },
+    {
+      "id": "btt-0070",
+      "number": 70,
+      "title": "Varieties of Capitalism",
+      "author": "Peter A. Hall & David Soskice (eds.)",
+      "category": "Economics & Political Economy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0070.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0070.webp"
+    },
+    {
+      "id": "btt-0071",
+      "number": 71,
+      "title": "Weapons of Math Destruction",
+      "author": "Cathy O'Neil",
+      "category": "AI — Society, Ethics & Governance",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0071.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0071.webp"
+    },
+    {
+      "id": "btt-0072",
+      "number": 72,
+      "title": "Why Ancient Chinese Political Thought Matters",
+      "author": "Daniel A. Bell",
+      "category": "Society, Institutions & Public Policy",
+      "domain": "economies",
+      "image": "../images/thoughttiles/full/btt-0072.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0072.webp"
+    },
+    {
+      "id": "btt-0073",
+      "number": 73,
+      "title": "Why Machines Learn",
+      "author": "Anil Ananthaswamy",
+      "category": "AI — Foundations & Technical Development",
+      "domain": "technology",
+      "image": "../images/thoughttiles/full/btt-0073.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0073.webp"
+    },
+    {
+      "id": "btt-0074",
+      "number": 74,
+      "title": "Research Proposal — Governed Knowledge Object",
+      "author": "GP",
+      "category": "Knowledge Management & Learning Systems",
+      "domain": "human",
+      "image": "../images/thoughttiles/full/btt-0074.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0074.webp"
+    },
+    {
+      "id": "btt-0075",
+      "number": 75,
+      "title": "Research Proposal — The Emotional Geography of Music",
+      "author": "GP",
+      "category": "Music, Culture & Creative Interpretation",
+      "domain": "practice",
+      "image": "../images/thoughttiles/full/btt-0075.webp",
+      "thumbnail": "../images/thoughttiles/thumbnails/btt-0075.webp"
+    }
+  ]
+}
