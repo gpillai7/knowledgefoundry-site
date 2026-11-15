@@ -1,5 +1,57 @@
 let DATA=[],D=[],domain="",category="",query="",current=null,zoom=1,dx=0,dy=0,drag=null;const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));async function boot(){try{const d=await fetch("catalogue.json");if(!d.ok)throw Error("Unable to load catalogue");const x=await d.json();DATA=x.items;D=x.domains;renderDomains();renderCats();render();const url=new URL(location.href);const id=url.searchParams.get("id");if(id)openItem(id,false)}catch(e){$("cards").textContent="Catalogue is currently unavailable.";console.error(e)}}function renderDomains(){$("domainGrid").innerHTML=D.map(d=>'<button class="domain '+(domain===d.id?'selected':'')+'" data-domain="'+esc(d.id)+'"><span class="num">'+esc(d.num)+'</span><strong>'+esc(d.name)+'</strong><small>'+esc(d.desc)+'</small></button>').join("");$("domainGrid").querySelectorAll("button").forEach(b=>b.onclick=()=>{domain=domain===b.dataset.domain?"":b.dataset.domain;category="";$("category").value="";renderDomains();render();$("collection").scrollIntoView({behavior:"smooth"})})}function renderCats(){const cats=[...new Set(DATA.map(x=>x.category))];$("category").innerHTML='<option value="">All 12 categories</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join("")}function render(){const q=query.toLowerCase().trim();const filtered=DATA.filter(x=>(!domain||x.domain===domain)&&(!category||x.category===category)&&(!q||[x.title,x.author,x.category].some(y=>y.toLowerCase().includes(q))));$("active").textContent=(D.find(d=>d.id===domain)?.name||"All intellectual domains")+(category?" / "+category:"");$("count").textContent=filtered.length+" entries";$("cards").replaceChildren();for(const x of filtered){const b=document.createElement("button");b.className="tile";b.type="button";const section=document.createElement("div");section.className="thumb";const fallback=document.createElement("div");fallback.className="missing";fallback.textContent="Ingot illustration";const img=document.createElement("img");img.src=x.thumbnail;img.alt="";img.loading="lazy";img.onerror=()=>{img.remove();fallback.textContent="Illustration pending upload"};section.append(fallback,img);img.onload=()=>fallback.remove();const meta=document.createElement("div");meta.className="tilemeta";meta.innerHTML='<small>Ingot '+String(x.number).padStart(2,"0")+' · '+esc(x.category)+'</small><strong>'+esc(x.title)+'</strong><span>'+esc(x.author)+'</span>';b.append(section,meta);b.onclick=()=>openItem(x.id,true);$("cards").append(b)}}let lastFocus=null;
 const MIN_ZOOM=0.5, MAX_ZOOM=5;
+
+// On desktop, a keyboard-accessible separator controls the text column width.
+// Width survives changes between Ingots within the current browser session.
+const panelResize=$("panelResize");
+const viewerMain=document.querySelector(".viewermain");
+const desktopPanel=window.matchMedia("(min-width: 951px)");
+let detailWidth=310;
+let resizing=null;
+function panelWidthBounds(){
+  const total=viewerMain.clientWidth;
+  return {min:240,max:Math.max(240,Math.min(800,total-320-9))};
+}
+function applyPanelWidth(width,fit=true){
+  const b=panelWidthBounds();
+  detailWidth=clamp(width,b.min,b.max);
+  viewerMain.style.setProperty("--detail-width",detailWidth+"px");
+  panelResize.setAttribute("aria-valuemin",String(b.min));
+  panelResize.setAttribute("aria-valuemax",String(b.max));
+  panelResize.setAttribute("aria-valuenow",String(Math.round(detailWidth)));
+  panelResize.setAttribute("aria-valuetext",Math.round(detailWidth)+" pixels wide");
+  if(fit&&!$("overlay").hidden)requestAnimationFrame(sizeFitImage);
+}
+panelResize.addEventListener("pointerdown",e=>{
+  if(!desktopPanel.matches||$("overlay").classList.contains("panel-hidden")||e.button!==0)return;
+  e.preventDefault();
+  resizing={id:e.pointerId,startX:e.clientX,startWidth:detailWidth};
+  panelResize.setPointerCapture(e.pointerId);
+  document.body.classList.add("ingot-panel-resizing");
+});
+panelResize.addEventListener("pointermove",e=>{
+  if(!resizing||resizing.id!==e.pointerId)return;
+  applyPanelWidth(resizing.startWidth+resizing.startX-e.clientX);
+});
+function finishPanelResize(e){
+  if(!resizing||resizing.id!==e.pointerId)return;
+  resizing=null;
+  document.body.classList.remove("ingot-panel-resizing");
+  if(panelResize.hasPointerCapture(e.pointerId))panelResize.releasePointerCapture(e.pointerId);
+}
+panelResize.addEventListener("pointerup",finishPanelResize);
+panelResize.addEventListener("pointercancel",finishPanelResize);
+panelResize.addEventListener("lostpointercapture",()=>{resizing=null;document.body.classList.remove("ingot-panel-resizing")});
+panelResize.addEventListener("keydown",e=>{
+  if(!desktopPanel.matches)return;
+  if(e.key==="ArrowLeft"||e.key==="ArrowRight"){
+    e.preventDefault();
+    applyPanelWidth(detailWidth+(e.key==="ArrowLeft"?20:-20)*(e.shiftKey?3:1));
+  }else if(e.key==="Home"){e.preventDefault();applyPanelWidth(panelWidthBounds().min)}
+  else if(e.key==="End"){e.preventDefault();applyPanelWidth(panelWidthBounds().max)}
+});
+window.addEventListener("resize",()=>{if(desktopPanel.matches)applyPanelWidth(detailWidth,false)});
+
 let imageBaseWidth=0, imageBaseHeight=0;
 // Fit is measured from the visible canvas, reserving clearance for viewer controls.
 function sizeFitImage(){
@@ -157,6 +209,7 @@ $("art").addEventListener("pointercancel",endPointer);
 $("art").addEventListener("lostpointercapture",e=>{activePointers.delete(e.pointerId);drag=null;pinch=null});
 document.addEventListener("keydown",e=>{
   if($("overlay").hidden)return;
+  if(e.target===panelResize&&e.key!=="Escape")return;
   if(e.key==="Escape"){e.preventDefault();closeItem(true)}
   else if(e.key==="+"||e.key==="="){e.preventDefault();setZoom(zoom*1.35)}
   else if(e.key==="-"){e.preventDefault();setZoom(zoom/1.35)}
