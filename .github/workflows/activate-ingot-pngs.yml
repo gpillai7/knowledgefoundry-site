@@ -1,0 +1,33 @@
+name: Activate original Ingot PNGs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'images/thoughttiles/full/*.png'
+      - 'scripts/activate_ingot_pngs.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-ingot-catalogue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Activate all verified uploaded PNG masters
+        run: python3 scripts/activate_ingot_pngs.py
+      - name: Commit catalogue changes, if any
+        run: |
+          if git diff --quiet -- ingots/catalogue.json; then
+            echo "No catalogue updates needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ingots/catalogue.json
+          git commit -m "Automatically activate uploaded lossless Ingot PNGs"
+          git push
