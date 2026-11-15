@@ -1,0 +1,65 @@
+name: Import Book ThoughtTiles artwork
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'btt-artwork-import.zip'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-btt-artwork
+  cancel-in-progress: false
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Validate and extract audited BTT artwork
+        shell: python
+        run: |
+          import os, re, zipfile
+          from pathlib import Path
+          archive = Path("btt-artwork-import.zip")
+          if not archive.exists():
+              raise SystemExit("Missing btt-artwork-import.zip. Upload the audited archive to repository root.")
+          with zipfile.ZipFile(archive) as z:
+              names = z.namelist()
+              expected = [
+                  f"images/thoughttiles/{kind}/btt-{n:04}.webp"
+                  for kind in ("full", "thumbnails")
+                  for n in range(1, 76)
+                  if n not in {14, 25, 28, 31, 36, 61}
+              ]
+              if len(names) != 138 or set(names) != set(expected):
+                  raise SystemExit("Artwork archive does not match audited 69 full/69 thumbnail files.")
+              for name in names:
+                  meta = z.getinfo(name)
+                  if meta.file_size > 2_000_000:
+                      raise SystemExit(f"Image unexpectedly large: {name}")
+                  data = z.read(name)
+                  if data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+                      raise SystemExit(f"Unexpected format: {name}")
+                  target = Path(name)
+                  target.parent.mkdir(parents=True, exist_ok=True)
+                  target.write_bytes(data)
+          print("Extracted 138 audited WebP images.")
+      - name: Commit artwork and delete upload archive
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/thoughttiles/
+          git rm btt-artwork-import.zip
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Publish 69 illustrated Book ThoughtTiles and thumbnails"
+          git push origin HEAD:main
