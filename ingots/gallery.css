@@ -73,3 +73,16 @@
 .ingot-summary p{font-family:'IBM Plex Sans',Helvetica,sans-serif;font-size:14px;line-height:1.7;margin:0 0 14px;color:#393b34}
 .ingot-summary p strong{font-weight:600;color:#1b1a17}
 .ingot-summary[hidden]{display:none}
+
+/* Resizable editorial pane: drag boundary between Ingot artwork and text. */
+@media(min-width:951px){
+  .viewermain{--detail-width:310px;grid-template-columns:minmax(0,1fr) 9px minmax(0,var(--detail-width));transition:none}
+  .panel-resize{position:relative;z-index:3;min-width:0;background:#e0e2d9;border-left:1px solid #c9d0c5;border-right:1px solid #c9d0c5;cursor:col-resize;touch-action:none;display:flex;align-items:center;justify-content:center}
+  .panel-resize:hover,.panel-resize:focus-visible,.overlay.is-resizing .panel-resize{background:#d1dbcF;outline:2px solid var(--forest);outline-offset:-2px}
+  .resize-grip{display:block;width:3px;height:42px;border-left:1px solid #81958a;border-right:1px solid #81958a}
+  .overlay.panel-hidden .viewermain{grid-template-columns:minmax(0,1fr) 0 0}
+  .overlay.panel-hidden .panel-resize{display:none}
+  .viewermain aside{min-width:0}
+  body.ingot-panel-resizing{cursor:col-resize;user-select:none}
+}
+@media(max-width:950px){.panel-resize{display:none}}
