@@ -1,37 +1,65 @@
 let DATA=[],D=[],domain="",category="",query="",current=null,zoom=1,dx=0,dy=0,drag=null;const $=id=>document.getElementById(id);const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));async function boot(){try{const d=await fetch("catalogue.json");if(!d.ok)throw Error("Unable to load catalogue");const x=await d.json();DATA=x.items;D=x.domains;renderDomains();renderCats();render();const url=new URL(location.href);const id=url.searchParams.get("id");if(id)openItem(id,false)}catch(e){$("cards").textContent="Catalogue is currently unavailable.";console.error(e)}}function renderDomains(){$("domainGrid").innerHTML=D.map(d=>'<button class="domain '+(domain===d.id?'selected':'')+'" data-domain="'+esc(d.id)+'"><span class="num">'+esc(d.num)+'</span><strong>'+esc(d.name)+'</strong><small>'+esc(d.desc)+'</small></button>').join("");$("domainGrid").querySelectorAll("button").forEach(b=>b.onclick=()=>{domain=domain===b.dataset.domain?"":b.dataset.domain;category="";$("category").value="";renderDomains();render();$("collection").scrollIntoView({behavior:"smooth"})})}function renderCats(){const cats=[...new Set(DATA.map(x=>x.category))];$("category").innerHTML='<option value="">All 12 categories</option>'+cats.map(c=>'<option>'+esc(c)+'</option>').join("")}function render(){const q=query.toLowerCase().trim();const filtered=DATA.filter(x=>(!domain||x.domain===domain)&&(!category||x.category===category)&&(!q||[x.title,x.author,x.category].some(y=>y.toLowerCase().includes(q))));$("active").textContent=(D.find(d=>d.id===domain)?.name||"All intellectual domains")+(category?" / "+category:"");$("count").textContent=filtered.length+" entries";$("cards").replaceChildren();for(const x of filtered){const b=document.createElement("button");b.className="tile";b.type="button";const section=document.createElement("div");section.className="thumb";const fallback=document.createElement("div");fallback.className="missing";fallback.textContent="Ingot illustration";const img=document.createElement("img");img.src=x.thumbnail;img.alt="";img.loading="lazy";img.onerror=()=>{img.remove();fallback.textContent="Illustration pending upload"};section.append(fallback,img);img.onload=()=>fallback.remove();const meta=document.createElement("div");meta.className="tilemeta";meta.innerHTML='<small>Ingot '+String(x.number).padStart(2,"0")+' · '+esc(x.category)+'</small><strong>'+esc(x.title)+'</strong><span>'+esc(x.author)+'</span>';b.append(section,meta);b.onclick=()=>openItem(x.id,true);$("cards").append(b)}}let lastFocus=null;
 const MIN_ZOOM=0.5, MAX_ZOOM=5;
 
-// On desktop, a keyboard-accessible separator controls the text column width.
-// Width survives changes between Ingots within the current browser session.
+// Responsive, keyboard-accessible splitter for both gallery layouts.
 const panelResize=$("panelResize");
 const viewerMain=document.querySelector(".viewermain");
 const desktopPanel=window.matchMedia("(min-width: 951px)");
 let detailWidth=310;
+let detailHeight=null;
 let resizing=null;
 function panelWidthBounds(){
   const total=viewerMain.clientWidth;
   return {min:240,max:Math.max(240,Math.min(800,total-320-9))};
 }
+function panelHeightBounds(){
+  const total=viewerMain.clientHeight;
+  // Preserve a useful illustration and readable summary on compact phones.
+  const min=Math.min(110,Math.max(60,Math.floor(total*0.25)));
+  const max=Math.max(min,Math.floor(total-14-Math.min(160,total*0.40)));
+  return {min,max};
+}
+function updateSeparatorAccessibility(){
+  const desktop=desktopPanel.matches;
+  const b=desktop?panelWidthBounds():panelHeightBounds();
+  const value=desktop?detailWidth:detailHeight;
+  panelResize.setAttribute("aria-orientation",desktop?"vertical":"horizontal");
+  panelResize.setAttribute("aria-label",desktop?"Resize text panel width":"Resize text panel height");
+  panelResize.setAttribute("aria-valuemin",String(b.min));
+  panelResize.setAttribute("aria-valuemax",String(b.max));
+  panelResize.setAttribute("aria-valuenow",String(Math.round(value)));
+  panelResize.setAttribute("aria-valuetext",Math.round(value)+" pixels "+(desktop?"wide":"high"));
+}
 function applyPanelWidth(width,fit=true){
   const b=panelWidthBounds();
   detailWidth=clamp(width,b.min,b.max);
   viewerMain.style.setProperty("--detail-width",detailWidth+"px");
-  panelResize.setAttribute("aria-valuemin",String(b.min));
-  panelResize.setAttribute("aria-valuemax",String(b.max));
-  panelResize.setAttribute("aria-valuenow",String(Math.round(detailWidth)));
-  panelResize.setAttribute("aria-valuetext",Math.round(detailWidth)+" pixels wide");
+  if(desktopPanel.matches)updateSeparatorAccessibility();
   if(fit&&!$("overlay").hidden)requestAnimationFrame(sizeFitImage);
 }
+function applyPanelHeight(height,fit=true){
+  const b=panelHeightBounds();
+  detailHeight=clamp(height,b.min,b.max);
+  viewerMain.style.setProperty("--detail-height",detailHeight+"px");
+  if(!desktopPanel.matches)updateSeparatorAccessibility();
+  if(fit&&!$("overlay").hidden)requestAnimationFrame(sizeFitImage);
+}
+function syncPanelResize(){
+  if(desktopPanel.matches)applyPanelWidth(detailWidth,false);
+  else applyPanelHeight(detailHeight===null?viewerMain.clientHeight*0.34:detailHeight,false);
+}
 panelResize.addEventListener("pointerdown",e=>{
-  if(!desktopPanel.matches||$("overlay").classList.contains("panel-hidden")||e.button!==0)return;
+  if($("overlay").hidden||$("overlay").classList.contains("panel-hidden")||e.button!==0)return;
   e.preventDefault();
-  resizing={id:e.pointerId,startX:e.clientX,startWidth:detailWidth};
+  resizing={id:e.pointerId,desktop:desktopPanel.matches,startX:e.clientX,startY:e.clientY,
+    startSize:desktopPanel.matches?detailWidth:detailHeight};
   panelResize.setPointerCapture(e.pointerId);
   document.body.classList.add("ingot-panel-resizing");
 });
 panelResize.addEventListener("pointermove",e=>{
   if(!resizing||resizing.id!==e.pointerId)return;
-  applyPanelWidth(resizing.startWidth+resizing.startX-e.clientX);
+  if(resizing.desktop)applyPanelWidth(resizing.startSize+resizing.startX-e.clientX);
+  else applyPanelHeight(resizing.startSize+resizing.startY-e.clientY);
 });
 function finishPanelResize(e){
   if(!resizing||resizing.id!==e.pointerId)return;
@@ -43,14 +71,24 @@ panelResize.addEventListener("pointerup",finishPanelResize);
 panelResize.addEventListener("pointercancel",finishPanelResize);
 panelResize.addEventListener("lostpointercapture",()=>{resizing=null;document.body.classList.remove("ingot-panel-resizing")});
 panelResize.addEventListener("keydown",e=>{
-  if(!desktopPanel.matches)return;
-  if(e.key==="ArrowLeft"||e.key==="ArrowRight"){
+  const desktop=desktopPanel.matches;
+  const delta=(e.shiftKey?60:20);
+  if(desktop&&(e.key==="ArrowLeft"||e.key==="ArrowRight")){
+    e.preventDefault();applyPanelWidth(detailWidth+(e.key==="ArrowLeft"?delta:-delta));
+  }else if(!desktop&&(e.key==="ArrowUp"||e.key==="ArrowDown")){
+    e.preventDefault();applyPanelHeight(detailHeight+(e.key==="ArrowUp"?delta:-delta));
+  }else if(e.key==="Home"){
     e.preventDefault();
-    applyPanelWidth(detailWidth+(e.key==="ArrowLeft"?20:-20)*(e.shiftKey?3:1));
-  }else if(e.key==="Home"){e.preventDefault();applyPanelWidth(panelWidthBounds().min)}
-  else if(e.key==="End"){e.preventDefault();applyPanelWidth(panelWidthBounds().max)}
+    if(desktop)applyPanelWidth(panelWidthBounds().min);
+    else applyPanelHeight(panelHeightBounds().min);
+  }else if(e.key==="End"){
+    e.preventDefault();
+    if(desktop)applyPanelWidth(panelWidthBounds().max);
+    else applyPanelHeight(panelHeightBounds().max);
+  }
 });
-window.addEventListener("resize",()=>{if(desktopPanel.matches)applyPanelWidth(detailWidth,false)});
+window.addEventListener("resize",syncPanelResize);
+desktopPanel.addEventListener("change",syncPanelResize);
 
 let imageBaseWidth=0, imageBaseHeight=0;
 // Fit is measured from the visible canvas, reserving clearance for viewer controls.
@@ -129,6 +167,7 @@ function openItem(id,push){
   }
   $("overlay").hidden=false;
   document.body.style.overflow="hidden";
+  syncPanelResize();
   requestAnimationFrame(sizeFitImage);
   if(push){const u=new URL(location.href);u.searchParams.set("id",id);history.pushState({id},"",u)}
   $("close").focus();
