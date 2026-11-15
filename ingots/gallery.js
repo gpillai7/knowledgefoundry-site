@@ -220,38 +220,58 @@ $("art").addEventListener("wheel",e=>{
   e.preventDefault();
   setZoom(zoom*(e.deltaY>0?0.88:1.14));
 },{passive:false});
-$("art").addEventListener("pointerdown",e=>{
-  // Never capture pointer events initiated on buttons: capture would cancel clicks.
+// Pan gestures are tracked at window level so a drag continues reliably
+// across the artwork, including when the pointer leaves the image viewport.
+// The same handler is used for all Ingots (no title-specific behaviour).
+const artCanvas=$("art");
+function startArtPointer(e){
   if(e.target.closest("button")||e.target.closest(".zoom"))return;
-  if(!current||$("big").hidden)return;
+  if(!current||$("big").hidden||e.pointerType==="mouse"&&e.button!==0)return;
   activePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
   if(activePointers.size===2){
     const a=[...activePointers.values()];
     pinch={distance:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y),startZoom:zoom};
     drag=null;
-  }else if(zoom>1&&activePointers.size===1){
+  }else if(activePointers.size===1&&zoom>1){
     drag={id:e.pointerId,x:e.clientX-dx,y:e.clientY-dy};
   }
-  if(zoom>1||activePointers.size>1)$("art").setPointerCapture(e.pointerId);
-});
-$("art").addEventListener("pointermove",e=>{
+  if(zoom>1||activePointers.size>1){
+    e.preventDefault();
+    try{artCanvas.setPointerCapture(e.pointerId)}catch(err){
+      // Window-level listeners still handle the gesture if capture is denied.
+    }
+  }
+}
+function moveArtPointer(e){
   if(!activePointers.has(e.pointerId))return;
   activePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
   if(activePointers.size===2&&pinch){
     const a=[...activePointers.values()];
     setZoom(pinch.startZoom*Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y)/Math.max(1,pinch.distance));
   }else if(drag&&drag.id===e.pointerId&&zoom>1){
-    dx=e.clientX-drag.x;dy=e.clientY-drag.y;transform();
+    dx=e.clientX-drag.x;
+    dy=e.clientY-drag.y;
+    transform();
   }
-});
-function endPointer(e){
-  activePointers.delete(e.pointerId);
-  drag=null;pinch=null;
-  if($("art").hasPointerCapture(e.pointerId))$("art").releasePointerCapture(e.pointerId);
 }
-$("art").addEventListener("pointerup",endPointer);
-$("art").addEventListener("pointercancel",endPointer);
-$("art").addEventListener("lostpointercapture",e=>{activePointers.delete(e.pointerId);drag=null;pinch=null});
+function endArtPointer(e){
+  if(!activePointers.has(e.pointerId))return;
+  activePointers.delete(e.pointerId);
+  if(drag&&drag.id===e.pointerId)drag=null;
+  if(activePointers.size<2)pinch=null;
+  if(activePointers.size===1&&zoom>1){
+    const [id,p]=[...activePointers.entries()][0];
+    drag={id,x:p.x-dx,y:p.y-dy};
+  }
+  if(artCanvas.hasPointerCapture(e.pointerId)){
+    artCanvas.releasePointerCapture(e.pointerId);
+  }
+}
+artCanvas.addEventListener("pointerdown",startArtPointer);
+window.addEventListener("pointermove",moveArtPointer);
+window.addEventListener("pointerup",endArtPointer);
+window.addEventListener("pointercancel",endArtPointer);
+artCanvas.addEventListener("dragstart",e=>e.preventDefault());
 document.addEventListener("keydown",e=>{
   if($("overlay").hidden)return;
   if(e.target===panelResize&&e.key!=="Escape")return;
