@@ -86,3 +86,49 @@
   body.ingot-panel-resizing{cursor:col-resize;user-select:none}
 }
 @media(max-width:950px){.panel-resize{display:none}}
+
+/* Stacked small-screen viewer: adjustable horizontal boundary. */
+@media(max-width:950px){
+  .viewermain{
+    --detail-height:34%;
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr) 14px minmax(0,var(--detail-height));
+    transition:none;
+  }
+  .viewermain aside{
+    min-height:0;
+    max-height:none;
+    height:100%;
+    overflow-y:auto;
+  }
+  .panel-resize{
+    position:relative;
+    z-index:3;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#e0e2d9;
+    border-top:1px solid #c9d0c5;
+    border-bottom:1px solid #c9d0c5;
+    cursor:row-resize;
+    touch-action:none;
+  }
+  .panel-resize:hover,.panel-resize:focus-visible,body.ingot-panel-resizing .panel-resize{
+    background:#d1dbcf;
+    outline:2px solid var(--forest);
+    outline-offset:-2px;
+  }
+  .resize-grip{
+    display:block;
+    width:48px;
+    height:4px;
+    border-top:1px solid #81958a;
+    border-bottom:1px solid #81958a;
+  }
+  .overlay.panel-hidden .viewermain{
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr) 0 0;
+  }
+  .overlay.panel-hidden .panel-resize{display:none}
+  body.ingot-panel-resizing{cursor:row-resize;user-select:none}
+}
