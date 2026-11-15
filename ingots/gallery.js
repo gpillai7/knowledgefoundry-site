@@ -215,10 +215,23 @@ if("ResizeObserver" in window){
 }
 window.addEventListener("resize",()=>{if(!$("overlay").hidden)sizeFitImage()});
 if(window.visualViewport)window.visualViewport.addEventListener("resize",()=>{if(!$("overlay").hidden)sizeFitImage()});
+// Trackpad support: two-finger scrolling pans an enlarged Ingot.
+// Trackpad pinch (Ctrl/Meta + wheel) remains zoom; buttons offer explicit zoom.
 $("art").addEventListener("wheel",e=>{
   if($("overlay").hidden||e.target.closest(".zoom"))return;
   e.preventDefault();
-  setZoom(zoom*(e.deltaY>0?0.88:1.14));
+  if(e.ctrlKey||e.metaKey){
+    // Precision trackpad pinch is normally exposed as Ctrl + wheel.
+    setZoom(zoom*Math.exp(-e.deltaY*0.01));
+  }else if(zoom>1){
+    const unit=e.deltaMode===1?16:e.deltaMode===2?$("art").clientHeight:1;
+    dx-=e.deltaX*unit;
+    dy-=e.deltaY*unit;
+    transform();
+  }else{
+    // Keep the existing scroll-to-zoom behaviour at fitted size.
+    setZoom(zoom*(e.deltaY>0?0.88:1.14));
+  }
 },{passive:false});
 // Pan gestures are tracked at window level so a drag continues reliably
 // across the artwork, including when the pointer leaves the image viewport.
