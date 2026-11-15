@@ -55,6 +55,26 @@ function openItem(id,push){
   $("detailAuthor").textContent=x.author;
   $("detailCategory").textContent=x.category;
   $("detailDomain").textContent=D.find(d=>d.id===x.domain)?.name||"";
+  let summaryBox=$("detailSummary");
+  if(!summaryBox){
+    summaryBox=document.createElement("section");
+    summaryBox.id="detailSummary";
+    summaryBox.className="ingot-summary";
+    $("details").appendChild(summaryBox);
+  }
+  summaryBox.replaceChildren();
+  summaryBox.hidden=!x.summary;
+  if(x.summary){
+    const heading=document.createElement("h3");
+    heading.textContent="The book in brief";
+    summaryBox.appendChild(heading);
+    x.summary.split(/\n\s*\n/).forEach(raw=>{
+      const para=document.createElement("p");
+      const markup=esc(raw.trim()).replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>").replace(/\*([^*]+)\*/g,"<em>$1</em>");
+      para.innerHTML=markup;
+      summaryBox.appendChild(para);
+    });
+  }
   $("overlay").hidden=false;
   document.body.style.overflow="hidden";
   requestAnimationFrame(sizeFitImage);
